@@ -1,0 +1,38 @@
+{
+	"overrides": [
+		{
+			"files": "*.md",
+			"options": {
+				"printWidth": 120,
+				"parser": "markdown"
+			}
+		},
+		{
+			"files": "*.sh",
+			"options": {
+				"printWidth": 120,
+				"parser": "shfmt"
+			}
+		}
+	],
+	"printWidth": 120,
+	"tabWidth": 2,
+	"useTabs": true,
+	"singleQuote": true,
+	"semi": false,
+	"quoteProps": "as-needed",
+	"jsxSingleQuote": false,
+	"trailingComma": "all",
+	"bracketSpacing": true,
+	"jsxBracketSameLine": false,
+	"arrowParens": "always",
+	"requirePragma": false,
+	"insertPragma": false,
+	"no-semi": true,
+	"proseWrap": "always",
+	"htmlWhitespaceSensitivity": "css",
+	"endOfLine": "lf",
+	"embeddedLanguageFormatting": "auto",
+	"importOrderSeparation": true,
+	"importOrderSortSpecifiers": true
+}

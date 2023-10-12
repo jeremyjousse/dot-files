@@ -1,0 +1,31 @@
+{
+  "conventionalCommits.scopes": [
+    "boostrap",
+    "code",
+    "decathlon",
+    "git",
+    "http",
+    "install",
+    "nvim",
+    "utils",
+    "zsh"
+  ],
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[markdown]": {
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": true
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll.markdownlint": true
+  },
+  "workbench.colorCustomizations": {
+    "titleBar.activeBackground": "#745492"
+  },
+  "cSpell.words": [
+    "Neovim"
+  ],
+  "[shellscript]": {
+    "editor.defaultFormatter": "mkhl.shfmt"
+  }
+}

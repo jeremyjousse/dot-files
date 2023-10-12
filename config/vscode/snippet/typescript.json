@@ -1,0 +1,21 @@
+{
+    "Describe": {
+      "prefix": "desc",
+      "body": ["describe('$1', () => {$2})"],
+      "description": "Describe block for test scoping"
+    },
+    "it": {
+      "prefix": "it",
+      "body": [
+        "it('$1', ($2) => {",
+        "// Given",
+        "$3",
+        "// When",
+        "",
+        "// Then",
+        "})"
+      ],
+      "description": "Test block with jest"
+    }
+  }
+  

@@ -1,0 +1,24 @@
+[user]
+        name = Jérémy Jousse
+        email = jeremy.jousse@decathlon.com
+        # TODO add signingkey
+[core]
+	autocrlf = input
+	editor = code --wait
+
+[alias]
+        st=status
+        ci=commit -m
+        co=checkout
+        br=branch
+        ft=fetch
+        df=diff -w
+        tree=log --graph --oneline --all
+        la="!git config -l | grep alias | cut -c 7-"
+        pr=pull --rebase
+        cl-pr=push origin -d
+        cb="!git fetch --prune && git branch -vv|grep ': gone]'|awk '{ print $1; }'|xargs git branch -D"
+[init]
+	defaultBranch = main
+[pull]
+	rebase = true

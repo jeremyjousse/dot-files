@@ -1,0 +1,8 @@
+### dot-files ###
+config/zsh/custom/professional.zsh
+
+### node ###
+node_modules
+
+### macOS ###
+.DS_Store
