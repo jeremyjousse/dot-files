@@ -180,7 +180,9 @@ fi
 
 ## TODO add Rust
 
-# FiraCode Nerd Font (https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/FiraCode) free monospaced font with programming ligatures
+# DEPRECATED FiraCode Nerd Font (https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/FiraCode) free monospaced font with programming ligatures
+# MesloLGL Nerd Font (update VSCode settings to "terminal.integrated.fontFamily": "'MesloLGL Nerd Font'",)
+MesloLGL Nerd Font
 if ! fc-list | grep -q MesloLGS; then
     info "Installing Nerd fonts"
     brew tap homebrew/cask-fonts
