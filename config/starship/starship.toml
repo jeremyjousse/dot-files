@@ -1,5 +1,123 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+add_newline = false
+
+# format = '''
+# [┌───────────────────>](bold green)
+# [│](bold green)$directory$rust$package
+# [└─>](bold green) '''
+
+# Which is equivalent to
+format = """
+$username\
+$hostname\
+$localip\
+$shlvl\
+$singularity\
+$kubernetes\
+$directory\
+$vcsh\
+$fossil_branch\
+$git_branch\
+$git_commit\
+$git_state\
+$git_metrics\
+$git_status\
+$hg_branch\
+$pijul_channel\
+$docker_context\
+$package\
+$c\
+$cmake\
+$cobol\
+$daml\
+$dart\
+$deno\
+$dotnet\
+$elixir\
+$elm\
+$erlang\
+$fennel\
+$golang\
+$guix_shell\
+$haskell\
+$haxe\
+$helm\
+$java\
+$julia\
+$kotlin\
+$gradle\
+$lua\
+$nim\
+$nodejs\
+$ocaml\
+$opa\
+$perl\
+$php\
+$pulumi\
+$purescript\
+$python\
+$raku\
+$rlang\
+$red\
+$ruby\
+$rust\
+$scala\
+$solidity\
+$swift\
+$terraform\
+$vlang\
+$vagrant\
+$zig\
+$buf\
+$nix_shell\
+$conda\
+$meson\
+$spack\
+$memory_usage\
+$aws\
+$gcloud\
+$openstack\
+$azure\
+$env_var\
+$crystal\
+$custom\
+$sudo\
+$cmd_duration\
+$jobs\
+$battery\
+$time\
+$status\
+$os\
+$container\
+$shell\
+$character"""
+
+[character]
+success_symbol = '[➜](bold green)'
+error_symbol = "[✖](bold red) "
+
 [aws]
 symbol = "  "
+
+[battery]
+disabled = false
+full_symbol = '🔋 '
+charging_symbol = "🔌 "
+discharging_symbol = '💀 '
+unknown_symbol = "❓ "
+empty_symbol = "❗ "
+
+[[battery.display]] # 'bold red' style and discharging_symbol when capacity is between 0% and 10%
+threshold = 100
+style = 'bold green'
+
+[[battery.display]]
+threshold = 60
+style = "bold orange"
+
+[[battery.display]]
+threshold = 30
+style = "bold red"
 
 [buf]
 symbol = " "
@@ -15,6 +133,8 @@ symbol = " "
 
 [directory]
 read_only = " 󰌾"
+truncation_length = 5
+format = "[$path]($style)[$lock_symbol]($lock_style) "
 
 [docker_context]
 symbol = " "
@@ -28,8 +148,29 @@ symbol = " "
 [fossil_branch]
 symbol = " "
 
+[gcloud]
+# format = 'on [$symbol$account(@$domain)(\($region\))]($style) '
+format = '[$symbol$active]($style) '
+style = 'bold blue'
+# format = 'on [$symbol$account(@$domain)(\($region\))(\($project\))]($style) '
+symbol = '️🇬️ '
+
 [git_branch]
 symbol = " "
+
+[git_status]
+conflicted = "⚔️ "
+ahead = "🏎️ 💨 x${count} "
+behind = "🐢 x${count} "
+diverged = "🔱 🏎️ 💨 x${ahead_count} 🐢 x${behind_count} "
+untracked = "🛤️  x${count} "
+stashed = "📦 "
+modified = "📝 x${count} "
+staged = "🗃️  x${count} "
+renamed = "📛 x${count} "
+deleted = "🗑️  x${count} "
+style = "bright-white"
+format = "$all_status$ahead_behind"
 
 [golang]
 symbol = " "
@@ -134,3 +275,13 @@ symbol = " "
 
 [scala]
 symbol = " "
+
+[time]
+time_format = "%T"
+format = "🕙 $time($style) "
+style = "bright-white"
+disabled = false
+
+[username]
+style_user = "bold blue"
+show_always = true
