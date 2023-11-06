@@ -1,8 +1,10 @@
 ### dot-files ###
 config/zsh/custom/professional.zsh
+config/nvim/lazy-lock.json
 
 ### node ###
 node_modules
 
 ### macOS ###
 .DS_Store
+
