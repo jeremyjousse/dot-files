@@ -60,14 +60,8 @@ check_install_cask iterm2 iTerm.app
 # DevToys (https://devtoys.app/) Swiss army knife for developers
 check_install_cask devtoys DevToys.app
 
-# Obsidian (https://obsidian.md/) private second brain tool
-check_install_cask obsidian Obsidian.app
-
 # Rectangle (https://rectangleapp.com/) move and resize windows in macOS using keyboard shortcuts or snap areas
 check_install_cask rectangle Rectangle.app
-
-# ShowMeYourHotKeys (https://showmeyourhotkeys.moxadventu.com/) shows all app menu items hotkeys
-check_install_cask showmeyourhotkeys ShowMeYourHotKeys.app
 
 # VLC (https://www.videolan.org/vlc/index.html) multimedia player
 check_install_cask vlc VLC.app
@@ -182,7 +176,6 @@ fi
 
 # DEPRECATED FiraCode Nerd Font (https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/FiraCode) free monospaced font with programming ligatures
 # MesloLGL Nerd Font (update VSCode settings to "terminal.integrated.fontFamily": "'MesloLGL Nerd Font'",)
-MesloLGL Nerd Font
 if ! fc-list | grep -q MesloLGS; then
     info "Installing Nerd fonts"
     brew tap homebrew/cask-fonts
