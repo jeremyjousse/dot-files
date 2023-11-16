@@ -60,6 +60,12 @@ check_install_cask iterm2 iTerm.app
 # DevToys (https://devtoys.app/) Swiss army knife for developers
 check_install_cask devtoys DevToys.app
 
+# Maccy (https://maccy.app/) Clipboard manager
+check_install_cask maccy Maccy.app
+
+# KeyClu (https://sergii.tatarenkov.name/keyclu/support/) Simple and handy overview of applications shortcuts
+check_install_cask keyclu KeyClu.app
+
 # Rectangle (https://rectangleapp.com/) move and resize windows in macOS using keyboard shortcuts or snap areas
 check_install_cask rectangle Rectangle.app
 
