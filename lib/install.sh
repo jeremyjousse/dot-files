@@ -88,6 +88,9 @@ check_install_cask jdk-mission-control "JDK Mission Control.app"
 # Shell applications
 ###
 
+# fish [friendly interactive shell] (https://fishshell.com/) user-friendly command-line shell for UNIX-like operating systems
+check_install fish
+
 # GitHub CLI (https://cli.github.com/) brings GitHub to your terminal
 check_install gh
 
