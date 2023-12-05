@@ -245,6 +245,9 @@ vscodeToInstallExtensions+=("SonarSource.sonarlint-vscode")
 # Svelte for VS Code (https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode)
 vscodeToInstallExtensions+=("svelte.svelte-vscode")
 
+# CodeLLDB (https://marketplace.visualstudio.com/items?itemName=vadimcn.vscode-lldb)
+vscodeToInstallExtensions+=("vadimcn.vscode-lldb")
+
 # IntelliCode (https://marketplace.visualstudio.com/items?itemName=VisualStudioExptTeam.vscodeintellicode)
 vscodeToInstallExtensions+=("VisualStudioExptTeam.vscodeintellicode")
 
