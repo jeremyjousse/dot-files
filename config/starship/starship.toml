@@ -24,7 +24,6 @@ $git_metrics\
 $git_status\
 $hg_branch\
 $pijul_channel\
-$docker_context\
 $package\
 $c\
 $cmake\
@@ -72,7 +71,7 @@ $buf\
 $nix_shell\
 $conda\
 $meson\
-$spack\
+$spack
 $memory_usage\
 $aws\
 $gcloud\
@@ -149,13 +148,14 @@ symbol = " "
 symbol = " "
 
 [gcloud]
-# format = 'on [$symbol$account(@$domain)(\($region\))]($style) '
-format = '[$symbol$active]($style) '
+format = '[$symbol$account(@$domain)(\($region\))]($style) '
+# format = '[$symbol$active]($style) '
 style = 'bold blue'
 # format = 'on [$symbol$account(@$domain)(\($region\))(\($project\))]($style) '
 symbol = '️🇬️ '
 
 [git_branch]
+format = '[$symbol$branch]($style) '
 symbol = " "
 
 [git_status]
@@ -212,6 +212,7 @@ symbol = "󰆥 "
 symbol = " "
 
 [nodejs]
+format = '[$symbol($version )]($style)'
 symbol = " "
 
 [os.symbols]
@@ -256,6 +257,7 @@ Unknown = " "
 Windows = "󰍲 "
 
 [package]
+format = '[$symbol$version]($style) '
 symbol = "󰏗 "
 
 [pijul_channel]
@@ -283,5 +285,6 @@ style = "bright-white"
 disabled = false
 
 [username]
+format= '[$user]($style) '
 style_user = "bold blue"
 show_always = true
