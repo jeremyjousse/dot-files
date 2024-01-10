@@ -81,6 +81,9 @@ check_install_cask jetbrains-toolbox "JetBrains Toolbox.app"
 # JDK Mission Control (https://www.oracle.com/java/technologies/jdk-mission-control.html) a profiling and event collection framework for JDK
 check_install_cask jdk-mission-control "JDK Mission Control.app"
 
+# Obsidian (https://obsidian.md/) private and flexible writing app, your seconde brain
+check_install_cask obsidian Obsidian.app
+
 # TODO this is not a standard cask install
 # check_install_cask google-cloud-sdk
 
