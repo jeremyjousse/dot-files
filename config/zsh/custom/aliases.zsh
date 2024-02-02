@@ -22,3 +22,7 @@ alias k="kubectl"
 
 ## Podman
 alias docker=podman
+
+# Python
+alias pip="python3 -m pip"
+alias python=python3
