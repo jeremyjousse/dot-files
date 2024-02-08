@@ -139,6 +139,11 @@ check_install fnm
 # Bun (https://bun.sh/) a new JavaScript runtime built from scratch to serve the modern JavaScript ecosystem
 check_install bun
 
+# - Python
+
+# pyenv (https://github.com/pyenv/pyenv) simple Python version management
+check_install pyenv
+
 # - Container
 
 # podman-compose (https://github.com/containers/podman-compose) a script to run docker-compose.yml using podman

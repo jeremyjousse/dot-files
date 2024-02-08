@@ -9,7 +9,8 @@
 		"nvim",
 		"utils",
 		"zsh",
-		"starship"
+		"starship",
+		"mise"
 	],
 	"editor.formatOnSave": true,
 	"editor.defaultFormatter": "esbenp.prettier-vscode",

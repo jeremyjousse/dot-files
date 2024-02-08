@@ -43,3 +43,6 @@ export USE_GKE_GCLOUD_AUTH_PLUGIN=true
 
 # code (Visual Studio Code) in terminal
 [ -f "/Applications/Visual Studio Code.app/Contents/Resources/app/bin" ] && export PATH="${PATH}:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+
+# mise
+eval "$(/opt/homebrew/bin/mise activate zsh)"

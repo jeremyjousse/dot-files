@@ -1,0 +1,12 @@
+[env]
+# supports arbitrary env vars so mise can be used like direnv/dotenv
+NODE_ENV = 'development'
+
+[tools]
+node = 'lts'
+python = 'lts'
+java = 'temurin-jre-21.0.2+13.0.LTS'
+rust = '1.75.0'
+
+[plugins]
+
