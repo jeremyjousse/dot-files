@@ -131,6 +131,11 @@ check_install shfmt
 # The Fuck (https://github.com/nvbn/thefuck) corrects your previous console command
 check_install thefuck
 
+# - IA
+
+# Ollama (https://ollama.com/) runs with large language models, locally.
+check_install ollama
+
 # - Javascript
 
 #  fnm (https://github.com/Schniz/fnm) fast and simple Node.js version manager, built in Rust
