@@ -131,6 +131,11 @@ check_install shfmt
 # The Fuck (https://github.com/nvbn/thefuck) corrects your previous console command
 check_install thefuck
 
+# - Dev languages boostrap
+
+# mise-en-place (https://mise.jdx.dev) The front-end to your dev env
+check_install mise
+
 # - IA
 
 # Ollama (https://ollama.com/) runs with large language models, locally.
@@ -195,6 +200,11 @@ fi
 # fnm install --lts
 
 ## TODO add Rust
+
+## TODO add K8s Kubernetes kew
+# https://krew.sigs.k8s.io/docs/user-guide/setup/install/
+# kubectl krew install ctx
+# kubectl krew install ns
 
 # DEPRECATED FiraCode Nerd Font (https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/FiraCode) free monospaced font with programming ligatures
 # MesloLGL Nerd Font (update VSCode settings to "terminal.integrated.fontFamily": "'MesloLGL Nerd Font'",)
