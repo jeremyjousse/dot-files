@@ -4,7 +4,7 @@ NODE_ENV = 'development'
 
 [tools]
 node = 'lts'
-python = 'lts'
+python = '3.12'
 java = 'temurin-jre-21.0.2+13.0.LTS'
 
 [plugins]

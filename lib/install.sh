@@ -174,6 +174,9 @@ check_install helm
 # Flux (https://fluxcd.io/) used to bootstrap and interact with Flux (a set of continuous and progressive delivery solutions for Kubernetes)
 check_install fluxcd/tap/flux flux
 
+# Act (https://nektosact.com/) run your GitHub Actions locally
+check_install act
+
 ###
 # JVM based SDKs with SDKMan
 ###
