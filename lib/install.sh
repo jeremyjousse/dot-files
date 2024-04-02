@@ -151,8 +151,18 @@ check_install bun
 
 # - Python
 
+# DEPRECATED, for now using mise (https://mise.jdx.dev)
 # pyenv (https://github.com/pyenv/pyenv) simple Python version management
-check_install pyenv
+# check_install pyenv
+
+# uv (https://github.com/astral-sh/uv) an extremely fast Python package installer and resolver, written in Rust
+check_install uv
+
+# ruff (https://github.com/astral-sh/ruff) an extremely fast Python linter and code formatter, written in Rust
+check_install ruff
+
+# rye (https://rye-up.com) a comprehensive project and package management solution for Python
+check_install rye
 
 # - Container
 
@@ -228,6 +238,9 @@ vscodeToInstallExtensions+=("amatiasq.sort-imports")
 
 # Markdown Preview Mermaid Support (https://marketplace.visualstudio.com/items?itemName=bierner.markdown-mermaid)
 vscodeToInstallExtensions+=("bierner.markdown-mermaid")
+
+# Ruff extension for Visual Studio Code (https://marketplace.visualstudio.com/items?itemName=charliermarsh.ruff)
+vscodeToInstallExtensions+=("charliermarsh.ruff")
 
 # Markdown lint (https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint)
 vscodeToInstallExtensions+=("DavidAnson.vscode-markdownlint")
