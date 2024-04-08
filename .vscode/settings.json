@@ -1,6 +1,6 @@
 {
 	"conventionalCommits.scopes": [
-		"boostrap",
+		"bootstrap",
 		"code",
 		"decathlon",
 		"git",
