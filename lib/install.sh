@@ -88,11 +88,18 @@ check_install_cask obsidian Obsidian.app
 # check_install_cask google-cloud-sdk
 
 ###
-# Shell applications
+# Shells
 ###
 
 # fish [friendly interactive shell] (https://fishshell.com/) user-friendly command-line shell for UNIX-like operating systems
 check_install fish
+
+# Nushell [friendly interactive shell] (https://www.nushell.sh/) a new type of shell
+check_install nushell
+
+###
+# Shell utils
+###
 
 # GitHub CLI (https://cli.github.com/) brings GitHub to your terminal
 check_install gh
