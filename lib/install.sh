@@ -95,7 +95,8 @@ check_install_cask obsidian Obsidian.app
 check_install fish
 
 # Nushell [friendly interactive shell] (https://www.nushell.sh/) a new type of shell
-check_install nushell
+# TODO nushell not detected
+# check_install nushell
 
 ###
 # Shell utils
@@ -220,6 +221,11 @@ fi
 # fnm install --lts
 
 ## TODO add Rust
+if [[ ! "$(rustc --version)" > /dev/null ]]; then
+    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+else
+    rustup upgrade
+fi
 
 ## TODO add K8s Kubernetes kew
 # https://krew.sigs.k8s.io/docs/user-guide/setup/install/
