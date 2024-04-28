@@ -6,11 +6,12 @@
 		"git",
 		"http",
 		"install",
+		"mise",
+		"nushell",
 		"nvim",
-		"utils",
-		"zsh",
 		"starship",
-		"mise"
+		"utils",
+		"zsh"
 	],
 	"editor.formatOnSave": true,
 	"editor.defaultFormatter": "esbenp.prettier-vscode",

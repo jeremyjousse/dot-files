@@ -92,11 +92,10 @@ check_install_cask obsidian Obsidian.app
 ###
 
 # fish [friendly interactive shell] (https://fishshell.com/) user-friendly command-line shell for UNIX-like operating systems
-check_install fish
+#check_install fish
 
 # Nushell [friendly interactive shell] (https://www.nushell.sh/) a new type of shell
-# TODO nushell not detected
-# check_install nushell
+check_install nushell nu
 
 ###
 # Shell utils
@@ -224,7 +223,7 @@ fi
 if [[ ! "$(rustc --version)" > /dev/null ]]; then
     curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 else
-    rustup upgrade
+    rustup upgrade stable
 fi
 
 ## TODO add K8s Kubernetes kew
@@ -255,14 +254,14 @@ vscodeToInstallExtensions+=("bierner.markdown-mermaid")
 # Ruff extension for Visual Studio Code (https://marketplace.visualstudio.com/items?itemName=charliermarsh.ruff)
 vscodeToInstallExtensions+=("charliermarsh.ruff")
 
-# Markdown lint (https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint)
-vscodeToInstallExtensions+=("DavidAnson.vscode-markdownlint")
+# Markdown lint (https://marketplace.visualstudio.com/items?itemName=davidanson.vscode-markdownlint)
+vscodeToInstallExtensions+=("davidanson.vscode-markdownlint")
 
 # ESLint (https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
 vscodeToInstallExtensions+=("dbaeumer.vscode-eslint")
 
-# XML Tools (https://marketplace.visualstudio.com/items?itemName=DotJoshJohnson.xml)
-vscodeToInstallExtensions+=("DotJoshJohnson.xml")
+# XML Tools (https://marketplace.visualstudio.com/items?itemName=dotjoshjohnson.xml)
+vscodeToInstallExtensions+=("dotjoshjohnson.xml")
 
 # Prettier code formatter (https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
 vscodeToInstallExtensions+=("esbenp.prettier-vscode")
@@ -270,8 +269,8 @@ vscodeToInstallExtensions+=("esbenp.prettier-vscode")
 # GitHub Actions (https://marketplace.visualstudio.com/items?itemName=GitHub.vscode-github-actions)
 vscodeToInstallExtensions+=("github.vscode-github-actions")
 
-# GitHub Pull Requests and Issues (https://marketplace.visualstudio.com/items?itemName=GitHub.vscode-pull-request-github)
-vscodeToInstallExtensions+=("GitHub.vscode-pull-request-github")
+# GitHub Pull Requests and Issues (https://marketplace.visualstudio.com/items?itemName=github.vscode-pull-request-github)
+vscodeToInstallExtensions+=("github.vscode-pull-request-github")
 
 # CodeMetrics (https://marketplace.visualstudio.com/items?itemName=kisstkondoros.vscode-codemetrics)
 vscodeToInstallExtensions+=("kisstkondoros.vscode-codemetrics")
@@ -291,17 +290,20 @@ vscodeToInstallExtensions+=("rust-lang.rust-analyzer")
 # Rust Crates (https://marketplace.visualstudio.com/items?itemName=serayuzgur.crates)
 vscodeToInstallExtensions+=("serayuzgur.crates")
 
-# SonarLint (https://marketplace.visualstudio.com/items?itemName=SonarSource.sonarlint-vscode)
-vscodeToInstallExtensions+=("SonarSource.sonarlint-vscode")
+# SonarLint (https://marketplace.visualstudio.com/items?itemName=sonarsource.sonarlint-vscode)
+vscodeToInstallExtensions+=("sonarsource.sonarlint-vscode")
 
-# Svelte for VS Code (https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode)
+# Svelte syntax highlighting (https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode)
 vscodeToInstallExtensions+=("svelte.svelte-vscode")
+
+# Nushell syntax highlighting (https://marketplace.visualstudio.com/items?itemName=thenuprojectcontributors.vscode-nushell-lang)
+vscodeToInstallExtensions+=("thenuprojectcontributors.vscode-nushell-lang")
 
 # CodeLLDB (https://marketplace.visualstudio.com/items?itemName=vadimcn.vscode-lldb)
 vscodeToInstallExtensions+=("vadimcn.vscode-lldb")
 
-# IntelliCode (https://marketplace.visualstudio.com/items?itemName=VisualStudioExptTeam.vscodeintellicode)
-vscodeToInstallExtensions+=("VisualStudioExptTeam.vscodeintellicode")
+# IntelliCode (https://marketplace.visualstudio.com/items?itemName=visualStudioExptTeam.vscodeintellicode)
+vscodeToInstallExtensions+=("visualstudioexptteam.vscodeintellicode")
 
 # Conventional Commits (https://marketplace.visualstudio.com/items?itemName=vivaxy.vscode-conventional-commits)
 vscodeToInstallExtensions+=("vivaxy.vscode-conventional-commits")
