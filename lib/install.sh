@@ -138,6 +138,12 @@ check_install shfmt
 # The Fuck (https://github.com/nvbn/thefuck) corrects your previous console command
 check_install thefuck
 
+# Bat (https://github.com/sharkdp/bat) a cat(1) clone with wings
+check_install bat
+
+# fzf (https://github.com/junegunn/fzf) command-line fuzzy finder
+check_install fzf
+
 # - Dev languages boostrap
 
 # mise-en-place (https://mise.jdx.dev) The front-end to your dev env
