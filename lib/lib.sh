@@ -71,12 +71,30 @@ link_config_files() {
     unlink "$destination"
   fi
 
-  if [ ! -h "$destination" ]; then
+  if [ ! -L "$destination" ]; then
     info "Linking ${destination} to ${source}"
     ln -s "$source" "$destination"
   fi
 
   return 0
+}
+
+copy_config_files() {
+  local source="$1"
+  local destination="$2"
+
+  if [[ -d $source && -d $destination && -L $destination ]]; then
+    warning "${destination} is a symlink folder"
+    info "Unlink destination folder to ${destination}!"
+    unlink "$destination"
+  fi
+
+  # if [ ! -d "$destination" ]; then
+  #   info "Creating destination folder ${destination}"
+  #   mkdir -p "$destination"
+  # fi
+
+  cp -r "$source" "$destination"
 }
 
 colblk='\033[0;30m'       # Black
