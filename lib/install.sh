@@ -144,6 +144,9 @@ check_install bat
 # fzf (https://github.com/junegunn/fzf) command-line fuzzy finder
 check_install fzf
 
+# lsd (https://github.com/lsd-rs/lsd) next gen ls command
+check_install lsd
+
 # - Dev languages boostrap
 
 # mise-en-place (https://mise.jdx.dev) The front-end to your dev env
