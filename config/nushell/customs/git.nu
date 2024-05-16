@@ -1,3 +1,26 @@
+##
+# Git aliases
+##
+
+## Inspired form https://github.com/nushell/nu_scripts/blob/main/aliases/git/git-aliases.nu
+
+# git fetch
+export alias gf = git fetch
+
+# git fetch --all --prune
+export alias gfa = git fetch --all --prune
+
+# git fetch origin
+export alias gfo = git fetch origin
+
+# git pull
+export alias gpl = git pull
+
+##
+# Git functions
+##
+
+# Switch git branches using fzf completion
 def gbs [] {
   let branch = (
     git branch |
@@ -13,6 +36,7 @@ def gbs [] {
   }
 }
 
+# Delete git branches using fzf completion
 def gbd [] {
   let branches = (
     git branch |
@@ -31,10 +55,12 @@ def gbd [] {
   }
 }
 
+# Clean git merged branches
 def gbc [] {
     git branch --merged | lines | where ($it != "* master" and $it != "* main") | each {|br| git branch -D ($br | str trim) } | str trim
 }
 
+# Show git log in a pretty way
 def gl [limit = 10] {
     git log --pretty=%h»¦«%aN»¦«%s»¦«%aD | lines | split column "»¦«" sha1 committer desc merged_at | first ($limit)
 }
@@ -44,8 +70,11 @@ def gca [] {
     git log --pretty=%h»¦«%aN»¦«%s»¦«%aD | lines | split column "»¦«" sha1 committer desc merged_at | histogram committer merger | sort-by merger | reverse
 }
 
-# custom completions issued from:
-# https://github.com/nushell/nu_scripts/blob/main/custom-completions/git/git-completions.nu
+##
+# Git custom completions
+##
+
+## inspired from: https://github.com/nushell/nu_scripts/blob/main/custom-completions/git/git-completions.nu
 
 def "nu-complete git remotes" [] {
   ^git remote | lines | each { |line| $line | str trim }
@@ -81,7 +110,7 @@ def "nu-complete git log" [] {
 }
 
 
-# Switch between branches and commits
+# Switch between git branches and commits
 export extern "git switch" [
   switch?: string@"nu-complete git switch"        # name of branch to switch to
   --create(-c)                                    # create a new branch
@@ -101,7 +130,3 @@ export extern "git switch" [
   --recurse-submodules                            # update the contents of sub-modules
   --track(-t)                                     # set "upstream" configuration
 ]
-
-
-def animals [] { ["cat", "dog", "eel" ] }
-def my-command [animal: string@animals] { print $animal }
