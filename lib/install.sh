@@ -281,6 +281,9 @@ vscodeToInstallExtensions+=("github.vscode-github-actions")
 # GitHub Pull Requests and Issues (https://marketplace.visualstudio.com/items?itemName=github.vscode-pull-request-github)
 vscodeToInstallExtensions+=("github.vscode-pull-request-github")
 
+# Dependi (https://marketplace.visualstudio.com/items?itemName=fill-labs.dependi)
+vscodeToInstallExtensions+=("fill-labs.dependi")
+
 # CodeMetrics (https://marketplace.visualstudio.com/items?itemName=kisstkondoros.vscode-codemetrics)
 vscodeToInstallExtensions+=("kisstkondoros.vscode-codemetrics")
 
@@ -295,9 +298,6 @@ vscodeToInstallExtensions+=("oliversturm.fix-json")
 
 # Rust Analyzer (https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer)
 vscodeToInstallExtensions+=("rust-lang.rust-analyzer")
-
-# Rust Crates (https://marketplace.visualstudio.com/items?itemName=serayuzgur.crates)
-vscodeToInstallExtensions+=("serayuzgur.crates")
 
 # SonarLint (https://marketplace.visualstudio.com/items?itemName=sonarsource.sonarlint-vscode)
 vscodeToInstallExtensions+=("sonarsource.sonarlint-vscode")
