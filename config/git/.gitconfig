@@ -1,11 +1,3 @@
-[user]
-        name = Jérémy Jousse
-        email = jeremy.jousse@decathlon.com
-        # TODO add signingkey
-[core]
-	autocrlf = input
-	editor = code --wait
-
 [alias]
         st=status
         ci=commit -m
@@ -18,7 +10,34 @@
         pr=pull --rebase
         cl-pr=push origin -d
         cb="!git fetch --prune && git branch -vv|grep ': gone]'|awk '{ print $1; }'|xargs git branch -D"
+        undo = reset --soft HEAD^
+
+[commit]
+        #gpgsign = true
+
+[core]
+	autocrlf = input
+	editor = code --wait
+        pager = delta
+
+[delta]
+
+        line-numbers = true
+
+[gpg]
+        program = /opt/homebrew/bin/gpg
+
 [init]
 	defaultBranch = main
+
+[user]
+        name = Jérémy Jousse
+        email = jeremy.jousse@decathlon.com
+        # TODO add signingkey
+
 [pull]
 	rebase = true
+
+[push]
+	autoSetupRemote = true
+        default = current

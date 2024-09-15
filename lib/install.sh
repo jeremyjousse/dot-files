@@ -51,6 +51,9 @@ check_install_cask chrome "Google Chrome.app"
 # Firefox (https://www.mozilla.org/en-US/firefox/new/) Mozilla's web browser
 check_install_cask firefox "Firefox.app"
 
+# Arc (https://arc.net/) is the Chrome replacement I’ve been waiting for
+check_install_cask arc "Arc.app"
+
 # Visual Studio Code (https://code.visualstudio.com/) a great Integrated Development Environment
 check_install_cask visual-studio-code "Visual Studio Code.app"
 
@@ -103,6 +106,9 @@ check_install nushell nu
 
 # GitHub CLI (https://cli.github.com/) brings GitHub to your terminal
 check_install gh
+
+# delta (https://github.com/dandavison/delta) syntax-highlighting pager for git, diff, grep, and blame output
+check_install git-delta
 
 # direnv (https://direnv.net/) can load and unload environment variables depending on the current directory
 check_install direnv
@@ -316,6 +322,9 @@ vscodeToInstallExtensions+=("visualstudioexptteam.vscodeintellicode")
 
 # Conventional Commits (https://marketplace.visualstudio.com/items?itemName=vivaxy.vscode-conventional-commits)
 vscodeToInstallExtensions+=("vivaxy.vscode-conventional-commits")
+
+# Make TypeScript errors prettier and human-readable (https://marketplace.visualstudio.com/items?itemName=yoavbls.pretty-ts-errors)
+vscodeToInstallExtensions+=("yoavbls.pretty-ts-errors")
 
 # Markdown All in One (https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one)
 vscodeToInstallExtensions+=("yzhang.markdown-all-in-one")
