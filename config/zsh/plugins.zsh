@@ -23,8 +23,8 @@ plugins=(
   bun
   command-not-found
   # common-aliases
-  direnv
-  dotenv
+  # direnv
+  # dotenv
   gh
   git-auto-fetch
   git

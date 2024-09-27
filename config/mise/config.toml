@@ -1,6 +1,6 @@
 [env]
 # supports arbitrary env vars so mise can be used like direnv/dotenv
-NODE_ENV = 'development'
+#NODE_ENV = 'development'
 
 [tools]
 node = 'lts'
