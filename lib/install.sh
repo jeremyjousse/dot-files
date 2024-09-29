@@ -49,7 +49,7 @@ fi
 check_install_cask chrome "Google Chrome.app"
 
 # Firefox (https://www.mozilla.org/en-US/firefox/new/) Mozilla's web browser
-check_install_cask firefox "Firefox.app"
+check_install_cask firefox@developer-edition "Firefox Developer Edition.app"
 
 # Arc (https://arc.net/) is the Chrome replacement I’ve been waiting for
 check_install_cask arc "Arc.app"
@@ -111,7 +111,7 @@ check_install nushell nu
 check_install gh
 
 # delta (https://github.com/dandavison/delta) syntax-highlighting pager for git, diff, grep, and blame output
-check_install git-delta
+check_install git-delta delta
 
 # direnv (https://direnv.net/) can load and unload environment variables depending on the current directory
 check_install direnv
