@@ -72,6 +72,9 @@ check_install_cask keyclu KeyClu.app
 # Rectangle (https://rectangleapp.com/) move and resize windows in macOS using keyboard shortcuts or snap areas
 check_install_cask rectangle Rectangle.app
 
+# AltTab (https://alt-tab-macos.netlify.app/) Windows alt-tab on macOS
+check_install_cask alt-tab AltTab.app
+
 # VLC (https://www.videolan.org/vlc/index.html) multimedia player
 check_install_cask vlc VLC.app
 
