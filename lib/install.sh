@@ -14,9 +14,6 @@ if [[ ! "$(which brew)" > /dev/null ]]; then
     info "Install Homebrew ..."
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     eval "$(homebrew/bin/brew shellenv)"
-else
-    info "Upgrading Homebrew ..."
-    brew upgrade
 fi
 
 ###
@@ -170,9 +167,6 @@ check_install ollama
 
 #  fnm (https://github.com/Schniz/fnm) fast and simple Node.js version manager, built in Rust
 check_install fnm
-
-# Bun (https://bun.sh/) a new JavaScript runtime built from scratch to serve the modern JavaScript ecosystem
-check_install bun
 
 # - Python
 
@@ -333,3 +327,5 @@ vscodeToInstallExtensions+=("yoavbls.pretty-ts-errors")
 vscodeToInstallExtensions+=("yzhang.markdown-all-in-one")
 
 check_install_vscode_extensions "${vscodeToInstallExtensions[@]}"
+
+# TODO add `mise install` but reload shell
