@@ -1,4 +1,12 @@
+[font]
+normal.family = "MesloLGS Nerd Font Mono"
+size = 17
+
+
+
 [window]
+
+
 padding.x = 10
 padding.y = 10
 
@@ -6,9 +14,3 @@ decorations = "buttonless"
 
 blur = true
 opacity = 0.8
-
-option_as_alt = "both"
-
-[font]
-normal.family = "MesloLGS Nerd Font Mono"
-size = 17

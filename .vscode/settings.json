@@ -11,7 +11,8 @@
 		"nvim",
 		"starship",
 		"utils",
-		"zsh"
+		"zsh",
+		"alacritty"
 	],
 	"editor.formatOnSave": true,
 	"editor.defaultFormatter": "esbenp.prettier-vscode",
