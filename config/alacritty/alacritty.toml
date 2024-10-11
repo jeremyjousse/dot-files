@@ -1,11 +1,9 @@
 [font]
+
 normal.family = "MesloLGS Nerd Font Mono"
 size = 17
 
-
-
 [window]
-
 
 padding.x = 10
 padding.y = 10
