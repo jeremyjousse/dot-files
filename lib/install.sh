@@ -57,6 +57,9 @@ check_install_cask visual-studio-code "Visual Studio Code.app"
 # iTem2 (https://iterm2.com/) is a replacement for Terminal
 check_install_cask iterm2 iTerm.app
 
+# Alacritty (https://iterm2.com/) a modern terminal emulator that comes with sensible defaults, but allows for extensive configuration.
+check_install_cask alacritty Alacritty.app
+
 # DevToys (https://devtoys.app/) Swiss army knife for developers
 check_install_cask devtoys DevToys.app
 
