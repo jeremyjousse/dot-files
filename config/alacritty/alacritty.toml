@@ -7,8 +7,3 @@ size = 17
 
 padding.x = 10
 padding.y = 10
-
-decorations = "Full"
-
-blur = true
-opacity = 0.8
