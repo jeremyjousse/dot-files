@@ -4,6 +4,7 @@
 # version = "0.92.2"
 
 $env.STARSHIP_SHELL = "nu"
+$env.CARAPACE_BRIDGES = 'zsh,fish,bash,inshellisense' # optional
 
 def create_left_prompt [] {
     # let dir = match (do --ignore-shell-errors { $env.PWD | path relative-to $nu.home-path }) {
@@ -111,3 +112,5 @@ $env.PATH = ($env.PATH | split row (char esep) | prepend '/opt/homebrew/bin')
 
 # To load from a custom file you can use:
 source ($nu.default-config-dir | path join 'custom.nu')
+
+carapace _carapace nushell | save --force ~/.cache/carapace/init.nu
