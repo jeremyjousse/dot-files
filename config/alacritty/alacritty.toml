@@ -3,6 +3,10 @@
 normal.family = "MesloLGS Nerd Font Mono"
 size = 17
 
+[terminal]
+
+shell = "/opt/homebrew/bin/nu"
+
 [window]
 
 padding.x = 10
