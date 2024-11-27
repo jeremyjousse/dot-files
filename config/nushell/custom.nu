@@ -1,4 +1,5 @@
 
+source ~/.cache/carapace/init.nu
 source ($nu.default-config-dir | path join scripts mise.nu)
 
 source ($nu.default-config-dir | path join customs aliases.nu)
