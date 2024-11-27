@@ -84,7 +84,6 @@ $sudo\
 $cmd_duration\
 $jobs\
 $battery\
-$time\
 $status\
 $os\
 $container\
@@ -278,13 +277,13 @@ symbol = " "
 [scala]
 symbol = " "
 
-[time]
-time_format = "%T"
-format = "🕙 $time($style) "
-style = "bright-white"
-disabled = false
+# [time]
+# time_format = "%T"
+# format = "🕙 $time($style) "
+# style = "bright-white"
+# disabled = false
 
 [username]
-format= '[$user]($style) '
+format = '[$user]($style) '
 style_user = "bold blue"
 show_always = true
