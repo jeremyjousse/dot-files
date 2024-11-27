@@ -122,6 +122,9 @@ check_install jq
 # ShellCheck (https://www.shellcheck.net/) finds bugs in your shell scripts
 check_install shellcheck
 
+# carapace-bin (https://carapace-sh.github.io/carapace-bin/carapace-bin.html) multi-shell multi-command argument completer
+check_install carapace
+
 # Starship (https://starship.rs/) minimal, blazing-fast, and infinitely customizable prompt for any shell
 check_install starship
 
