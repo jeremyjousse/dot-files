@@ -14,7 +14,7 @@ alias chrome="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
 alias server='python -m SimpleHTTPServer 8000'
 
 # A global alias to pipe a command’s output to grep
-# exemple use: history G ssh
+# example use: history G ssh
 alias -g G='| grep'
 
 ## Cargo for Rust
