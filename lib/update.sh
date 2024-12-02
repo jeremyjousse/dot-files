@@ -1,6 +1,6 @@
 #!/bin/bash
 
-omz update
+# omz update
 
 mise upgrade
 

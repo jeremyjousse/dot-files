@@ -27,6 +27,8 @@ alias dot-files = code $"($env.HOME)/Development/Personal/dot-files"
 # headless chrome
 alias chrome = ^open "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
 
+alias code = ^open "/Applications/Visual Studio Code.app"
+
 ##
 # containers
 ##

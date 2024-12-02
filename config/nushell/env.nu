@@ -1,10 +1,10 @@
 
 # Nushell Environment Config File
-#
-# version = "0.92.2"
 
 $env.STARSHIP_SHELL = "nu"
-$env.CARAPACE_BRIDGES = 'zsh,fish,bash,inshellisense' # optional
+$env.CARAPACE_BRIDGES = 'zsh,fish,bash,inshellisense'
+$env.CARGO_HOME = ($env.HOME | path join ".cargo")
+
 
 def create_left_prompt [] {
     # let dir = match (do --ignore-shell-errors { $env.PWD | path relative-to $nu.home-path }) {
@@ -103,10 +103,10 @@ $env.PATH = ($env.PATH | split row (char esep) | prepend '/opt/homebrew/bin')
 # $env.PATH = ($env.PATH | split row (char esep) | prepend '/some/path')
 # An alternate way to add entries to $env.PATH is to use the custom command `path add`
 # which is built into the nushell stdlib:
-# use std "path add"
+use std "path add"
 # $env.PATH = ($env.PATH | split row (char esep))
 # path add /some/path
-# path add ($env.CARGO_HOME | path join "bin")
+path add ($env.CARGO_HOME | path join "bin")
 # path add ($env.HOME | path join ".local" "bin")
 # $env.PATH = ($env.PATH | uniq)
 
