@@ -140,6 +140,9 @@ check_install graphviz dot
 # wrk (https://github.com/wg/wrk) HTTP benchmarking tool
 check_install wrk
 
+# bat (https://github.com/sharkdp/bat) A cat(1) clone with syntax highlighting and Git integration.
+check_install bat
+
 # GnuPG (https://gnupg.org/) is a complete and free implementation of the OpenPGP
 # Used to generate GPG key to sign git commits
 check_install gnupg gpg
