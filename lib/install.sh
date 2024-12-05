@@ -119,6 +119,12 @@ check_install direnv
 # jq (https://jqlang.github.io/jq/) is a lightweight and flexible command-line JSON processor
 check_install jq
 
+# fd (https://github.com/sharkdp/fd) simple, fast and user-friendly alternative to 'find'
+check_install fd
+
+# ripgrep (https://github.com/BurntSushi/ripgrep)recursively searches directories for a regex pattern while respecting your gitignore
+check_install ripgrep rg
+
 # ShellCheck (https://www.shellcheck.net/) finds bugs in your shell scripts
 check_install shellcheck
 
@@ -142,6 +148,9 @@ check_install wrk
 
 # bat (https://github.com/sharkdp/bat) A cat(1) clone with syntax highlighting and Git integration.
 check_install bat
+
+# eza (https://github.com/eza-community/eza) modern alternative to ls
+check_install eza
 
 # GnuPG (https://gnupg.org/) is a complete and free implementation of the OpenPGP
 # Used to generate GPG key to sign git commits
