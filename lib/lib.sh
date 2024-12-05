@@ -98,12 +98,9 @@ copy_config_files() {
   cp -r "$source" "$destination"
 }
 
-colblk='\033[0;30m'       # Black
-colred='\033[0;31m'       # Red
 green_color='\033[0;32m'  # Green
+red_color='\033[0;31m'    # Yellow
 yellow_color='\033[0;33m' # Yellow
-colpur='\033[0;35m'       # Purple
-colwht='\033[0;97m'       # White
 rest_color='\033[0m'      # Text Reset
 
 warning() {
@@ -114,15 +111,11 @@ info() {
   echo -e "\n\rℹ️ ${green_color}INFO${rest_color} $1"
 }
 
-# info() {
-#   command printf '\033[1;32mInfo\033[0m %s\n\n' "$1" 1>&2
-# }
+error() {
+  echo -e "\n\r⚠️ ${red_color}ERROR${rest_color} $1"
+}
 
-# error() {
-#   command printf '\033[1;31mError\033[0m: %s\n\n' "$1" 1>&2
-# }
-
-# abort() {
-#   printf "%s\n" "$@" >&2
-#   exit 1
-# }
+abort() {
+  error "Aborting script"
+  exit 1
+}
