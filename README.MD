@@ -10,3 +10,5 @@ Bootstrap my laptop from scratch.
 - [dotfiles of Josean Martinez](https://github.com/josean-dev/dev-environment-files)
 - [dotfiles of Anish Athalye](https://github.com/anishathalye/dotbot)
 - [dotfiles of Mathias Bynens](https://github.com/mathiasbynens/dotfiles)
+- [dotfiles of Evan Travers](https://github.com/evantravers/dotfiles)
+- [dotfiles of Lars Kappert](https://github.com/webpro/dotfiles)
