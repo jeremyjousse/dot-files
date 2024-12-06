@@ -12,7 +12,8 @@
 		"starship",
 		"utils",
 		"zsh",
-		"alacritty"
+		"alacritty",
+		"nix"
 	],
 	"editor.formatOnSave": true,
 	"editor.defaultFormatter": "esbenp.prettier-vscode",
@@ -29,5 +30,9 @@
 	"cSpell.words": ["Neovim", "nushell"],
 	"[shellscript]": {
 		"editor.defaultFormatter": "mkhl.shfmt"
-	}
+	},
+	"[nix]": {
+		"editor.defaultFormatter": "brettm12345.nixfmt-vscode"
+	},
+	"makefile.configureOnOpen": false
 }
