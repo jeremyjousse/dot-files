@@ -106,11 +106,17 @@ $env.PATH = ($env.PATH | split row (char esep) | prepend '/opt/homebrew/bin')
 use std "path add"
 # $env.PATH = ($env.PATH | split row (char esep))
 # path add /some/path
+
+# add Cargo to path
 path add ($env.CARGO_HOME | path join "bin")
-# path add ($env.HOME | path join ".local" "bin")
+
+# add Nix to path
+path add /nix/var/nix/profiles/default/bin
+
 # $env.PATH = ($env.PATH | uniq)
 
 # To load from a custom file you can use:
 source ($nu.default-config-dir | path join 'custom.nu')
 
+# TODO move this
 carapace _carapace nushell | save --force ~/.cache/carapace/init.nu

@@ -113,3 +113,5 @@ POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true
 if [ -f "${HOME}/.config/zsh/custom/index.zsh" ]; then
   source "${HOME}/.config/zsh/custom/index.zsh"
 fi
+
+export NIX_SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt
