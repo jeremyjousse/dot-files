@@ -1,3 +1,183 @@
 tap "homebrew/bundle"
 
+###
+# Shell tools
+###
+
+# mas (https://github.com/mas-cli/mas) Mac App Store command-line interface
 brew "mas"
+
+# fish [friendly interactive shell] (https://fishshell.com/) user-friendly command-line shell for UNIX-like operating systems
+#brew fish
+
+# Nushell [friendly interactive shell] (https://www.nushell.sh/) a new type of shell
+brew "nushell"
+
+###
+# Shell utils
+###
+
+# GitHub CLI (https://cli.github.com/) brings GitHub to your terminal
+brew "gh"
+
+# delta (https://github.com/dandavison/delta) syntax-highlighting pager for git, diff, grep, and blame output
+brew "git-delta"
+
+# direnv (https://direnv.net/) can load and unload environment variables depending on the current directory
+brew "direnv"
+
+# jq (https://jqlang.github.io/jq/) is a lightweight and flexible command-line JSON processor
+brew "jq"
+
+# fd (https://github.com/sharkdp/fd) simple, fast and user-friendly alternative to 'find'
+brew "fd"
+
+# ripgrep (https://github.com/BurntSushi/ripgrep)recursively searches directories for a regex pattern while respecting your gitignore
+brew "ripgrep"
+
+# ShellCheck (https://www.shellcheck.net/) finds bugs in your shell scripts
+brew "shellcheck"
+
+# carapace-bin (https://carapace-sh.github.io/carapace-bin/carapace-bin.html) multi-shell multi-command argument completer
+brew "carapace"
+
+# Starship (https://starship.rs/) minimal, blazing-fast, and infinitely customizable prompt for any shell
+brew "starship"
+
+# HTTPie (https://httpie.io/) command line API testing client
+brew "httpie"
+
+# SurrealDB (https://surrealdb.com/) ultimate multi-model database
+brew "surrealdb/tap/surreal"
+
+# Graphviz (https://graphviz.org/) graph visualization software
+brew "graphviz"
+
+# wrk (https://github.com/wg/wrk) HTTP benchmarking tool
+brew "wrk"
+
+# bat (https://github.com/sharkdp/bat) A cat(1) clone with syntax highlighting and Git integration.
+brew "bat"
+
+# eza (https://github.com/eza-community/eza) modern alternative to ls
+brew "eza"
+
+# GnuPG (https://gnupg.org/) is a complete and free implementation of the OpenPGP
+# Used to generate GPG key to sign git commits
+brew "gnupg" 
+
+# shfmt (https://github.com/mvdan/sh) is a shell parser, formatter, and interpreter with bash support; includes shfmt
+brew "shfmt"
+
+# The Fuck (https://github.com/nvbn/thefuck) corrects your previous console command
+brew "thefuck"
+
+# Bat (https://github.com/sharkdp/bat) a cat(1) clone with wings
+brew "bat"
+
+# fzf (https://github.com/junegunn/fzf) command-line fuzzy finder
+brew "fzf"
+
+# lsd (https://github.com/lsd-rs/lsd) next gen ls command
+brew "lsd"
+
+# - Dev languages bootstrap
+
+# mise-en-place (https://mise.jdx.dev) The front-end to your dev env
+brew "mise"
+
+# - IA
+
+# Ollama (https://ollama.com/) runs with large language models, locally.
+brew "ollama"
+
+# - Javascript
+
+#  fnm (https://github.com/Schniz/fnm) fast and simple Node.js version manager, built in Rust
+brew "fnm"
+
+# - Python
+
+# uv (https://github.com/astral-sh/uv) an extremely fast Python package installer and resolver, written in Rust
+brew "uv"
+
+# ruff (https://github.com/astral-sh/ruff) an extremely fast Python linter and code formatter, written in Rust
+brew "ruff"
+
+# rye (https://rye-up.com) a comprehensive project and package management solution for Python
+brew "rye"
+
+# - Container
+
+# podman-compose (https://github.com/containers/podman-compose) a script to run docker-compose.yml using podman
+brew "podman-compose"
+
+# Kubernetes command-line tool (https://kubernetes.io/docs/tasks/tools/) allows you to run commands against Kubernetes clusters
+brew "kubectl"
+
+# kubectx (https://github.com/ahmetb/kubectx) Faster way to switch between clusters and namespaces in kubectl
+brew "kubectx"
+
+# K9s (https://k9scli.io/) a terminal based UI to interact with your Kubernetes clusters
+brew "k9s"
+
+# HELM (https://helm.sh/) Helm charts help you define, install, and upgrade even the most complex Kubernetes application
+brew "helm"
+
+# Flux (https://fluxcd.io/) used to bootstrap and interact with Flux (a set of continuous and progressive delivery solutions for Kubernetes)
+brew "fluxcd/tap/flux"
+
+# Act (https://nektosact.com/) run your GitHub Actions locally
+brew "act"
+
+###
+# GUI tools
+###
+
+# Chrome (https://www.google.com/intl/en_us/chrome/) Google's web browser
+# cask "chrome"
+
+# Firefox (https://www.mozilla.org/en-US/firefox/new/) Mozilla's web browser
+cask "firefox@developer-edition"
+
+# Arc (https://arc.net/) is the Chrome replacement I’ve been waiting for
+cask "arc"
+
+# Visual Studio Code (https://code.visualstudio.com/) a great Integrated Development Environment
+cask "visual-studio-code"
+
+# iTem2 (https://iterm2.com/) is a replacement for Terminal
+cask "iterm2"
+
+# Alacritty (https://iterm2.com/) a modern terminal emulator that comes with sensible defaults, but allows for extensive configuration.
+cask "alacritty"
+
+# DevToys (https://devtoys.app/) Swiss army knife for developers
+cask "devtoys"
+
+# Maccy (https://maccy.app/) Clipboard manager
+cask "maccy"
+
+# KeyClu (https://sergii.tatarenkov.name/keyclu/support/) Simple and handy overview of applications shortcuts
+cask "keyclu"
+
+# Rectangle (https://rectangleapp.com/) move and resize windows in macOS using keyboard shortcuts or snap areas
+cask "rectangle"
+
+# AltTab (https://alt-tab-macos.netlify.app/) Windows alt-tab on macOS
+cask "alt-tab"
+
+# VLC (https://www.videolan.org/vlc/index.html) multimedia player
+cask "vlc"
+
+# Podman Desktop (https://podman-desktop.io/) a graphical interface that enables application developers to seamlessly work with containers and Kubernetes
+cask "podman-desktop"
+
+# JetBrains Toolbox (https://www.jetbrains.com/toolbox-app/) manage your JetBrains tools easily
+cask "jetbrains-toolbox"
+
+# JDK Mission Control (https://www.oracle.com/java/technologies/jdk-mission-control.html) a profiling and event collection framework for JDK
+cask "jdk-mission-control"
+
+# Obsidian (https://obsidian.md/) private and flexible writing app, your seconde brain
+cask "obsidian"

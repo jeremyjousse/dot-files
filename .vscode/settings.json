@@ -27,7 +27,23 @@
 	"workbench.colorCustomizations": {
 		"titleBar.activeBackground": "#745492"
 	},
-	"cSpell.words": ["Neovim", "nushell"],
+	"cSpell.words": [
+		"alacritty",
+		"devtoys",
+		"direnv",
+		"fluxcd",
+		"Graphviz",
+		"iterm",
+		"keyclu",
+		"kubectx",
+		"Neovim",
+		"nushell",
+		"ollama",
+		"shellcheck",
+		"shfmt",
+		"surrealdb",
+		"thefuck"
+	],
 	"[shellscript]": {
 		"editor.defaultFormatter": "mkhl.shfmt"
 	},
