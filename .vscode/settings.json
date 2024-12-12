@@ -37,12 +37,17 @@
 		"keyclu",
 		"kubectx",
 		"Neovim",
+		"nixfmt",
+		"nixpkgs",
 		"nushell",
+		"nvim",
 		"ollama",
+		"pkgs",
 		"shellcheck",
 		"shfmt",
 		"surrealdb",
-		"thefuck"
+		"thefuck",
+		"zoxide"
 	],
 	"[shellscript]": {
 		"editor.defaultFormatter": "mkhl.shfmt"

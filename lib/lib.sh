@@ -1,31 +1,31 @@
 #!/bin/bash
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 
-check_install() {
-  local installName="$1"
-  if [ $# -eq 2 ]; then
-    local software="$2"
-  else
-    local software="$1"
-  fi
+# check_install() {
+#   local installName="$1"
+#   if [ $# -eq 2 ]; then
+#     local software="$2"
+#   else
+#     local software="$1"
+#   fi
 
-  if [[ ! $(which "$software") > /dev/null ]]; then
-    info "Installing $installName using brew"
-    brew install "$installName"
-  fi
-}
+#   if [[ ! $(which "$software") > /dev/null ]]; then
+#     info "Installing $installName using brew"
+#     brew install "$installName"
+#   fi
+# }
 
-check_install_cask() {
-  if [[ ! $# -eq 2 ]]; then
-    error "check_install_cask require two arguments"
-    return 1
-  fi
+# check_install_cask() {
+#   if [[ ! $# -eq 2 ]]; then
+#     error "check_install_cask require two arguments"
+#     return 1
+#   fi
 
-  if [[ ! -d /Applications/"$2" ]]; then
-    info "Installing $1 using brew (cask)"
-    brew install --cask "$1"
-  fi
-}
+#   if [[ ! -d /Applications/"$2" ]]; then
+#     info "Installing $1 using brew (cask)"
+#     brew install --cask "$1"
+#   fi
+# }
 
 check_install_vscode_extensions() {
   local vscodeToInstallExtensions=("$@")
