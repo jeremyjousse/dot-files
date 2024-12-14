@@ -15,11 +15,11 @@ def --env add-hook [field: cell-path new_hook: any] {
 }
 
 def "parse vars" [] {
-  $in | lines | parse "{op},{name},{value}"
+  $in | from csv --noheaders --no-infer | rename 'op' 'name' 'value'
 }
 
-export def --wrapped main [command?: string, --help, ...rest: string] {
-  let commands = ["shell", "deactivate"]
+export def --env --wrapped main [command?: string, --help, ...rest: string] {
+  let commands = ["deactivate", "shell", "sh"]
 
   if ($command == null) {
     ^"/opt/homebrew/bin/mise"

@@ -120,3 +120,4 @@ source ($nu.default-config-dir | path join 'custom.nu')
 
 # TODO move this
 carapace _carapace nushell | save --force ~/.cache/carapace/init.nu
+
