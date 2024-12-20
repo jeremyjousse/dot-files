@@ -21,7 +21,6 @@
           # $ nix-env -qaP | grep wget
           environment.systemPackages = [
             pkgs.neovim
-            pkgs.helix
             pkgs.eza
             pkgs.mas
             pkgs.nixfmt-rfc-style
@@ -57,7 +56,7 @@
           homebrew = {
             enable = true;
             brews = [
-              "cowsay"
+              "helix"
             ];
           };
         };
