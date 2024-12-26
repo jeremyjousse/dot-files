@@ -863,4 +863,4 @@ $env.config = {
     ]
 }
 
-# use ($nu.default-config-dir | path join mise.nu)
+use ($nu.default-config-dir | path join customs | path join mise.nu)

@@ -6,8 +6,7 @@
 bun = 'latest'
 deno = 'latest'
 node = 'lts'
-python = '3.12'
+python = '3.13'
 java = "temurin-jre-21.0.4+7.0.LTS"
 
 [plugins]
-

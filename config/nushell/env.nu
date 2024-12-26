@@ -121,3 +121,5 @@ source ($nu.default-config-dir | path join 'custom.nu')
 # TODO move this
 carapace _carapace nushell | save --force ~/.cache/carapace/init.nu
 
+let mise_path = $nu.default-config-dir | path join customs | path join mise.nu
+^mise activate nu | save $mise_path --force
