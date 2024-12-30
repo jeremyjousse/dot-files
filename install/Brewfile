@@ -91,11 +91,6 @@ brew "mise"
 # Ollama (https://ollama.com/) runs with large language models, locally.
 brew "ollama"
 
-# - Javascript
-
-#  fnm (https://github.com/Schniz/fnm) fast and simple Node.js version manager, built in Rust
-brew "fnm"
-
 # - Python
 
 # uv (https://github.com/astral-sh/uv) an extremely fast Python package installer and resolver, written in Rust
@@ -103,9 +98,6 @@ brew "uv"
 
 # ruff (https://github.com/astral-sh/ruff) an extremely fast Python linter and code formatter, written in Rust
 brew "ruff"
-
-# rye (https://rye-up.com) a comprehensive project and package management solution for Python
-brew "rye"
 
 # - Container
 
