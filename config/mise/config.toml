@@ -1,6 +1,5 @@
 [env]
-# supports arbitrary env vars so mise can be used like direnv/dotenv
-#NODE_ENV = 'development'
+_.path = ['./node_modules/.bin']
 
 [tools]
 bun = 'latest'
