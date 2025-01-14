@@ -5,7 +5,7 @@ _.path = ['./node_modules/.bin']
 bun = 'latest'
 deno = 'latest'
 node = 'lts'
-python = '3.13'
+python = '3.13.1'
 java = "temurin-jre-21.0.4+7.0.LTS"
 
 [plugins]
