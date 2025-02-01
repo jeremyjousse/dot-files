@@ -13,10 +13,6 @@ brew "mas"
 # Nushell [friendly interactive shell] (https://www.nushell.sh/) a new type of shell
 brew "nushell"
 
-###
-# Shell utils
-###
-
 # GitHub CLI (https://cli.github.com/) brings GitHub to your terminal
 brew "gh"
 
@@ -80,6 +76,14 @@ brew "fzf"
 
 # lsd (https://github.com/lsd-rs/lsd) next gen ls command
 brew "lsd"
+
+###
+# Shell tools
+###
+
+# Helix (https://helix-editor.com/) post-modern text editor
+brew "helix"
+
 
 # - Dev languages bootstrap
 
