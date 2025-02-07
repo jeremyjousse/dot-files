@@ -176,4 +176,4 @@ cask "jetbrains-toolbox"
 cask "jdk-mission-control"
 
 # Obsidian (https://obsidian.md/) private and flexible writing app, your seconde brain
-cask "obsidian"
+# cask "obsidian"
