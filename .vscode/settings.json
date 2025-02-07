@@ -47,6 +47,7 @@
 		"shfmt",
 		"surrealdb",
 		"thefuck",
+		"Wocabulary",
 		"zoxide"
 	],
 	"[shellscript]": {
