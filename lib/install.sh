@@ -92,9 +92,6 @@ fi
 # Visual Studio Code Extensions
 vscodeToInstallExtensions=()
 
-# Cucumber (Gherkin) Full Support (https://marketplace.visualstudio.com/items?itemName=alexkrechik.cucumberautocomplete)
-vscodeToInstallExtensions+=("alexkrechik.cucumberautocomplete")
-
 # Sort imports (https://marketplace.visualstudio.com/items?itemName=amatiasq.sort-imports)
 vscodeToInstallExtensions+=("amatiasq.sort-imports")
 

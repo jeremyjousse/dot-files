@@ -177,3 +177,14 @@ cask "jdk-mission-control"
 
 # Obsidian (https://obsidian.md/) private and flexible writing app, your seconde brain
 # cask "obsidian"
+
+# Wocabulary (https://wokabulary.com/) Flash card vocabulary learning app
+mas "Wocabulary", id: 166_7619_825
+
+
+mas "Canal", id: 694_580_816
+
+
+
+# Cucumber (Gherkin) Full Support (https://marketplace.visualstudio.com/items?itemName=alexkrechik.cucumberautocomplete)
+vscode "alexkrechik.cucumberautocomplete"
