@@ -1,5 +1,6 @@
 tap "homebrew/bundle"
 
+
 ###
 # Shell tools
 ###
@@ -77,6 +78,9 @@ brew "fzf"
 # lsd (https://github.com/lsd-rs/lsd) next gen ls command
 brew "lsd"
 
+# zoxide (https://github.com/ajeetdsouza/zoxide) a smarter cd command.
+brew "zoxide"
+
 ###
 # Shell tools
 ###
@@ -84,13 +88,19 @@ brew "lsd"
 # Helix (https://helix-editor.com/) post-modern text editor
 brew "helix"
 
+# neovim (https://neovim.io/) hyper extensible Vim-based text editor
+brew "neovim"
 
-# - Dev languages bootstrap
+###
+# Dev languages bootstrap
+###
 
 # mise-en-place (https://mise.jdx.dev) The front-end to your dev env
 brew "mise"
 
-# - IA
+###
+# AI
+###
 
 # Ollama (https://ollama.com/) runs with large language models, locally.
 brew "ollama"
@@ -103,7 +113,9 @@ brew "uv"
 # ruff (https://github.com/astral-sh/ruff) an extremely fast Python linter and code formatter, written in Rust
 brew "ruff"
 
-# - Container
+###
+# Container
+###
 
 # podman-compose (https://github.com/containers/podman-compose) a script to run docker-compose.yml using podman
 brew "podman-compose"

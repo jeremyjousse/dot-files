@@ -23,11 +23,7 @@
           # List packages installed in system profile. To search by name, run:
           # $ nix-env -qaP | grep wget
           environment.systemPackages = [
-            pkgs.neovim
-            pkgs.eza
-            pkgs.mas
             pkgs.nixfmt-rfc-style
-            pkgs.zoxide
           ];
 
           # Necessary for using flakes on this system.
@@ -59,7 +55,6 @@
           homebrew = {
             enable = true;
             brews = [
-              "helix"
             ];
           };
         };
