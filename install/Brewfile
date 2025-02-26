@@ -201,5 +201,8 @@ mas "Canal", id: 694_580_816
 
 
 
-# Cucumber (Gherkin) Full Support (https://marketplace.visualstudio.com/items?itemName=alexkrechik.cucumberautocomplete)
+# Cucumber (https://marketplace.visualstudio.com/items?itemName=alexkrechik.cucumberautocomplete) Gherkin Full Language Support
 vscode "alexkrechik.cucumberautocomplete"
+
+# KDL (https://marketplace.visualstudio.com/items?itemName=kdl-org.kdl) Language support for the KDL Document Language. 
+vscode "kdl-org.kdl"
