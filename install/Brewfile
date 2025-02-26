@@ -78,6 +78,9 @@ brew "fzf"
 # lsd (https://github.com/lsd-rs/lsd) next gen ls command
 brew "lsd"
 
+# Zellij (https://zellij.dev/) a terminal workspace with batteries included
+brew "zellij"
+
 # zoxide (https://github.com/ajeetdsouza/zoxide) a smarter cd command.
 brew "zoxide"
 
