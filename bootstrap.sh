@@ -18,6 +18,10 @@ link_config_files "$PWD"/config/zellij "$HOME"/.config/zellij
 
 copy_config_files "$PWD"/config/mise "$HOME"/.config
 
+# TODO link deno to /usr/local/bin due to Deno VSCode extension
+# bad configuration https://github.com/denoland/vscode_deno/issues/234
+# sudo ln -s "$HOME".local/share/mise/installs/deno/latest/bin/deno /usr/local/bin
+
 source lib/install.sh
 
 source lib/update.sh
