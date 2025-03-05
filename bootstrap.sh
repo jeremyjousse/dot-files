@@ -20,7 +20,7 @@ copy_config_files "$PWD"/config/mise "$HOME"/.config
 
 # TODO link deno to /usr/local/bin due to Deno VSCode extension
 # bad configuration https://github.com/denoland/vscode_deno/issues/234
-# sudo ln -s "$HOME".local/share/mise/installs/deno/latest/bin/deno /usr/local/bin
+# sudo ln -s ~/.local/share/mise/installs/deno/latest/bin/deno /usr/local/bin/deno
 
 source lib/install.sh
 

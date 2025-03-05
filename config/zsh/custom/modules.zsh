@@ -50,3 +50,6 @@ export USE_GKE_GCLOUD_AUTH_PLUGIN=true
 
 # mise
 eval "$(/opt/homebrew/bin/mise activate zsh)"
+
+# zoxide
+eval "$(zoxide init zsh)"

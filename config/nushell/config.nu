@@ -863,3 +863,5 @@ $env.config = {
 }
 
 use ($nu.default-config-dir | path join customs | path join mise.nu)
+
+source ~/.zoxide.nu
