@@ -2,10 +2,9 @@
 _.path = ['./node_modules/.bin']
 
 [tools]
-bun = 'latest'
 deno = 'latest'
 node = 'lts'
-python = '3.13.1'
-java = "temurin-jre-21.0.4+7.0.LTS"
+python = '3.13.2'
+java = "temurin-jre-21.0.6+7.0.LTS"
 
 [plugins]
