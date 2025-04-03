@@ -19,6 +19,7 @@
 	autocrlf = input
 	editor = code --wait
         pager = delta
+        ignorecase = false
 
 [delta]
 
