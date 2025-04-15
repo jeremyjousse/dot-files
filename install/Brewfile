@@ -66,9 +66,6 @@ brew "gnupg"
 # shfmt (https://github.com/mvdan/sh) is a shell parser, formatter, and interpreter with bash support; includes shfmt
 brew "shfmt"
 
-# The Fuck (https://github.com/nvbn/thefuck) corrects your previous console command
-brew "thefuck"
-
 # Bat (https://github.com/sharkdp/bat) a cat(1) clone with wings
 brew "bat"
 
