@@ -8,3 +8,6 @@ python = '3.13.2'
 java = "temurin-jre-21.0.6+7.0.LTS"
 
 [plugins]
+
+[settings]
+idiomatic_version_file_enable_tools = ["node"]
