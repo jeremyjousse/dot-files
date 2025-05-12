@@ -142,6 +142,17 @@ brew "fluxcd/tap/flux"
 brew "act"
 
 ###
+# Libraries
+###
+
+# FFmpeg (https://ffmpeg.org/) cross-platform solution to record, convert and stream audio and video
+brew "ffmpeg"
+
+# pkgconf (http://pkgconf.org/) helper tool used when compiling applications and libraries
+brew "pkg-config"
+
+
+###
 # GUI tools
 ###
 
@@ -190,8 +201,8 @@ cask "jetbrains-toolbox"
 # JDK Mission Control (https://www.oracle.com/java/technologies/jdk-mission-control.html) a profiling and event collection framework for JDK
 cask "jdk-mission-control"
 
-# Obsidian (https://obsidian.md/) private and flexible writing app, your seconde brain
-# cask "obsidian"
+
+### Mac App Store apps
 
 # Wocabulary (https://wokabulary.com/) Flash card vocabulary learning app
 mas "Wocabulary", id: 166_7619_825
@@ -199,7 +210,7 @@ mas "Wocabulary", id: 166_7619_825
 
 mas "Canal", id: 694_580_816
 
-
+## # Visual Studio Code extensions
 
 # Cucumber (https://marketplace.visualstudio.com/items?itemName=alexkrechik.cucumberautocomplete) Gherkin Full Language Support
 vscode "alexkrechik.cucumberautocomplete"
