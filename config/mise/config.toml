@@ -10,4 +10,4 @@ java = "temurin-jre-21.0.6+7.0.LTS"
 [plugins]
 
 [settings]
-idiomatic_version_file_enable_tools = ["node"]
+idiomatic_version_file_enable_tools = ["node", "python"]
