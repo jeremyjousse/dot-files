@@ -14,7 +14,7 @@ jobs:
       - name: 📥 Checkout main branch
         uses: actions/checkout@v4
         with:
-          path: "sources"
+          fetch-depth: 0
       - name: Application Version
         id: version
         uses: paulhatch/semantic-version@v5.4.0
