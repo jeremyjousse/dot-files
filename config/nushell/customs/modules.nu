@@ -47,3 +47,7 @@ export def book-clean []  {
 #     git checkout $branch
 # }
 
+export def update-dot-files [] {
+  exec $"($env.Home)/Development/Personal/dot-files/bootstrap.sh"
+  
+}
