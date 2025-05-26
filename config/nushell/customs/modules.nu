@@ -43,11 +43,6 @@ export def book-clean []  {
   }
 }
 
-# export def gco [branch: string@"nu-complete git branches"] {
-#     git checkout $branch
-# }
-
 export def update-dot-files [] {
-  exec $"($env.Home)/Development/Personal/dot-files/bootstrap.sh"
-  
+  exec $"($env.Home)/Development/Personal/dot-files/bootstrap.sh" 
 }
