@@ -1,0 +1,20 @@
+name: Release
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  release:
+    name: Release
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Checkout main branch
+        uses: actions/checkout@v4
+        with:
+          path: "sources"
+      - name: Application Version
+        id: version
+        uses: paulhatch/semantic-version@v5.4.0
