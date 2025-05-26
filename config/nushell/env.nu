@@ -115,6 +115,8 @@ path add /nix/var/nix/profiles/default/bin
 
 # $env.PATH = ($env.PATH | uniq)
 
+$env.PATH = ($env.PATH | split row (char esep) | prepend "/usr/local/bin")
+
 # To load from a custom file you can use:
 source ($nu.default-config-dir | path join 'custom.nu')
 
