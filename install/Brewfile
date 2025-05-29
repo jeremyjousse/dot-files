@@ -201,6 +201,9 @@ cask "jetbrains-toolbox"
 # JDK Mission Control (https://www.oracle.com/java/technologies/jdk-mission-control.html) a profiling and event collection framework for JDK
 cask "jdk-mission-control"
 
+# FreeTube App (https://freetubeapp.io/) The Private YouTube Client
+cask "freetube" # FreeTube is an open-source YouTube app built with privacy in mind
+
 
 ### Mac App Store apps
 
