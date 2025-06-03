@@ -1,12 +1,11 @@
+tap "atlassian/homebrew-acli"
+tap "databricks/tap"
 tap "homebrew/bundle"
 
 
 ###
-# Shell tools
+# Shells
 ###
-
-# mas (https://github.com/mas-cli/mas) Mac App Store command-line interface
-brew "mas"
 
 # fish [friendly interactive shell] (https://fishshell.com/) user-friendly command-line shell for UNIX-like operating systems
 #brew fish
@@ -14,8 +13,12 @@ brew "mas"
 # Nushell [friendly interactive shell] (https://www.nushell.sh/) a new type of shell
 brew "nushell"
 
-# GitHub CLI (https://cli.github.com/) brings GitHub to your terminal
-brew "gh"
+###
+# Shell tools
+###
+
+# mas (https://github.com/mas-cli/mas) Mac App Store command-line interface
+brew "mas"
 
 # delta (https://github.com/dandavison/delta) syntax-highlighting pager for git, diff, grep, and blame output
 brew "git-delta"
@@ -44,8 +47,8 @@ brew "starship"
 # HTTPie (https://httpie.io/) command line API testing client
 brew "httpie"
 
-# SurrealDB (https://surrealdb.com/) ultimate multi-model database
-brew "surrealdb/tap/surreal"
+# # SurrealDB (https://surrealdb.com/) ultimate multi-model database
+# brew "surrealdb/tap/surreal"
 
 # Graphviz (https://graphviz.org/) graph visualization software
 brew "graphviz"
@@ -82,7 +85,7 @@ brew "zellij"
 brew "zoxide"
 
 ###
-# Shell tools
+# Shell editors
 ###
 
 # Helix (https://helix-editor.com/) post-modern text editor
@@ -151,6 +154,16 @@ brew "ffmpeg"
 # pkgconf (http://pkgconf.org/) helper tool used when compiling applications and libraries
 brew "pkg-config"
 
+
+###
+# SaaS tools
+###
+
+# GitHub CLI (https://cli.github.com/) brings GitHub to your terminal
+brew "gh"
+
+# Databricks CLI (https://docs.databricks.com/dev-tools/cli/index.html) allows you to interact with Databricks from the command line
+brew databricks
 
 ###
 # GUI tools
