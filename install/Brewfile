@@ -78,6 +78,9 @@ brew "fzf"
 # lsd (https://github.com/lsd-rs/lsd) next gen ls command
 brew "lsd"
 
+# tailspin (https://github.com/bensadeh/tailspin) log file highlighter
+brew "tailspin"
+
 # Zellij (https://zellij.dev/) a terminal workspace with batteries included
 brew "zellij"
 
