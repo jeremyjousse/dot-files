@@ -166,7 +166,7 @@ brew "pkg-config"
 brew "gh"
 
 # Databricks CLI (https://docs.databricks.com/dev-tools/cli/index.html) allows you to interact with Databricks from the command line
-brew databricks
+brew "databricks"
 
 ###
 # GUI tools
