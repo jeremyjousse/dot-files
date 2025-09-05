@@ -98,6 +98,7 @@ $env.NU_PLUGIN_DIRS = [
 
 # Add Homebrew bin directory to PATH
 $env.PATH = ($env.PATH | split row (char esep) | prepend '/opt/homebrew/bin')
+$env.HOMEBREW_AUTO_UPDATE_SECS = 604800
 
 # To add entries to PATH (on Windows you might use Path), you can use the following pattern:
 # $env.PATH = ($env.PATH | split row (char esep) | prepend '/some/path')

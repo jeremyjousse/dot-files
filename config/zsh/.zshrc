@@ -3,6 +3,7 @@
 
 # Add Brew bin
 export PATH=$PATH:/opt/homebrew/bin
+export HOMEBREW_AUTO_UPDATE_SECS=604800
 
 # Add Brew apps
 eval $(/opt/homebrew/bin/brew shellenv)
@@ -79,7 +80,7 @@ HIST_STAMPS="yyyy-mm-dd"
 #plugins=(git)
 
 if [ -f "${HOME}/.config/zsh/plugins.zsh" ]; then
-  source "${HOME}/.config/zsh/plugins.zsh"
+	source "${HOME}/.config/zsh/plugins.zsh"
 fi
 
 source "${ZSH}/oh-my-zsh.sh"
@@ -111,7 +112,7 @@ POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true
 
 # Add personal ZSH config
 if [ -f "${HOME}/.config/zsh/custom/index.zsh" ]; then
-  source "${HOME}/.config/zsh/custom/index.zsh"
+	source "${HOME}/.config/zsh/custom/index.zsh"
 fi
 
 export NIX_SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt
