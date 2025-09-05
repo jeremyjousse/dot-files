@@ -12,9 +12,6 @@ eval "$(direnv hook zsh)"
 # Starship
 eval "$(starship init zsh)"
 
-# fnm
-[ -s "/opt/homebrew/opt/fnm/bin/fnm" ] && eval "$(fnm env --use-on-cd)"
-
 # SDKMAN
 [ -s "${HOME}/.sdkman/bin/sdkman-init.sh" ] && . "${HOME}/.sdkman/bin/sdkman-init.sh"
 
