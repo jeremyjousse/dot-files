@@ -129,3 +129,8 @@ let mise_path = $nu.default-config-dir | path join customs | path join mise.nu
 
 # Zioxide
 zoxide init nushell | save -f ~/.zoxide.nu
+
+# pnpm
+$env.PNPM_HOME = ($env.HOME | path join Library pnpm)
+# TODO FIX
+path add ($env.HOME | path join Library pnpm )

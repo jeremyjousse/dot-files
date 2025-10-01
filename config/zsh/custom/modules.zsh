@@ -45,6 +45,10 @@ export USE_GKE_GCLOUD_AUTH_PLUGIN=true
 # Krew
 [ -d $HOME/.krew ] && export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 
+## pnpm
+[ -d $HOME/Library/pnpm/ ] && export PATH="${HOME}/Library/pnpm/:$PATH"
+[ -d $HOME/Library/pnpm/ ] && export PNPM_HOME="$HOME/Library/pnpm/"
+
 # mise
 eval "$(/opt/homebrew/bin/mise activate zsh)"
 
