@@ -202,8 +202,8 @@ cask "keyclu"
 # Rectangle (https://rectangleapp.com/) move and resize windows in macOS using keyboard shortcuts or snap areas
 cask "rectangle"
 
-# Google Cloud SDK (https://cloud.google.com/sdk) set of tools to manage resources and applications hosted on Google Cloud
-cask "google-cloud-sdk"
+# Google Cloud CLI (https://cloud.google.com/cli) set of tools to manage resources and applications hosted on Google Cloud
+cask "gcloud-cli"
 
 # AltTab (https://alt-tab-macos.netlify.app/) Windows alt-tab on macOS
 cask "alt-tab"
