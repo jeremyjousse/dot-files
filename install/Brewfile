@@ -38,6 +38,9 @@ brew "ripgrep"
 # ShellCheck (https://www.shellcheck.net/) finds bugs in your shell scripts
 brew "shellcheck"
 
+# markdownlint-cli2 (https://github.com/DavidAnson/markdownlint-cli2) fast, flexible, configuration-based command-line interface for linting Markdown/CommonMark files with the markdownlint library
+brew "markdownlint-cli2"
+
 # carapace-bin (https://carapace-sh.github.io/carapace-bin/carapace-bin.html) multi-shell multi-command argument completer
 brew "carapace"
 
