@@ -8,6 +8,10 @@ alias r = nu
 alias reload = nu
 alias vi = nvim
 
+# add ripgrep as rg alias
+# ^ means to run an external command
+alias rg = ^rg
+
 ##
 # Network
 ##
