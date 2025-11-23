@@ -49,6 +49,9 @@ export USE_GKE_GCLOUD_AUTH_PLUGIN=true
 [ -d $HOME/Library/pnpm/ ] && export PATH="${HOME}/Library/pnpm/:$PATH"
 [ -d $HOME/Library/pnpm/ ] && export PNPM_HOME="$HOME/Library/pnpm/"
 
+## uv tools
+[ -d $HOME/.local/bin/ ] && export PATH="$HOME/.local/bin/:$PATH"
+
 # mise
 eval "$(/opt/homebrew/bin/mise activate zsh)"
 
