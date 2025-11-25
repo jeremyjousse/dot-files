@@ -134,3 +134,9 @@ zoxide init nushell | save -f ~/.zoxide.nu
 $env.PNPM_HOME = ($env.HOME | path join Library pnpm)
 # TODO FIX
 path add ($env.HOME | path join Library pnpm )
+
+## uv tools
+let uv_local_bin = ($env.HOME | path join .local bin)
+if ($uv_local_bin | path exists) {
+    path add $uv_local_bin
+}
