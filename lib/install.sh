@@ -11,9 +11,9 @@ info "Installing dependencies"
 ###
 
 if [[ ! "$(which brew)" > /dev/null ]]; then
-    info "Install Homebrew ..."
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-    eval "$(homebrew/bin/brew shellenv)"
+	info "Install Homebrew ..."
+	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+	eval "$(homebrew/bin/brew shellenv)"
 fi
 
 ###
@@ -22,20 +22,20 @@ fi
 
 # OH My ZSH (https://ohmyz.sh/) a framework for managing your Zsh configuration
 if [ ! -f "$HOME"/.oh-my-zsh/oh-my-zsh.sh ]; then
-    info "Install OH My ZSH"
-    sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+	info "Install OH My ZSH"
+	sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 fi
 
 # OH My ZSH Autosuggestions (https://github.com/zsh-users/zsh-autosuggestions) suggests commands based on history and completions.
 if [ ! -d "$HOME"/.oh-my-zsh/custom/plugins/zsh-autosuggestions ]; then
-    info "Install OH My ZSH Autosuggetions"
-    git clone https://github.com/zsh-users/zsh-autosuggestions "${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions"
+	info "Install OH My ZSH Autosuggetions"
+	git clone https://github.com/zsh-users/zsh-autosuggestions "${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions"
 fi
 
 # OH My ZSH syntax highlighting (https://github.com/zsh-users/zsh-syntax-highlighting) Fish shell like syntax highlighting for Zsh.
 if [ ! -d "$HOME"/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting ]; then
-    info "Install OH My syntax highlighting"
-    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+	info "Install OH My syntax highlighting"
+	git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 fi
 
 ###
@@ -49,8 +49,8 @@ brew bundle --file="$PWD/install/Brewfile"
 ###
 
 if [ ! -d "${HOME}/.sdkman" ]; then
-    info "Install SDKMAN"
-    curl -s "https://get.sdkman.io" | bash
+	info "Install SDKMAN"
+	curl -s "https://get.sdkman.io" | bash
 fi
 
 # # echo "Install Java Stable"
@@ -71,9 +71,9 @@ fi
 
 ## TODO add Rust
 if [[ ! "$(rustc --version)" > /dev/null ]]; then
-    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+	curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 else
-    rustup upgrade stable
+	rustup upgrade stable
 fi
 
 ## TODO add K8s Kubernetes kew
@@ -84,16 +84,13 @@ fi
 # DEPRECATED FiraCode Nerd Font (https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/FiraCode) free monospaced font with programming ligatures
 # MesloLGL Nerd Font (update VSCode settings to "terminal.integrated.fontFamily": "'MesloLGL Nerd Font'",)
 if ! fc-list | grep -q MesloLGS; then
-    info "Installing Nerd fonts"
-    brew tap homebrew/cask-fonts
-    brew install --cask font-meslo-lg-nerd-font
+	info "Installing Nerd fonts"
+	brew tap homebrew/cask-fonts
+	brew install --cask font-meslo-lg-nerd-font
 fi
 
 # Visual Studio Code Extensions
 vscodeToInstallExtensions=()
-
-# Sort imports (https://marketplace.visualstudio.com/items?itemName=amatiasq.sort-imports)
-vscodeToInstallExtensions+=("amatiasq.sort-imports")
 
 # Markdown Preview Mermaid Support (https://marketplace.visualstudio.com/items?itemName=bierner.markdown-mermaid)
 vscodeToInstallExtensions+=("bierner.markdown-mermaid")
@@ -148,9 +145,6 @@ vscodeToInstallExtensions+=("thenuprojectcontributors.vscode-nushell-lang")
 
 # CodeLLDB (https://marketplace.visualstudio.com/items?itemName=vadimcn.vscode-lldb)
 vscodeToInstallExtensions+=("vadimcn.vscode-lldb")
-
-# IntelliCode (https://marketplace.visualstudio.com/items?itemName=visualStudioExptTeam.vscodeintellicode)
-vscodeToInstallExtensions+=("visualstudioexptteam.vscodeintellicode")
 
 # Conventional Commits (https://marketplace.visualstudio.com/items?itemName=vivaxy.vscode-conventional-commits)
 vscodeToInstallExtensions+=("vivaxy.vscode-conventional-commits")

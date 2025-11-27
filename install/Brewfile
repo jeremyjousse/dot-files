@@ -235,6 +235,9 @@ mas "Wocabulary", id: 166_7619_825
 
 ## # Visual Studio Code extensions
 
+# Sort imports (https://marketplace.visualstudio.com/items?itemName=amatiasq.sort-imports)
+vscode "amatiasq.sort-imports"
+
 # Cucumber (https://marketplace.visualstudio.com/items?itemName=alexkrechik.cucumberautocomplete) Gherkin Full Language Support
 vscode "alexkrechik.cucumberautocomplete"
 
