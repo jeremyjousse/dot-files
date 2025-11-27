@@ -233,8 +233,6 @@ cask "freetube" # FreeTube is an open-source YouTube app built with privacy in m
 mas "Wocabulary", id: 166_7619_825
 
 
-mas "Canal", id: 694_580_816
-
 ## # Visual Studio Code extensions
 
 # Cucumber (https://marketplace.visualstudio.com/items?itemName=alexkrechik.cucumberautocomplete) Gherkin Full Language Support
