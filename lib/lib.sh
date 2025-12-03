@@ -28,74 +28,82 @@ export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/b
 # }
 
 check_install_vscode_extensions() {
-  local vscodeToInstallExtensions=("$@")
+	local vscodeToInstallExtensions=("$@")
 
-  while IFS='' read -r line; do vscodeInstalledExtensions+=("$line"); done < <(code --list-extensions)
+	while IFS='' read -r line; do vscodeInstalledExtensions+=("$line"); done < <(code --list-extensions)
 
-  for vscodeToInstallExtension in "${vscodeToInstallExtensions[@]}"; do
-    if [[ ! ${vscodeInstalledExtensions[*]} =~ ${vscodeToInstallExtension} ]]; then
-      info "installing $vscodeToInstallExtension Visual Studio Code extension"
-      code --install-extension "${vscodeToInstallExtension}"
-    fi
-  done
+	for vscodeToInstallExtension in "${vscodeToInstallExtensions[@]}"; do
+		if [[ ! ${vscodeInstalledExtensions[*]} =~ ${vscodeToInstallExtension} ]]; then
+			info "installing $vscodeToInstallExtension Visual Studio Code extension"
+			code --install-extension "${vscodeToInstallExtension}"
+		fi
+	done
 }
 
 create_folder() {
-  if [[ ! -d "$1" ]]; then
-    info "Creating folder $1"
-    mkdir -p "$1"
-  fi
+	if [[ ! -d "$1" ]]; then
+		info "Creating folder $1"
+		mkdir -p "$1"
+	fi
 }
 
 link_config_files() {
-  local source="$1"
-  local destination="$2"
+	local source="$1"
+	local destination="$2"
 
-  # TODO check source
-  # TODO check destination parent folder
+	# TODO check source
+	# TODO check destination parent folder
 
-  if [[ -d $source && -d $destination && ! -L $destination ]]; then
-    warning "${destination} is a regular folder"
-    info "Backuping destination folder to ${destination}.back!"
-    mv "$destination"{,.back}
-  fi
+	if [[ -d $source && -d $destination && ! -L $destination ]]; then
+		warning "${destination} is a regular folder"
+		info "Backuping destination folder to ${destination}.back!"
+		mv "$destination"{,.back}
+	fi
 
-  if [[ -f $source && -f $destination && ! -L $destination ]]; then
-    waring "${destination} is a regular file"
-    info "Backuping destination file to ${destination}.back!"
-    mv "$destination"{,.back}
-  fi
+	if [[ -f $source && -f $destination && ! -L $destination ]]; then
+		waring "${destination} is a regular file"
+		info "Backuping destination file to ${destination}.back!"
+		mv "$destination"{,.back}
+	fi
 
-  if [[ -L "$destination" && $(readlink -f "$destination") != "$source" ]]; then
-    warning "Destination $(readlink -f "$destination") is not linked to ${source}"
-    info "unlinking ${destination} link"
-    unlink "$destination"
-  fi
+	if [[ -L "$destination" && $(readlink -f "$destination") != "$source" ]]; then
+		warning "Destination $(readlink -f "$destination") is not linked to ${source}"
+		info "unlinking ${destination} link"
+		unlink "$destination"
+	fi
 
-  if [ ! -L "$destination" ]; then
-    info "Linking ${destination} to ${source}"
-    ln -s "$source" "$destination"
-  fi
+	if [ ! -L "$destination" ]; then
+		info "Linking ${destination} to ${source}"
+		ln -s "$source" "$destination"
+	fi
 
-  return 0
+	return 0
+}
+
+unlink_config_files() {
+	local destination="$1"
+	if [ ! -L "$destination" ]; then
+		info "Unlinking ${destination}"
+		unlink "$destination"
+	fi
 }
 
 copy_config_files() {
-  local source="$1"
-  local destination="$2"
+	local source="$1"
+	local destination="$2"
 
-  if [[ -d $source && -d $destination && -L $destination ]]; then
-    warning "${destination} is a symlink folder"
-    info "Unlink destination folder to ${destination}!"
-    unlink "$destination"
-  fi
+	if [[ -d $source && -d $destination && -L $destination ]]; then
+		warning "${destination} is a symlink folder"
+		info "Unlink destination folder to ${destination}!"
+		unlink "$destination"
+	fi
 
-  # if [ ! -d "$destination" ]; then
-  #   info "Creating destination folder ${destination}"
-  #   mkdir -p "$destination"
-  # fi
+	# if [ ! -d "$destination" ]; then
+	#   info "Creating destination folder ${destination}"
+	#   mkdir -p "$destination"
+	# fi
 
-  cp -r "$source" "$destination"
+	cp -r "$source" "$destination"
 }
 
 green_color='\033[0;32m'  # Green
@@ -104,18 +112,18 @@ yellow_color='\033[0;33m' # Yellow
 rest_color='\033[0m'      # Text Reset
 
 warning() {
-  echo -e "\n\r⚠️ ${yellow_color}WARNING${rest_color} $1"
+	echo -e "\n\r⚠️ ${yellow_color}WARNING${rest_color} $1"
 }
 
 info() {
-  echo -e "\n\rℹ️ ${green_color}INFO${rest_color} $1"
+	echo -e "\n\rℹ️ ${green_color}INFO${rest_color} $1"
 }
 
 error() {
-  echo -e "\n\r⚠️ ${red_color}ERROR${rest_color} $1"
+	echo -e "\n\r⚠️ ${red_color}ERROR${rest_color} $1"
 }
 
 abort() {
-  error "Aborting script"
-  exit 1
+	error "Aborting script"
+	exit 1
 }
