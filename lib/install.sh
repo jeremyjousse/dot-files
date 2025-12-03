@@ -48,10 +48,12 @@ brew bundle --file="$PWD/install/Brewfile"
 # JVM based SDKs with SDKMan
 ###
 
-if [ ! -d "${HOME}/.sdkman" ]; then
-	info "Install SDKMAN"
-	curl -s "https://get.sdkman.io" | bash
-fi
+# TODO remplace by Mise
+
+# if [ ! -d "${HOME}/.sdkman" ]; then
+# 	info "Install SDKMAN"
+# 	curl -s "https://get.sdkman.io" | bash
+# fi
 
 # # echo "Install Java Stable"
 ## sdk current java
@@ -107,8 +109,8 @@ vscodeToInstallExtensions+=("dbaeumer.vscode-eslint")
 # XML Tools (https://marketplace.visualstudio.com/items?itemName=dotjoshjohnson.xml)
 vscodeToInstallExtensions+=("dotjoshjohnson.xml")
 
-# Prettier code formatter (https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
-vscodeToInstallExtensions+=("esbenp.prettier-vscode")
+# Prettier code formatter (https://marketplace.visualstudio.com/items?itemName=prettier.prettier-vscode)
+vscodeToInstallExtensions+=("prettier.prettier-vscode")
 
 # GitHub Actions (https://marketplace.visualstudio.com/items?itemName=GitHub.vscode-github-actions)
 vscodeToInstallExtensions+=("github.vscode-github-actions")
@@ -155,6 +157,6 @@ vscodeToInstallExtensions+=("yoavbls.pretty-ts-errors")
 # Markdown All in One (https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one)
 vscodeToInstallExtensions+=("yzhang.markdown-all-in-one")
 
-check_install_vscode_extensions "${vscodeToInstallExtensions[@]}"
+# check_install_vscode_extensions "${vscodeToInstallExtensions[@]}"
 
 # TODO add `mise install` but reload shell
