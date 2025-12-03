@@ -7,24 +7,17 @@
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # Direnv
-eval "$(direnv hook zsh)"
+# TODO mabe remove due to mise
+command -v direnv &> /dev/null && eval "$(direnv hook zsh)"
 
 # Starship
-eval "$(starship init zsh)"
+command -v starship &> /dev/null && eval "$(starship init zsh)"
 
 # SDKMAN
 [ -s "${HOME}/.sdkman/bin/sdkman-init.sh" ] && . "${HOME}/.sdkman/bin/sdkman-init.sh"
 
 # Oh My ZSH Autocompletion
 [ -f "${HOME}/.oh-my-zsh/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh" ] && source "${HOME}/.oh-my-zsh/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh"
-
-# pyenv
-PYENV_SHIMS="$(pyenv root)/shims"
-[ -e $PYENV_SHIMS ] && eval $(pyenv init --path)
-
-# SAML2AWS
-SML2AWS="$(command -v saml2aws 2>/dev/null)"
-[ ! -z "${SML2AWS}" ] && eval "$(saml2aws --completion-script-bash)"
 
 # cht (https://cht.sh/)
 [ -e ${HOME}/.cht ] && export PATH="${HOME}/.cht:$PATH" && fpath=(~/.zsh.d/ $fpath)
@@ -53,7 +46,7 @@ export USE_GKE_GCLOUD_AUTH_PLUGIN=true
 [ -d $HOME/.local/bin/ ] && export PATH="$HOME/.local/bin/:$PATH"
 
 # mise
-eval "$(/opt/homebrew/bin/mise activate zsh)"
+command -v mise &> /dev/null && eval "$(/opt/homebrew/bin/mise activate zsh)"
 
 # zoxide
-eval "$(zoxide init zsh)"
+command -v zoxide &> /dev/null && eval "$(zoxide init zsh)"
