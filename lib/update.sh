@@ -2,4 +2,4 @@
 
 mise upgrade
 
-brew upgrade
+# brew upgrade
