@@ -45,7 +45,7 @@ fi
 brew bundle --file="$PWD/install/Brewfile"
 
 ###
-# JVM based SDKs with SDKMan
+# JVM based SDKs
 ###
 
 # TODO remplace by Mise
@@ -68,12 +68,13 @@ brew bundle --file="$PWD/install/Brewfile"
 # VisualVM ()
 # sdk install visualvm
 
-## TODO
-# fnm install --lts
+###
+# Rust
+###
 
-## TODO add Rust
 if [[ ! "$(rustc --version)" > /dev/null ]]; then
-	curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+	mise use -g rust
+	# curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 else
 	rustup upgrade stable
 fi
@@ -108,9 +109,6 @@ vscodeToInstallExtensions+=("dbaeumer.vscode-eslint")
 
 # XML Tools (https://marketplace.visualstudio.com/items?itemName=dotjoshjohnson.xml)
 vscodeToInstallExtensions+=("dotjoshjohnson.xml")
-
-# Prettier code formatter (https://marketplace.visualstudio.com/items?itemName=prettier.prettier-vscode)
-vscodeToInstallExtensions+=("prettier.prettier-vscode")
 
 # GitHub Actions (https://marketplace.visualstudio.com/items?itemName=GitHub.vscode-github-actions)
 vscodeToInstallExtensions+=("github.vscode-github-actions")

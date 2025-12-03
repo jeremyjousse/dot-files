@@ -11,7 +11,7 @@ tap "homebrew/bundle"
 #brew fish
 
 # Nushell [friendly interactive shell] (https://www.nushell.sh/) a new type of shell
-brew "nushell"
+# brew "nushell"
 
 ###
 # Shell tools
@@ -24,7 +24,7 @@ brew "mas"
 brew "git-delta"
 
 # direnv (https://direnv.net/) can load and unload environment variables depending on the current directory
-brew "direnv"
+# brew "direnv"
 
 # jq (https://jqlang.github.io/jq/) is a lightweight and flexible command-line JSON processor
 brew "jq"
@@ -48,7 +48,7 @@ brew "carapace"
 brew "starship"
 
 # HTTPie (https://httpie.io/) command line API testing client
-brew "httpie"
+# brew "httpie"
 
 # # SurrealDB (https://surrealdb.com/) ultimate multi-model database
 # brew "surrealdb/tap/surreal"
@@ -63,7 +63,7 @@ brew "wrk"
 brew "bat"
 
 # eza (https://github.com/eza-community/eza) modern alternative to ls
-brew "eza"
+# brew "eza"
 
 # GnuPG (https://gnupg.org/) is a complete and free implementation of the OpenPGP
 # Used to generate GPG key to sign git commits
@@ -76,7 +76,7 @@ brew "shfmt"
 brew "bat"
 
 # fzf (https://github.com/junegunn/fzf) command-line fuzzy finder
-brew "fzf"
+# brew "fzf"
 
 # lsd (https://github.com/lsd-rs/lsd) next gen ls command
 brew "lsd"
@@ -95,7 +95,7 @@ brew "zoxide"
 ###
 
 # Helix (https://helix-editor.com/) post-modern text editor
-brew "helix"
+# brew "helix"
 
 # neovim (https://neovim.io/) hyper extensible Vim-based text editor
 brew "neovim"
@@ -112,7 +112,7 @@ brew "mise"
 ###
 
 # Ollama (https://ollama.com/) runs with large language models, locally.
-brew "ollama"
+# brew "ollama"
 
 # - Python
 
@@ -139,16 +139,16 @@ brew "kubectl"
 brew "kubectx"
 
 # K9s (https://k9scli.io/) a terminal based UI to interact with your Kubernetes clusters
-brew "k9s"
+# brew "k9s"
 
 # HELM (https://helm.sh/) Helm charts help you define, install, and upgrade even the most complex Kubernetes application
 brew "helm"
 
 # Flux (https://fluxcd.io/) used to bootstrap and interact with Flux (a set of continuous and progressive delivery solutions for Kubernetes)
-brew "fluxcd/tap/flux"
+# brew "fluxcd/tap/flux"
 
 # Act (https://nektosact.com/) run your GitHub Actions locally
-brew "act"
+# brew "act"
 
 ###
 # Libraries
@@ -169,7 +169,7 @@ brew "pkg-config"
 brew "gh"
 
 # Databricks CLI (https://docs.databricks.com/dev-tools/cli/index.html) allows you to interact with Databricks from the command line
-brew "databricks"
+# brew "databricks"
 
 ###
 # GUI tools
@@ -179,10 +179,10 @@ brew "databricks"
 # cask "chrome"
 
 # Firefox (https://www.mozilla.org/en-US/firefox/new/) Mozilla's web browser
-cask "firefox@developer-edition"
+# cask "firefox@developer-edition"
 
 # Arc (https://arc.net/) is the Chrome replacement I’ve been waiting for
-cask "arc"
+# cask "arc"
 
 # Visual Studio Code (https://code.visualstudio.com/) a great Integrated Development Environment
 cask "visual-studio-code"
@@ -191,25 +191,25 @@ cask "visual-studio-code"
 cask "iterm2"
 
 # Alacritty (https://iterm2.com/) a modern terminal emulator that comes with sensible defaults, but allows for extensive configuration.
-cask "alacritty"
+# cask "alacritty"
 
 # DevToys (https://devtoys.app/) Swiss army knife for developers
-cask "devtoys"
+# cask "devtoys"
 
 # Maccy (https://maccy.app/) Clipboard manager
-cask "maccy"
+# cask "maccy"
 
 # KeyClu (https://sergii.tatarenkov.name/keyclu/support/) Simple and handy overview of applications shortcuts
-cask "keyclu"
+# cask "keyclu"
 
 # Rectangle (https://rectangleapp.com/) move and resize windows in macOS using keyboard shortcuts or snap areas
-cask "rectangle"
+# cask "rectangle"
 
 # Google Cloud CLI (https://cloud.google.com/cli) set of tools to manage resources and applications hosted on Google Cloud
-cask "gcloud-cli"
+# cask "gcloud-cli"
 
 # AltTab (https://alt-tab-macos.netlify.app/) Windows alt-tab on macOS
-cask "alt-tab"
+# cask "alt-tab"
 
 # VLC (https://www.videolan.org/vlc/index.html) multimedia player
 cask "vlc"
@@ -218,10 +218,10 @@ cask "vlc"
 cask "podman-desktop"
 
 # JetBrains Toolbox (https://www.jetbrains.com/toolbox-app/) manage your JetBrains tools easily
-cask "jetbrains-toolbox"
+# cask "jetbrains-toolbox"
 
 # JDK Mission Control (https://www.oracle.com/java/technologies/jdk-mission-control.html) a profiling and event collection framework for JDK
-cask "jdk-mission-control"
+# cask "jdk-mission-control"
 
 # Obsidian (https://obsidian.md/) free and flexible app for your private thoughts
 cask "obsidian"
@@ -229,16 +229,19 @@ cask "obsidian"
 ### Mac App Store apps
 
 # Wocabulary (https://wokabulary.com/) Flash card vocabulary learning app
-mas "Wocabulary", id: 166_7619_825
+# mas "Wocabulary", id: 166_7619_825
 
 
 ## # Visual Studio Code extensions
 
 # Sort imports (https://marketplace.visualstudio.com/items?itemName=amatiasq.sort-imports)
-vscode "amatiasq.sort-imports"
+# vscode "amatiasq.sort-imports"
 
 # Cucumber (https://marketplace.visualstudio.com/items?itemName=alexkrechik.cucumberautocomplete) Gherkin Full Language Support
-vscode "alexkrechik.cucumberautocomplete"
+# vscode "alexkrechik.cucumberautocomplete"
 
 # KDL (https://marketplace.visualstudio.com/items?itemName=kdl-org.kdl) Language support for the KDL Document Language. 
-vscode "kdl-org.kdl"
+# vscode "kdl-org.kdl"
+
+# Prettier code formatter (https://marketplace.visualstudio.com/items?itemName=prettier.prettier-vscode)
+vscode "prettier.prettier-vscode"
