@@ -116,23 +116,11 @@ vscodeToInstallExtensions+=("github.vscode-github-actions")
 # GitHub Pull Requests and Issues (https://marketplace.visualstudio.com/items?itemName=github.vscode-pull-request-github)
 vscodeToInstallExtensions+=("github.vscode-pull-request-github")
 
-# Dependi (https://marketplace.visualstudio.com/items?itemName=fill-labs.dependi)
-vscodeToInstallExtensions+=("fill-labs.dependi")
-
 # CodeMetrics (https://marketplace.visualstudio.com/items?itemName=kisstkondoros.vscode-codemetrics)
 vscodeToInstallExtensions+=("kisstkondoros.vscode-codemetrics")
 
-# Docker (https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker)
-vscodeToInstallExtensions+=("ms-azuretools.vscode-docker")
-
-# Liveshare (https://marketplace.visualstudio.com/items?itemName=ms-vsliveshare.vsliveshare)
-vscodeToInstallExtensions+=("ms-vsliveshare.vsliveshare")
-
 # JSON fix (https://marketplace.visualstudio.com/items?itemName=oliversturm.fix-json)
 vscodeToInstallExtensions+=("oliversturm.fix-json")
-
-# Rust Analyzer (https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer)
-vscodeToInstallExtensions+=("rust-lang.rust-analyzer")
 
 # SonarLint (https://marketplace.visualstudio.com/items?itemName=sonarsource.sonarlint-vscode)
 vscodeToInstallExtensions+=("sonarsource.sonarlint-vscode")

@@ -234,14 +234,17 @@ cask "obsidian"
 
 ## # Visual Studio Code extensions
 
-# Sort imports (https://marketplace.visualstudio.com/items?itemName=amatiasq.sort-imports)
-# vscode "amatiasq.sort-imports"
+# Dependi (https://marketplace.visualstudio.com/items?itemName=fill-labs.dependi)
+vscode "fill-labs.dependi"
 
-# Cucumber (https://marketplace.visualstudio.com/items?itemName=alexkrechik.cucumberautocomplete) Gherkin Full Language Support
-# vscode "alexkrechik.cucumberautocomplete"
+# GitHub Copilot Chat (https://marketplace.visualstudio.com/items?itemName=GitHub.copilot-chat) AI peer programming tool that helps you write code faster and smarter.
+vscode "GitHub.copilot-chat"
 
-# KDL (https://marketplace.visualstudio.com/items?itemName=kdl-org.kdl) Language support for the KDL Document Language. 
-# vscode "kdl-org.kdl"
+# Liveshare (https://marketplace.visualstudio.com/items?itemName=ms-vsliveshare.vsliveshare)
+vscode "ms-vsliveshare.vsliveshare"
 
 # Prettier code formatter (https://marketplace.visualstudio.com/items?itemName=prettier.prettier-vscode)
 vscode "prettier.prettier-vscode"
+
+# Rust Analyzer (https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer)
+vscode "rust-lang.rust-analyzer"
