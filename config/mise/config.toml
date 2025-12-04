@@ -2,14 +2,16 @@
 _.path = ['./node_modules/.bin']
 
 [tools]
+
 deno = 'latest'
 node = 'lts'
-python = '3.13.2'
-java = 'temurin-jre-21.0.8+9.0.LTS'
-rust = { version = "1.91.1" }
 
-[tools.cargo]
-tauri-cli = 'latest'
+python = '3.13.2'
+
+java = 'temurin-jre-21.0.8+9.0.LTS'
+
+rust = { version = "1.91.1" }
+"cargo:tauri-cli" = 'latest'
 
 [plugins]
 
