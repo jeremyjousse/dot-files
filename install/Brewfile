@@ -113,6 +113,12 @@ brew "mise"
 # Ollama (https://ollama.com/) runs with large language models, locally.
 # brew "ollama"
 
+###
+# NodeJS
+###
+
+brew "pnpm"
+
 # - Python
 
 # uv (https://github.com/astral-sh/uv) an extremely fast Python package installer and resolver, written in Rust
@@ -257,6 +263,9 @@ vscode "GitHub.copilot-chat"
 # GitHub Pull Requests and Issues (https://marketplace.visualstudio.com/items?itemName=github.vscode-pull-request-github) Pull Request and Issue Provider for GitHub
 vscode "github.vscode-pull-request-github"
 
+# Even Better TOML (https://marketplace.visualstudio.com/items?itemName=tamasfe.even-better-toml) Fully-featured TOML support
+vscode "tamasfe.even-better-toml"
+
 # ESLint (https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) Integrates ESLint JavaScript into VS Code
 vscode "dbaeumer.vscode-eslint"
 
@@ -283,3 +292,6 @@ vscode "rust-lang.rust-analyzer"
 
 # Svelte syntax highlighting (https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode) Svelte language support for VS Code
 vscode "svelte.svelte-vscode"
+
+# Tauri (https://marketplace.visualstudio.com/items?itemName=tauri-apps.tauri-vscode) Enhances the experience of Tauri apps development
+vscode "tauri-apps.tauri-vscode"

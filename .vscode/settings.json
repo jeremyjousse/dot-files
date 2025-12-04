@@ -48,6 +48,7 @@
 		"shellcheck",
 		"shfmt",
 		"surrealdb",
+		"Tauri",
 		"thefuck",
 		"Wocabulary",
 		"zoxide"
