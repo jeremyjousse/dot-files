@@ -1,6 +1,5 @@
-tap "atlassian/homebrew-acli"
-tap "databricks/tap"
-tap "homebrew/bundle"
+# tap "atlassian/homebrew-acli"
+# tap "databricks/tap"
 
 
 ###

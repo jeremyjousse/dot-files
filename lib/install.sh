@@ -72,7 +72,7 @@ brew bundle --file="$PWD/install/Brewfile"
 # Rust
 ###
 
-if [[ ! "$(rustc --version)" > /dev/null ]]; then
+if ! command -v rustc &> /dev/null; then
 	mise use -g rust
 	# curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 else
@@ -88,7 +88,6 @@ fi
 # MesloLGL Nerd Font (update VSCode settings to "terminal.integrated.fontFamily": "'MesloLGL Nerd Font'",)
 if ! fc-list | grep -q MesloLGS; then
 	info "Installing Nerd fonts"
-	brew tap homebrew/cask-fonts
 	brew install --cask font-meslo-lg-nerd-font
 fi
 
