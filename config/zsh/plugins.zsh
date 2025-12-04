@@ -7,11 +7,7 @@ plugins=(
   kubectx
   macos
   man
-  npm
   podman
-  sdk
-  thefuck
-  vscode
   zsh-autosuggestions
   zsh-syntax-highlighting
 )

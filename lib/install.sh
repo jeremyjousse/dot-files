@@ -97,23 +97,8 @@ vscodeToInstallExtensions=()
 # Markdown Preview Mermaid Support (https://marketplace.visualstudio.com/items?itemName=bierner.markdown-mermaid)
 vscodeToInstallExtensions+=("bierner.markdown-mermaid")
 
-# Ruff extension for Visual Studio Code (https://marketplace.visualstudio.com/items?itemName=charliermarsh.ruff)
-vscodeToInstallExtensions+=("charliermarsh.ruff")
-
-# Markdown lint (https://marketplace.visualstudio.com/items?itemName=davidanson.vscode-markdownlint)
-vscodeToInstallExtensions+=("davidanson.vscode-markdownlint")
-
-# ESLint (https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
-vscodeToInstallExtensions+=("dbaeumer.vscode-eslint")
-
 # XML Tools (https://marketplace.visualstudio.com/items?itemName=dotjoshjohnson.xml)
 vscodeToInstallExtensions+=("dotjoshjohnson.xml")
-
-# GitHub Actions (https://marketplace.visualstudio.com/items?itemName=GitHub.vscode-github-actions)
-vscodeToInstallExtensions+=("github.vscode-github-actions")
-
-# GitHub Pull Requests and Issues (https://marketplace.visualstudio.com/items?itemName=github.vscode-pull-request-github)
-vscodeToInstallExtensions+=("github.vscode-pull-request-github")
 
 # CodeMetrics (https://marketplace.visualstudio.com/items?itemName=kisstkondoros.vscode-codemetrics)
 vscodeToInstallExtensions+=("kisstkondoros.vscode-codemetrics")
@@ -124,20 +109,9 @@ vscodeToInstallExtensions+=("oliversturm.fix-json")
 # SonarLint (https://marketplace.visualstudio.com/items?itemName=sonarsource.sonarlint-vscode)
 vscodeToInstallExtensions+=("sonarsource.sonarlint-vscode")
 
-# Svelte syntax highlighting (https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode)
-vscodeToInstallExtensions+=("svelte.svelte-vscode")
 
 # Nushell syntax highlighting (https://marketplace.visualstudio.com/items?itemName=thenuprojectcontributors.vscode-nushell-lang)
 vscodeToInstallExtensions+=("thenuprojectcontributors.vscode-nushell-lang")
-
-# CodeLLDB (https://marketplace.visualstudio.com/items?itemName=vadimcn.vscode-lldb)
-vscodeToInstallExtensions+=("vadimcn.vscode-lldb")
-
-# Conventional Commits (https://marketplace.visualstudio.com/items?itemName=vivaxy.vscode-conventional-commits)
-vscodeToInstallExtensions+=("vivaxy.vscode-conventional-commits")
-
-# Make TypeScript errors prettier and human-readable (https://marketplace.visualstudio.com/items?itemName=yoavbls.pretty-ts-errors)
-vscodeToInstallExtensions+=("yoavbls.pretty-ts-errors")
 
 # Markdown All in One (https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one)
 vscodeToInstallExtensions+=("yzhang.markdown-all-in-one")
