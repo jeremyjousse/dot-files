@@ -52,9 +52,6 @@ brew "starship"
 # # SurrealDB (https://surrealdb.com/) ultimate multi-model database
 # brew "surrealdb/tap/surreal"
 
-# Graphviz (https://graphviz.org/) graph visualization software
-brew "graphviz"
-
 # wrk (https://github.com/wg/wrk) HTTP benchmarking tool
 brew "wrk"
 
@@ -119,7 +116,9 @@ brew "mise"
 
 brew "pnpm"
 
-# - Python
+###
+# Python
+###
 
 # uv (https://github.com/astral-sh/uv) an extremely fast Python package installer and resolver, written in Rust
 brew "uv"
@@ -162,6 +161,9 @@ brew "helm"
 # FFmpeg (https://ffmpeg.org/) cross-platform solution to record, convert and stream audio and video
 brew "ffmpeg"
 
+# Graphviz (https://graphviz.org/) graph visualization software
+brew "graphviz"
+
 # pkgconf (http://pkgconf.org/) helper tool used when compiling applications and libraries
 brew "pkg-config"
 
@@ -194,6 +196,9 @@ cask "visual-studio-code"
 
 # iTem2 (https://iterm2.com/) is a replacement for Terminal
 cask "iterm2"
+
+# Google Cloud CLI (https://docs.cloud.google.com/sdk/docs) command-line tools for Google Cloud Platform
+cask "gcloud-cli"
 
 # Alacritty (https://iterm2.com/) a modern terminal emulator that comes with sensible defaults, but allows for extensive configuration.
 # cask "alacritty"
