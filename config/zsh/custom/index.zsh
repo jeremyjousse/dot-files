@@ -14,6 +14,5 @@ load_config_file "${CONFIG_PATH}utils.zsh"
 
 hostname=$(hostname)
 if [ ${hostname} = "FRL-Y65NQL4JTG" ]; then
-  echo "Loading professional config"
   load_config_file "${CONFIG_PATH}professional.zsh"
 fi

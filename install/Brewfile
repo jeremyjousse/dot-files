@@ -194,6 +194,9 @@ brew "gh"
 # Visual Studio Code (https://code.visualstudio.com/) a great Integrated Development Environment
 cask "visual-studio-code"
 
+# JetBrains Toolbox (https://www.jetbrains.com/toolbox-app/) manage your JetBrains tools easily
+cask "jetbrains-toolbox"
+
 # iTem2 (https://iterm2.com/) is a replacement for Terminal
 cask "iterm2"
 
