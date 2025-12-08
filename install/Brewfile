@@ -240,6 +240,12 @@ cask "podman-desktop"
 # Obsidian (https://obsidian.md/) free and flexible app for your private thoughts
 cask "obsidian"
 
+# Meslo Nerd Font (https://www.nerdfonts.com/)
+cask "font-meslo-lg-nerd-font"
+
+# FiraCode Nerd Font (https://www.nerdfonts.com/)
+cask "font-fira-code-nerd-font"
+
 ### Mac App Store apps
 
 # Wocabulary (https://wokabulary.com/) Flash card vocabulary learning app

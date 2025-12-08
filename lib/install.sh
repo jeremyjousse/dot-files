@@ -84,13 +84,6 @@ fi
 # kubectl krew install ctx
 # kubectl krew install ns
 
-# DEPRECATED FiraCode Nerd Font (https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/FiraCode) free monospaced font with programming ligatures
-# MesloLGL Nerd Font (update VSCode settings to "terminal.integrated.fontFamily": "'MesloLGL Nerd Font'",)
-if ! fc-list | grep -q MesloLGS; then
-	info "Installing Nerd fonts"
-	brew install --cask font-meslo-lg-nerd-font
-fi
-
 # Visual Studio Code Extensions
 vscodeToInstallExtensions=()
 
