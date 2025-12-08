@@ -1,5 +1,6 @@
 # tap "atlassian/homebrew-acli"
 # tap "databricks/tap"
+tap "fluxcd/tap"
 
 
 ###
@@ -149,7 +150,7 @@ brew "kubectx"
 brew "helm"
 
 # Flux (https://fluxcd.io/) used to bootstrap and interact with Flux (a set of continuous and progressive delivery solutions for Kubernetes)
-# brew "fluxcd/tap/flux"
+brew "fluxcd/tap/flux"
 
 # Act (https://nektosact.com/) run your GitHub Actions locally
 # brew "act"
