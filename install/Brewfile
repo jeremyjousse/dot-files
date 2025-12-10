@@ -131,6 +131,12 @@ brew "ruff"
 # Container
 ###
 
+# container (https://apple.github.io/container/documentation/) tool for creating and running Linux containers using lightweight virtual machines on a Mac
+brew "container"
+
+# Container-Compose (https://github.com/Mcrich23/Container-Compose) docker-compose clone for Apple Container
+brew "container-compose"
+
 # podman (https://podman.io/) the best free & open source container tools
 brew "podman"
 
