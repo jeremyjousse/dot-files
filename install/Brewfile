@@ -225,9 +225,6 @@ cask "gcloud-cli"
 # Rectangle (https://rectangleapp.com/) move and resize windows in macOS using keyboard shortcuts or snap areas
 # cask "rectangle"
 
-# Google Cloud CLI (https://cloud.google.com/cli) set of tools to manage resources and applications hosted on Google Cloud
-# cask "gcloud-cli"
-
 # AltTab (https://alt-tab-macos.netlify.app/) Windows alt-tab on macOS
 # cask "alt-tab"
 
@@ -242,6 +239,9 @@ cask "podman-desktop"
 
 # JDK Mission Control (https://www.oracle.com/java/technologies/jdk-mission-control.html) a profiling and event collection framework for JDK
 # cask "jdk-mission-control"
+
+# Bruno (https://usebruno.com/) fully local and Git-native solution to accelerate and secure API work and collaboration
+cask "bruno"
 
 # Obsidian (https://obsidian.md/) free and flexible app for your private thoughts
 cask "obsidian"
