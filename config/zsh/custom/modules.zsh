@@ -10,9 +10,6 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 # TODO mabe remove due to mise
 command -v direnv &> /dev/null && eval "$(direnv hook zsh)"
 
-# Starship
-command -v starship &> /dev/null && eval "$(starship init zsh)"
-
 # SDKMAN
 [ -s "${HOME}/.sdkman/bin/sdkman-init.sh" ] && . "${HOME}/.sdkman/bin/sdkman-init.sh"
 

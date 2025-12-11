@@ -38,6 +38,13 @@ if [ ! -d "$HOME"/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting ]; then
 	git clone https://github.com/zsh-users/zsh-syntax-highlighting.git "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting"
 fi
 
+# zsh-defer (https://github.com/romkatv/zsh-defer) deferred execution of zsh commands
+if [ ! -d "$HOME"/.zsh-defer ]; then
+	info "Install zsh-defer"
+	git clone https://github.com/romkatv/zsh-defer.git ~/.zsh-defer
+fi
+
+
 ###
 # Brew install using Brewfile
 ###
