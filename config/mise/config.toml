@@ -10,7 +10,7 @@ python = '3.13.2'
 
 java = 'temurin-jre-21.0.8+9.0.LTS'
 
-rust = { version = "1.91.1" }
+rust = { version = "stable" }
 "cargo:tauri-cli" = 'latest'
 
 [plugins]

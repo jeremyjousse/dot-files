@@ -52,70 +52,11 @@ fi
 brew bundle --file="$PWD/install/Brewfile"
 
 ###
-# JVM based SDKs
-###
-
-# TODO remplace by Mise
-
-# if [ ! -d "${HOME}/.sdkman" ]; then
-# 	info "Install SDKMAN"
-# 	curl -s "https://get.sdkman.io" | bash
-# fi
-
-# # echo "Install Java Stable"
-## sdk current java
-# sdk install java
-
-# # echo "Install Java 8.0.222"
-# # sdk install java 8.0.222.hs-adpt
-
-# # echo "Install Maven"
-# sdk install maven
-
-# VisualVM ()
-# sdk install visualvm
-
-###
 # Rust
 ###
 
-if ! command -v rustc &> /dev/null; then
-	mise use -g rust
-	# curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-else
-	rustup upgrade stable
-fi
-
-## TODO add K8s Kubernetes kew
-# https://krew.sigs.k8s.io/docs/user-guide/setup/install/
-# kubectl krew install ctx
-# kubectl krew install ns
-
-# Visual Studio Code Extensions
-vscodeToInstallExtensions=()
-
-# Markdown Preview Mermaid Support (https://marketplace.visualstudio.com/items?itemName=bierner.markdown-mermaid)
-vscodeToInstallExtensions+=("bierner.markdown-mermaid")
-
-# XML Tools (https://marketplace.visualstudio.com/items?itemName=dotjoshjohnson.xml)
-vscodeToInstallExtensions+=("dotjoshjohnson.xml")
-
-# CodeMetrics (https://marketplace.visualstudio.com/items?itemName=kisstkondoros.vscode-codemetrics)
-vscodeToInstallExtensions+=("kisstkondoros.vscode-codemetrics")
-
-# JSON fix (https://marketplace.visualstudio.com/items?itemName=oliversturm.fix-json)
-vscodeToInstallExtensions+=("oliversturm.fix-json")
-
-# SonarLint (https://marketplace.visualstudio.com/items?itemName=sonarsource.sonarlint-vscode)
-vscodeToInstallExtensions+=("sonarsource.sonarlint-vscode")
-
-
-# Nushell syntax highlighting (https://marketplace.visualstudio.com/items?itemName=thenuprojectcontributors.vscode-nushell-lang)
-vscodeToInstallExtensions+=("thenuprojectcontributors.vscode-nushell-lang")
-
-# Markdown All in One (https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one)
-vscodeToInstallExtensions+=("yzhang.markdown-all-in-one")
-
-# check_install_vscode_extensions "${vscodeToInstallExtensions[@]}"
-
-# TODO add `mise install` but reload shell
+# if ! command -v rustc &> /dev/null; then
+# 	mise use -g rust
+# else
+# 	rustup upgrade stable
+# fi
