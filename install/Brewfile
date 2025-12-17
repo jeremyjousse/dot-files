@@ -254,6 +254,9 @@ cask "font-fira-code-nerd-font"
 
 ### Mac App Store apps
 
+# SQLPro for SQLite (https://www.sqlitepro.com/) simple, powerful SQLite manager for macOS
+mas "SQLPro for SQLite", id: 586001240
+
 # Wocabulary (https://wokabulary.com/) Flash card vocabulary learning app
 # mas "Wocabulary", id: 166_7619_825
 
