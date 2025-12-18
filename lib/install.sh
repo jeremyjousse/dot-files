@@ -52,11 +52,16 @@ fi
 brew bundle --file="$PWD/install/Brewfile"
 
 ###
-# Rust
+# npm global packages
 ###
 
-# if ! command -v rustc &> /dev/null; then
-# 	mise use -g rust
-# else
-# 	rustup upgrade stable
-# fi
+# Gemini CLI (hhttps://github.com/google-gemini/gemini-cli) an open-source AI agent that brings the power of Gemini directly into your terminal
+if ! command -v gemini &> /dev/null; then
+	info "Install Gemini CLI"
+	npm i -g @google/gemini-cli
+fi
+
+
+###
+# uv tools
+###

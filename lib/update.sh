@@ -2,7 +2,4 @@
 
 mise upgrade
 
-# brew upgrade
-
-
-omz update
+# omz update

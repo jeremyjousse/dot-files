@@ -47,9 +47,6 @@ brew "carapace"
 # Starship (https://starship.rs/) minimal, blazing-fast, and infinitely customizable prompt for any shell
 brew "starship"
 
-# Gemini CLI (hhttps://github.com/google-gemini/gemini-cli) an open-source AI agent that brings the power of Gemini directly into your termina
-brew "gemini-cli"
-
 # HTTPie (https://httpie.io/) command line API testing client
 # brew "httpie"
 
