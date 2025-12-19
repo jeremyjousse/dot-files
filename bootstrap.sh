@@ -15,6 +15,7 @@ link_config_files "$PWD"/config/git/.gitconfig "$HOME"/.gitconfig
 link_config_files "$PWD"/config/nvim "$HOME"/.config/nvim
 link_config_files "$PWD"/config/starship/starship.toml "$HOME"/.config/starship.toml
 link_config_files "$PWD"/config/zellij "$HOME"/.config/zellij
+link_config_files "$PWD"/config/ghostty "$HOME"/.config/ghostty
 
 copy_config_files "$PWD"/config/mise "$HOME"/.config
 
