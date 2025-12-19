@@ -204,8 +204,11 @@ cask "visual-studio-code"
 # JetBrains Toolbox (https://www.jetbrains.com/toolbox-app/) manage your JetBrains tools easily
 cask "jetbrains-toolbox"
 
+# Ghostty (https://ghostty.org/) fast, feature-rich, and cross-platform terminal emulator
+cask "ghostty"
+
 # iTem2 (https://iterm2.com/) is a replacement for Terminal
-cask "iterm2"
+# cask "iterm2"
 
 # Google Cloud CLI (https://docs.cloud.google.com/sdk/docs) command-line tools for Google Cloud Platform
 cask "gcloud-cli"
