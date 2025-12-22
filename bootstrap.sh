@@ -24,6 +24,7 @@ copy_config_files "$PWD"/config/mise "$HOME"/.config
 # sudo ln -s ~/.local/share/mise/installs/deno/latest/bin/deno /usr/local/bin/deno
 
 source lib/install.sh
+source lib/git_repositories.sh
 
 source lib/update.sh
 

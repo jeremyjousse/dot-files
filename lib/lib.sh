@@ -1,6 +1,12 @@
 #!/bin/bash
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 
+##
+# CONSTANTS
+##
+
+DEVELOPMENT_ROOT_FOLDER="$HOME/Development"
+
 # check_install() {
 #   local installName="$1"
 #   if [ $# -eq 2 ]; then
@@ -106,24 +112,34 @@ copy_config_files() {
 	cp -r "$source" "$destination"
 }
 
+clone_github_repo() {
+	local repo_url="$1"
+	local destination="$2"
+
+	if [ ! -d "$destination" ]; then
+		info "Cloning Github repository $repo_url to $destination"
+		gh repo clone "$repo_url" "$destination"
+	fi
+}
+
 green_color='\033[0;32m'  # Green
 red_color='\033[0;31m'    # Yellow
 yellow_color='\033[0;33m' # Yellow
 rest_color='\033[0m'      # Text Reset
 
 warning() {
-	echo -e "\n\r⚠️ ${yellow_color}WARNING${rest_color} $1"
+	printf "\n\r⚠️ ${yellow_color}WARNING${rest_color} $1"
 }
 
 info() {
-	echo -e "\n\rℹ️ ${green_color}INFO${rest_color} $1"
+	printf "\n\rℹ️ ${green_color}INFO${rest_color} $1"
 }
 
 error() {
-	echo -e "\n\r⚠️ ${red_color}ERROR${rest_color} $1"
+	printf "\n\r⚠️ ${red_color}ERROR${rest_color} $1"
 }
 
 abort() {
 	error "Aborting script"
-	exit 1
+	return 1
 }
