@@ -65,3 +65,8 @@ fi
 ###
 # uv tools
 ###
+
+if ! command -v pynglish &> /dev/null; then
+	info "Install pynglish uv tool"
+	uv tool install "$DEVELOPMENT_ROOT_FOLDER/Personal/pynglish"
+fi
