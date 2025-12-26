@@ -92,10 +92,10 @@ brew "zoxide"
 ###
 
 # Helix (https://helix-editor.com/) post-modern text editor
-# brew "helix"
+brew "helix"
 
 # neovim (https://neovim.io/) hyper extensible Vim-based text editor
-brew "neovim"
+# brew "neovim"
 
 ###
 # Dev languages bootstrap
