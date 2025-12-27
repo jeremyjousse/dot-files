@@ -14,7 +14,8 @@
 		"zsh",
 		"alacritty",
 		"nix",
-		"reset"
+		"reset",
+		"hammerspoon"
 	],
 	"editor.formatOnSave": true,
 	"editor.defaultFormatter": "esbenp.prettier-vscode",

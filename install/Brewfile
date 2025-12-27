@@ -225,6 +225,9 @@ cask "gcloud-cli"
 # KeyClu (https://sergii.tatarenkov.name/keyclu/support/) Simple and handy overview of applications shortcuts
 # cask "keyclu"
 
+# Hammerspoon (http://www.hammerspoon.org) tool for powerful automation of macOS
+cask "hammerspoon"
+
 # Rectangle (https://rectangleapp.com/) move and resize windows in macOS using keyboard shortcuts or snap areas
 # cask "rectangle"
 
