@@ -109,15 +109,15 @@ hs.loadSpoon("GrM")
 
 -- Configure GrM Spoon
 
-local appMode = spoon.GrM:createSelectionMode("Apps Mode", apps, function(item)
+local appMode = spoon.GrM:createSelectionMode("App Mode", apps, function(item)
     hs.task.new("/usr/bin/open", nil, {item.path}):start()
 end)
 
-hs.hotkey.bind({"ctrl", "alt", "cmd", "shift"}, "T", function()
+hs.hotkey.bind({"ctrl", "alt", "cmd", "shift"}, "A", function()
     appMode:enter()
 end)
 
-local folderMode = spoon.GrM:createSelectionMode("Folders Mode", folders, function(item)
+local folderMode = spoon.GrM:createSelectionMode("Folder Mode", folders, function(item)
     local path = item.path:gsub("^~", os.getenv("HOME"))
     hs.task.new("/usr/bin/open", nil, {path}):start()
 end)
