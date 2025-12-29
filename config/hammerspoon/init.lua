@@ -35,7 +35,7 @@ local function openGithub(project)
 end
 
 for _, project in ipairs(projects) do
-    codeMode:bind({"ctrl", "alt", "cmd"}, project.key, function()
+    codeMode:bind({"ctrl", "alt", "cmd", "shift"}, project.key, function()
         if githubMode then
             openGithub(project)
         else
@@ -44,7 +44,7 @@ for _, project in ipairs(projects) do
     end)
 end
 
-codeMode:bind({"ctrl", "alt", "cmd"}, "G", function()
+codeMode:bind({"ctrl", "alt", "cmd", "shift"}, "G", function()
     githubMode = not githubMode
     if codeTimer then codeTimer:stop() end
     codeTimer = hs.timer.doAfter(2, exitCodeMode)
@@ -55,7 +55,7 @@ codeMode:bind({"ctrl", "alt", "cmd"}, "G", function()
     end
 end)
 
-hs.hotkey.bind({"ctrl", "alt", "cmd"}, "C", function()
+hs.hotkey.bind({"ctrl", "alt", "cmd", "shift"}, "C", function()
     codeMode:enter()
     local msg = "Code Mode\n\r"
     msg = msg .. ("G: GitHub Mode\n\r" or "")
@@ -71,7 +71,7 @@ codeMode:bind({}, "escape", function()
     hs.alert.show("Code Mode cancelled")
 end)
 
-hs.hotkey.bind({"ctrl", "alt", "cmd"}, "R", function()
+hs.hotkey.bind({"ctrl", "alt", "cmd", "shift"}, "R", function()
 	hs.reload()
 end)
 hs.alert.show("Config loaded")
