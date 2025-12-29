@@ -323,5 +323,8 @@ vscode "rust-lang.rust-analyzer"
 # Svelte syntax highlighting (https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode) Svelte language support for VS Code
 vscode "svelte.svelte-vscode"
 
+# C4 DSL Extension (https://marketplace.visualstudio.com/items?itemName=systemticks.c4-dsl-extension) VS Code extension for C4 DSL Models
+vscode "systemticks.c4-dsl-extension"
+
 # Tauri (https://marketplace.visualstudio.com/items?itemName=tauri-apps.tauri-vscode) Enhances the experience of Tauri apps development
 vscode "tauri-apps.tauri-vscode"
