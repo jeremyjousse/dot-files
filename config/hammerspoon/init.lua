@@ -7,7 +7,7 @@ if hs.fs.attributes(workConfigPath) then
     if status then
         hs.alert.show("Professional config enabled.")
     else
-        hs.alert.show("Erreur dans professional.lua : " .. err)
+        hs.alert.show("error loading professional.lua : " .. err)
     end
 end
 
@@ -23,17 +23,31 @@ local function exitCodeMode()
 end
 
 local projects = {
-    { key = "D", name = "discory", path = "/Users/jerry/Development/Personal/discory", github = "jeremyjousse/discory" },
-    { key = "F", name = "dot-files", path = "/Users/jerry/Development/Personal/dot-files", github = "jeremyjousse/dot-files" },
-    { key = "P", name = "places", path = "/Users/jerry/Development/Personal/place-view" , github = "jeremyjousse/place-view"},
-    { key = "B", name = "places (Xcode)", path = "/Users/jerry/Development/Personal/place-view/swift-app", app = "Xcode" },
-    { key = "W", name = "website", path = "/Users/jerry/Development/Personal/website" , github = "jeremyjousse/website"},
+    { key = "D", name = "discory", path = "~/Development/Personal/discory", github = "jeremyjousse/discory" },
+    { key = "F", name = "dot-files", path = "~/Development/Personal/dot-files", github = "jeremyjousse/dot-files" },
+    { key = "P", name = "places", path = "~/Development/Personal/place-view" , github = "jeremyjousse/place-view"},
+    { key = "B", name = "places (Xcode)", path = "~/Development/Personal/place-view/swift-app", app = "Xcode" },
+    { key = "W", name = "website", path = "~/Development/Personal/website" , github = "jeremyjousse/website"},
 }
 
+local apps = {
+    { key = "C", name = "Google Chrome", path = "/Applications/Google Chrome.app" },
+    { key = "O", name = "Obsidian", path = "/Applications/Obsidian.app" },
+    { key = "T", name = "Terminal", path = "/Applications/Ghostty.app" },
+}
+
+local folders = {
+    { key = "A", name = "Applications", path = "/Applications" },
+    { key = "C", name = "Code", path = "~/Development" },
+    { key = "D", name = "Documents", path = "~/Documents" },
+    { key = "T", name = "Downloads", path = "~/Downloads" },
+}
+    
 local function openProject(project)
     exitCodeMode()
     local app = project.app or "Visual Studio Code"
-    hs.task.new("/usr/bin/open", nil, {"-a", app, project.path}):start()
+    local path = project.path:gsub("^~", os.getenv("HOME"))
+    hs.task.new("/usr/bin/open", nil, {"-a", app, path}):start()
     hs.alert.show("Opening " .. project.name)
 end
 
@@ -89,5 +103,25 @@ hs.hotkey.bind({"ctrl", "alt", "cmd", "shift"}, "R", function()
 end)
 
 
+-- Load GrM Spoon
 
--- hs.alert.show("Config loaded")
+hs.loadSpoon("GrM")
+
+-- Configure GrM Spoon
+
+local appMode = spoon.GrM:createSelectionMode("Apps Mode", apps, function(item)
+    hs.task.new("/usr/bin/open", nil, {item.path}):start()
+end)
+
+hs.hotkey.bind({"ctrl", "alt", "cmd", "shift"}, "T", function()
+    appMode:enter()
+end)
+
+local folderMode = spoon.GrM:createSelectionMode("Folders Mode", folders, function(item)
+    local path = item.path:gsub("^~", os.getenv("HOME"))
+    hs.task.new("/usr/bin/open", nil, {path}):start()
+end)
+
+hs.hotkey.bind({"ctrl", "alt", "cmd", "shift"}, "F", function()
+    folderMode:enter()
+end)
