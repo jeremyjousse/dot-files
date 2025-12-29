@@ -1,6 +1,7 @@
 ### dot-files ###
-config/zsh/custom/professional.zsh
+config/hammerspoon/professional.lua
 config/nvim/lazy-lock.json
+config/zsh/custom/professional.zsh
 
 ### node ###
 node_modules

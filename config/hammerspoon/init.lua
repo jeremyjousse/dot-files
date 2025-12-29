@@ -1,3 +1,16 @@
+-- Maybe consider to create a Spoon?
+local workConfigPath = hs.configdir .. "/professional.lua"
+
+if hs.fs.attributes(workConfigPath) then
+    local status, err = pcall(function() require("professional") end)
+    
+    if status then
+        hs.alert.show("Professional config enabled.")
+    else
+        hs.alert.show("Erreur dans professional.lua : " .. err)
+    end
+end
+
 -- Code Mode
 local codeMode = hs.hotkey.modal.new()
 local codeTimer = nil
@@ -74,4 +87,7 @@ end)
 hs.hotkey.bind({"ctrl", "alt", "cmd", "shift"}, "R", function()
 	hs.reload()
 end)
-hs.alert.show("Config loaded")
+
+
+
+-- hs.alert.show("Config loaded")
