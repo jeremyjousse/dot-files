@@ -228,6 +228,9 @@ cask "gcloud-cli"
 # Hammerspoon (http://www.hammerspoon.org) tool for powerful automation of macOS
 cask "hammerspoon"
 
+# Hyperkey (https://hyperkey.app/) extra macOS modifier key
+cask "hyperkey"
+
 # Rectangle (https://rectangleapp.com/) move and resize windows in macOS using keyboard shortcuts or snap areas
 # cask "rectangle"
 
