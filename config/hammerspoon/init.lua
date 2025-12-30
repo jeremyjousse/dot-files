@@ -1,3 +1,15 @@
+-- Desired key bindings:
+-- Ctrl + Alt + Cmd + Shift + ? : Enter Help Mode
+-- Ctrl + Alt + Cmd + Shift + P : Enter Professional Mode
+--  - A: Enter App Mode
+--  - B: Enter Browse Mode
+--  - F: Enter Folder Mode
+--  - C: Enter Code Mode
+--    - G: Toggle GitHub Mode (within Code Mode)
+-- Ctrl + Alt + Cmd + Shift + H : Enter Home Mode
+-- Ctrl + Alt + Cmd + Shift + W : Enter Window Mode
+
+
 -- Maybe consider to create a Spoon?
 local workConfigPath = hs.configdir .. "/professional.lua"
 
@@ -22,6 +34,12 @@ local function exitCodeMode()
     githubMode = false
 end
 
+local root = {
+    { key = "H", name = "Home" },
+    { key = "P", name = "Professional" },
+    { key = "W", name = "Window" },
+}
+
 local projects = {
     { key = "D", name = "discory", path = "~/Development/Personal/discory", github = "jeremyjousse/discory" },
     { key = "F", name = "dot-files", path = "~/Development/Personal/dot-files", github = "jeremyjousse/dot-files" },
@@ -37,6 +55,13 @@ local apps = {
 }
 
 local folders = {
+    { key = "A", name = "Applications", path = "/Applications" },
+    { key = "C", name = "Code", path = "~/Development" },
+    { key = "D", name = "Documents", path = "~/Documents" },
+    { key = "T", name = "Downloads", path = "~/Downloads" },
+}
+
+local window = {
     { key = "A", name = "Applications", path = "/Applications" },
     { key = "C", name = "Code", path = "~/Development" },
     { key = "D", name = "Documents", path = "~/Documents" },
@@ -109,11 +134,21 @@ hs.loadSpoon("GrM")
 
 -- Configure GrM Spoon
 
+local hyperKey = {"ctrl", "alt", "cmd", "shift"}
+
+local helpMode = spoon.GrM:createSelectionMode("Help Mode", root, function(item)
+    hs.alert.show("Help Mode not yet configured.", 2)
+end)
+
+hs.hotkey.bind(hyperKey, ",", function()
+    helpMode:enter()
+end)
+
 local appMode = spoon.GrM:createSelectionMode("App Mode", apps, function(item)
     hs.task.new("/usr/bin/open", nil, {item.path}):start()
 end)
 
-hs.hotkey.bind({"ctrl", "alt", "cmd", "shift"}, "A", function()
+hs.hotkey.bind(hyperKey, "A", function()
     appMode:enter()
 end)
 
@@ -122,6 +157,6 @@ local folderMode = spoon.GrM:createSelectionMode("Folder Mode", folders, functio
     hs.task.new("/usr/bin/open", nil, {path}):start()
 end)
 
-hs.hotkey.bind({"ctrl", "alt", "cmd", "shift"}, "F", function()
+hs.hotkey.bind(hyperKey, "F", function()
     folderMode:enter()
 end)
