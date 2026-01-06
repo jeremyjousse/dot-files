@@ -15,7 +15,8 @@
 		"alacritty",
 		"nix",
 		"reset",
-		"hammerspoon"
+		"hammerspoon",
+		"ai"
 	],
 	"editor.formatOnSave": true,
 	"editor.defaultFormatter": "esbenp.prettier-vscode",
