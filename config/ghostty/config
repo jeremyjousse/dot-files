@@ -1,2 +1,5 @@
 background = 1A1A1A
 foreground = ffffff
+
+# Binds left Option as Alt
+macos-option-as-alt = left
