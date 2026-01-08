@@ -272,6 +272,9 @@ mas "SQLPro for SQLite", id: 586001240
 
 ## # Visual Studio Code extensions
 
+# Cucumber (Gherkin) Full Support (https://marketplace.visualstudio.com/items?itemName=alexkrechik.cucumberautocomplete) Cucumber (Gherkin) Full Language Support + Formatting + Autocomplete
+vscode "alexkrechik.cucumberautocomplete"
+
 # CodeLLDB (https://marketplace.visualstudio.com/items?itemName=vadimcn.vscode-lldb) Debugger for native code, powered by LLDB. Debug C++, Rust, and other compiled languages
 vscode "vadimcn.vscode-lldb"
 
