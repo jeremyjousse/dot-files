@@ -105,13 +105,13 @@ function obj:start(config, hyper)
         if item.child then
             local mode = self:createSelectionMode(item.name, item.child)
             if item.key == "?" then
-                hs.hotkey.bind(hyper, "/", function() mode:enter() end)
+                hs.hotkey.bind(hyper, ",", function() mode:enter() end)
             else
                 hs.hotkey.bind(hyper, item.key, function() mode:enter() end)
             end
         else
              if item.key == "?" then
-                hs.hotkey.bind(hyper, "/", function() self:runAction(item, {}) end)
+                hs.hotkey.bind(hyper, ",", function() self:runAction(item, {}) end)
             else
                 hs.hotkey.bind(hyper, item.key, function() self:runAction(item, {}) end)
             end
