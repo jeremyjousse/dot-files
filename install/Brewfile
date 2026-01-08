@@ -305,6 +305,12 @@ vscode "tamasfe.even-better-toml"
 # ESLint (https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) Integrates ESLint JavaScript into VS Code
 vscode "dbaeumer.vscode-eslint"
 
+# Prettier (https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) Code formatter using prettier
+vscode "esbenp.prettier-vscode"
+
+# shfmt (https://marketplace.visualstudio.com/items?itemName=mkhl.shfmt) format shell programs
+vscode "mkhl.shfmt"
+
 # Liveshare (https://marketplace.visualstudio.com/items?itemName=ms-vsliveshare.vsliveshare) Real-time collaborative development from the comfort of your favorite tools.
 vscode "ms-vsliveshare.vsliveshare"
 

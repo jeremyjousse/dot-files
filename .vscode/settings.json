@@ -1,22 +1,23 @@
 {
 	"conventionalCommits.scopes": [
+		"ai",
+		"alacritty",
 		"bootstrap",
 		"code",
 		"decathlon",
 		"git",
+		"hammerspoon",
 		"http",
 		"install",
+		"macos defaults",
 		"mise",
 		"nushell",
 		"nvim",
+		"reset",
 		"starship",
 		"utils",
 		"zsh",
-		"alacritty",
-		"nix",
-		"reset",
-		"hammerspoon",
-		"ai"
+		"nix"
 	],
 	"editor.formatOnSave": true,
 	"editor.defaultFormatter": "esbenp.prettier-vscode",
@@ -60,9 +61,6 @@
 	],
 	"[shellscript]": {
 		"editor.defaultFormatter": "mkhl.shfmt"
-	},
-	"[nix]": {
-		"editor.defaultFormatter": "brettm12345.nixfmt-vscode"
 	},
 	"makefile.configureOnOpen": false
 }
