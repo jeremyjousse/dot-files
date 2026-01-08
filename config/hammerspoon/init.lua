@@ -145,5 +145,12 @@ hs.loadSpoon("GrM")
 -- Configure GrM Spoon
 spoon.GrM:start(root, hyperKey)
 
+-- Load Rectangle Spoon
+hs.loadSpoon("rectangle")
+
+-- Configure Rectangle Spoon
+spoon.rectangle:init()
+spoon.rectangle:start()
+
 
 
