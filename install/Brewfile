@@ -311,11 +311,17 @@ vscode "esbenp.prettier-vscode"
 # shfmt (https://marketplace.visualstudio.com/items?itemName=mkhl.shfmt) format shell programs
 vscode "mkhl.shfmt"
 
+# ShellCheck (https://marketplace.visualstudio.com/items?itemName=timonwong.shellcheck) integrates ShellCheck into VS Code, a linter for Shell scripts.
+vscode "timonwong.shellcheck"
+
 # Liveshare (https://marketplace.visualstudio.com/items?itemName=ms-vsliveshare.vsliveshare) Real-time collaborative development from the comfort of your favorite tools.
 vscode "ms-vsliveshare.vsliveshare"
 
 # Markdown lint (https://marketplace.visualstudio.com/items?itemName=davidanson.vscode-markdownlint) Markdown linting and style checking for Visual Studio Code
 vscode "davidanson.vscode-markdownlint"
+
+# Markdown All in One (https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one) All you need to write Markdown (keyboard shortcuts, table of contents, auto preview and more)
+vscode "yzhang.markdown-all-in-one"
 
 # Prettier code formatter (https://marketplace.visualstudio.com/items?itemName=prettier.prettier-vscode) Code formatter using prettier
 vscode "prettier.prettier-vscode"
