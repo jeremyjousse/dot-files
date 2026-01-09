@@ -33,21 +33,22 @@ obj.logger = hs.logger.new(obj.name)
 -- Default attributes
 obj._attribs = {
     leaderKey = {"cmd", "alt", "ctrl", "shift"},
+    -- leaderKey = {"cmd", "alt"},
     gridSize = "6x6",
     animationDuration = 0,
     hotkeys = {
-        left = "h",
-        right = "l",
-        up = "k",
-        down = "j",
-        maximize = "f",
+        left = "left",
+        right = "right",
+        up = "up",
+        down = "down",
+        maximize = "space",
         topLeft = "u",
         topRight = "i",
         bottomLeft = "n",
         bottomRight = "m",
         center = "c",
-        nextScreen = "right",
-        prevScreen = "left"
+        -- nextScreen = "right",
+        -- prevScreen = "left"
     }
 }
 for k, v in pairs(obj._attribs) do obj[k] = v end
