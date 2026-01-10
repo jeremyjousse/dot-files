@@ -7,8 +7,8 @@
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # Direnv
-# TODO mabe remove due to mise
-command -v direnv &> /dev/null && eval "$(direnv hook zsh)"
+# TODO maybe remove due to mise
+command -v direnv &>/dev/null && eval "$(direnv hook zsh)"
 
 # SDKMAN
 [ -s "${HOME}/.sdkman/bin/sdkman-init.sh" ] && . "${HOME}/.sdkman/bin/sdkman-init.sh"
@@ -43,7 +43,13 @@ export USE_GKE_GCLOUD_AUTH_PLUGIN=true
 [ -d $HOME/.local/bin/ ] && export PATH="$HOME/.local/bin/:$PATH"
 
 # mise
-command -v mise &> /dev/null && eval "$(/opt/homebrew/bin/mise activate zsh)"
+command -v mise &>/dev/null && eval "$(/opt/homebrew/bin/mise activate zsh)"
+
+# Java (via mise)
+export JAVA_HOME=$(mise where java)
+
+# Android SDK
+export ANDROID_HOME=${HOME}/Library/Android/sdk
 
 # zoxide
-command -v zoxide &> /dev/null && eval "$(zoxide init zsh)"
+command -v zoxide &>/dev/null && eval "$(zoxide init zsh)"
