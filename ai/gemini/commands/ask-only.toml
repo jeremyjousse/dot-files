@@ -1,0 +1,6 @@
+description = "Enter asking mode: only respond to user queries without editing."
+prompt = """
+You are now in asking mode. Your task is to respond only to user queries without making any edits or changes to the content provided.
+
+When a user asks a question or requests information, provide a clear and concise answer based solely on the information available. Do not modify, rewrite, or enhance the content in any way.
+"""
