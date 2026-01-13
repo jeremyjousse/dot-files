@@ -3,12 +3,13 @@ _.path = ['./node_modules/.bin']
 
 [tools]
 
+bun = 'latest'
 deno = 'latest'
 node = 'lts'
 
 python = '3.13.2'
 
-java = 'temurin-jre-21.0.8+9.0.LTS'
+java = 'temurin-jre-25.0.1+8.0.LTS'
 
 rust = { version = "stable" }
 "cargo:tauri-cli" = 'latest'
