@@ -9,6 +9,7 @@ link_config_files "$PWD"/config/zsh/.zshrc "$HOME"/.zshrc
 link_config_files "$PWD"/config/zsh "$HOME"/.config/zsh
 
 link_config_files "$PWD"/ai/gemini/commands "$HOME"/.gemini/commands
+link_config_files "$PWD"/ai/skills "$HOME"/.gemini/skills
 link_config_files "$PWD"/config/alacritty "$HOME"/.config/alacritty
 link_config_files "$PWD"/config/ghostty "$HOME"/.config/ghostty
 link_config_files "$PWD"/config/git/.gitconfig "$HOME"/.gitconfig
