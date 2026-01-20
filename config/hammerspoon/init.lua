@@ -95,11 +95,11 @@ local browse = {
 }
 
 local code = {
-    { key = "D", name = "discory", path = "~/Development/Personal/discory", github = "jeremyjousse/discory" },
-    { key = "F", name = "dot-files", path = "~/Development/Personal/dot-files", github = "jeremyjousse/dot-files" },
-    { key = "P", name = "places", path = "~/Development/Personal/place-view" , github = "jeremyjousse/place-view"},
-    { key = "B", name = "places (Xcode)", path = "~/Development/Personal/place-view/swift-app", app = "Xcode" },
-    { key = "W", name = "website", path = "~/Development/Personal/website" , github = "jeremyjousse/website"},
+    { key = "D", name = "discory", code = "~/Development/Personal/discory", github = "jeremyjousse/discory" },
+    { key = "F", name = "dot-files", code = "~/Development/Personal/dot-files", github = "jeremyjousse/dot-files" },
+    { key = "P", name = "places", code = "~/Development/Personal/place-view" , github = "jeremyjousse/place-view"},
+    { key = "B", name = "places (Xcode)", code = "~/Development/Personal/place-view/swift-app", app = "Xcode" },
+    { key = "W", name = "website", code = "~/Development/Personal/website" , github = "jeremyjousse/website"},
     { key = "G", name = "Toggle GitHub Mode", action = "toggleGithub" },
 }
 
@@ -153,4 +153,5 @@ spoon.rectangle:init()
 spoon.rectangle:start()
 
 
+hs.hotkey.bind(hyperKey, "space", function() spoon.GrM:showChooser(root) end)
 

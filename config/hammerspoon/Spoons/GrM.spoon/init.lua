@@ -9,6 +9,38 @@ obj.license = "MIT"
 
 local activeMode = nil
 
+function obj:gatherChoices(items, prefix)
+    local choices = {}
+    for _, item in ipairs(items) do
+        if item.name then
+            local fullName = (prefix and (prefix .. " > ") or "") .. item.name
+            if item.child then
+                for _, sc in ipairs(self:gatherChoices(item.child, fullName)) do
+                    table.insert(choices, sc)
+                end
+            else
+                table.insert(choices, {
+                    text = item.name,
+                    subText = fullName,
+                    item = item
+                })
+            end
+        end
+    end
+    return choices
+end
+
+function obj:showChooser(root)
+    local choices = self:gatherChoices(root)
+    local chooser = hs.chooser.new(function(choice)
+        if choice then
+            spoon.GrM:runAction(choice.item, { githubMode = false })
+        end
+    end)
+    chooser:choices(choices)
+    chooser:show()
+end
+
 function obj.scheduleAutoExit(mode, modeName)
     if mode.autoExitTimer then
         mode.autoExitTimer:stop()
@@ -42,6 +74,9 @@ function obj:runAction(item, modeState)
         actionExecuted = true
     elseif item.path then
         hs.execute("open " .. item.path)
+        actionExecuted = true
+    elseif item.code then
+        hs.execute("/opt/homebrew/bin/code " .. item.code)
         actionExecuted = true
     elseif item.link then
         hs.urlevent.openURL(item.link)
