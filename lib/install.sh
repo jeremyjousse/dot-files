@@ -44,7 +44,6 @@ if [ ! -d "$HOME"/.zsh-defer ]; then
 	git clone https://github.com/romkatv/zsh-defer.git ~/.zsh-defer
 fi
 
-
 ###
 # Brew install using Brewfile
 ###
@@ -52,21 +51,10 @@ fi
 brew bundle --file="$PWD/install/Brewfile"
 
 ###
-# npm global packages
-###
-
-# Gemini CLI (hhttps://github.com/google-gemini/gemini-cli) an open-source AI agent that brings the power of Gemini directly into your terminal
-if ! command -v gemini &> /dev/null; then
-	info "Install Gemini CLI"
-	npm i -g @google/gemini-cli
-fi
-
-
-###
 # uv tools
 ###
 
-if ! command -v pynglish &> /dev/null; then
+if ! command -v pynglish &>/dev/null; then
 	info "Install pynglish uv tool"
 	uv tool install "$DEVELOPMENT_ROOT_FOLDER/Personal/pynglish"
 fi
