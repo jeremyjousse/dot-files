@@ -323,9 +323,6 @@ vscode "davidanson.vscode-markdownlint"
 # Markdown All in One (https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one) All you need to write Markdown (keyboard shortcuts, table of contents, auto preview and more)
 vscode "yzhang.markdown-all-in-one"
 
-# Prettier code formatter (https://marketplace.visualstudio.com/items?itemName=prettier.prettier-vscode) Code formatter using prettier
-vscode "prettier.prettier-vscode"
-
 # Pretty TypeScript Errors (https://marketplace.visualstudio.com/items?itemName=yoavbls.pretty-ts-errors) Make TypeScript errors prettier and human-readable
 vscode "yoavbls.pretty-ts-errors"
 
