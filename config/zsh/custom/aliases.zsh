@@ -1,11 +1,10 @@
 alias ll='ls -l'
-alias myip='curl http://ipecho.net/plain; echo'
+alias my_ip='curl http://ipecho.net/plain; echo'
 alias reload='source ~/.zshrc'
+alias r='source ~/.zshrc'
 alias dot-files='code $HOME/Development/Personal/dot-files'
-alias learnings='cd $HOME/Development/Personal/learnings && code . && npm run docusaurus start'
-alias english='code $HOME/Development/Personal/learnings/docs/english/README.md'
 
-alias vi="nvim"
+alias vi="hx"
 
 # headless chrome
 alias chrome="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
