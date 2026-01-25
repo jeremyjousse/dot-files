@@ -1,0 +1,9 @@
+default_provider = "keychain"
+
+[providers.keychain]
+type = "keychain"
+service = "fnox"
+prefix = "fnox_"
+
+[secrets]
+MY_SECRET = { description = "Example Fnox secret", provider = "keychain", value = "MY_SECRET" }
