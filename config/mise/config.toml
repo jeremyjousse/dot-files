@@ -12,7 +12,7 @@ python = '3.14.2'
 
 java = 'temurin-jre-25.0.1+8.0.LTS'
 
-rust = { version = "stable" }
+rust = { version = "latest" }
 "cargo:tauri-cli" = 'latest'
 
 fnox = "latest"
