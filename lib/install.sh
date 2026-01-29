@@ -49,6 +49,7 @@ fi
 ###
 
 brew bundle --file="$PWD/install/Brewfile"
+[ -f "$PWD/install/ProfessionalBrewfile" ] && brew bundle --file="$PWD/install/ProfessionalBrewfile"
 
 ###
 # uv tools
