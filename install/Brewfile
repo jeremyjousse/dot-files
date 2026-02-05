@@ -128,6 +128,13 @@ brew "uv"
 brew "ruff"
 
 ###
+# Swift
+###
+
+# XcodeGen (https://github.com/yonaskolb/XcodeGen) a command line tool written in Swift that generates your Xcode project using your folder structure and a project spec
+brew "xcodegen"
+
+###
 # Container
 ###
 
