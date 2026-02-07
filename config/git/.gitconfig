@@ -7,9 +7,12 @@
         df=diff -w
         tree=log --graph --oneline --all
         la="!git config -l | grep alias | cut -c 7-"
-        pr=pull --rebase
+        lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+        pf = push --force-with-lease
+        pr = pull --rebase
         cl-pr=push origin -d
         cb="!git fetch --prune && git branch -vv|grep ': gone]'|awk '{ print $1; }'|xargs git branch -D"
+        purge = "!git branch --merged | egrep -v '(^\\*|main|develop)' | xargs git branch -d"
         undo = reset --soft HEAD^
 
 [commit]
@@ -18,22 +21,28 @@
 [core]
 	autocrlf = input
 	editor = code --wait
+        fileMode = false
         pager = delta
         ignorecase = false
 
 [delta]
-
         line-numbers = true
+
+[diff]
+        algorithm = patience
 
 [gpg]
         program = /opt/homebrew/bin/gpg
+
+[includeIf "gitdir:~/Development/Decathlon/"]
+    path = ~/.gitconfig-work
 
 [init]
 	defaultBranch = main
 
 [user]
         name = Jérémy Jousse
-        email = jeremy.jousse@decathlon.com
+        email = jeremy.jousse@gmail.com
         # TODO add signingkey
 
 [pull]
