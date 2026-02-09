@@ -9,12 +9,26 @@ jobs:
   release:
     name: Release
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
 
     steps:
       - name: 📥 Checkout main branch
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - name: Application Version
-        id: version
-        uses: paulhatch/semantic-version@v5.4.0
+
+      - name: ➡️ Get Next Version
+        id: semver
+        uses: paulhatch/semantic-version@v6.0.1
+
+      - name: 📦 Create Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v${{ steps.semver.outputs.version }}
+          name: Release v${{ steps.semver.outputs.version }}
+          generate_release_notes: true
+          draft: false
+          prerelease: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
