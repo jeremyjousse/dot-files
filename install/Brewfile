@@ -238,9 +238,6 @@ cask "hyperkey"
 # Rectangle (https://rectangleapp.com/) move and resize windows in macOS using keyboard shortcuts or snap areas
 # cask "rectangle"
 
-# AltTab (https://alt-tab-macos.netlify.app/) Windows alt-tab on macOS
-# cask "alt-tab"
-
 # VLC (https://www.videolan.org/vlc/index.html) multimedia player
 cask "vlc"
 
