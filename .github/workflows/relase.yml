@@ -36,5 +36,6 @@ jobs:
           generate_release_notes: true
           draft: false
           prerelease: false
+          body: ${{ steps.changelog.outputs.changelog }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
