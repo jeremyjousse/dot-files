@@ -202,9 +202,6 @@ brew "gh"
 # Firefox (https://www.mozilla.org/en-US/firefox/new/) Mozilla's web browser
 # cask "firefox@developer-edition"
 
-# Arc (https://arc.net/) is the Chrome replacement I’ve been waiting for
-# cask "arc"
-
 # Visual Studio Code (https://code.visualstudio.com/) a great Integrated Development Environment
 cask "visual-studio-code"
 
