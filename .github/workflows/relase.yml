@@ -22,7 +22,7 @@ jobs:
         id: semver
         uses: paulhatch/semantic-version@v6.0.1
 
-      - name: Generate Changelog
+      - name: 📃 Generate Changelog
         id: changelog
         uses: Bullrich/generate-release-changelog@2.0.2
         env:
