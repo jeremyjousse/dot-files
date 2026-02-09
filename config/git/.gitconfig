@@ -16,7 +16,7 @@
         undo = reset --soft HEAD^
 
 [commit]
-        #gpgsign = true
+        gpgsign = true
 
 [core]
 	autocrlf = input
@@ -32,10 +32,8 @@
         algorithm = patience
 
 [gpg]
-        program = /opt/homebrew/bin/gpg
-
-[includeIf "gitdir:~/Development/Decathlon/"]
-    path = ~/.gitconfig-work
+        # program = /opt/homebrew/bin/gpg
+        format = ssh
 
 [init]
 	defaultBranch = main
@@ -43,7 +41,7 @@
 [user]
         name = Jérémy Jousse
         email = jeremy.jousse@gmail.com
-        # TODO add signingkey
+        signingkey = ~/.ssh/jeremyjousse.pub
 
 [pull]
 	rebase = true
@@ -51,3 +49,7 @@
 [push]
 	autoSetupRemote = true
         default = current
+
+
+[includeIf "gitdir:~/Development/Decathlon/"]
+    path = ~/.gitconfig-work

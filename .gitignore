@@ -1,4 +1,5 @@
 ### dot-files ###
+config/git/.gitconfig-work
 config/hammerspoon/professional.lua
 config/nvim/lazy-lock.json
 config/zsh/custom/professional.zsh

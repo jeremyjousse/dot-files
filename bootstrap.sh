@@ -13,6 +13,7 @@ link_config_files "$PWD"/ai/skills "$HOME"/.gemini/skills
 link_config_files "$PWD"/config/alacritty "$HOME"/.config/alacritty
 link_config_files "$PWD"/config/ghostty "$HOME"/.config/ghostty
 link_config_files "$PWD"/config/git/.gitconfig "$HOME"/.gitconfig
+[ -f "$PWD"/config/git/.gitconfig-work ] && link_config_files "$PWD"/config/git/.gitconfig-work "$HOME"/.gitconfig-work
 link_config_files "$PWD"/config/hammerspoon "$HOME"/.config/hammerspoon
 link_config_files "$PWD"/config/nushell "$HOME/Library/Application Support/nushell"
 link_config_files "$PWD"/config/nvim "$HOME"/.config/nvim
