@@ -5,18 +5,36 @@ on:
     branches: [main]
   workflow_dispatch:
 
-permissions:
-  contents: write
-  issues: write
-  pull-requests: write
-
 jobs:
   release:
     name: Release
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
     steps:
-      - uses: google-github-actions/release-please-action@v4
-        name: 📦 Create Release
+      - name: 📥 Checkout main branch
+        uses: actions/checkout@v6
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          release-type: simple
+          fetch-depth: 0
+
+      - name: ➡️ Get Next Version
+        id: semver
+        uses: paulhatch/semantic-version@v6.0.1
+
+      - name: Generate Changelog
+        id: changelog
+        uses: Bullrich/generate-release-changelog@2.0.2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: 📦 Create Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v${{ steps.semver.outputs.version }}
+          name: Release v${{ steps.semver.outputs.version }}
+          generate_release_notes: true
+          draft: false
+          prerelease: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
