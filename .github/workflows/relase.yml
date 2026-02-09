@@ -22,20 +22,20 @@ jobs:
         id: semver
         uses: paulhatch/semantic-version@v6.0.1
 
-      # - name: 📃 Generate Changelog
-      #   id: changelog
-      #   uses: Bullrich/generate-release-changelog@2.0.2
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: 📃 Generate Changelog
+        id: changelog
+        uses: Bullrich/generate-release-changelog@2.0.2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: 📦 Create Release
         uses: softprops/action-gh-release@v2
         with:
           tag_name: v${{ steps.semver.outputs.version }}
           name: Release v${{ steps.semver.outputs.version }}
-          generate_release_notes: true
+          generate_release_notes: false
           draft: false
           prerelease: false
-          # body: ${{ steps.changelog.outputs.changelog }}
+          body: ${{ steps.changelog.outputs.changelog }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
