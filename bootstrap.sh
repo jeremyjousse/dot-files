@@ -14,11 +14,11 @@ link_config_files "$PWD"/config/alacritty "$HOME"/.config/alacritty
 link_config_files "$PWD"/config/gemini/settings.json "$HOME"/.gemini/settings.json
 link_config_files "$PWD"/config/ghostty "$HOME"/.config/ghostty
 link_config_files "$PWD"/config/git/.gitconfig "$HOME"/.gitconfig
-[ -f "$PWD"/config/git/.gitconfig-work ] && link_config_files "$PWD"/config/git/.gitconfig-work "$HOME"/.gitconfig-work
 link_config_files "$PWD"/config/hammerspoon "$HOME"/.config/hammerspoon
 link_config_files "$PWD"/config/nushell "$HOME/Library/Application Support/nushell"
 link_config_files "$PWD"/config/nvim "$HOME"/.config/nvim
 link_config_files "$PWD"/config/starship/starship.toml "$HOME"/.config/starship.toml
+link_config_files "$PWD"/config/vscode/settings.json "$HOME"/Library/Application\ Support/Code/User/settings.json
 link_config_files "$PWD"/config/zellij "$HOME"/.config/zellij
 
 copy_config_files "$PWD"/config/mise "$HOME"/.config

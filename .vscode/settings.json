@@ -63,5 +63,7 @@
 	"[shellscript]": {
 		"editor.defaultFormatter": "mkhl.shfmt"
 	},
-	"makefile.configureOnOpen": false
+	"[jsonc]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	}
 }

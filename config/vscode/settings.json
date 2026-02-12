@@ -1,0 +1,57 @@
+{
+  "github.copilot.nextEditSuggestions.enabled": true,
+  "[jsonc]": {
+    "editor.defaultFormatter": "prettier.prettier-vscode",
+  },
+  "git.autofetch": true,
+  "git.enableSmartCommit": true,
+  "git.confirmSync": false,
+  "security.workspace.trust.untrustedFiles": "open",
+  "git.replaceTagsWhenPull": true,
+  "editor.fontFamily": "\"MesloLGM Nerd Font\", Menlo, Monaco, 'Courier New', monospace",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "[svelte]": {
+    "editor.defaultFormatter": "svelte.svelte-vscode",
+  },
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "prettier.prettier-vscode",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "always",
+  },
+  "svelte.enable-ts-plugin": true,
+  "chat.tools.terminal.autoApprove": {
+    "git fetch": true,
+    "git ls-remote": true,
+    "pnpm": true,
+    "npx": true,
+    "cargo check": true,
+  },
+  "[rust]": {
+    "editor.defaultFormatter": "rust-lang.rust-analyzer",
+  },
+  "githubPullRequests.notifications": "pullRequests",
+  "python.analysis.typeCheckingMode": "standard",
+  "[python]": {
+    "editor.defaultFormatter": "charliermarsh.ruff",
+  },
+  "chat.viewSessions.orientation": "stacked",
+  "chat.useAgentSkills": true,
+  "liveshare.connectionMode": "relay",
+  "workbench.settings.applyToAllProfiles": ["liveshare.connectionMode"],
+  "shfmt.executablePath": "/opt/homebrew/bin/shfmt",
+  "[AMPscript]": {},
+  "[markdown]": {
+    "editor.defaultFormatter": "DavidAnson.vscode-markdownlint",
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+  },
+  "[shellscript]": {
+    "editor.defaultFormatter": "mkhl.shfmt",
+  },
+  "typescript.preferences.organizeImports": {},
+}
