@@ -1,32 +1,37 @@
 {
-	"ide": {
-		"enabled": true,
-		"hasSeenNudge": true
-	},
-	"experimental": {
-		"skills": true
-	},
-	"security": {
-		"auth": {
-			"selectedType": "vertex-ai"
-		}
-	},
-	"general": {
-		"previewFeatures": true,
-		"sessionRetention": {
-			"enabled": true
-		},
-		"enablePromptCompletion": true
-	},
-	"mcpServers": {
-		"chrome-devtools": {
-			"command": "npx",
-			"args": ["chrome-devtools-mcp@latest"],
-			"trust": true
-		},
-		"github": {
-			"command": "sh",
-			"args": ["-c", "GITHUB_PERSONAL_ACCESS_TOKEN=$(gh auth token) npx -y @modelcontextprotocol/server-github"]
-		}
-	}
+  "ide": {
+    "enabled": true,
+    "hasSeenNudge": true
+  },
+  "experimental": {
+    "skills": true
+  },
+  "security": {
+    "auth": {
+      "selectedType": "vertex-ai"
+    }
+  },
+  "general": {
+    "previewFeatures": true,
+    "sessionRetention": {
+      "enabled": true
+    },
+    "enablePromptCompletion": true
+  },
+  "mcpServers": {
+    "chrome-devtools": {
+      "command": "npx",
+      "args": [
+        "chrome-devtools-mcp@latest"
+      ],
+      "trust": true
+    },
+    "github": {
+      "command": "sh",
+      "args": [
+        "-c",
+        "GITHUB_PERSONAL_ACCESS_TOKEN=$(gh auth token) npx -y @modelcontextprotocol/server-github"
+      ]
+    }
+  }
 }
