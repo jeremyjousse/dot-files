@@ -8,9 +8,9 @@ deno = 'latest'
 node = 'lts'
 "npm:@google/gemini-cli" = "latest"
 
-python = '3.14.2'
+python = '3.14.3'
 
-java = 'temurin-jre-25.0.1+8.0.LTS'
+java = 'temurin-jre-25.0.2+10.0.LTS'
 
 rust = { version = "latest" }
 "cargo:tauri-cli" = 'latest'
