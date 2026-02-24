@@ -54,4 +54,7 @@
     "editor.defaultFormatter": "mkhl.shfmt",
   },
   "typescript.preferences.organizeImports": {},
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
 }
