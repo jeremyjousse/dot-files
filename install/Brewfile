@@ -108,9 +108,6 @@ brew "mise"
 # AI
 ###
 
-# GitHub Copilot CLI (https://github.com/github/copilot-cli) the power of Copilot coding agent directly to your terminal
-brew "copilot-cli"
-
 # Ollama (https://ollama.com/) runs with large language models, locally.
 # brew "ollama"
 
