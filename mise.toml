@@ -1,2 +1,5 @@
+[env]
+MY_ENV_VAR = 'my_value'
+
 [tools]
 node = "lts"

@@ -95,6 +95,36 @@ unlink_config_files() {
 	fi
 }
 
+generate_local_gitconfig() {
+	local ENV_FILE="$1"
+	local GITCONFIG_FILE="$2"
+
+	if [ -f "$ENV_FILE" ]; then
+		source "$ENV_FILE"
+
+		if [ -n "$GIT_USER_NAME" ]; then
+			if [ "$(git config --file "$GITCONFIG_FILE" user.name 2>/dev/null)" != "$GIT_USER_NAME" ]; then
+				info "Generating local gitconfig with user.name=$GIT_USER_NAME"
+				git config --file "$GITCONFIG_FILE" user.name "$GIT_USER_NAME"
+			fi
+		fi
+		if [ -n "$GIT_USER_EMAIL" ]; then
+			if [ "$(git config --file "$GITCONFIG_FILE" user.email 2>/dev/null)" != "$GIT_USER_EMAIL" ]; then
+				info "Generating local gitconfig with user.email=$GIT_USER_EMAIL"
+				git config --file "$GITCONFIG_FILE" user.email "$GIT_USER_EMAIL"
+			fi
+		fi
+		if [ -n "$GIT_SIGNING_KEY" ]; then
+			if [ "$(git config --file "$GITCONFIG_FILE" user.signingkey 2>/dev/null)" != "$GIT_SIGNING_KEY" ]; then
+				info "Generating local gitconfig with user.signingkey=$GIT_SIGNING_KEY"
+				git config --file "$GITCONFIG_FILE" user.signingkey "$GIT_SIGNING_KEY"
+			fi
+		fi
+	else
+		echo "⚠️  Warning: $ENV_FILE not found. Skipping gitconfig generation."
+	fi
+}
+
 copy_config_files() {
 	local source="$1"
 	local destination="$2"

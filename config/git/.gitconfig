@@ -39,9 +39,9 @@
 	defaultBranch = main
 
 [user]
-        name = Jérémy Jousse
-        email = jeremy.jousse@gmail.com
-        signingkey = ~/.ssh/jeremyjousse.pub
+	name = Jérémy Jousse
+	email = jeremy.jousse@gmail.com
+	signingkey = ~/.ssh/jeremyjousse.pub
 
 [pull]
 	rebase = true

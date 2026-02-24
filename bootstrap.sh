@@ -27,6 +27,8 @@ copy_config_files "$PWD"/config/mise "$HOME"/.config
 # bad configuration https://github.com/denoland/vscode_deno/issues/234
 # sudo ln -s ~/.local/share/mise/installs/deno/latest/bin/deno /usr/local/bin/deno
 
+generate_local_gitconfig "$PWD"/.env "$PWD"/config/git/.gitconfig
+
 source lib/install.sh
 source lib/git_repositories.sh
 
