@@ -19,6 +19,9 @@ command -v direnv &>/dev/null && eval "$(direnv hook zsh)"
 # cht (https://cht.sh/)
 [ -e ${HOME}/.cht ] && export PATH="${HOME}/.cht:$PATH" && fpath=(~/.zsh.d/ $fpath)
 
+# Github Personal Token for GitHub MCP in Gemini CLI
+export GITHUB_MCP_PAT=$(gh auth token)
+
 # Google Cloud SDK
 [ -d "$(brew --prefix)/share/google-cloud-sdk/" ] && source "$(brew --prefix)/share/google-cloud-sdk/path.zsh.inc" && source "$(brew --prefix)/share/google-cloud-sdk/completion.zsh.inc"
 
