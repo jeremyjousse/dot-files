@@ -23,6 +23,9 @@ brew "mas"
 # delta (https://github.com/dandavison/delta) syntax-highlighting pager for git, diff, grep, and blame output
 brew "git-delta"
 
+# diffnav (https://github.com/dlvhdr/diffnav) git diff pager based on delta but with a file tree, à la GitHub.
+brew "dlvhdr/formulae/diffnav"
+
 # direnv (https://direnv.net/) can load and unload environment variables depending on the current directory
 # brew "direnv"
 
