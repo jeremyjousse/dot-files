@@ -52,4 +52,4 @@
 
 
 [includeIf "gitdir:~/Development/Decathlon/"]
-    path = ~/.gitconfig-work
+    path = ~/.gitconfig-professional

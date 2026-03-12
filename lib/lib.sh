@@ -58,6 +58,34 @@ link_config_files() {
 	local source="$1"
 	local destination="$2"
 
+	# TODO Detect professional file
+
+	# Detect file path from $source without file name
+	local file_path
+	file_path=$(dirname "$source")
+
+	# Detect file name from $source
+	local file_name
+	file_name=$(basename "$source")
+	# Detect extension from file name
+	local file_extension="${file_name##*.}"
+	# Detect file name without extension
+	local file_name_without_extension="${file_name%.*}"
+
+	# Generate professional file name
+	# warning extension may be null
+	# But we need the extension to detect the professional file, so we consider that if there is no extension, the professional file will also have no extension
+	local professional_file_name
+	if [[ -n "$file_extension" ]]; then
+		professional_file_name="${file_name_without_extension}-professional.${file_extension}"
+	else
+		professional_file_name="${file_name}-professional"
+	fi
+	if [[ -f "$file_path/$professional_file_name" ]]; then
+		source="$file_path/$professional_file_name"
+		info "Professional file detected for ${file_name}, using ${professional_file_name} as source"
+	fi
+
 	# TODO check source
 	# TODO check destination parent folder
 
