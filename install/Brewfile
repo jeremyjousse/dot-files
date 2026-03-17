@@ -7,9 +7,6 @@ tap "fluxcd/tap"
 # Shells
 ###
 
-# fish [friendly interactive shell] (https://fishshell.com/) user-friendly command-line shell for UNIX-like operating systems
-#brew fish
-
 # Nushell [friendly interactive shell] (https://www.nushell.sh/) a new type of shell
 # brew "nushell"
 
@@ -52,9 +49,6 @@ brew "starship"
 
 # HTTPie (https://httpie.io/) command line API testing client
 # brew "httpie"
-
-# # SurrealDB (https://surrealdb.com/) ultimate multi-model database
-# brew "surrealdb/tap/surreal"
 
 # wrk (https://github.com/wg/wrk) HTTP benchmarking tool
 brew "wrk"
@@ -214,14 +208,8 @@ cask "jetbrains-toolbox"
 # Ghostty (https://ghostty.org/) fast, feature-rich, and cross-platform terminal emulator
 cask "ghostty"
 
-# iTem2 (https://iterm2.com/) is a replacement for Terminal
-# cask "iterm2"
-
 # Google Cloud CLI (https://docs.cloud.google.com/sdk/docs) command-line tools for Google Cloud Platform
 cask "gcloud-cli"
-
-# Alacritty (https://iterm2.com/) a modern terminal emulator that comes with sensible defaults, but allows for extensive configuration.
-# cask "alacritty"
 
 # DevToys (https://devtoys.app/) Swiss army knife for developers
 # cask "devtoys"
@@ -230,16 +218,13 @@ cask "gcloud-cli"
 # cask "maccy"
 
 # KeyClu (https://sergii.tatarenkov.name/keyclu/support/) Simple and handy overview of applications shortcuts
-# cask "keyclu"
+cask "keyclu"
 
 # Hammerspoon (http://www.hammerspoon.org) tool for powerful automation of macOS
 cask "hammerspoon"
 
 # Hyperkey (https://hyperkey.app/) extra macOS modifier key
 cask "hyperkey"
-
-# Rectangle (https://rectangleapp.com/) move and resize windows in macOS using keyboard shortcuts or snap areas
-# cask "rectangle"
 
 # VLC (https://www.videolan.org/vlc/index.html) multimedia player
 cask "vlc"
