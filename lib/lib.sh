@@ -81,7 +81,6 @@ link_config_files() {
 	fi
 	if [[ -f "$file_path/$professional_file_name" ]]; then
 		source="$file_path/$professional_file_name"
-		info "Professional file detected for ${file_name}, using ${professional_file_name} as source"
 	fi
 
 	# TODO check source
@@ -99,8 +98,8 @@ link_config_files() {
 		mv "$destination"{,.back}
 	fi
 
-	if [[ -L "$destination" && $(readlink -f "$destination") != "$source" ]]; then
-		warning "Destination $(readlink -f "$destination") is not linked to ${source}"
+	if [[ -L "$destination" && $(readlink "$destination") != "$source" ]]; then
+		warning "Destination $(readlink "$destination") is not linked to ${source}"
 		info "unlinking ${destination} link"
 		unlink "$destination"
 	fi
