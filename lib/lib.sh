@@ -73,8 +73,6 @@ link_config_files() {
 	local file_name_without_extension="${file_name%.*}"
 
 	# Generate professional file name
-	# warning extension may be null
-	# But we need the extension to detect the professional file, so we consider that if there is no extension, the professional file will also have no extension
 	local professional_file_name
 	if [[ -n "$file_extension" ]]; then
 		professional_file_name="${file_name_without_extension}-professional.${file_extension}"
