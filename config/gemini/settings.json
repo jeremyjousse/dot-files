@@ -9,7 +9,8 @@
 	"security": {
 		"auth": {
 			"selectedType": "oauth-personal"
-		}
+		},
+		"allowedExtensions": []
 	},
 	"general": {
 		"previewFeatures": true,
@@ -27,5 +28,8 @@
 			"args": ["chrome-devtools-mcp@latest"],
 			"trust": true
 		}
+	},
+	"skills": {
+		"enabled": true
 	}
 }
