@@ -106,7 +106,7 @@ brew "mise"
 ###
 
 # Ollama (https://ollama.com/) runs with large language models, locally.
-# brew "ollama"
+brew "ollama"
 
 ###
 # NodeJS
