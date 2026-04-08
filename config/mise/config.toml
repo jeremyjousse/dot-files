@@ -14,6 +14,7 @@ node = 'lts'
 python = '3.14.3'
 
 java = 'temurin-jre-25.0.2+10.0.LTS'
+maven = 'latest'
 
 rust = { version = "latest" }
 "cargo:tauri-cli" = 'latest'
