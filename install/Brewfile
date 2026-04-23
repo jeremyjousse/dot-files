@@ -162,6 +162,9 @@ brew "helm"
 # Flux (https://fluxcd.io/) used to bootstrap and interact with Flux (a set of continuous and progressive delivery solutions for Kubernetes)
 brew "fluxcd/tap/flux"
 
+# rtk (https://www.rtk-ai.app/) High-performance CLI proxy that reduces LLM token consumption
+brew "rtk"
+
 # Act (https://nektosact.com/) run your GitHub Actions locally
 # brew "act"
 
