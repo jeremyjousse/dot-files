@@ -3,6 +3,7 @@
 source lib/lib.sh
 
 create_folder "$HOME"/.config
+create_folder "$HOME"/.gemini
 create_folder "$HOME"/Development/Personal
 
 link_config_files "$PWD"/config/zsh/.zshrc "$HOME"/.zshrc
@@ -15,7 +16,7 @@ link_config_files "$PWD"/config/alacritty "$HOME"/.config/alacritty
 link_config_files "$PWD"/config/gh-dash "$HOME"/.config/gh-dash
 link_config_files "$PWD"/config/ghostty "$HOME"/.config/ghostty
 link_config_files "$PWD"/config/git/.gitconfig "$HOME"/.gitconfig
-link_config_files "$PWD"/config/hammerspoon "$HOME"/.config/hammerspoon
+link_config_files "$PWD"/config/hammerspoon "$HOME"/.hammerspoon
 link_config_files "$PWD"/config/nushell "$HOME/Library/Application Support/nushell"
 link_config_files "$PWD"/config/nvim "$HOME"/.config/nvim
 link_config_files "$PWD"/config/starship/starship.toml "$HOME"/.config/starship.toml

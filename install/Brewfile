@@ -69,6 +69,9 @@ brew "shfmt"
 # Bat (https://github.com/sharkdp/bat) a cat(1) clone with wings
 brew "bat"
 
+# dockutil (https://github.com/kcrawford/dockutil) command-line utility to manage macOS Dock items
+brew "dockutil"
+
 # fzf (https://github.com/junegunn/fzf) command-line fuzzy finder
 # brew "fzf"
 
@@ -197,7 +200,7 @@ brew "gh"
 ###
 
 # Chrome (https://www.google.com/intl/en_us/chrome/) Google's web browser
-# cask "chrome"
+cask "google-chrome"
 
 # Firefox (https://www.mozilla.org/en-US/firefox/new/) Mozilla's web browser
 # cask "firefox@developer-edition"
@@ -207,6 +210,9 @@ cask "visual-studio-code"
 
 # JetBrains Toolbox (https://www.jetbrains.com/toolbox-app/) manage your JetBrains tools easily
 cask "jetbrains-toolbox"
+
+# 1Password (https://1password.com/) password manager
+cask "1password@7"
 
 # Ghostty (https://ghostty.org/) fast, feature-rich, and cross-platform terminal emulator
 cask "ghostty"
