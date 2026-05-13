@@ -7,7 +7,7 @@ load_config_file() {
 }
 
 # Starship
-command -v starship &> /dev/null && eval "$(starship init zsh)"
+command -v starship &>/dev/null && eval "$(starship init zsh)"
 
 zsh-defer load_config_file "${CONFIG_PATH}lib.sh"
 zsh-defer load_config_file "${CONFIG_PATH}modules.zsh"
@@ -16,7 +16,6 @@ zsh-defer load_config_file "${CONFIG_PATH}proxy.sh"
 zsh-defer load_config_file "${CONFIG_PATH}env.zsh"
 zsh-defer load_config_file "${CONFIG_PATH}utils.zsh"
 
-hostname=$(hostname)
-if [ ${hostname} = "FRL-Y65NQL4JTG" ]; then
-  zsh-defer load_config_file "${CONFIG_PATH}professional.sh"
+if [ -f "${CONFIG_PATH}professional.zsh" ]; then
+  zsh-defer load_config_file "${CONFIG_PATH}professional.zsh"
 fi
