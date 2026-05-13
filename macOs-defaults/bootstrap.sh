@@ -14,10 +14,18 @@ dockutil --no-restart --remove all
 dockutil --no-restart --add "/Applications/Google Chrome.app"
 dockutil --no-restart --add "/Applications/Ghostty.app"
 dockutil --no-restart --add "/Applications/Visual Studio Code.app"
+dockutil --no-restart --add "/Applications/Messages.app"
 
 dockutil --add ~/Downloads --display folder --view grid --sort dateadded
 
 killall Dock
+
+###############################################################################
+# Audio.                                                                      #
+###############################################################################
+
+# Play feedback when volume is changed
+defaults write -g "com.apple.sound.beep.feedback" -int 1
 
 ###############################################################################
 # Keyboard & Input                                                            #
