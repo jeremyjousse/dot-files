@@ -202,6 +202,9 @@ brew "gh"
 # Chrome (https://www.google.com/intl/en_us/chrome/) Google's web browser
 cask "google-chrome"
 
+# Google Drive (https://www.google.com/drive/) Google's cloud storage service
+cask "google-drive"
+
 # Firefox (https://www.mozilla.org/en-US/firefox/new/) Mozilla's web browser
 # cask "firefox@developer-edition"
 
