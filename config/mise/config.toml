@@ -11,7 +11,9 @@ node = 'lts'
 "npm:@google/gemini-cli" = "latest"
 "npm:@googleworkspace/cli" = "latest"
 
-python = '3.14.3'
+go = 'latest'
+
+python = '3.14.5'
 
 java = 'temurin-25.0.3+9.0.LTS'
 maven = 'latest'
