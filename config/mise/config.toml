@@ -10,6 +10,7 @@ node = 'lts'
 "npm:@github/copilot" = "latest"
 "npm:@google/gemini-cli" = "latest"
 "npm:@googleworkspace/cli" = "latest"
+"npm:repomix" = "latest"
 
 go = 'latest'
 
