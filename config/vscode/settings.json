@@ -1,7 +1,7 @@
 {
 	"github.copilot.nextEditSuggestions.enabled": true,
 	"[jsonc]": {
-		"editor.defaultFormatter": "prettier.prettier-vscode"
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	},
 	"git.autofetch": true,
 	"git.enableSmartCommit": true,
@@ -63,5 +63,15 @@
 	"python.languageServer": "Default",
 	"chat.viewSessions.orientation": "stacked",
 	"workbench.iconTheme": "vscode-icons",
-	"docker.extension.enableComposeLanguageServer": false
+	"docker.extension.enableComposeLanguageServer": false,
+	"github.copilot.enable": {
+		"*": true,
+		"plaintext": false,
+		"markdown": false,
+		"scminput": false,
+		"json": true
+	},
+	"[typescript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	}
 }
