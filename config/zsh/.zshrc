@@ -5,6 +5,9 @@
 export PATH=$PATH:/opt/homebrew/bin
 export HOMEBREW_AUTO_UPDATE_SECS=604800
 
+# mise
+command -v mise &>/dev/null && eval "$(/opt/homebrew/bin/mise activate zsh)"
+
 # Add Brew apps
 eval $(/opt/homebrew/bin/brew shellenv)
 

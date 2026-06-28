@@ -3,9 +3,6 @@
 # personnal utils as shell app
 [ -d "${HOME}/Development/Personal/toolbox/utils" ] && export PATH="${HOME}/Development/Personal/toolbox/utils:$PATH"
 
-# Homebrew
-eval "$(/opt/homebrew/bin/brew shellenv)"
-
 # Direnv
 # TODO maybe remove due to mise
 command -v direnv &>/dev/null && eval "$(direnv hook zsh)"
@@ -44,9 +41,6 @@ export USE_GKE_GCLOUD_AUTH_PLUGIN=true
 
 ## uv tools
 [ -d $HOME/.local/bin/ ] && export PATH="$HOME/.local/bin/:$PATH"
-
-# mise
-command -v mise &>/dev/null && eval "$(/opt/homebrew/bin/mise activate zsh)"
 
 # Java (via mise)
 export JAVA_HOME=$(mise where java)
