@@ -1,5 +1,6 @@
 # tap "atlassian/homebrew-acli"
 # tap "databricks/tap"
+tap "jundot/omlx"
 tap "fluxcd/tap"
 
 
@@ -108,8 +109,11 @@ brew "mise"
 # AI
 ###
 
+# oMLX (https://github.com/jundot/omlx) LLM inference server with continuous batching & SSD caching for Apple Silicon — managed from the macOS menu bar
+brew "omlx"
+
 # Ollama (https://ollama.com/) runs with large language models, locally.
-brew "ollama"
+# brew "ollama"
 
 ###
 # NodeJS
