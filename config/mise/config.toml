@@ -11,6 +11,7 @@ node = 'lts'
 "npm:@google/gemini-cli" = "latest"
 "npm:@googleworkspace/cli" = "latest"
 "npm:repomix" = "latest"
+"npm:@earendil-works/pi-coding-agent" = "latest"
 
 go = 'latest'
 
