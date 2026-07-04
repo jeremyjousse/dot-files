@@ -1,6 +1,6 @@
 # tap "atlassian/homebrew-acli"
 # tap "databricks/tap"
-tap "jundot/omlx"
+tap "jundot/omlx", "https://github.com/jundot/omlx"
 tap "fluxcd/tap"
 
 
