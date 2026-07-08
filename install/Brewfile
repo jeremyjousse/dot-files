@@ -348,3 +348,6 @@ vscode "systemticks.c4-dsl-extension"
 
 # Tauri (https://marketplace.visualstudio.com/items?itemName=tauri-apps.tauri-vscode) Enhances the experience of Tauri apps development
 vscode "tauri-apps.tauri-vscode"
+
+# Vitest (https://marketplace.visualstudio.com/items?itemName=vitest.explorer) Vite-native testing framework
+vscode "vitest.explorer"
