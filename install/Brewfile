@@ -22,7 +22,7 @@ brew "mas"
 brew "git-delta"
 
 # diffnav (https://github.com/dlvhdr/diffnav) git diff pager based on delta but with a file tree, à la GitHub.
-brew "dlvhdr/formulae/diffnav"
+brew "diffnav"
 
 # direnv (https://direnv.net/) can load and unload environment variables depending on the current directory
 # brew "direnv"
@@ -204,7 +204,7 @@ brew "databricks"
 ###
 
 # Chrome (https://www.google.com/intl/en_us/chrome/) Google's web browser
-cask "google-chrome"
+# cask "google-chrome"
 
 # Google Drive (https://www.google.com/drive/) Google's cloud storage service
 cask "google-drive"
