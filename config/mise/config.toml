@@ -15,7 +15,7 @@ node = 'lts'
 
 go = 'latest'
 
-python = '3.14'
+python = 'latest'
 
 java = 'temurin-25'
 maven = 'latest'
