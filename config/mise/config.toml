@@ -3,7 +3,6 @@ _.path = ['./node_modules/.bin']
 
 [tools]
 
-bun = 'latest'
 deno = 'latest'
 node = 'lts'
 "npm:@fission-ai/openspec" = "latest"
