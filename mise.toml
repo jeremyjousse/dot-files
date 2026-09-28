@@ -3,3 +3,4 @@ MY_ENV_VAR = 'my_value'
 
 [tools]
 node = "lts"
+"npm:github-labels" = { version = "latest", allow_low_downloads = true }

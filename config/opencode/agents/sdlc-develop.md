@@ -15,6 +15,8 @@ permission:
     'git add*': allow
     'gh issue view*': allow
     'gh issue edit*': allow
+    'gh label*': allow
+    'labels *': allow
     'cargo *': allow
     'pnpm *': allow
     'npm *': allow
