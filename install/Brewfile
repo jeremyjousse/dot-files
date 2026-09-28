@@ -1,8 +1,6 @@
-# tap "atlassian/homebrew-acli"
 tap "databricks/tap", trusted: true
-# tap "jundot/omlx", "https://github.com/jundot/omlx", trusted: true
 tap "fluxcd/tap", trusted: true
-
+tap "manaflow-ai/cmux", trusted: true
 
 ###
 # Shells
@@ -54,8 +52,11 @@ brew "starship"
 # wrk (https://github.com/wg/wrk) HTTP benchmarking tool
 brew "wrk"
 
-# bat (https://github.com/sharkdp/bat) A cat(1) clone with syntax highlighting and Git integration.
+# bat (https://github.com/sharkdp/bat) A cat(1) clone with syntax highlighting and Git integration
 brew "bat"
+
+# dust (https://github.com/bootandy/dust) A  more intuitive version of du in rust
+brew "dust"
 
 # eza (https://github.com/eza-community/eza) modern alternative to ls
 # brew "eza"
@@ -230,8 +231,8 @@ cask "gcloud-cli"
 # DevToys (https://devtoys.app/) Swiss army knife for developers
 # cask "devtoys"
 
-# Maccy (https://maccy.app/) Clipboard manager
-# cask "maccy"
+# cmux (https://github.com/manaflow-ai/cmux) Open source Ghostty-based macOS terminal with vertical tabs and notifications for AI coding agents. Built for multitasking, organization, and programmability.
+cask "cmux"
 
 # KeyClu (https://sergii.tatarenkov.name/keyclu/support/) Simple and handy overview of applications shortcuts
 cask "keyclu"
