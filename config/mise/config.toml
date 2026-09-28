@@ -5,11 +5,8 @@ _.path = ['./node_modules/.bin']
 
 deno = 'latest'
 node = 'lts'
-"npm:@fission-ai/openspec" = "latest"
 "npm:@github/copilot" = "latest"
-"npm:@google/gemini-cli" = "latest"
 "npm:@googleworkspace/cli" = "latest"
-"npm:repomix" = "latest"
 "npm:@earendil-works/pi-coding-agent" = "latest"
 
 go = 'latest'
