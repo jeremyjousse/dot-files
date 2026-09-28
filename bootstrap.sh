@@ -3,11 +3,18 @@
 source lib/lib.sh
 
 create_folder "$HOME"/.config
+create_folder "$HOME"/.config/opencode
 create_folder "$HOME"/.gemini
 create_folder "$HOME"/Development/Personal
 
 link_config_files "$PWD"/config/zsh/.zshrc "$HOME"/.zshrc
 link_config_files "$PWD"/config/zsh "$HOME"/.config/zsh
+
+link_config_files "$PWD"/config/opencode/opencode.jsonc "$HOME"/.config/opencode/opencode.jsonc
+link_config_files "$PWD"/config/opencode/command "$HOME"/.config/opencode/command
+link_config_files "$PWD"/config/opencode/agents "$HOME"/.config/opencode/agents
+link_config_files "$PWD"/config/opencode/skills "$HOME"/.config/opencode/skills
+link_config_files "$PWD"/config/opencode/rules "$HOME"/.config/opencode/rules
 
 link_config_files "$PWD"/ai/gemini/commands "$HOME"/.gemini/commands
 link_config_files "$PWD"/ai/skills "$HOME"/.gemini/skills

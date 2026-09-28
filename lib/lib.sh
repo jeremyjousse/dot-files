@@ -93,7 +93,7 @@ link_config_files() {
 	fi
 
 	if [[ -f $source && -f $destination && ! -L $destination ]]; then
-		waring "${destination} is a regular file"
+		warning "${destination} is a regular file"
 		info "Backuping destination file to ${destination}.back!"
 		mv "$destination"{,.back}
 	fi
