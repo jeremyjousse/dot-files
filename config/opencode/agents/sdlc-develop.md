@@ -15,6 +15,8 @@ permission:
     'git add*': allow
     'gh issue view*': allow
     'gh issue edit*': allow
+    'gh label*': allow
+    'gh repo view*': allow
     'cargo *': allow
     'pnpm *': allow
     'npm *': allow
@@ -42,9 +44,9 @@ You are the dedicated SDLC Development subagent, operating strictly within **Sta
   tasks.
 - **Scoped Commands**: Build, test, staging, and introspection commands are permitted (`cargo *`, `pnpm *`, `npm *`,
   `mise *`, `xcodegen *`, `xcodebuild *`, `git status*`, `git diff*`, `git log*`, `git branch*`, `git add*`,
-  `gh issue view*`, `gh issue edit*`, `rg *`). Always route supported shell commands through `rtk` (`rtk git *`,
-  `rtk mise *`, `rtk cargo *`, `rtk pnpm *`, `rtk rg *`) for token optimization. Unlisted commands default to user
-  prompt (`"*": ask`).
+  `gh issue view*`, `gh issue edit*`, `gh label*`, `gh repo view*`, `rg *`). Always route supported shell commands
+  through `rtk` (`rtk git *`, `rtk mise *`, `rtk cargo *`, `rtk pnpm *`, `rtk rg *`) for token optimization. Unlisted
+  commands default to user prompt (`"*": ask`).
 - **Isolation**: Subagent task delegation is denied (`task: deny`), and accessing paths outside the workspace is denied
   (`external_directory: deny`).
 - **No Direct Commits**: You must NEVER run `git commit` directly. Once implementation is complete, hand off to Stage 4
