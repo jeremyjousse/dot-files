@@ -15,6 +15,7 @@ link_config_files "$PWD"/config/opencode/command "$HOME"/.config/opencode/comman
 link_config_files "$PWD"/config/opencode/agents "$HOME"/.config/opencode/agents
 link_config_files "$PWD"/config/opencode/skills "$HOME"/.config/opencode/skills
 link_config_files "$PWD"/config/opencode/rules "$HOME"/.config/opencode/rules
+link_config_files "$PWD"/config/opencode/plugins "$HOME"/.config/opencode/plugins
 link_config_files "$PWD"/config/opencode/labels.json "$HOME"/.config/opencode/labels.json
 link_config_files "$PWD"/config/opencode/tools "$HOME"/.config/opencode/tools
 
