@@ -20,6 +20,8 @@
   color: '#5dd9b6'
 - name: 'Status: To do :computer:'
   color: '#5dd9b6'
+- name: 'Status: In progress :construction:'
+  color: '#5dd9b6'
 - name: 'Status: Done :heavy_check_mark:'
   color: '#5dd9b6'
 - name: 'Type: Bug :boom:'
