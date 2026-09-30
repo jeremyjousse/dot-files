@@ -2,6 +2,7 @@ import { execFileSync } from 'node:child_process'
 import { existsSync, readFileSync } from 'node:fs'
 import { homedir } from 'node:os'
 import { join } from 'node:path'
+import { tool } from '@opencode-ai/plugin'
 
 interface LabelSpec {
 	name: string
@@ -9,18 +10,28 @@ interface LabelSpec {
 	description?: string
 }
 
-export default {
+export default tool({
 	description: 'Synchronize GitHub repository labels using native gh label CLI commands from a JSON specification',
-	args: {},
+	args: {
+		repo: tool.schema
+			.string()
+			.optional()
+			.describe('Target repository in owner/repo format or URL (defaults to active git repository)'),
+		config: tool.schema
+			.string()
+			.optional()
+			.describe('Path to the JSON labels configuration file (defaults to .github/labels.json or global fallback)'),
+	},
 	async execute(args: Record<string, any> = {}, context: any = {}) {
 		const cwd = context?.directory || process.cwd()
 
 		let repo = typeof args.repo === 'string' ? args.repo.trim() : ''
 		if (repo) {
-			const match = repo.match(/github\.com[/:]([^/]+\/[^/.]+)/)
+			const match = repo.match(/github\.com[/:]([^/\s?#]+\/[^/\s?#]+)/)
 			if (match) {
-				repo = match[1].replace(/\.git$/, '')
+				repo = match[1]
 			}
+			repo = repo.replace(/\.git$/, '')
 		} else {
 			try {
 				const remoteUrl = execFileSync('git', ['config', '--get', 'remote.origin.url'], {
@@ -29,7 +40,7 @@ export default {
 					stdio: ['ignore', 'pipe', 'ignore'],
 					timeout: 5000,
 				}).trim()
-				const match = remoteUrl.match(/github\.com[/:]([^/]+\/[^/.]+)/)
+				const match = remoteUrl.match(/github\.com[/:]([^/\s?#]+\/[^/\s?#]+)/)
 				if (match) {
 					repo = match[1].replace(/\.git$/, '')
 				}
@@ -118,4 +129,4 @@ export default {
 			`- Effort:   ${effortCount}`,
 		].join('\n')
 	},
-}
+})
