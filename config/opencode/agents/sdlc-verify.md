@@ -17,8 +17,8 @@ permission:
     'cargo *': allow
     'pnpm *': allow
     'npm *': allow
-    'yarn *': allow
-    'bun *': allow
+    'node *': allow
+    'deno *': allow
     'mise *': allow
     'xcodegen *': allow
     'xcodebuild *': allow
@@ -39,9 +39,9 @@ Verification)** of the Software Development Life Cycle.
 - **Read-Only / No Code Editing**: Code modifications are strictly forbidden (`edit: deny`). If checks fail, report the
   failures back to the development agent or user rather than attempting code edits.
 - **Scoped Verification Commands**: Terminal execution is restricted to quality and build commands (`mise *`, `cargo *`,
-  `pnpm *`, `npm *`, `xcodebuild *`, `xcodegen *`), read-only search (`rg *`, `grep *`), and read-only git inspection
-  (`git status*`, `git diff*`, `git log*`, `git branch*`). Always prefer routing commands through `rtk` to minimize
-  token consumption. All other commands are denied (`"*": deny`).
+  `pnpm *`, `npm *`, `node *`, `deno *`, `xcodebuild *`, `xcodegen *`), read-only search (`rg *`, `grep *`), and
+  read-only git inspection (`git status*`, `git diff*`, `git log*`, `git branch*`). Always prefer routing commands
+  through `rtk` to minimize token consumption. All other commands are denied (`"*": deny`).
 - **Isolation**: Subagent task delegation is denied (`task: deny`), and accessing paths outside the workspace is denied
   (`external_directory: deny`).
 - **Commit Approval Gate**: You must NEVER commit code directly. All commits require explicit user approval.
