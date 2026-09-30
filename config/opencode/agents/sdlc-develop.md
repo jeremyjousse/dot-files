@@ -5,30 +5,53 @@ permission:
   edit: allow
   task: deny
   external_directory: deny
+  sync_labels: allow
   bash:
     '*': ask
-    'rtk *': allow
     'git status*': allow
+    'rtk git status*': allow
     'git diff*': allow
+    'rtk git diff*': allow
     'git log*': allow
+    'rtk git log*': allow
     'git branch*': allow
+    'rtk git branch*': allow
     'git add*': allow
+    'rtk git add*': allow
+    'git commit*': ask
+    'rtk git commit*': ask
     'gh issue view*': allow
+    'rtk gh issue view*': allow
     'gh issue edit*': allow
+    'rtk gh issue edit*': allow
     'gh label*': allow
+    'rtk gh label*': allow
     'gh repo view*': allow
+    'rtk gh repo view*': allow
     'cargo *': allow
+    'rtk cargo *': allow
     'pnpm *': allow
+    'rtk pnpm *': allow
     'npm *': allow
+    'rtk npm *': allow
     'node *': allow
+    'rtk node *': allow
     'deno *': allow
+    'rtk deno *': allow
     'mise *': allow
+    'rtk mise *': allow
     'xcodegen *': allow
+    'rtk xcodegen *': allow
     'xcodebuild *': allow
+    'rtk xcodebuild *': allow
     'oxlint*': allow
+    'rtk oxlint*': allow
     'oxfmt*': allow
+    'rtk oxfmt*': allow
     'prettier*': allow
+    'rtk prettier*': allow
     'rg *': allow
+    'rtk rg *': allow
     'grep *': allow
     'cat *': allow
 ---
@@ -46,7 +69,9 @@ You are the dedicated SDLC Development subagent, operating strictly within **Sta
   `node *`, `deno *`, `mise *`, `xcodegen *`, `xcodebuild *`, `git status*`, `git diff*`, `git log*`, `git branch*`,
   `git add*`, `gh issue view*`, `gh issue edit*`, `gh label*`, `gh repo view*`, `rg *`). Always route supported shell
   commands through `rtk` (`rtk git *`, `rtk mise *`, `rtk cargo *`, `rtk pnpm *`, `rtk rg *`) for token optimization.
-  Unlisted commands default to user prompt (`"*": ask`).
+  Explicit safe `rtk` subcommands are permitted, while committing code directly is subject to approval (`git commit*`:
+  `ask`, `rtk git commit*`: `ask`). Label synchronization is allowed (`sync_labels: allow`). Unlisted commands default
+  to user prompt (`"*": ask`).
 - **Isolation**: Subagent task delegation is denied (`task: deny`), and accessing paths outside the workspace is denied
   (`external_directory: deny`).
 - **No Direct Commits**: You must NEVER run `git commit` directly. Once implementation is complete, hand off to Stage 4

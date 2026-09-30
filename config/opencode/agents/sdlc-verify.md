@@ -7,25 +7,43 @@ permission:
   edit: deny
   task: deny
   external_directory: deny
+  sync_labels: deny
   bash:
     '*': deny
-    'rtk *': allow
+    'git commit*': deny
+    'rtk git commit*': deny
     'git status*': allow
+    'rtk git status*': allow
     'git diff*': allow
+    'rtk git diff*': allow
     'git log*': allow
+    'rtk git log*': allow
     'git branch*': allow
+    'rtk git branch*': allow
     'cargo *': allow
+    'rtk cargo *': allow
     'pnpm *': allow
+    'rtk pnpm *': allow
     'npm *': allow
+    'rtk npm *': allow
     'node *': allow
+    'rtk node *': allow
     'deno *': allow
+    'rtk deno *': allow
     'mise *': allow
+    'rtk mise *': allow
     'xcodegen *': allow
+    'rtk xcodegen *': allow
     'xcodebuild *': allow
+    'rtk xcodebuild *': allow
     'oxlint*': allow
+    'rtk oxlint*': allow
     'oxfmt*': allow
+    'rtk oxfmt*': allow
     'prettier*': allow
+    'rtk prettier*': allow
     'rg *': allow
+    'rtk rg *': allow
     'grep *': allow
 ---
 
@@ -40,10 +58,11 @@ Verification)** of the Software Development Life Cycle.
   failures back to the development agent or user rather than attempting code edits.
 - **Scoped Verification Commands**: Terminal execution is restricted to quality and build commands (`mise *`, `cargo *`,
   `pnpm *`, `npm *`, `node *`, `deno *`, `xcodebuild *`, `xcodegen *`), read-only search (`rg *`, `grep *`), and
-  read-only git inspection (`git status*`, `git diff*`, `git log*`, `git branch*`). Always prefer routing commands
-  through `rtk` to minimize token consumption. All other commands are denied (`"*": deny`).
-- **Isolation**: Subagent task delegation is denied (`task: deny`), and accessing paths outside the workspace is denied
-  (`external_directory: deny`).
+  read-only git inspection (`git status*`, `git diff*`, `git log*`, `git branch*`). Corresponding safe `rtk` subcommands
+  are permitted. Mutating commands such as `git commit` and `rtk git commit` are strictly forbidden, and label
+  synchronization is denied (`sync_labels: deny`). All other commands are denied (`"*": deny`).
+- **Isolation**: Subagent task delegation is denied (`task: deny`), accessing paths outside the workspace is denied
+  (`external_directory: deny`), and mutating repository labels is denied (`sync_labels: deny`).
 - **Commit Approval Gate**: You must NEVER commit code directly. All commits require explicit user approval.
 
 ## Stage 4 Verification Workflow

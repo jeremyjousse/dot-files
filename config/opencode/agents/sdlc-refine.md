@@ -5,6 +5,7 @@ permission:
   edit: deny
   task: deny
   external_directory: deny
+  sync_labels: deny
   bash:
     '*': deny
     'gh issue *': allow
@@ -23,8 +24,8 @@ Gate)** of the Software Development Life Cycle.
 - **Scoped Commands**: Terminal execution is restricted exclusively to GitHub issue commands (`gh issue *`,
   `rtk gh issue *`). Always prefer routing through `rtk` for compact token-efficient output. All other shell commands
   are blocked.
-- **Isolation**: Subagent task delegation is denied (`task: deny`), and accessing paths outside the workspace is denied
-  (`external_directory: deny`).
+- **Isolation**: Subagent task delegation is denied (`task: deny`), accessing paths outside the workspace is denied
+  (`external_directory: deny`), and mutating repository labels is denied (`sync_labels: deny`).
 - **Task Decoupling**: You are strictly confined to issue review, analysis, and refinement. You MUST NEVER create
   branches (`git checkout -b`), write application code, or transition to implementation (Stage 2/3). Implementation
   requires an explicit user instruction outside of this subagent.

@@ -1,7 +1,7 @@
 import { execFileSync } from 'node:child_process'
 import { existsSync, readFileSync } from 'node:fs'
 import { homedir } from 'node:os'
-import { join } from 'node:path'
+import { isAbsolute, join, resolve } from 'node:path'
 import { tool } from '@opencode-ai/plugin'
 
 interface LabelSpec {
@@ -63,7 +63,11 @@ export default tool({
 		}
 
 		let configFile = typeof args.config === 'string' ? args.config.trim() : ''
-		if (!configFile) {
+		if (configFile) {
+			if (!isAbsolute(configFile)) {
+				configFile = resolve(cwd, configFile)
+			}
+		} else {
 			const projectLabels = join(cwd, '.github', 'labels.json')
 			const globalLabels = join(homedir(), '.config', 'opencode', 'labels.json')
 			if (existsSync(projectLabels)) {
@@ -88,6 +92,19 @@ export default tool({
 			throw new Error(
 				`Failed to parse labels configuration file ${configFile}: ${err instanceof Error ? err.message : String(err)}`,
 			)
+		}
+
+		if (typeof context?.ask === 'function') {
+			await context.ask({
+				permission: 'sync_labels',
+				patterns: [repo],
+				always: [repo],
+				metadata: {
+					repo,
+					config: configFile,
+					count: rawLabels.length,
+				},
+			})
 		}
 
 		const results: string[] = []

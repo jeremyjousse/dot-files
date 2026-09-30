@@ -7,6 +7,7 @@ permission:
   edit: allow
   task: deny
   external_directory: deny
+  sync_labels: deny
   bash:
     '*': ask
     'gh pr *': allow
@@ -18,20 +19,35 @@ permission:
     'sleep*': allow
     'cat*': allow
     'git status*': allow
+    'rtk git status*': allow
     'git diff*': allow
+    'rtk git diff*': allow
     'git log*': allow
+    'rtk git log*': allow
     'git branch*': allow
+    'rtk git branch*': allow
     'git push*': allow
-    'rtk *': allow
+    'rtk git push*': allow
+    'git commit*': ask
+    'rtk git commit*': ask
     'cargo *': allow
+    'rtk cargo *': allow
     'pnpm *': allow
+    'rtk pnpm *': allow
     'npm *': allow
+    'rtk npm *': allow
     'node *': allow
+    'rtk node *': allow
     'deno *': allow
+    'rtk deno *': allow
     'mise *': allow
+    'rtk mise *': allow
     'xcodegen *': allow
+    'rtk xcodegen *': allow
     'xcodebuild *': allow
+    'rtk xcodebuild *': allow
     'rg *': allow
+    'rtk rg *': allow
 ---
 
 # SDLC Pull Request Review Agent
@@ -47,11 +63,12 @@ You are the dedicated SDLC PR Review subagent, operating strictly within **Stage
   polling, `gh api *` (GraphQL queries/mutations for review threads), read-only git inspection (`git status*`,
   `git diff*`, `git log*`, `git branch*`), `git push*` for pushing validated fix commits, and quality commands
   (`mise *`, `cargo *`, `pnpm *`, `npm *`, `node *`, `deno *`, `xcodebuild *`, `rg *`). Always prefer routing supported
-  commands through `rtk` for token optimization.
+  commands through `rtk` for token optimization. Blanket `rtk *` is removed in favor of explicit safe `rtk` subcommands.
+  Label synchronization is denied (`sync_labels: deny`).
 - **Strict Merge Deny**: Automated PR merge is explicitly denied (`gh pr merge*`: `deny`). Merging is strictly reserved
   for manual human action.
-- **Isolation**: Subagent task delegation is denied (`task: deny`), and accessing paths outside the workspace is denied
-  (`external_directory: deny`).
+- **Isolation**: Subagent task delegation is denied (`task: deny`), accessing paths outside the workspace is denied
+  (`external_directory: deny`), and mutating repository labels is denied (`sync_labels: deny`).
 - **Commit Approval Rule**: You must NEVER commit code directly. All follow-up commits require human approval.
 
 ## Stage 5 Protocol
