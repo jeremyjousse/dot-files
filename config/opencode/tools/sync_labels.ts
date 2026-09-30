@@ -1,7 +1,7 @@
 import { execFileSync } from 'node:child_process'
-import { existsSync, readFileSync } from 'node:fs'
+import { existsSync, readFileSync, realpathSync } from 'node:fs'
 import { homedir } from 'node:os'
-import { isAbsolute, join, resolve } from 'node:path'
+import { isAbsolute, join, relative, resolve } from 'node:path'
 import { tool } from '@opencode-ai/plugin'
 
 interface LabelSpec {
@@ -62,7 +62,8 @@ export default tool({
 			}
 		}
 
-		let configFile = typeof args.config === 'string' ? args.config.trim() : ''
+		const isExplicitConfig = Boolean(typeof args.config === 'string' && args.config.trim())
+		let configFile = isExplicitConfig ? (args.config as string).trim() : ''
 		if (configFile) {
 			if (!isAbsolute(configFile)) {
 				configFile = resolve(cwd, configFile)
@@ -83,6 +84,42 @@ export default tool({
 
 		if (!existsSync(configFile)) {
 			throw new Error(`Labels configuration file not found at: ${configFile}`)
+		}
+
+		let realConfigFile: string
+		try {
+			realConfigFile = realpathSync(configFile)
+		} catch {
+			realConfigFile = resolve(configFile)
+		}
+
+		if (isExplicitConfig) {
+			let realCwd: string
+			try {
+				realCwd = existsSync(cwd) ? realpathSync(cwd) : resolve(cwd)
+			} catch {
+				realCwd = resolve(cwd)
+			}
+
+			const rel = relative(realCwd, realConfigFile)
+			const isOutside = rel.startsWith('..') || isAbsolute(rel)
+			if (isOutside) {
+				if (typeof context?.ask === 'function') {
+					await context.ask({
+						permission: 'external_directory',
+						patterns: [realConfigFile],
+						always: [realConfigFile],
+						metadata: {
+							path: realConfigFile,
+							description: 'Read labels configuration outside workspace',
+						},
+					})
+				} else {
+					throw new Error(
+						`Explicit labels configuration file resolves outside the workspace directory: ${realConfigFile}`,
+					)
+				}
+			}
 		}
 
 		let rawLabels: LabelSpec[]

@@ -7,6 +7,9 @@ import type { Plugin } from '@opencode-ai/plugin'
 // which is the single source of truth (src/discover/registry.rs).
 // To add or change rewrite rules, edit the Rust registry — not this file.
 
+const FILESYSTEM_COMMAND_PATTERN = /(?:^|[|&;\s])(cat|ls|head|tail|cd|pushd|popd|rm|cp|mv|mkdir|touch|chmod|chown)\b/
+const FILESYSTEM_REWRITE_PATTERN = /\brtk (read|ls)\b/
+
 export const RtkOpenCodePlugin: Plugin = async ({ $ }) => {
 	try {
 		await $`which rtk`.quiet()
@@ -25,11 +28,17 @@ export const RtkOpenCodePlugin: Plugin = async ({ $ }) => {
 			const command = (args as Record<string, unknown>).command
 			if (typeof command !== 'string' || !command) return
 
+			// Avoid rewriting filesystem-sensitive commands so OpenCode's shell tool
+			// can inspect original command paths and enforce `external_directory` permissions.
+			if (FILESYSTEM_COMMAND_PATTERN.test(command)) return
+
 			try {
 				const result = await $`rtk rewrite ${command}`.quiet().nothrow()
 				const rewritten = String(result.stdout).trim()
 				if (rewritten && rewritten !== command) {
-					;(args as Record<string, unknown>).command = rewritten
+					if (!FILESYSTEM_REWRITE_PATTERN.test(rewritten)) {
+						;(args as Record<string, unknown>).command = rewritten
+					}
 				}
 			} catch {
 				// rtk rewrite failed — pass through unchanged
