@@ -6,17 +6,19 @@ permissions:
   issues: write
 
 jobs:
-  labels:
+  labeler:
     runs-on: ubuntu-latest
-
+    permissions:
+      contents: read
+      issues: write
     steps:
-      - uses: actions/checkout@v7
+      - name: ⤵️ Check out code from GitHub
+        uses: actions/checkout@v7
+      - name: Run Labeler
+        uses: crazy-max/ghaction-github-labeler@v6
         with:
-          sparse-checkout: .github/labels.yml
-      - uses: EndBug/label-sync@v2
-        with:
-          config-file: .github/labels.yml
-          source-repo: owner/repo
-          delete-other-labels: true
-          dry-run: true
-          token: ${{ secrets.GITHUB_TOKEN }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          yaml-file: .github/labels.yml
+          exclude: |
+            help*
+            *issue
