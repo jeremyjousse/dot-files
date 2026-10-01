@@ -59,3 +59,13 @@ if ! command -v pynglish &>/dev/null; then
 	info "Install pynglish uv tool"
 	uv tool install "$DEVELOPMENT_ROOT_FOLDER/Personal/pynglish"
 fi
+
+###
+# Open code plugins
+###
+
+RTK_STATUS=$(rtk init --show | grep 'Opencode')
+if [ -z "$RTK_STATUS" ]; then
+	info "Install Open code plugins"
+	rtk init -g --opencode
+fi
