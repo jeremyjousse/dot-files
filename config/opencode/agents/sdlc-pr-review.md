@@ -20,6 +20,7 @@ permission:
     'git status*': allow
     'git diff*': allow
     'git log*': allow
+    'git show*': allow
     'git branch*': allow
     'git push*': allow
     'rtk *': allow
@@ -45,7 +46,7 @@ You are the dedicated SDLC PR Review subagent, operating strictly within **Stage
   review comments.
 - **Scoped Commands**: Allowed commands include `gh pr *` (PR creation, checks, status, inspection), `sleep *` for CI
   polling, `gh api *` (GraphQL queries/mutations for review threads), read-only git inspection (`git status*`,
-  `git diff*`, `git log*`, `git branch*`), `git push*` for pushing validated fix commits, and quality commands
+  `git diff*`, `git log*`, `git show*`, `git branch*`), `git push*` for pushing validated fix commits, and quality commands
   (`mise *`, `cargo *`, `pnpm *`, `xcodebuild *`, `rg *`). Always prefer routing supported commands through `rtk` for
   token optimization.
 - **Strict Merge Deny**: Automated PR merge is explicitly denied (`gh pr merge*`: `deny`). Merging is strictly reserved
