@@ -1,4 +1,4 @@
 module.exports = {
-  '*.{js,json,md,mdx,html,css,scss}': 'prettier --write',
-  // '*.md': 'prettier --list-different',
-};
+	'*.{js,cjs,mjs,jsx,ts,cts,mts,tsx}': ['oxlint --fix', 'oxfmt --write'],
+	'*.{json,jsonc}': ['oxfmt --write'],
+}
