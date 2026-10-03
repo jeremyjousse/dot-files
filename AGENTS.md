@@ -69,13 +69,13 @@ changes:
 - **Format Check**:
 
   ```bash
-  pnpm prettier --check .
+  pnpm oxfmt --check .
   ```
 
 - **Lint Check** (JavaScript / repository root):
 
   ```bash
-  pnpm eslint .
+  pnpm oxlint .
   ```
 
 - **Shell Syntax Validation** (run on any new or modified `.sh` scripts):

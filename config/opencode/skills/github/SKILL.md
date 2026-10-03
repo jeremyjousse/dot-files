@@ -62,6 +62,12 @@ In projects adhering to this SDLC, User Stories and tasks are tracked as GitHub 
 
 ### GitHub Issue Labels
 
+- **List available labels**:
+
+  ```bash
+  rtk gh label list
+  ```
+
 Standard status and type labels:
 
 - **Status labels**:

@@ -11,7 +11,7 @@ cascade into development.
 
 - **Slash Command**: `/sdlc-1-refine <issue-id>`
 - **Dedicated Agent**: `sdlc-refine`
-- **Permissions**: `edit: deny`, `bash: gh issue *` only, `task: deny`, `external_directory: deny`
+- **Permissions**: `edit: deny`, `bash: gh issue *, gh label list*`, `task: deny`, `external_directory: deny`
 
 Before writing ANY code, creating branches, or modifying files:
 
