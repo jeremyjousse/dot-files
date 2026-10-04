@@ -5,15 +5,15 @@
 	"keywords": [
 		"toolbox"
 	],
-	"homepage": "https://github.com/jeremyjousse/toolbox#readme",
+	"homepage": "https://github.com/jeremyjousse/dot-files#readme",
 	"bugs": {
-		"url": "https://github.com/jeremyjousse/toolbox/issues"
+		"url": "https://github.com/jeremyjousse/dot-files/issues"
 	},
 	"license": "MIT",
 	"author": "Jeremy Jousse",
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/jeremyjousse/toolbox.git"
+		"url": "git+https://github.com/jeremyjousse/dot-files.git"
 	},
 	"main": "index.js",
 	"scripts": {
@@ -22,14 +22,18 @@
 		"lint": "oxlint",
 		"lint:fix": "oxlint --fix",
 		"prepare": "husky install",
+		"release": "semantic-release",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"devDependencies": {
 		"@commitlint/cli": "^17.1.2",
 		"@commitlint/config-conventional": "^17.1.0",
+		"@semantic-release/changelog": "^7.0.0",
+		"@semantic-release/git": "^11.0.1",
 		"husky": "^8.0.1",
 		"lint-staged": "^13.0.3",
 		"oxfmt": "^0.71.0",
-		"oxlint": "^1.86.0"
+		"oxlint": "^1.86.0",
+		"semantic-release": "^25.0.9"
 	}
 }
