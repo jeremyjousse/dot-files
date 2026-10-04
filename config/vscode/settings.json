@@ -86,5 +86,6 @@
 			"approveRequest": false,
 			"approveResponse": true
 		}
-	}
+	},
+	"git.path": "/usr/git/bin"
 }
