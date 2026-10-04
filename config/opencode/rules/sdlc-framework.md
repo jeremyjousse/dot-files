@@ -73,8 +73,9 @@ All implementations must conform strictly to the project's architecture contract
 3. **Project Synchronization Gate**:
    - If specified in `AGENTS.md` (e.g., XcodeGen via `rtk mise run generate`, database migration generators, code
      generation), regenerate project configurations whenever files are added, moved, or deleted.
-4. **Testing Discipline**:
+4. **Testing Discipline & Code Quality**:
    - Write or update unit and integration tests covering all changed behavior and edge cases.
+   - Format modified code using standard tasks (`rtk mise run format` or repository formatter).
 5. **No Direct Commits**:
    - Do NOT commit directly during development. Hand off to Stage 4 (`/sdlc-3-verify`).
 
@@ -93,8 +94,9 @@ Before any commit is proposed:
 2. **Test Coverage Assessment**:
    - Verify that new or modified logic is backed by corresponding tests. Confirm no stubs or dead code remain.
 3. **Run Quality Verification Suite**:
-   - If configured, run `rtk mise run verify` (or project task runner).
-   - Otherwise, run all quality commands specified in `AGENTS.md` under `## Quality Commands`.
+   - **Standardized Task Runner Interface**: Prioritize `rtk mise run verify` to execute all verification checks in one
+     step (or individual tasks `rtk mise run lint` and `rtk mise run format:check`).
+   - **Fallback**: If no `mise` tasks are configured, run all quality commands specified in `AGENTS.md` under `## Quality Commands`.
    - All checks must pass with zero errors.
 4. **Commit Approval Rule (MANDATORY)**:
    - **NEVER** commit directly or automatically.

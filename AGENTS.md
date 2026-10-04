@@ -66,17 +66,35 @@ Implementations must adhere to dotfiles-specific conventions:
 SDLC verification (`/sdlc-3-verify` / `sdlc-verify`) must execute the following commands when verifying working tree
 changes:
 
+- **Standard Verification Suite** (runs both lint and format check):
+
+  ```bash
+  rtk mise run verify
+  ```
+
 - **Format Check**:
 
   ```bash
-  pnpm oxfmt --check .
+  rtk mise run format:check
   ```
+
+  *(Underlying tool: `pnpm oxfmt --check`)*
+
+- **Format Code**:
+
+  ```bash
+  rtk mise run format
+  ```
+
+  *(Underlying tool: `pnpm oxfmt`)*
 
 - **Lint Check** (JavaScript / repository root):
 
   ```bash
-  pnpm oxlint .
+  rtk mise run lint
   ```
+
+  *(Underlying tool: `pnpm oxlint`)*
 
 - **Shell Syntax Validation** (run on any new or modified `.sh` scripts):
 

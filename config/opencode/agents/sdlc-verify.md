@@ -53,13 +53,20 @@ Verification)** of the Software Development Life Cycle.
 
 Execute the project verification suite using `rtk` and verify that all checks pass with zero errors:
 
-1. **Standardized Task Runner Check**: If a `verify` task exists in `mise.toml` (or `package.json`), run:
+1. **Standardized Task Runner Check**: Prioritize running `mise` tasks. Run the unified `verify` task:
 
    ```bash
    rtk mise run verify
    ```
 
-2. **Fallback to AGENTS.md Commands**: If no single `verify` task exists, run all verification commands listed under
+   Or run granular verification checks when isolating failures:
+
+   ```bash
+   rtk mise run lint
+   rtk mise run format:check
+   ```
+
+2. **Fallback to AGENTS.md Commands**: If no `mise` verification tasks exist, run all verification commands listed under
    `## Quality Commands` in `AGENTS.md` (typecheck, lint, test, build).
 
 ### 2. Architectural Self-Review

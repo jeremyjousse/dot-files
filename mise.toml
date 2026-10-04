@@ -3,3 +3,20 @@ MY_ENV_VAR = 'my_value'
 
 [tools]
 node = "lts"
+
+[tasks.lint]
+description = "Lint code with oxlint"
+run = "pnpm oxlint"
+
+[tasks.format]
+description = "Format code with oxfmt"
+run = "pnpm oxfmt"
+
+[tasks."format:check"]
+description = "Check code formatting with oxfmt"
+run = "pnpm oxfmt --check"
+
+[tasks.verify]
+description = "Run all verification checks (lint and format:check)"
+depends = ["lint", "format:check"]
+

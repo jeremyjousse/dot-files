@@ -37,13 +37,20 @@ Review the changes against testing standards:
 
 Run the automated quality checks using `rtk` to optimize output:
 
-1. **Standardized Task Runner Check**: If a `verify` task is defined in `mise.toml` (or `package.json`), run it:
+1. **Standardized Task Runner Check**: Prioritize running `mise` tasks. Run the unified `verify` task:
 
    ```bash
    rtk mise run verify
    ```
 
-2. **Fallback to Project Commands**: If no single `verify` task exists, execute all quality commands specified in
+   Or run granular checks when isolating failures or troubleshooting:
+
+   ```bash
+   rtk mise run lint
+   rtk mise run format:check
+   ```
+
+2. **Fallback to Project Commands**: If no `mise` verification tasks exist, execute all quality commands specified in
    `AGENTS.md` under `## Quality Commands` (typecheck, lint, build, test):
    - Always route supported commands through `rtk`.
    - Ensure all checks pass with zero warnings/errors.
