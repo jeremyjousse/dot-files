@@ -74,5 +74,17 @@
 	"[typescript]": {
 		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	},
-	"workbench.startupEditor": "none"
+	"workbench.startupEditor": "none",
+	"chat.tools.urls.autoApprove": {
+		"https://code.visualstudio.com": true,
+		"https://github.com/microsoft/vscode/wiki/*": true,
+		"https://opencode.ai/docs/config": {
+			"approveRequest": true,
+			"approveResponse": false
+		},
+		"https://opencode.ai": {
+			"approveRequest": false,
+			"approveResponse": true
+		}
+	}
 }

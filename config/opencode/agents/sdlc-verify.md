@@ -13,6 +13,7 @@ permission:
     'git status*': allow
     'git diff*': allow
     'git log*': allow
+    'git show*': allow
     'git branch*': allow
     'cargo *': allow
     'pnpm *': allow
@@ -40,7 +41,7 @@ Verification)** of the Software Development Life Cycle.
   failures back to the development agent or user rather than attempting code edits.
 - **Scoped Verification Commands**: Terminal execution is restricted to quality and build commands (`mise *`, `cargo *`,
   `pnpm *`, `npm *`, `xcodebuild *`, `xcodegen *`), read-only search (`rg *`, `grep *`), and read-only git inspection
-  (`git status*`, `git diff*`, `git log*`, `git branch*`). Always prefer routing commands through `rtk` to minimize
+  (`git status*`, `git diff*`, `git log*`, `git show*`, `git branch*`). Always prefer routing commands through `rtk` to minimize
   token consumption. All other commands are denied (`"*": deny`).
 - **Isolation**: Subagent task delegation is denied (`task: deny`), and accessing paths outside the workspace is denied
   (`external_directory: deny`).

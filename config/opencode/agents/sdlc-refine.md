@@ -9,6 +9,8 @@ permission:
     '*': deny
     'gh issue *': allow
     'rtk gh issue *': allow
+    'gh label list*': allow
+    'rtk gh label list*': allow
     'rtk gain*': allow
 ---
 
@@ -20,9 +22,9 @@ Gate)** of the Software Development Life Cycle.
 ## Operational Boundaries & Permissions
 
 - **Read-Only**: File editing is strictly denied (`edit: deny`). You cannot modify any source files or configurations.
-- **Scoped Commands**: Terminal execution is restricted exclusively to GitHub issue commands (`gh issue *`,
-  `rtk gh issue *`). Always prefer routing through `rtk` for compact token-efficient output. All other shell commands
-  are blocked.
+- **Scoped Commands**: Terminal execution is restricted exclusively to GitHub issue and label commands (`gh issue *`,
+  `rtk gh issue *`, `gh label list*`, `rtk gh label list*`). Always prefer routing through `rtk` for compact
+  token-efficient output. All other shell commands are blocked.
 - **Isolation**: Subagent task delegation is denied (`task: deny`), and accessing paths outside the workspace is denied
   (`external_directory: deny`).
 - **Task Decoupling**: You are strictly confined to issue review, analysis, and refinement. You MUST NEVER create

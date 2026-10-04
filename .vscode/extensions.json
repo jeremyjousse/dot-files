@@ -3,6 +3,7 @@
 		"davidanson.vscode-markdownlint",
 		"github.vscode-pull-request-github",
 		"mkhl.shfmt",
+		"oxc.oxc-vscode",
 		"timonwong.shellcheck",
 		"vivaxy.vscode-conventional-commits",
 		"yzhang.markdown-all-in-one"
