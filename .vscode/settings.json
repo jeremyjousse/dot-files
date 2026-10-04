@@ -20,7 +20,7 @@
 		"nix"
 	],
 	"editor.formatOnSave": true,
-	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"editor.defaultFormatter": "oxc.oxc-vscode",
 	"[markdown]": {
 		"editor.formatOnSave": true,
 		"editor.formatOnPaste": true
@@ -65,6 +65,6 @@
 		"editor.defaultFormatter": "mkhl.shfmt"
 	},
 	"[jsonc]": {
-		"editor.defaultFormatter": "esbenp.prettier-vscode"
+		"editor.defaultFormatter": "oxc.oxc-vscode"
 	}
 }
