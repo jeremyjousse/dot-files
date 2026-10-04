@@ -8,6 +8,7 @@ node = 'lts'
 "npm:@github/copilot" = "latest"
 "npm:@googleworkspace/cli" = "latest"
 "npm:@earendil-works/pi-coding-agent" = "latest"
+"npm:@opencode/cli" = "latest"
 
 go = 'latest'
 
