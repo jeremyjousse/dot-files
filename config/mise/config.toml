@@ -3,12 +3,13 @@ _.path = ['./node_modules/.bin']
 
 [tools]
 
+"github:anomalyco/opencode" = "latest"
+
 deno = 'latest'
 node = 'lts'
 "npm:@github/copilot" = "latest"
 "npm:@googleworkspace/cli" = "latest"
 "npm:@earendil-works/pi-coding-agent" = "latest"
-"npm:@opencode/cli" = "latest"
 
 go = 'latest'
 
