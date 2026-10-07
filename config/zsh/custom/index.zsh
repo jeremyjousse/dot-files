@@ -15,6 +15,7 @@ zsh-defer load_config_file "${CONFIG_PATH}aliases.zsh"
 zsh-defer load_config_file "${CONFIG_PATH}proxy.sh"
 zsh-defer load_config_file "${CONFIG_PATH}env.zsh"
 zsh-defer load_config_file "${CONFIG_PATH}utils.zsh"
+zsh-defer load_config_file "${CONFIG_PATH}fnox.zsh"
 
 if [ -f "${CONFIG_PATH}professional.zsh" ]; then
   zsh-defer load_config_file "${CONFIG_PATH}professional.zsh"

@@ -7,3 +7,4 @@ prefix = "fnox_"
 
 [secrets]
 MY_SECRET = { description = "Example Fnox secret", provider = "keychain", value = "MY_SECRET" }
+GITHUB_PERSONAL_ACCESS_TOKEN= { provider = "keychain", value = "GITHUB_PERSONAL_ACCESS_TOKEN" }
