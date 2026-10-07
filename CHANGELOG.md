@@ -1,3 +1,10 @@
+## [0.13.1](https://github.com/jeremyjousse/dot-files/compare/v0.13.0...v0.13.1) (2026-10-07)
+
+
+### Bug Fixes
+
+* **config:** update googleworkspace CLI entry to use cargo format ([91ccd6b](https://github.com/jeremyjousse/dot-files/commit/91ccd6bcde9439bba129d99d4bc92fe60a8e7fa7))
+
 # [0.13.0](https://github.com/jeremyjousse/dot-files/compare/v0.12.0...v0.13.0) (2026-10-07)
 
 
