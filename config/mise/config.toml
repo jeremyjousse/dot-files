@@ -8,7 +8,7 @@ _.path = ['./node_modules/.bin']
 deno = 'latest'
 node = 'lts'
 "npm:@github/copilot" = "latest"
-"npm:@googleworkspace/cli" = "latest"
+"cargo:https://github.com/googleworkspace/cli" = { version = "latest", locked = true }
 "npm:@earendil-works/pi-coding-agent" = "latest"
 
 go = 'latest'
