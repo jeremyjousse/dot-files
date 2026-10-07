@@ -1,4 +1,5 @@
 tap "databricks/tap", trusted: true
+tap "datadog-labs/pack", trusted: true
 tap "fluxcd/tap", trusted: true
 tap "manaflow-ai/cmux", trusted: true
 
@@ -199,6 +200,9 @@ brew "gh"
 
 # Databricks CLI (https://docs.databricks.com/dev-tools/cli/index.html) allows you to interact with Databricks from the command line
 brew "databricks"
+
+# pup (https://github.com/DataDog/pup) CLI companion for Datadog APIs and products
+brew "datadog-labs/pack/pup"
 
 ###
 # GUI tools
