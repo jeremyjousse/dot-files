@@ -127,9 +127,13 @@ Before any commit is proposed:
 4. **PR Review Feedback Loop**:
    - Load `review-pr` skill.
    - Fetch review threads via GraphQL.
-   - Triage into **Legitimate** (fix code/test, run verify, commit with approval, push, react 👍, reply via stdin
-     heredoc, resolve thread) vs **Non-Applicable** (no code change, react 👎, reply with technical rationale, resolve
-     thread).
+   - **Triage Assessment & User Confirmation**: Explain triage classification (Legitimate vs Non-Applicable),
+     rationale, and proposed actions to the user; await explicit human confirmation before modifying code or taking
+     action.
+   - **Execute Legitimate**: Fix code/test, run verify, commit with approval, push, react 👍, reply via stdin heredoc,
+     resolve thread.
+   - **Execute Non-Applicable**: No code change, react 👎, reply with technical rationale via stdin heredoc, resolve
+     thread.
 5. **Merge Gate**:
    - **NEVER** run `gh pr merge`.
    - Merging is strictly reserved for human manual action once all checks and threads are resolved.
@@ -144,4 +148,4 @@ Before any commit is proposed:
 | `/sdlc-2-develop <id>`   | Stage 2 & 3 | `sdlc-develop`   | `edit: allow`    | Confirm branch, set In progress label, guide implementation via `AGENTS.md`.             |
 | `/sdlc-3-verify`         | Stage 4     | `sdlc-verify`    | `edit: deny`     | Architectural check, quality commands (`mise run verify` / `AGENTS.md`), propose commit. |
 | `/sdlc-4-pr [id]`        | Stage 5     | `sdlc-pr-review` | `edit: allow`    | Push branch, create PR with template, inspect CI.                                        |
-| `/sdlc-5-review-pr [id]` | Stage 5     | `sdlc-pr-review` | `edit: allow`    | Fetch threads via GraphQL, triage, fix, reply, and resolve. Merge denied.                |
+| `/sdlc-5-review-pr [id]` | Stage 5     | `sdlc-pr-review` | `edit: allow`    | Fetch threads via GraphQL, explain triage & confirm, fix, reply, and resolve.           |

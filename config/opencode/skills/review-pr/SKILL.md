@@ -14,18 +14,23 @@ conversation threads across repositories.
 
 All actions performed during PR review resolution MUST adhere to the following guardrails:
 
-1. **Commit Approval Rule (SDLC Stage 4 - MANDATORY)**:
+1. **Triage Confirmation Gate (MANDATORY)**:
+   - **NEVER** modify code, push commits, post reactions, reply to comments, or resolve threads without explicit user
+     confirmation.
+   - Present a structured triage assessment explaining the classification (Legitimate vs Non-Applicable) and rationale
+     for every unresolved thread, and await explicit human confirmation before executing any actions.
+2. **Commit Approval Rule (SDLC Stage 4 - MANDATORY)**:
    - **NEVER** commit directly or automatically after making code modifications or tests.
    - If the project requires project synchronization (e.g. `rtk mise run generate`), execute it.
    - Always run the verification suite (`rtk mise run verify` or quality commands from `AGENTS.md`).
    - Present `git status` + list of changed files and propose a Conventional Commit message (`fix(...)` /
      `refactor(...)`).
    - **Wait for explicit user approval** before running `git commit`.
-2. **Merge Gate (SDLC Stage 5 - MANDATORY)**:
+3. **Merge Gate (SDLC Stage 5 - MANDATORY)**:
    - **NEVER** merge a PR automatically (`gh pr merge`).
    - Merging is strictly reserved for explicit human confirmation or manual action by the repository maintainer once all
      reviews and CI checks pass.
-3. **Architectural Integrity**:
+4. **Architectural Integrity**:
    - Maintain strict separation of concerns and layer decoupling adhering to the project's `AGENTS.md`.
 
 ---
@@ -128,7 +133,39 @@ The comment is inapplicable or should not be implemented:
 
 ---
 
-## Step 3: Resolving Legitimate Comments
+## Step 3: Present Triage Assessment & Await User Confirmation (MANDATORY)
+
+Before modifying any code, creating commits, posting reactions, or resolving threads, you MUST present a structured
+breakdown of all unresolved threads to the user and await explicit confirmation.
+
+### Explanation Format
+
+Present each unresolved review thread using the following structured format:
+
+#### Thread <number>: `<file_path>:<line_number>` (ID: `<thread_node_id>`)
+
+- **Author**: `@<reviewer_login>`
+- **Comment**: "<reviewer comment text or concise summary>"
+- **Classification**: `Legitimate` | `Non-Applicable`
+- **Rationale**: Clear technical justification explaining why the comment is legitimate (identifies bug, regression,
+  missing test, architectural violation) or non-applicable (out of scope, intentional design per `AGENTS.md`, false
+  positive).
+- **Proposed Action**:
+  - *If Legitimate*: Specific code/test changes to implement.
+  - *If Non-Applicable*: Outline of the technical explanation to post in the reply.
+
+### User Confirmation Gate
+
+After presenting the triage assessment for all unresolved threads, prompt the user:
+
+> *"Please review the triage assessment above. Confirm if you approve proceeding with these actions (yes/no), or specify any adjustments."*
+
+**STOP AND WAIT**: Do NOT modify code, add reactions, post replies, or resolve threads until the user explicitly
+confirms the assessment.
+
+---
+
+## Step 4: Resolving Legitimate Comments
 
 When a comment is deemed legitimate, follow this sequential execution loop:
 
@@ -205,7 +242,7 @@ mutation($threadId: ID!) {
 
 ---
 
-## Step 4: Resolving Non-Applicable Comments (Wontfix)
+## Step 5: Resolving Non-Applicable Comments (Wontfix)
 
 When a comment is determined to be non-applicable or wontfix:
 
@@ -245,7 +282,7 @@ mutation($threadId: ID!) {
 
 ---
 
-## Step 5: Post-Triage Verification & Final Checks
+## Step 6: Post-Triage Verification & Final Checks
 
 1. **Verify Thread Resolution**:
    - Re-run the paginated GraphQL query to confirm all review threads have `isResolved: true`.

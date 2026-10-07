@@ -16,6 +16,8 @@ If no PR number or URL is specified in `$ARGUMENTS`, detect the active PR for th
 ## Operational Boundaries
 
 - **Scoped Editing**: File modifications are permitted exclusively to resolve legitimate review comments.
+- **Triage Confirmation Gate**: You must NEVER modify code, create commits, add reactions, post replies, or resolve
+  threads without explicit user confirmation. Explain the triage assessment for all comments and obtain approval first.
 - **Commit Approval Rule**: You must NEVER commit code directly; propose commit messages for human approval.
 - **No Direct Merge**: Automated PR merging is strictly denied (`gh pr merge` is forbidden). Merging is strictly
   reserved for manual human action.
@@ -55,7 +57,28 @@ query($owner: String!, $repo: String!, $pr: Int!, $endCursor: String) {
 }' -F owner=':owner' -F repo=':repo' -F pr=<pr-number>
 ```
 
-### 2. Triage Each Unresolved Thread
+### 2. Triage Assessment & User Confirmation (MANDATORY)
+
+Before taking any action on the review comments:
+
+1. **Evaluate Each Unresolved Thread**:
+   - Classify as **Legitimate** (bug, regression, missing test, architectural drift, linter/type error) or
+     **Non-Applicable** (out of scope, intentional design choice per `AGENTS.md`, false positive).
+2. **Present Triage Plan to User**:
+   - Present a clear, structured breakdown for each unresolved thread:
+     - **Location**: `<file-path>:<line>` (Thread ID: `<thread-id>`)
+     - **Author & Feedback**: Author login and summary/quote of reviewer feedback.
+     - **Classification**: `Legitimate` or `Non-Applicable`.
+     - **Rationale**: Detailed technical explanation justifying why the feedback is legitimate or non-applicable.
+     - **Proposed Action**: Concrete implementation plan (code/test modifications) or proposed technical reply.
+3. **STOP AND WAIT**:
+   - Prompt the user: *"Please confirm if you agree with this triage assessment and the proposed actions before I proceed."*
+   - Do **NOT** modify any files, add reactions, post replies, or resolve threads until the user explicitly confirms the
+     plan.
+
+### 3. Execute Approved Actions
+
+Once the user approves the triage assessment:
 
 #### A. Legitimate Feedback (Valid bug, style issue, missing test, architectural gap)
 
@@ -80,14 +103,14 @@ query($owner: String!, $repo: String!, $pr: Int!, $endCursor: String) {
 1. Do NOT modify code or create commits.
 2. Add a 👎 (`-1`) reaction to the review comment via GitHub API.
 3. Post a respectful reply with clear technical justification explaining why the suggestion cannot or should not be
-   applied.
+   applied (pass body securely via stdin heredoc: `-F body=@- <<'EOF'`).
 4. Resolve the review thread via GraphQL:
 
    ```bash
    gh api graphql -f query='mutation { resolveReviewThread(input: { threadId: "<thread-id>" }) { thread { isResolved } } }'
    ```
 
-### 3. Verify Resolution & CI Status
+### 4. Verify Resolution & CI Status
 
 - Check that all review threads are resolved.
 - Check CI workflow status:
@@ -96,7 +119,7 @@ query($owner: String!, $repo: String!, $pr: Int!, $endCursor: String) {
   rtk gh pr checks
   ```
 
-### 4. Merge Gate
+### 5. Merge Gate
 
 Once all review threads are marked resolved and CI checks pass green:
 
