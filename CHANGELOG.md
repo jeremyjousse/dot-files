@@ -1,3 +1,53 @@
+# [0.11.0](https://github.com/jeremyjousse/dot-files/compare/v0.10.0...v0.11.0) (2026-10-07)
+
+
+### Bug Fixes
+
+* **ai:** :sparkles: delete gemini work settings ([18a01be](https://github.com/jeremyjousse/dot-files/commit/18a01be37e7f8c7331813746d583467468985d14))
+* **git:** :fire: remove legacy repository ([92f159e](https://github.com/jeremyjousse/dot-files/commit/92f159e5a52252603e2e83d5d3334b0f58003d86))
+* **install:** :bug: correct diffnav formula reference and comment out google-chrome cask ([1c7a480](https://github.com/jeremyjousse/dot-files/commit/1c7a4801fdbcef16fd05b897b9542d94cabf6871))
+* **install:** :bug: fix omlx ([1a01c68](https://github.com/jeremyjousse/dot-files/commit/1a01c682da540d13104a19532bf3e895d12e7ea5))
+* **utils:** :sparkles: professional file link detection ([95a8877](https://github.com/jeremyjousse/dot-files/commit/95a8877fb7b14b33a9d8e0ee7033f739c18e8fca))
+* **zsh:** :sparkles: prior mise to brew ([608c8d3](https://github.com/jeremyjousse/dot-files/commit/608c8d39bc378b8fb27af98c965059297912bfe8))
+
+
+### Features
+
+* add rsync script for pictures and music backup ([88db3e3](https://github.com/jeremyjousse/dot-files/commit/88db3e3d20cda9ed84180b18e53d82e66e58e688))
+* **ai:** :sparkles: add ability to have multiple auth types in gemini cli ([5248511](https://github.com/jeremyjousse/dot-files/commit/52485114c40cd3680851318af156b1dc3d3cb026))
+* **config:** add maven configuration and update java settings in vscode ([ec9ce4f](https://github.com/jeremyjousse/dot-files/commit/ec9ce4f7918ac4b5ab700411a8c5204ac2e1487e))
+* **git:** :sparkles: add diffnav and configure gh dash ([d2a4804](https://github.com/jeremyjousse/dot-files/commit/d2a4804b480e3b8765101c3afd97978711f359ad))
+* **install:** :ambulance: remove omlx ([d68d855](https://github.com/jeremyjousse/dot-files/commit/d68d855173887e3d9536f89e9780ad419bc04048))
+* **install:** :sparkles: add google drive ([d37e495](https://github.com/jeremyjousse/dot-files/commit/d37e49533377cb92ae9df6c9e6ff4947702c70df))
+* **install:** :sparkles: add rtk ([8bfb748](https://github.com/jeremyjousse/dot-files/commit/8bfb748dca65314bed571b4ccc2e069c31bdc41a))
+* **install:** :sparkles: add vitest extension ([3294cab](https://github.com/jeremyjousse/dot-files/commit/3294caba974355ccae394712f2ba427fb55c1230))
+* **install:** :sparkles: clean or reactivate brew install ([9298437](https://github.com/jeremyjousse/dot-files/commit/9298437b480250357f027e1acd0c3514b779f408))
+* **install:** :sparkles: reactivate databricks CLI ([089a6a3](https://github.com/jeremyjousse/dot-files/commit/089a6a32d264b6fcfbc07bd2ca17f06485317ea4))
+* **install:** :zap: update brew tap ([afe806d](https://github.com/jeremyjousse/dot-files/commit/afe806d32352abb694575bc8d1f47f71766ccb04))
+* **install:** clean up npm dependencies in config.toml ([f2e095e](https://github.com/jeremyjousse/dot-files/commit/f2e095e02585461160c7a35938f8e0e64ac1c66b))
+* **install:** enable installation of ollama ([0afdaca](https://github.com/jeremyjousse/dot-files/commit/0afdaca9eea6ff733751763c61696f0a3395689d))
+* **install:** remove bun tool from configuration ([cd4bf5b](https://github.com/jeremyjousse/dot-files/commit/cd4bf5bc6ca6a1a8e6e9cd1edeb636ed06b66e7c))
+* **install:** update Brewfile to add cmux and dust, remove commented taps ([4c6f5c9](https://github.com/jeremyjousse/dot-files/commit/4c6f5c98e9c7aa4735b9fc8c039cd42d1e941894))
+* **install:** update python and java versions to remove patch numbers ([d861f04](https://github.com/jeremyjousse/dot-files/commit/d861f047f4395fbec643c5595b2cc613a828d9e4))
+* **install:** update python version to 'latest' ([2b0a2b5](https://github.com/jeremyjousse/dot-files/commit/2b0a2b512f3f232d95fb9e862dab85732f55ffd5))
+* **labels:** add 'In progress' status label to labels configuration ([835ceac](https://github.com/jeremyjousse/dot-files/commit/835ceacf25e981bd05b02dd8c03fa7b65ea2de1e))
+* **labels:** add initial labels configuration and sync workflow ([ce6710c](https://github.com/jeremyjousse/dot-files/commit/ce6710cdde023340498ed501f55f4dfdbe614fbf))
+* **labels:** refactor label synchronization workflow for improved clarity and functionality ([b88c8b9](https://github.com/jeremyjousse/dot-files/commit/b88c8b993c358c1f5d62310b5719f08b34357439))
+* **macOS:** add audio feedback settings to bootstrap script ([ec691f0](https://github.com/jeremyjousse/dot-files/commit/ec691f0cfb5482802b18290dafba06e409d2f487))
+* **macOS:** add dock configuration and input settings to bootstrap script ([170017b](https://github.com/jeremyjousse/dot-files/commit/170017b7931fb1664df0b19e4c4d6f0a69e8545d))
+* **mise:** :sparkles: add golang ([7af5a86](https://github.com/jeremyjousse/dot-files/commit/7af5a86e5ad14096a5c51d61dd0ae19609c92e33))
+* **mise:** :sparkles: add googleworkspace cli ([c3bcb8f](https://github.com/jeremyjousse/dot-files/commit/c3bcb8f7189ad0036617f8ce1e42e9fcf594fa67))
+* **mise:** :sparkles: add repomix ([f5c470f](https://github.com/jeremyjousse/dot-files/commit/f5c470f3e9c5079757b32016b914dd09232f5923))
+* **mise:** :sparkles: add toolchain and component to rust ([cb8e47b](https://github.com/jeremyjousse/dot-files/commit/cb8e47bf61688efd5808ce592421edd7a6c2b6ea))
+* **mise:** :sparkles: change java jre to jdk ([cacde47](https://github.com/jeremyjousse/dot-files/commit/cacde47db3d640ddb4abe13faf45322183c9f5d2))
+* **mise:** :zap: add pi coding agent ([3164ca6](https://github.com/jeremyjousse/dot-files/commit/3164ca6862ab05ce85e5312850ac3f173b940a0d))
+* **mise:** add @opencode/cli to global tools ([d6931f2](https://github.com/jeremyjousse/dot-files/commit/d6931f214174755ebcda13014bb7c898155fdf88))
+* **mise:** add open spec ([293dd4f](https://github.com/jeremyjousse/dot-files/commit/293dd4f62b285896f80814b5b9e465d428b66f8f))
+* **mise:** add opencode tool to configuration/ ([799eb16](https://github.com/jeremyjousse/dot-files/commit/799eb16ff1d87ecbdfc56ea57c5860615ef21271))
+* **opencode:** add installation for Open code plugins in install script ([d2a137d](https://github.com/jeremyjousse/dot-files/commit/d2a137d40022b72d25eb157ea2e7b8cf085fc589))
+* **opencode:** introduce centralized agents, commands, skills, and configuration ([74ccaf6](https://github.com/jeremyjousse/dot-files/commit/74ccaf62a311a9f5ee005ee1a316de4a22d7ee6e))
+* **zsh:** update professional configuration loading ([3ebc391](https://github.com/jeremyjousse/dot-files/commit/3ebc391d5f848b539c25f1f4ef1c1450ce0050c6))
+
 # [0.11.0](https://github.com/jeremyjousse/dot-files/compare/v0.10.0...v0.11.0) (2026-10-05)
 
 
