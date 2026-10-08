@@ -12,6 +12,7 @@ You are executing **Stage 5 (PR Review Feedback Loop & Merge Gate)** of the SDLC
 Target: $ARGUMENTS
 
 If no PR number or URL is specified in `$ARGUMENTS`, detect the active PR for the current branch using `gh pr status`.
+If repository details or owner/repo are needed, inspect via `rtk gh repo view` (or `gh repo view --json owner,name`).
 
 ## Operational Boundaries
 
@@ -28,6 +29,14 @@ Before triaging, load the `review-pr` skill for detailed guidance on inspecting,
 review comments.
 
 ### 1. Fetch Review Threads
+
+If needed, confirm repository details:
+
+```bash
+rtk gh repo view
+# or retrieve owner and repository name explicitly
+gh repo view --json owner,name
+```
 
 Query all unresolved review threads and conversation comments via GitHub CLI / GraphQL API:
 
