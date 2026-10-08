@@ -10,6 +10,20 @@ description:
 Use `gh` (GitHub CLI) for all interactions with the GitHub remote repository, including User Stories (tracked as GitHub
 Issues) and Pull Requests. All actions must comply with the 5-stage SDLC.
 
+## Repository Inspection
+
+- **View repository information**:
+
+  ```bash
+  rtk gh repo view
+  ```
+
+- **Inspect repository details in JSON format (e.g. owner and name)**:
+
+  ```bash
+  gh repo view --json owner,name
+  ```
+
 ## User Stories (US) / GitHub Issues
 
 In projects adhering to this SDLC, User Stories and tasks are tracked as GitHub Issues.

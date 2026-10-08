@@ -11,7 +11,7 @@ cascade into development.
 
 - **Slash Command**: `/sdlc-1-refine <issue-id>`
 - **Dedicated Agent**: `sdlc-refine`
-- **Permissions**: `edit: deny`, `bash: gh issue *, gh label list*`, `task: deny`, `external_directory: deny`
+- **Permissions**: `edit: deny`, `bash: gh issue *, gh label list*, gh repo view*`, `task: deny`, `external_directory: deny`
 
 Before writing ANY code, creating branches, or modifying files:
 
@@ -110,7 +110,7 @@ Before any commit is proposed:
 
 - **Slash Commands**: `/sdlc-4-pr [issue-id]`, `/sdlc-5-review-pr [pr-id]`
 - **Dedicated Agent**: `sdlc-pr-review`
-- **Permissions**: `edit: allow` (scoped to review fixes), `gh pr *`, `gh pr merge: deny`, `gh api *`, `git push`
+- **Permissions**: `edit: allow` (scoped to review fixes), `gh pr *`, `gh repo view*`, `gh pr merge: deny`, `gh api *`, `git push`
 
 1. **Push Branch**:
 
@@ -123,7 +123,7 @@ Before any commit is proposed:
    - Reference the issue (`Closes #<id>`).
    - Return PR URL.
 3. **CI Verification**:
-   - Inspect status: `rtk gh pr checks` and `rtk gh pr status`.
+   - Inspect status: `rtk gh pr checks` and `rtk gh pr status` (or `rtk gh repo view` for repo inspection).
 4. **PR Review Feedback Loop**:
    - Load `review-pr` skill.
    - Fetch review threads via GraphQL.

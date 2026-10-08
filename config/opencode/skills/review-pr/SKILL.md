@@ -52,6 +52,14 @@ Or list recent open PRs:
 gh pr list --state open --limit 5
 ```
 
+To inspect repository information or verify owner and repository names:
+
+```bash
+rtk gh repo view
+# or inspect owner and repository name explicitly
+gh repo view --json owner,name
+```
+
 ### 2. Fetch Review Threads via GraphQL
 
 GitHub groups review comments into conversation threads. Use `gh api graphql --paginate` with `$endCursor: String` and
@@ -206,7 +214,7 @@ git push origin HEAD
 
 ### 5. Add Positive Reaction (👍)
 
-Acknowledge valid feedback by adding a `+1` reaction:
+Acknowledge valid feedback by adding a `+1` reaction (obtain `{owner}` and `{repo}` via `gh repo view --json owner,name` or use GitHub CLI placeholders):
 
 ```bash
 gh api repos/{owner}/{repo}/pulls/comments/<database_id>/reactions -f content='+1'
@@ -250,6 +258,8 @@ When a comment is determined to be non-applicable or wontfix:
 - **DO NOT** create commits.
 
 ### 1. Add Negative Reaction (👎)
+
+Add a `-1` reaction (obtain `{owner}` and `{repo}` via `gh repo view --json owner,name` or use GitHub CLI placeholders):
 
 ```bash
 gh api repos/{owner}/{repo}/pulls/comments/<database_id>/reactions -f content='-1'

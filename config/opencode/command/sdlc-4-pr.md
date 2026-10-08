@@ -29,6 +29,12 @@ If no issue number is provided in `$ARGUMENTS`, detect the issue ID from the act
   git branch --show-current
   ```
 
+- Confirm repository status if needed:
+
+  ```bash
+  rtk gh repo view
+  ```
+
 - Ensure development is NOT on `main`. If on `main`, stop immediately and warn the user.
 - Verify working tree is clean (`git status`). If there are uncommitted changes, advise running `/sdlc-3-verify` first.
 

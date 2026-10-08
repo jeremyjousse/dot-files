@@ -5,6 +5,8 @@
 			"*": "ask",
 			"gh label list*": "allow",
 			"rtk gh label list*": "allow",
+			"gh repo view*": "allow",
+			"rtk gh repo view*": "allow",
 			"git show*": "allow",
 			"rtk git show*": "allow",
 		},
