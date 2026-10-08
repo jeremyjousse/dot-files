@@ -55,7 +55,7 @@ conventions for Svelte 5 applications.
 
 ### Rule 2: Disciplined Effect Management
 - Use `$effect()` **strictly for side effects** (DOM manipulation, logging, syncing with external non-Svelte libraries, timers).
-- Always return a cleanup function from `$effect()` to prevent memory leaks:
+- Return a cleanup function from `$effect()` whenever creating subscriptions, timers, intervals, or DOM event listeners to prevent memory leaks:
   ```svelte
   <script lang="ts">
     $effect(() => {
@@ -172,7 +172,7 @@ Before submitting Svelte code for review or commit, verify:
 
 - [ ] **Typecheck**: Passes `svelte-check --tsconfig ./tsconfig.json` with zero errors.
 - [ ] **Runes Usage**: No legacy `export let` or `$:`; all reactivity uses `$state`, `$derived`, `$props`.
-- [ ] **Effects**: No `$effect()` used for derived calculations; cleanup handlers present on all side-effect effects.
+- [ ] **Effects**: No `$effect()` used for derived calculations; cleanup handlers present on effects that allocate resources or subscriptions.
 - [ ] **Snippets**: Uses `{#snippet}` and `{@render}` instead of legacy slots.
 - [ ] **SSR Safety**: No global mutable state in module scope for SSR projects.
 - [ ] **Accessibility**: Zero unhandled compiler a11y warnings.

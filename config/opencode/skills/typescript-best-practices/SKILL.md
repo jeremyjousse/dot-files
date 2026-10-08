@@ -25,10 +25,10 @@ for TypeScript development, adapted from *Clean Code TypeScript* and modern ente
 - **Intention-Revealing Names**: Names must describe what a variable, function, or class represents and why it exists.
   ```typescript
   // Bad
-  function between<T>(a1: T, a2: T, a3: T): boolean { return a2 <= a1 && a1 <= a3; }
+  function between(a1: number, a2: number, a3: number): boolean { return a2 <= a1 && a1 <= a3; }
 
   // Good
-  function between<T>(value: T, min: T, max: T): boolean { return min <= value && value <= max; }
+  function isBetween(value: number, min: number, max: number): boolean { return min <= value && value <= max; }
   ```
 - **No Magic Values**: Extract numbers and repeated strings into named constants:
   ```typescript

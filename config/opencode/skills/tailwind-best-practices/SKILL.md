@@ -22,7 +22,7 @@ development across frontend applications.
 ## 1. Tailwind CSS v4 Architecture & Configuration
 
 ### Rule 1: Embrace CSS-First Configuration
-- **Single Import**: Use `@import "tailwindcss";` as the sole import in your primary stylesheet.
+- **Modern Import**: Use `@import "tailwindcss";` to import Tailwind CSS instead of legacy directives (other valid CSS or font imports may still accompany it as needed).
   - ❌ Do **not** use deprecated `@tailwind base; @tailwind components; @tailwind utilities;` directives.
   - ❌ Do **not** create `tailwind.config.js` or `postcss.config.js` when using modern Vite / framework plugins unless strictly required for legacy integrations.
 - **Theme Customization via `@theme`**: Define custom tokens, colors, fonts, and dimensions directly in CSS:
@@ -52,9 +52,9 @@ development across frontend applications.
     }
   }
   ```
-- Define composite or custom variants using `@variant`:
+- Define composite or custom variants using `@custom-variant`:
   ```css
-  @variant hocus (&:hover, &:focus-visible);
+  @custom-variant hocus (&:hover, &:focus-visible);
   ```
 
 ---
