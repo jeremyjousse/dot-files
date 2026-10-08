@@ -1,3 +1,15 @@
+# [0.14.0](https://github.com/jeremyjousse/dot-files/compare/v0.13.1...v0.14.0) (2026-10-08)
+
+
+### Bug Fixes
+
+* **opencode:** address PR review comments on Svelte, Tailwind, and TypeScript skills ([84f713e](https://github.com/jeremyjousse/dot-files/commit/84f713e172f534a8db27cb45244c34a64653dcf3))
+
+
+### Features
+
+* **opencode:** add best practice skills for Rust, TypeScript, Svelte, and Tailwind CSS ([fffe998](https://github.com/jeremyjousse/dot-files/commit/fffe99835d7c5b3cd05f028c397c050716d7a1e7)), closes [#18](https://github.com/jeremyjousse/dot-files/issues/18)
+
 ## [0.13.1](https://github.com/jeremyjousse/dot-files/compare/v0.13.0...v0.13.1) (2026-10-07)
 
 
