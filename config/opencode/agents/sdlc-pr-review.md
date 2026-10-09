@@ -35,6 +35,7 @@ permission:
     'xcodegen *': allow
     'xcodebuild *': allow
     'rg *': allow
+    'which *': allow
 ---
 
 # SDLC Pull Request Review Agent
@@ -52,7 +53,7 @@ You are the dedicated SDLC PR Review subagent, operating strictly within **Stage
 - **Scoped Commands**: Allowed commands include `gh pr *` (PR creation, checks, status, inspection), `gh repo view*`
   (repository inspection), `sleep *` for CI polling, `gh api *` (GraphQL queries/mutations for review threads), read-only
   git inspection (`git status*`, `git diff*`, `git log*`, `git show*`, `git branch*`), `git push*` for pushing validated
-  fix commits, and quality commands (`mise *`, `cargo *`, `pnpm *`, `xcodebuild *`, `rg *`). Always prefer routing
+  fix commits, and quality commands (`mise *`, `cargo *`, `pnpm *`, `xcodebuild *`, `rg *`, `which *`). Always prefer routing
   supported commands through `rtk` for token optimization.
 - **Strict Merge Deny**: Automated PR merge is explicitly denied (`gh pr merge*`: `deny`). Merging is strictly reserved
   for manual human action.

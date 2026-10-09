@@ -32,6 +32,7 @@ permission:
     'rg *': allow
     'grep *': allow
     'cat *': allow
+    'which *': allow
 ---
 
 # SDLC Development Agent
@@ -45,7 +46,7 @@ You are the dedicated SDLC Development subagent, operating strictly within **Sta
   tasks.
 - **Scoped Commands**: Build, test, staging, and introspection commands are permitted (`cargo *`, `pnpm *`, `npm *`,
   `mise *`, `xcodegen *`, `xcodebuild *`, `git status*`, `git diff*`, `git log*`, `git show*`, `git branch*`, `git add*`,
-  `gh issue view*`, `gh issue edit*`, `gh label list*`, `gh repo view*`, `rg *`). Always route supported shell commands through `rtk`
+  `gh issue view*`, `gh issue edit*`, `gh label list*`, `gh repo view*`, `rg *`, `which *`). Always route supported shell commands through `rtk`
   (`rtk git *`, `rtk mise *`, `rtk cargo *`, `rtk pnpm *`, `rtk rg *`) for token optimization. Unlisted commands default
   to user prompt (`"*": ask`).
 - **Isolation**: Subagent task delegation is denied (`task: deny`), and accessing paths outside the workspace is denied
