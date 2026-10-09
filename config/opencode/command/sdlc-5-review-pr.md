@@ -38,6 +38,12 @@ rtk gh repo view
 gh repo view --json owner,name
 ```
 
+If needed, inspect the linked issue to confirm original requirements and scope boundaries:
+
+```bash
+rtk gh issue view <issue-id>
+```
+
 Query all unresolved review threads and conversation comments via GitHub CLI / GraphQL API:
 
 ```bash
@@ -72,7 +78,8 @@ Before taking any action on the review comments:
 
 1. **Evaluate Each Unresolved Thread**:
    - Classify as **Legitimate** (bug, regression, missing test, architectural drift, linter/type error) or
-     **Non-Applicable** (out of scope, intentional design choice per `AGENTS.md`, false positive).
+     **Non-Applicable** (out of scope, intentional design choice per `AGENTS.md`, false positive — verify original
+     scope boundaries via `rtk gh issue view <issue-id>`).
 2. **Present Triage Plan to User**:
    - Present a clear, structured breakdown for each unresolved thread:
      - **Location**: `<file-path>:<line>` (Thread ID: `<thread-id>`)

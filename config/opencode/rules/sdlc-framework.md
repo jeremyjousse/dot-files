@@ -85,7 +85,7 @@ All implementations must conform strictly to the project's architecture contract
 
 - **Slash Command**: `/sdlc-3-verify`
 - **Dedicated Agent**: `sdlc-verify`
-- **Permissions**: `edit: deny`, scoped verification `bash` (test/lint/check tools, read-only git), `task: deny`
+- **Permissions**: `edit: deny`, scoped verification `bash` (test/lint/check tools, read-only git, issue inspection), `task: deny`
 
 Before any commit is proposed:
 
@@ -110,7 +110,7 @@ Before any commit is proposed:
 
 - **Slash Commands**: `/sdlc-4-pr [issue-id]`, `/sdlc-5-review-pr [pr-id]`
 - **Dedicated Agent**: `sdlc-pr-review`
-- **Permissions**: `edit: allow` (scoped to review fixes), `gh pr *`, `gh repo view*`, `gh pr merge: deny`, `gh api *`, `git push`
+- **Permissions**: `edit: allow` (scoped to review fixes), `gh pr *`, `gh repo view*`, `gh issue view*`, `gh pr merge: deny`, `gh api *`, `git push`
 
 1. **Push Branch**:
 

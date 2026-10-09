@@ -60,6 +60,12 @@ rtk gh repo view
 gh repo view --json owner,name
 ```
 
+To inspect the associated User Story or Issue to check original requirements and scope:
+
+```bash
+rtk gh issue view <issue_number>
+```
+
 ### 2. Fetch Review Threads via GraphQL
 
 GitHub groups review comments into conversation threads. Use `gh api graphql --paginate` with `$endCursor: String` and
@@ -135,7 +141,8 @@ The comment points out a genuine problem or improvement aligned with the PR's sc
 
 The comment is inapplicable or should not be implemented:
 
-- **Out of Scope**: Demands features or refactoring unrelated to the User Story / Issue.
+- **Out of Scope**: Demands features or refactoring unrelated to the User Story / Issue (verify agreed boundaries
+  using `rtk gh issue view <issue_number>`).
 - **Intentional Design / Architectural Decision**: Conflicts with explicit project architecture defined in `AGENTS.md`.
 - **False Positives**: Reviewer or automated bot hallucination misinterpreting the code context.
 
