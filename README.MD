@@ -1,6 +1,41 @@
 # Dot files
 
-Bootstrap my laptop from scratch.
+Bootstrap and manage a macOS developer workstation from scratch.
+
+## Quick Start
+
+1. Clone this repository into `~/Development/Personal/dot-files`.
+2. Configure optional environment variables in `.env` (e.g. `GIT_USER_NAME`, `GIT_USER_EMAIL`, `GIT_SIGNING_KEY`).
+3. Run the bootstrap script:
+
+```bash
+./bootstrap.sh
+```
+
+## Repository Directory Map
+
+Each key folder contains a dedicated `README.md` documenting its configuration and usage:
+
+- **[`ai/`](ai/README.md)**: AI agent skills and prompt commands (Gemini CLI, OpenCode).
+- **[`config/`](config/)**: Tool and application configurations symlinked into `$HOME`:
+  - **[`alacritty/`](config/alacritty/README.md)**: Fast GPU-accelerated terminal emulator configuration.
+  - **[`gemini/`](config/gemini/README.md)**: Google Gemini Code Assist and CLI settings.
+  - **[`gh-dash/`](config/gh-dash/README.md)**: GitHub CLI terminal dashboard for PRs and issues.
+  - **[`ghostty/`](config/ghostty/README.md)**: Ghostty terminal emulator configuration.
+  - **[`git/`](config/git/README.md)**: Git configuration, aliases, and Delta syntax-highlighting pager.
+  - **[`hammerspoon/`](config/hammerspoon/README.md)**: macOS window management and automation with Hammerspoon.
+  - **[`mise/`](config/mise/README.md)**: Multi-language runtime version manager (`mise-en-place`).
+  - **[`nix-darwin/`](config/nix-darwin/README.md)**: Nix-darwin system configuration.
+  - **[`nushell/`](config/nushell/README.md)**: Nushell configuration and scripts.
+  - **[`nvim/`](config/nvim/README.md)**: Neovim configuration using `lazy.nvim`.
+  - **[`opencode/`](config/opencode/README.md)**: Centralized OpenCode configuration, SDLC agents, and rules.
+  - **[`starship/`](config/starship/README.md)**: Starship cross-shell prompt configuration.
+  - **[`vscode/`](config/vscode/README.md)**: Visual Studio Code settings, extensions, and snippets.
+  - **[`zellij/`](config/zellij/README.md)**: Terminal workspace and multiplexer configuration.
+  - **[`zsh/`](config/zsh/README.md)**: Zsh configuration, Oh My Zsh plugins, and custom aliases.
+- **[`install/`](install/README.md)**: Homebrew bundle manifests (`Brewfile`) for CLI tools, runtimes, casks, and extensions.
+- **[`lib/`](lib/README.md)**: Shell automation libraries, symlink helpers, and dependency installers.
+- **[`macOs-defaults/`](macOs-defaults/README.md)**: macOS system preferences and sensible defaults scripts.
 
 ## AI & Developer Tooling
 
