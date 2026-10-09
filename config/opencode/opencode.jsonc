@@ -1,14 +1,25 @@
 {
 	"$schema": "https://opencode.ai/config.json",
+	"mcp": {
+		"codeburn": {
+			"type": "local",
+			"command": ["codeburn", "mcp"],
+			"enabled": true,
+		},
+	},
 	"permission": {
 		"bash": {
 			"*": "ask",
+			"codeburn status*": "allow",
+			"rtk codeburn status*": "allow",
 			"gh label list*": "allow",
 			"rtk gh label list*": "allow",
 			"gh repo view*": "allow",
 			"rtk gh repo view*": "allow",
 			"git show*": "allow",
 			"rtk git show*": "allow",
+			"which *": "allow",
+			"rtk which *": "allow",
 		},
 	},
 }

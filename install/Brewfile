@@ -110,6 +110,9 @@ brew "mise"
 # AI
 ###
 
+# CodeBurn (https://codeburn.app/) track AI token consumption, costs, and model efficiency across local coding assistants
+brew "codeburn"
+
 # oMLX (https://github.com/jundot/omlx) LLM inference server with continuous batching & SSD caching for Apple Silicon — managed from the macOS menu bar
 #brew "omlx"
 
