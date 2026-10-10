@@ -6,8 +6,8 @@ Centralized OpenCode configuration for agents, commands, skills, rules, and MCP 
 
 - **`opencode.jsonc`**: Core settings, tool permissions, and local MCP server configurations.
 - **`agents/`**: SDLC specialized agents (`sdlc-refine`, `sdlc-develop`, `sdlc-verify`, `sdlc-pr-review`).
-- **`command/`**: SDLC workflow commands (`/sdlc-1-refine`, `/sdlc-2-develop`, `/sdlc-3-verify`, `/sdlc-4-pr`, `/sdlc-5-review-pr`).
-- **`skills/`**: Domain and best-practice skills (e.g. `rust-best-practices`, `typescript-best-practices`, `github`, etc.).
+- **`command/`**: SDLC workflow commands (`/sdlc-1-refine`, `/sdlc-2-develop`, `/sdlc-3-verify`, `/sdlc-4-pr`, `/sdlc-5-review-pr`) and utility commands (`/update-dependencies`).
+- **`skills/`**: Domain and best-practice skills (e.g. `update-dependencies`, `rust-best-practices`, `typescript-best-practices`, `github`, etc.).
 - **`rules/`**: Operational rules including the SDLC framework guidelines.
 
 ## Integrated MCP Servers
