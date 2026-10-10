@@ -1,3 +1,15 @@
+# [0.16.0](https://github.com/jeremyjousse/dot-files/compare/v0.15.0...v0.16.0) (2026-10-10)
+
+
+### Bug Fixes
+
+* **install:** address PR review comments on doctor checks and make targets ([e329a26](https://github.com/jeremyjousse/dot-files/commit/e329a26dba2f653b3832e5cab7acd8a518eeb8f0))
+
+
+### Features
+
+* **install:** separate casks, MAS apps, and VS Code extensions into dedicated Brewfiles ([ebb5c45](https://github.com/jeremyjousse/dot-files/commit/ebb5c45134c30bdcca643bf147a85335157e1437))
+
 # [0.15.0](https://github.com/jeremyjousse/dot-files/compare/v0.14.0...v0.15.0) (2026-10-10)
 
 
