@@ -17,7 +17,7 @@ Key responsibilities:
 - **Tool Configurations**: Houses dotfiles and configuration directories for daily developer tools (`zsh`, `git`,
   `nvim`, `ghostty`, `alacritty`, `zellij`, `starship`, `nushell`, `hammerspoon`, `vscode`).
 - **Provisioning & Automation**: Provides reproducible bootstrapping and symlinking scripts (`bootstrap.sh`, `lib/*.sh`,
-  `Makefile`) and package manifests (`install/Brewfile`).
+  `Makefile`) and package manifests (`install/*Brewfile`).
 
 ---
 

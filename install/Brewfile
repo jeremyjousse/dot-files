@@ -1,186 +1,188 @@
 tap "databricks/tap", trusted: true
 tap "fluxcd/tap", trusted: true
-tap "manaflow-ai/cmux", trusted: true
 
 ###
-# Shells
+# Shells & Prompts
 ###
 
-# Nushell [friendly interactive shell] (https://www.nushell.sh/) a new type of shell
+# Carapace (https://carapace-sh.github.io/carapace-bin/) multi-shell multi-command argument completer
+brew "carapace"
+
+# Nushell (https://www.nushell.sh/) a new type of shell
 # brew "nushell"
 
+# Starship (https://starship.rs/) minimal, blazing-fast, and infinitely customizable prompt for any shell
+brew "starship"
+
+# Zellij (https://zellij.dev/) a terminal workspace with batteries included
+brew "zellij"
+
+# Zoxide (https://github.com/ajeetdsouza/zoxide) a smarter cd command
+brew "zoxide"
+
 ###
-# Shell tools
+# CLI Navigation & File Utilities
 ###
 
-# mas (https://github.com/mas-cli/mas) Mac App Store command-line interface
-brew "mas"
+# Bat (https://github.com/sharkdp/bat) a cat(1) clone with syntax highlighting and Git integration
+brew "bat"
 
-# delta (https://github.com/dandavison/delta) syntax-highlighting pager for git, diff, grep, and blame output
-brew "git-delta"
-
-# diffnav (https://github.com/dlvhdr/diffnav) git diff pager based on delta but with a file tree, à la GitHub.
+# Diffnav (https://github.com/dlvhdr/diffnav) git diff pager based on delta but with a file tree
 brew "diffnav"
 
 # direnv (https://direnv.net/) can load and unload environment variables depending on the current directory
 # brew "direnv"
 
-# jq (https://jqlang.github.io/jq/) is a lightweight and flexible command-line JSON processor
-brew "jq"
+# Dust (https://github.com/bootandy/dust) a more intuitive version of du in rust
+brew "dust"
+
+# Eza (https://github.com/eza-community/eza) modern alternative to ls
+# brew "eza"
 
 # fd (https://github.com/sharkdp/fd) simple, fast and user-friendly alternative to 'find'
 brew "fd"
 
-# ripgrep (https://github.com/BurntSushi/ripgrep)recursively searches directories for a regex pattern while respecting your gitignore
-brew "ripgrep"
-
-# ShellCheck (https://www.shellcheck.net/) finds bugs in your shell scripts
-brew "shellcheck"
-
-# markdownlint-cli2 (https://github.com/DavidAnson/markdownlint-cli2) fast, flexible, configuration-based command-line interface for linting Markdown/CommonMark files with the markdownlint library
-brew "markdownlint-cli2"
-
-# carapace-bin (https://carapace-sh.github.io/carapace-bin/carapace-bin.html) multi-shell multi-command argument completer
-brew "carapace"
-
-# Starship (https://starship.rs/) minimal, blazing-fast, and infinitely customizable prompt for any shell
-brew "starship"
-
-# HTTPie (https://httpie.io/) command line API testing client
-# brew "httpie"
-
-# wrk (https://github.com/wg/wrk) HTTP benchmarking tool
-brew "wrk"
-
-# bat (https://github.com/sharkdp/bat) A cat(1) clone with syntax highlighting and Git integration
-brew "bat"
-
-# dust (https://github.com/bootandy/dust) A  more intuitive version of du in rust
-brew "dust"
-
-# eza (https://github.com/eza-community/eza) modern alternative to ls
-# brew "eza"
-
-# GnuPG (https://gnupg.org/) is a complete and free implementation of the OpenPGP
-# Used to generate GPG key to sign git commits
-brew "gnupg" 
-
-# shfmt (https://github.com/mvdan/sh) is a shell parser, formatter, and interpreter with bash support; includes shfmt
-brew "shfmt"
-
-# Bat (https://github.com/sharkdp/bat) a cat(1) clone with wings
-brew "bat"
-
-# dockutil (https://github.com/kcrawford/dockutil) command-line utility to manage macOS Dock items
-brew "dockutil"
-
 # fzf (https://github.com/junegunn/fzf) command-line fuzzy finder
 # brew "fzf"
+
+# Delta (https://github.com/dandavison/delta) syntax-highlighting pager for git, diff, grep, and blame output
+brew "git-delta"
+
+# jq (https://jqlang.github.io/jq/) lightweight and flexible command-line JSON processor
+brew "jq"
 
 # lsd (https://github.com/lsd-rs/lsd) next gen ls command
 brew "lsd"
 
+# ripgrep (https://github.com/BurntSushi/ripgrep) recursively searches directories for a regex pattern while respecting gitignore
+brew "ripgrep"
+
 # tailspin (https://github.com/bensadeh/tailspin) log file highlighter
 brew "tailspin"
 
-# Zellij (https://zellij.dev/) a terminal workspace with batteries included
-brew "zellij"
-
-# zoxide (https://github.com/ajeetdsouza/zoxide) a smarter cd command.
-brew "zoxide"
-
 ###
-# Shell editors
+# Shell Editors
 ###
 
 # Helix (https://helix-editor.com/) post-modern text editor
 brew "helix"
 
-# neovim (https://neovim.io/) hyper extensible Vim-based text editor
+# Neovim (https://neovim.io/) hyper extensible Vim-based text editor
 # brew "neovim"
 
 ###
-# Dev languages bootstrap
+# Dev Languages & Runtimes
 ###
 
-# mise-en-place (https://mise.jdx.dev) The front-end to your dev env
+# mise (https://mise.jdx.dev/) the front-end to your dev env
 brew "mise"
 
-###
-# AI
-###
-
-# CodeBurn (https://codeburn.app/) track AI token consumption, costs, and model efficiency across local coding assistants
-brew "codeburn"
-
-# oMLX (https://github.com/jundot/omlx) LLM inference server with continuous batching & SSD caching for Apple Silicon — managed from the macOS menu bar
-#brew "omlx"
-
-# Ollama (https://ollama.com/) runs with large language models, locally.
-# brew "ollama"
-
-###
-# NodeJS
-###
-
+# pnpm (https://pnpm.io/) fast, disk space efficient package manager
 brew "pnpm"
 
-###
-# Python
-###
+# Ruff (https://github.com/astral-sh/ruff) an extremely fast Python linter and code formatter, written in Rust
+brew "ruff"
 
 # uv (https://github.com/astral-sh/uv) an extremely fast Python package installer and resolver, written in Rust
 brew "uv"
 
-# ruff (https://github.com/astral-sh/ruff) an extremely fast Python linter and code formatter, written in Rust
-brew "ruff"
-
-###
-# Swift
-###
-
-# XcodeGen (https://github.com/yonaskolb/XcodeGen) a command line tool written in Swift that generates your Xcode project using your folder structure and a project spec
+# XcodeGen (https://github.com/yonaskolb/XcodeGen) generate your Xcode project using your folder structure and a project spec
 brew "xcodegen"
 
 ###
-# Container
+# Containers & Orchestration
 ###
 
-# container (https://apple.github.io/container/documentation/) tool for creating and running Linux containers using lightweight virtual machines on a Mac
+# Apple Container (https://apple.github.io/container/documentation/) tool for creating and running Linux containers using lightweight virtual machines on macOS
 brew "container"
 
 # Container-Compose (https://github.com/Mcrich23/Container-Compose) docker-compose clone for Apple Container
 brew "container-compose"
 
-# podman (https://podman.io/) the best free & open source container tools
+# Flux (https://fluxcd.io/) used to bootstrap and interact with Flux continuous delivery for Kubernetes
+brew "fluxcd/tap/flux"
+
+# Helm (https://helm.sh/) the package manager for Kubernetes
+brew "helm"
+
+# K9s (https://k9scli.io/) a terminal based UI to interact with your Kubernetes clusters
+# brew "k9s"
+
+# Kubernetes CLI (https://kubernetes.io/docs/tasks/tools/) run commands against Kubernetes clusters
+brew "kubectl"
+
+# kubectx (https://github.com/ahmetb/kubectx) faster way to switch between clusters and namespaces in kubectl
+brew "kubectx"
+
+# Podman (https://podman.io/) free & open source container tools
 brew "podman"
 
 # podman-compose (https://github.com/containers/podman-compose) a script to run docker-compose.yml using podman
 brew "podman-compose"
 
-# Kubernetes command-line tool (https://kubernetes.io/docs/tasks/tools/) allows you to run commands against Kubernetes clusters
-brew "kubectl"
+###
+# AI & Agent Tools
+###
 
-# kubectx (https://github.com/ahmetb/kubectx) Faster way to switch between clusters and namespaces in kubectl
-brew "kubectx"
+# CodeBurn (https://codeburn.app/) track AI token consumption, costs, and model efficiency across local coding assistants
+brew "codeburn"
 
-# K9s (https://k9scli.io/) a terminal based UI to interact with your Kubernetes clusters
-# brew "k9s"
+# Ollama (https://ollama.com/) run large language models locally
+# brew "ollama"
 
-# HELM (https://helm.sh/) Helm charts help you define, install, and upgrade even the most complex Kubernetes application
-brew "helm"
+# oMLX (https://github.com/jundot/omlx) LLM inference server with continuous batching & SSD caching for Apple Silicon
+# brew "omlx"
 
-# Flux (https://fluxcd.io/) used to bootstrap and interact with Flux (a set of continuous and progressive delivery solutions for Kubernetes)
-brew "fluxcd/tap/flux"
-
-# rtk (https://www.rtk-ai.app/) High-performance CLI proxy that reduces LLM token consumption
+# rtk (https://www.rtk-ai.app/) high-performance CLI proxy that reduces LLM token consumption
 brew "rtk"
+
+###
+# Cloud & SaaS CLIs
+###
 
 # Act (https://nektosact.com/) run your GitHub Actions locally
 # brew "act"
 
+# Databricks CLI (https://docs.databricks.com/dev-tools/cli/index.html) allows you to interact with Databricks from the command line
+brew "databricks"
+
+# GitHub CLI (https://cli.github.com/) brings GitHub to your terminal
+brew "gh"
+
 ###
-# Libraries
+# Code Quality & Linters
+###
+
+# markdownlint-cli2 (https://github.com/DavidAnson/markdownlint-cli2) fast, flexible command-line interface for linting Markdown files
+brew "markdownlint-cli2"
+
+# ShellCheck (https://www.shellcheck.net/) static analysis tool for shell scripts
+brew "shellcheck"
+
+# shfmt (https://github.com/mvdan/sh) shell parser, formatter, and interpreter with bash support
+brew "shfmt"
+
+###
+# System, Security & Networking
+###
+
+# dockutil (https://github.com/kcrawford/dockutil) command-line utility to manage macOS Dock items
+brew "dockutil"
+
+# GnuPG (https://gnupg.org/) complete and free implementation of the OpenPGP standard
+brew "gnupg"
+
+# HTTPie (https://httpie.io/) user-friendly command line API testing client
+# brew "httpie"
+
+# mas (https://github.com/mas-cli/mas) Mac App Store command-line interface
+brew "mas"
+
+# wrk (https://github.com/wg/wrk) modern HTTP benchmarking tool
+brew "wrk"
+
+###
+# Libraries & Compilers
 ###
 
 # FFmpeg (https://ffmpeg.org/) cross-platform solution to record, convert and stream audio and video
@@ -189,169 +191,5 @@ brew "ffmpeg"
 # Graphviz (https://graphviz.org/) graph visualization software
 brew "graphviz"
 
-# pkgconf (http://pkgconf.org/) helper tool used when compiling applications and libraries
+# pkgconf (https://pkgconf.org/) package compiler and linker metadata tool
 brew "pkg-config"
-
-
-###
-# SaaS tools
-###
-
-# GitHub CLI (https://cli.github.com/) brings GitHub to your terminal
-brew "gh"
-
-# Databricks CLI (https://docs.databricks.com/dev-tools/cli/index.html) allows you to interact with Databricks from the command line
-brew "databricks"
-
-###
-# GUI tools
-###
-
-# Chrome (https://www.google.com/intl/en_us/chrome/) Google's web browser
-# cask "google-chrome"
-
-# Google Drive (https://www.google.com/drive/) Google's cloud storage service
-cask "google-drive"
-
-# Firefox (https://www.mozilla.org/en-US/firefox/new/) Mozilla's web browser
-# cask "firefox@developer-edition"
-
-# Visual Studio Code (https://code.visualstudio.com/) a great Integrated Development Environment
-cask "visual-studio-code"
-
-# JetBrains Toolbox (https://www.jetbrains.com/toolbox-app/) manage your JetBrains tools easily
-cask "jetbrains-toolbox"
-
-# 1Password (https://1password.com/) password manager
-cask "1password@7"
-
-# Ghostty (https://ghostty.org/) fast, feature-rich, and cross-platform terminal emulator
-cask "ghostty"
-
-# Google Cloud CLI (https://docs.cloud.google.com/sdk/docs) command-line tools for Google Cloud Platform
-cask "gcloud-cli"
-
-# DevToys (https://devtoys.app/) Swiss army knife for developers
-# cask "devtoys"
-
-# cmux (https://github.com/manaflow-ai/cmux) Open source Ghostty-based macOS terminal with vertical tabs and notifications for AI coding agents. Built for multitasking, organization, and programmability.
-cask "cmux"
-
-# KeyClu (https://sergii.tatarenkov.name/keyclu/support/) Simple and handy overview of applications shortcuts
-cask "keyclu"
-
-# Hammerspoon (http://www.hammerspoon.org) tool for powerful automation of macOS
-cask "hammerspoon"
-
-# Hyperkey (https://hyperkey.app/) extra macOS modifier key
-cask "hyperkey"
-
-# VLC (https://www.videolan.org/vlc/index.html) multimedia player
-cask "vlc"
-
-# Podman Desktop (https://podman-desktop.io/) a graphical interface that enables application developers to seamlessly work with containers and Kubernetes
-cask "podman-desktop"
-
-# JetBrains Toolbox (https://www.jetbrains.com/toolbox-app/) manage your JetBrains tools easily
-# cask "jetbrains-toolbox"
-
-# JDK Mission Control (https://www.oracle.com/java/technologies/jdk-mission-control.html) a profiling and event collection framework for JDK
-# cask "jdk-mission-control"
-
-# Bruno (https://usebruno.com/) fully local and Git-native solution to accelerate and secure API work and collaboration
-cask "bruno"
-
-# Obsidian (https://obsidian.md/) free and flexible app for your private thoughts
-cask "obsidian"
-
-# Meslo Nerd Font (https://www.nerdfonts.com/)
-cask "font-meslo-lg-nerd-font"
-
-# FiraCode Nerd Font (https://www.nerdfonts.com/)
-cask "font-fira-code-nerd-font"
-
-### Mac App Store apps
-
-# Pixelmator Pro (https://www.pixelmator.com/pro/) professional image editing tools that anyone can use
-mas "Pixelmator Pro", id: 1289583905
-
-# SQLPro for SQLite (https://www.sqlitepro.com/) simple, powerful SQLite manager for macOS
-mas "SQLPro for SQLite", id: 586001240
-
-
-## # Visual Studio Code extensions
-
-# Cucumber (Gherkin) Full Support (https://marketplace.visualstudio.com/items?itemName=alexkrechik.cucumberautocomplete) Cucumber (Gherkin) Full Language Support + Formatting + Autocomplete
-vscode "alexkrechik.cucumberautocomplete"
-
-# CodeLLDB (https://marketplace.visualstudio.com/items?itemName=vadimcn.vscode-lldb) Debugger for native code, powered by LLDB. Debug C++, Rust, and other compiled languages
-vscode "vadimcn.vscode-lldb"
-
-# Code Spell Checker (https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker) Spelling checker for source code
-vscode "streetsidesoftware.code-spell-checker"
-
-# Code Spell Checker French (https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker-french) French dictionary extension for VS Code.
-vscode "streetsidesoftware.code-spell-checker-french"
-
-# Conventional Commits (https://marketplace.visualstudio.com/items?itemName=vivaxy.vscode-conventional-commits) Conventional Commits for VSCode.
-vscode "vivaxy.vscode-conventional-commits"
-
-# Dependi (https://marketplace.visualstudio.com/items?itemName=fill-labs.dependi) Empowers developers to efficiently manage dependencies and address vulnerabilities in Rust, Go, JavaScript, Typescript, PHP and Python projects
-vscode "fill-labs.dependi"
-
-# GitHub Actions (https://marketplace.visualstudio.com/items?itemName=GitHub.vscode-github-actions) GitHub Actions workflows and runs for github.com hosted repositories in VS Code
-vscode "github.vscode-github-actions"
-
-# GitHub Copilot Chat (https://marketplace.visualstudio.com/items?itemName=GitHub.copilot-chat) AI peer programming tool that helps you write code faster and smarter
-vscode "GitHub.copilot-chat"
-
-# GitHub Pull Requests and Issues (https://marketplace.visualstudio.com/items?itemName=github.vscode-pull-request-github) Pull Request and Issue Provider for GitHub
-vscode "github.vscode-pull-request-github"
-
-# Even Better TOML (https://marketplace.visualstudio.com/items?itemName=tamasfe.even-better-toml) Fully-featured TOML support
-vscode "tamasfe.even-better-toml"
-
-# ESLint (https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) Integrates ESLint JavaScript into VS Code
-vscode "dbaeumer.vscode-eslint"
-
-# Prettier (https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) Code formatter using prettier
-vscode "esbenp.prettier-vscode"
-
-# shfmt (https://marketplace.visualstudio.com/items?itemName=mkhl.shfmt) format shell programs
-vscode "mkhl.shfmt"
-
-# ShellCheck (https://marketplace.visualstudio.com/items?itemName=timonwong.shellcheck) integrates ShellCheck into VS Code, a linter for Shell scripts.
-vscode "timonwong.shellcheck"
-
-# Liveshare (https://marketplace.visualstudio.com/items?itemName=ms-vsliveshare.vsliveshare) Real-time collaborative development from the comfort of your favorite tools.
-vscode "ms-vsliveshare.vsliveshare"
-
-# Markdown lint (https://marketplace.visualstudio.com/items?itemName=davidanson.vscode-markdownlint) Markdown linting and style checking for Visual Studio Code
-vscode "davidanson.vscode-markdownlint"
-
-# Markdown All in One (https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one) All you need to write Markdown (keyboard shortcuts, table of contents, auto preview and more)
-vscode "yzhang.markdown-all-in-one"
-
-# Pretty TypeScript Errors (https://marketplace.visualstudio.com/items?itemName=yoavbls.pretty-ts-errors) Make TypeScript errors prettier and human-readable
-vscode "yoavbls.pretty-ts-errors"
-
-# Rainbow CSV (https://marketplace.visualstudio.com/items?itemName=mechatroner.rainbow-csv) Highlight CSV and TSV files
-vscode "mechatroner.rainbow-csv"
-
-# Ruff extension for Visual Studio Code (https://marketplace.visualstudio.com/items?itemName=charliermarsh.ruff) Ruff linter and formatter
-vscode "charliermarsh.ruff"
-
-# Rust Analyzer (https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer) Rust language support for Visual Studio Code
-vscode "rust-lang.rust-analyzer"
-
-# Svelte syntax highlighting (https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode) Svelte language support for VS Code
-vscode "svelte.svelte-vscode"
-
-# C4 DSL Extension (https://marketplace.visualstudio.com/items?itemName=systemticks.c4-dsl-extension) VS Code extension for C4 DSL Models
-vscode "systemticks.c4-dsl-extension"
-
-# Tauri (https://marketplace.visualstudio.com/items?itemName=tauri-apps.tauri-vscode) Enhances the experience of Tauri apps development
-vscode "tauri-apps.tauri-vscode"
-
-# Vitest (https://marketplace.visualstudio.com/items?itemName=vitest.explorer) Vite-native testing framework
-vscode "vitest.explorer"

@@ -1,0 +1,97 @@
+tap "manaflow-ai/cmux", trusted: true
+
+###
+# Browsers
+###
+
+# Firefox Developer Edition (https://www.mozilla.org/en-US/firefox/developer/) Mozilla's web browser for developers
+# cask "firefox@developer-edition"
+
+# Google Chrome (https://www.google.com/chrome/) Google's web browser
+cask "google-chrome"
+
+###
+# Terminals
+###
+
+# cmux (https://github.com/manaflow-ai/cmux) Open source Ghostty-based macOS terminal with vertical tabs and notifications for AI coding agents
+cask "cmux"
+
+# Ghostty (https://ghostty.org/) fast, feature-rich, and cross-platform terminal emulator
+cask "ghostty"
+
+###
+# Development & IDEs
+###
+
+# JetBrains Toolbox (https://www.jetbrains.com/toolbox-app/) manage your JetBrains tools easily
+# cask "jetbrains-toolbox"
+
+# Visual Studio Code (https://code.visualstudio.com/) a great Integrated Development Environment
+cask "visual-studio-code"
+
+###
+# Developer Tools
+###
+
+# Bruno (https://usebruno.com/) fully local and Git-native solution to accelerate and secure API work and collaboration
+cask "bruno"
+
+# DevToys (https://devtoys.app/) Swiss army knife for developers
+# cask "devtoys"
+
+# Google Cloud CLI (https://docs.cloud.google.com/sdk/docs) command-line tools for Google Cloud Platform
+cask "gcloud-cli"
+
+# JDK Mission Control (https://www.oracle.com/java/technologies/jdk-mission-control.html) a profiling and event collection framework for JDK
+# cask "jdk-mission-control"
+
+# Podman Desktop (https://podman-desktop.io/) a graphical interface that enables application developers to seamlessly work with containers and Kubernetes
+cask "podman-desktop"
+
+###
+# Productivity & Notes
+###
+
+# Google Drive (https://www.google.com/drive/) Google's cloud storage service
+cask "google-drive"
+
+# Obsidian (https://obsidian.md/) free and flexible app for your private thoughts
+cask "obsidian"
+
+###
+# macOS Utilities & Automation
+###
+
+# Hammerspoon (https://www.hammerspoon.org/) tool for powerful automation of macOS
+cask "hammerspoon"
+
+# Hyperkey (https://hyperkey.app/) extra macOS modifier key
+cask "hyperkey"
+
+# KeyClu (https://sergii.tatarenkov.name/keyclu/support/) Simple and handy overview of applications shortcuts
+cask "keyclu"
+
+###
+# Security & Passwords
+###
+
+# 1Password (https://1password.com/) password manager
+cask "1password@7"
+
+###
+# Media
+###
+
+# VLC (https://www.videolan.org/vlc/) multimedia player
+cask "vlc"
+
+###
+# Fonts
+###
+
+# FiraCode Nerd Font (https://www.nerdfonts.com/) patched font with ligatures and terminal glyphs
+cask "font-fira-code-nerd-font"
+
+# Meslo Nerd Font (https://www.nerdfonts.com/) patched font for terminal glyphs
+cask "font-meslo-lg-nerd-font"

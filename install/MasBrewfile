@@ -1,0 +1,12 @@
+###
+# Mac App Store apps
+###
+
+# Pixelmator Pro (https://www.pixelmator.com/pro/) professional image editing tools that anyone can use
+mas "Pixelmator Pro", id: 1289583905
+
+# SQLPro for SQLite (https://www.sqlitepro.com/) simple, powerful SQLite manager for macOS
+mas "SQLPro for SQLite", id: 586001240
+
+# Xcode (https://developer.apple.com/xcode/) Apple's integrated development environment for macOS
+mas "Xcode", id: 497799835

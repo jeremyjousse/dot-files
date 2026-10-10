@@ -45,10 +45,15 @@ if [ ! -d "$HOME"/.zsh-defer ]; then
 fi
 
 ###
-# Brew install using Brewfile
+# Brew install using Brewfiles
 ###
 
 brew bundle --file="$PWD/install/Brewfile"
+if [ "${1:-false}" = true ]; then
+	brew bundle --file="$PWD/install/CaskBrewfile"
+	brew bundle --file="$PWD/install/MasBrewfile"
+fi
+brew bundle --file="$PWD/install/VscodeBrewfile"
 [ -f "$PWD/install/ProfessionalBrewfile" ] && brew bundle --file="$PWD/install/ProfessionalBrewfile"
 
 ###
