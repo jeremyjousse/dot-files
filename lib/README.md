@@ -23,7 +23,8 @@ to configure and provision a macOS workstation idempotently.
 - **`install.sh`**: Installs base tool dependencies:
   - Homebrew package manager (if absent).
   - Oh My Zsh and community plugins (`zsh-autosuggestions`, `zsh-syntax-highlighting`, `zsh-defer`).
-  - Packages defined in `install/Brewfile`.
+  - Packages defined in `install/Brewfile` and `install/VscodeBrewfile`; Cask and Mac App Store bundles are installed
+    only when bootstrap is run with `--with-gui`.
   - Python tools managed via `uv tool` (e.g. `pynglish`).
   - OpenCode agent plugins via `rtk init`.
 - **`prepare.sh`**: Initial macOS preparation tasks (e.g. accepting Xcode license agreement).

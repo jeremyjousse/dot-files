@@ -1,10 +1,26 @@
 #!/bin/bash
 
+WITH_GUI=false
+for argument in "$@"; do
+	case "$argument" in
+		--with-gui)
+			WITH_GUI=true
+			;;
+		-h|--help)
+			printf 'Usage: %s [--with-gui]\n' "$0"
+			exit 0
+			;;
+		*)
+			printf 'Unknown option: %s\n' "$argument" >&2
+			exit 2
+			;;
+	esac
+done
+
 source lib/lib.sh
 
 create_folder "$HOME"/.config
 create_folder "$HOME"/.config/opencode
-create_folder "$HOME"/.gemini
 create_folder "$HOME"/Development/Personal
 
 link_config_files "$PWD"/config/zsh/.zshrc "$HOME"/.zshrc
@@ -16,9 +32,6 @@ link_config_files "$PWD"/config/opencode/agents "$HOME"/.config/opencode/agents
 link_config_files "$PWD"/config/opencode/skills "$HOME"/.config/opencode/skills
 link_config_files "$PWD"/config/opencode/rules "$HOME"/.config/opencode/rules
 
-link_config_files "$PWD"/ai/gemini/commands "$HOME"/.gemini/commands
-link_config_files "$PWD"/ai/skills "$HOME"/.gemini/skills
-link_config_files "$PWD"/config/gemini/settings.json "$HOME"/.gemini/settings.json
 link_config_files "$PWD"/config/alacritty "$HOME"/.config/alacritty
 link_config_files "$PWD"/config/gh-dash "$HOME"/.config/gh-dash
 link_config_files "$PWD"/config/ghostty "$HOME"/.config/ghostty
@@ -38,7 +51,7 @@ copy_config_files "$PWD"/config/mise "$HOME"/.config
 
 generate_local_gitconfig "$PWD"/.env "$PWD"/config/git/.gitconfig
 
-source lib/install.sh
+source lib/install.sh "$WITH_GUI"
 source lib/git_repositories.sh
 
 source lib/update.sh

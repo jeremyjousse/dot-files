@@ -6,11 +6,20 @@ Bootstrap and manage a macOS developer workstation from scratch.
 
 1. Clone this repository into `~/Development/Personal/dot-files`.
 2. Configure optional environment variables in `.env` (e.g. `GIT_USER_NAME`, `GIT_USER_EMAIL`, `GIT_SIGNING_KEY`).
-3. Run the bootstrap script:
+3. Run the default setup:
 
 ```bash
-./bootstrap.sh
+make
 ```
+
+This installs the Homebrew and VS Code packages, then runs `bootstrap.sh` to install the configuration. To also install
+Homebrew Casks and Mac App Store apps, run:
+
+```bash
+make brew-gui-packages
+```
+
+Run `make update` to update Homebrew formulae without upgrading GUI applications.
 
 ## Repository Directory Map
 
@@ -33,7 +42,7 @@ Each key folder contains a dedicated `README.md` documenting its configuration a
   - **[`vscode/`](config/vscode/README.md)**: Visual Studio Code settings, extensions, and snippets.
   - **[`zellij/`](config/zellij/README.md)**: Terminal workspace and multiplexer configuration.
   - **[`zsh/`](config/zsh/README.md)**: Zsh configuration, Oh My Zsh plugins, and custom aliases.
-- **[`install/`](install/README.md)**: Homebrew bundle manifests (`Brewfile`) for CLI tools, runtimes, casks, and extensions.
+- **[`install/`](install/README.md)**: Homebrew bundle manifests (`Brewfile`, `CaskBrewfile`, `MasBrewfile`, `VscodeBrewfile`) for CLI tools, runtimes, casks, and extensions.
 - **[`lib/`](lib/README.md)**: Shell automation libraries, symlink helpers, and dependency installers.
 - **[`macOs-defaults/`](macOs-defaults/README.md)**: macOS system preferences and sensible defaults scripts.
 

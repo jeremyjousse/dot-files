@@ -30,10 +30,11 @@ PATH := $(HOMEBREW_PREFIX)/bin:$(DOTFILES_DIR)/bin:$(N_PREFIX)/bin:$(PATH)
 #BIN := $(HOMEBREW_PREFIX)/bin
 
 install: brew-packages
+	$(MAKE) boostrap
 
 update:
 	brew update
-	brew upgrade
+	brew upgrade --formula
 	brew cleanup
 
 boostrap:
@@ -44,6 +45,9 @@ brew:
 
 brew-packages: brew
 	brew bundle --file=$(DOTFILES_DIR)/install/Brewfile || true
+	brew bundle --file=$(DOTFILES_DIR)/install/VscodeBrewfile || true
 
-rust-packages: brew-packages
-	cargo install $(shell cat install/Rustfile)
+brew-gui-packages: brew
+	brew bundle --file=$(DOTFILES_DIR)/install/CaskBrewfile || true
+	brew bundle --file=$(DOTFILES_DIR)/install/MasBrewfile || true
+	brew bundle --file=$(DOTFILES_DIR)/install/VscodeBrewfile || true
