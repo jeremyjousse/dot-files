@@ -50,3 +50,4 @@ brew-packages: brew
 brew-gui-packages: brew
 	brew bundle --file=$(DOTFILES_DIR)/install/CaskBrewfile || true
 	brew bundle --file=$(DOTFILES_DIR)/install/MasBrewfile || true
+	brew bundle --file=$(DOTFILES_DIR)/install/VscodeBrewfile || true
