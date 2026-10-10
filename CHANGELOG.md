@@ -1,3 +1,10 @@
+# [0.15.0](https://github.com/jeremyjousse/dot-files/compare/v0.14.0...v0.15.0) (2026-10-10)
+
+
+### Features
+
+* **opencode:** add generic dependency update skill and command ([4ffb015](https://github.com/jeremyjousse/dot-files/commit/4ffb01592fbf6f28da6b47a43bf6adc043f97cfb))
+
 # [0.14.0](https://github.com/jeremyjousse/dot-files/compare/v0.13.1...v0.14.0) (2026-10-08)
 
 
