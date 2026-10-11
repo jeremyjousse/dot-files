@@ -121,11 +121,37 @@ synthesizing standards from the Rust API Guidelines, Apollo GraphQL Codex rules,
   - `# Safety`: Mandatory for every `unsafe fn`.
 - Use `//!` at the top of files for module-level and crate-level documentation.
 
+### Rule 12: Mandatory Task Automation with mise.toml
+- When initiating a new Rust project or updating an existing one, you **MUST** configure standard verification tasks in `mise.toml`.
+- The SDLC Stage 4 Verification Agent (`sdlc-verify`) standardizes on `rtk mise run verify` (with granular tasks `lint` and `format:check`).
+- Define the standard tasks wrapping Cargo commands:
+  ```toml
+  [tasks.lint]
+  description = "Lint Rust code with clippy"
+  run = "cargo clippy --workspace --all-targets --all-features -- -D warnings"
+
+  [tasks."format:check"]
+  description = "Check Rust formatting"
+  run = "cargo fmt --all --check"
+
+  [tasks.format]
+  description = "Format Rust code"
+  run = "cargo fmt --all"
+
+  [tasks.test]
+  description = "Run Rust test suite"
+  run = "cargo test --workspace"
+
+  [tasks.verify]
+  description = "Run all verification checks (lint, format:check, test)"
+  depends = ["lint", "format:check", "test"]
+  ```
+
 ---
 
 ## 5. Performance & Concurrency
 
-### Rule 12: Measurement-Driven Optimization
+### Rule 13: Measurement-Driven Optimization
 - Do not optimize prematurely based on intuition; verify with profiling (e.g. `flamegraph`, `criterion` benchmarks) on release builds (`--release`).
 - Use `rayon` for CPU-bound data parallelism across collections.
 - Use `tokio` or async runtimes for I/O-bound concurrency; avoid blocking the async runtime with long-running synchronous code (use `tokio::task::spawn_blocking`).
@@ -136,6 +162,8 @@ synthesizing standards from the Rust API Guidelines, Apollo GraphQL Codex rules,
 
 Before submitting Rust code for review or commit, verify:
 
+- [ ] **Mise Verification Tasks**: `mise.toml` defines required `verify`, `lint`, and `format:check` tasks.
+- [ ] **Unified Verification**: Passes `rtk mise run verify` cleanly with zero warnings or errors.
 - [ ] **Formatting**: Passes `cargo fmt --all --check`.
 - [ ] **Linting**: Passes `cargo clippy --workspace --all-targets --all-features -- -D warnings` with zero warnings.
 - [ ] **Ownership**: No unnecessary `.clone()` calls or premature collections.

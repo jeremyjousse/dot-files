@@ -195,12 +195,44 @@ for TypeScript development, adapted from *Clean Code TypeScript* and modern ente
   }
   ```
 
+### Rule 12: Mandatory Task Automation with mise.toml
+- When initiating a new TypeScript project or updating an existing one, you **MUST** configure standard verification tasks in `mise.toml`.
+- The SDLC Stage 4 Verification Agent (`sdlc-verify`) standardizes on `rtk mise run verify` (with granular tasks `lint` and `format:check`).
+- Define the standard tasks wrapping package manager scripts (e.g. `pnpm`):
+  ```toml
+  [tasks.typecheck]
+  description = "Typecheck TypeScript code"
+  run = "pnpm tsc --noEmit"
+
+  [tasks.lint]
+  description = "Lint TypeScript code"
+  run = "pnpm oxlint" # or pnpm eslint .
+
+  [tasks."format:check"]
+  description = "Check TypeScript formatting"
+  run = "pnpm oxfmt --check" # or pnpm prettier --check .
+
+  [tasks.format]
+  description = "Format TypeScript code"
+  run = "pnpm oxfmt" # or pnpm prettier --write .
+
+  [tasks.test]
+  description = "Run test suite"
+  run = "pnpm test"
+
+  [tasks.verify]
+  description = "Run all verification checks (typecheck, lint, format:check, test)"
+  depends = ["typecheck", "lint", "format:check", "test"]
+  ```
+
 ---
 
 ## 6. Pre-Commit & Review Quality Checklist
 
 Before submitting TypeScript code for review or commit, verify:
 
+- [ ] **Mise Verification Tasks**: `mise.toml` defines required `verify`, `lint`, and `format:check` tasks.
+- [ ] **Unified Verification**: Passes `rtk mise run verify` cleanly with zero errors.
 - [ ] **Typecheck**: Runs cleanly under `tsc --noEmit` with zero errors.
 - [ ] **No `any`**: Zero usage of `any`; all dynamic data is validated with `unknown` and type guards.
 - [ ] **Immutability**: Readonly parameters and `as const` used for immutable structures.
