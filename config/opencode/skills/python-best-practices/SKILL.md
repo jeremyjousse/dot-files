@@ -71,11 +71,41 @@ Design (DDD), Clean/Hexagonal Architecture, and the high-performance `uv` toolch
   ```
 - **Virtual Environment Hygiene**: Rely on `uv run` to automatically execute within the project virtual environment without manual shell environment mutations.
 
+### Rule 4: Mandatory `mise.toml` Verification Tasks
+- When initiating a new Python project or updating an existing one, you **MUST** configure standard verification tasks in `mise.toml`.
+- The SDLC Stage 4 Verification Agent (`sdlc-verify`) standardizes on `rtk mise run verify` (with granular tasks `lint` and `format:check`).
+- Map all `mise` verification tasks directly to `uv` to preserve hermetic execution:
+  ```toml
+  [tasks.lint]
+  description = "Lint Python code with ruff"
+  run = "uv run ruff check ."
+
+  [tasks."format:check"]
+  description = "Check Python formatting with ruff"
+  run = "uv run ruff format --check ."
+
+  [tasks.format]
+  description = "Format Python code with ruff"
+  run = "uv run ruff format ."
+
+  [tasks.typecheck]
+  description = "Typecheck Python code with mypy"
+  run = "uv run mypy ."
+
+  [tasks.test]
+  description = "Run Python test suite with pytest"
+  run = "uv run pytest"
+
+  [tasks.verify]
+  description = "Run all verification checks (lint, format:check, typecheck, test)"
+  depends = ["lint", "format:check", "typecheck", "test"]
+  ```
+
 ---
 
 ## 2. Strict Type Safety & Static Analysis
 
-### Rule 4: Strict Typing as a Non-Negotiable Contract
+### Rule 5: Strict Typing as a Non-Negotiable Contract
 - Configure static type checking (`mypy` or `pyright`) in strict mode:
   ```toml
   [tool.mypy]
@@ -93,7 +123,7 @@ Design (DDD), Clean/Hexagonal Architecture, and the high-performance `uv` toolch
 - All public functions, methods, and domain properties must have explicit parameter and return type annotations.
 - **Ban `Any` in Domain Logic**: Replace `Any` with `object`, bounded `TypeVar`, `typing.Generic`, or structural `typing.Protocol`. If unvalidated data enters the system, validate it at the boundary.
 
-### Rule 5: Modern Python Type Syntax (3.10+)
+### Rule 6: Modern Python Type Syntax (3.10+)
 - Use native collection generics (`list[str]`, `dict[str, int]`, `tuple[int, ...]`, `set[UUID]`). Avoid legacy imports from `typing` (`List`, `Dict`, `Tuple`, `Set`, `Optional`, `Union`).
 - Use the union operator `|` instead of `Optional` or `Union`:
   ```python
@@ -114,7 +144,7 @@ Design (DDD), Clean/Hexagonal Architecture, and the high-performance `uv` toolch
           return self
   ```
 
-### Rule 6: Structural Subtyping with Protocols
+### Rule 7: Structural Subtyping with Protocols
 - Prefer `typing.Protocol` over nominal base classes (`abc.ABC`) for interfaces and collaborators. Protocols enable structural subtyping (duck typing verified statically) without forcing inheritance:
   ```python
   from typing import Protocol
@@ -124,7 +154,7 @@ Design (DDD), Clean/Hexagonal Architecture, and the high-performance `uv` toolch
   ```
 - Mark protocols with `@typing.runtime_checkable` only when runtime `isinstance` checks are strictly necessary.
 
-### Rule 7: Runtime Boundary Validation vs. Static Types
+### Rule 8: Runtime Boundary Validation vs. Static Types
 - Maintain a strict boundary between static type hints (compile-time analysis) and runtime data validation.
 - Use `pydantic` v2 (or `msgspec`) exclusively at system boundaries: HTTP request/response payloads, message broker events, configuration files, and external database adapters.
 - **Never pass unvalidated raw `dict` objects into domain entities or business logic functions.** Parse and validate into typed schemas first.
@@ -133,7 +163,7 @@ Design (DDD), Clean/Hexagonal Architecture, and the high-performance `uv` toolch
 
 ## 3. Domain Modeling & Architecture for Complex Business Logic
 
-### Rule 8: Clean / Hexagonal Architecture (Ports & Adapters)
+### Rule 9: Clean / Hexagonal Architecture (Ports & Adapters)
 - **Dependency Rule**: Dependencies always point inward toward the core domain. The domain core must have ZERO dependencies on frameworks, databases, or infrastructure libraries:
   - **Domain Core**: Pure business entities, value objects, domain events, domain exceptions, and port interfaces (`Protocol`). No imports of FastAPI, SQLAlchemy, Redis, Boto3, or HTTP libraries.
   - **Application / Use Case Layer**: Orchestrates domain entities and ports to execute business scenarios (e.g., `RegisterUserUseCase`, `ProcessInvoiceUseCase`).
@@ -151,7 +181,7 @@ Design (DDD), Clean/Hexagonal Architecture, and the high-performance `uv` toolch
 └────────────────────────────────────────────────────────┘
 ```
 
-### Rule 9: Rich Domain Models vs. Anemic Data Models
+### Rule 10: Rich Domain Models vs. Anemic Data Models
 - **Encapsulate Behavior**: Place business rules, validation invariants, and state transitions inside entities and aggregates—not in procedural service functions.
 - **Make Illegal State Unrepresentable**: Prevent entities from ever existing in an invalid state. Validate invariants in constructors and guard state changes:
   ```python
@@ -180,7 +210,7 @@ Design (DDD), Clean/Hexagonal Architecture, and the high-performance `uv` toolch
           self._status = OrderStatus.CANCELLED
   ```
 
-### Rule 10: Value Objects & Primitive Obsession Prevention
+### Rule 11: Value Objects & Primitive Obsession Prevention
 - Replace raw primitive types (`str`, `int`, `float`, `UUID`) with dedicated Value Objects or `NewType`:
   - **Value Objects**: Immutable, identityless concepts compared strictly by value:
     ```python
@@ -210,7 +240,7 @@ Design (DDD), Clean/Hexagonal Architecture, and the high-performance `uv` toolch
     ```
 - Use `enum.StrEnum` (Python 3.11+) or `enum.Enum` for discrete sets of domain states instead of arbitrary string literals.
 
-### Rule 11: Unit of Work & Transactional Boundaries
+### Rule 12: Unit of Work & Transactional Boundaries
 - Encapsulate database transactions with an asynchronous Unit of Work pattern (`async with uow:`).
 - Repositories should operate within the transaction managed by the Unit of Work. Do not commit transactions inside individual repository methods:
   ```python
@@ -228,7 +258,7 @@ Design (DDD), Clean/Hexagonal Architecture, and the high-performance `uv` toolch
 
 ## 4. Robust Error Handling & Defensive Programming
 
-### Rule 12: Explicit Domain Exception Hierarchies
+### Rule 13: Explicit Domain Exception Hierarchies
 - Create custom domain exception hierarchies inheriting from a base `DomainError(Exception)`.
 - Distinguish business invariant violations from unexpected infrastructure failures:
   ```python
@@ -247,7 +277,7 @@ Design (DDD), Clean/Hexagonal Architecture, and the high-performance `uv` toolch
           self.available_cents = available_cents
   ```
 
-### Rule 13: Exception Translation & Traceback Preservation
+### Rule 14: Exception Translation & Traceback Preservation
 - Translate low-level infrastructure exceptions (e.g. `asyncpg.PostgresError`, `httpx.HTTPError`) into domain or application exceptions at adapter boundaries.
 - **Always preserve original exceptions with `from exc`**:
   ```python
@@ -265,14 +295,14 @@ Design (DDD), Clean/Hexagonal Architecture, and the high-performance `uv` toolch
   ```
 - **Never swallow exceptions**: Avoid bare `except:` or `except Exception: pass`. Catch specific exceptions and log or re-raise appropriately.
 
-### Rule 14: Result Patterns for Expected Business Outcomes
+### Rule 15: Result Patterns for Expected Business Outcomes
 - For expected business branching where failure is a standard alternative path (e.g. form validation failure, credit limit reached), consider returning an explicit `Result[T, E]` type rather than throwing heavy exceptions for normal control flow.
 
 ---
 
 ## 5. Asynchronous Concurrency & Resilience
 
-### Rule 15: Structured Concurrency with `asyncio.TaskGroup`
+### Rule 16: Structured Concurrency with `asyncio.TaskGroup`
 - Always use `asyncio.TaskGroup` (Python 3.11+) instead of unmanaged `asyncio.create_task()` or `asyncio.gather()`. If any child task fails, the remaining tasks are automatically cancelled:
   ```python
   # Bad: Unhandled task failure leaves tasks dangling
@@ -288,7 +318,7 @@ Design (DDD), Clean/Hexagonal Architecture, and the high-performance `uv` toolch
   result2 = task2.result()
   ```
 
-### Rule 16: Non-Blocking Event Loop Hygiene
+### Rule 17: Non-Blocking Event Loop Hygiene
 - **Never run blocking I/O inside async functions**: File system access, synchronous database drivers, or synchronous HTTP clients (`requests`) freeze the event loop.
 - Offload unavoidable synchronous or CPU-intensive operations using `asyncio.to_thread()`:
   ```python
@@ -300,7 +330,7 @@ Design (DDD), Clean/Hexagonal Architecture, and the high-performance `uv` toolch
       response = await client.get(url)
   ```
 
-### Rule 17: Resource Lifecycle & Cancellation Safety
+### Rule 18: Resource Lifecycle & Cancellation Safety
 - Acquire and release connections, pools, and locks exclusively using asynchronous context managers (`async with`).
 - Allow `asyncio.CancelledError` to propagate cleanly. Perform cleanup in `finally:` blocks or context managers rather than catching and suppressing cancellation.
 
@@ -308,7 +338,7 @@ Design (DDD), Clean/Hexagonal Architecture, and the high-performance `uv` toolch
 
 ## 6. Code Quality, Tooling & Formatting (Ruff Standard)
 
-### Rule 18: Standardize on `ruff` for Linting & Formatting
+### Rule 19: Standardize on `ruff` for Linting & Formatting
 - Use `ruff` exclusively to replace `flake8`, `black`, `isort`, `pylint`, and `pyupgrade`.
 - Standard configuration in `pyproject.toml`:
   ```toml
@@ -336,7 +366,7 @@ Design (DDD), Clean/Hexagonal Architecture, and the high-performance `uv` toolch
   indent-style = "space"
   ```
 
-### Rule 19: Import Organization & Type Guarding
+### Rule 20: Import Organization & Type Guarding
 - Place type-only imports inside `if TYPE_CHECKING:` guards to prevent circular imports and optimize runtime startup performance:
   ```python
   from typing import TYPE_CHECKING
@@ -349,7 +379,7 @@ Design (DDD), Clean/Hexagonal Architecture, and the high-performance `uv` toolch
 
 ## 7. Testing Strategy for Business-Critical Systems
 
-### Rule 20: The Testing Pyramid for Complex Business Logic
+### Rule 21: The Testing Pyramid for Complex Business Logic
 - **Pure Domain Unit Tests**:
   - Test domain entities, value objects, and business rules without mocks, databases, or network calls.
   - Execute in milliseconds under `uv run pytest`.
@@ -359,7 +389,7 @@ Design (DDD), Clean/Hexagonal Architecture, and the high-performance `uv` toolch
 - **End-to-End / API Contract Tests**:
   - Verify complete use case flows through HTTP test clients with database transactions rolled back after each test.
 
-### Rule 21: Table-Driven Testing & Invariant Verification
+### Rule 22: Table-Driven Testing & Invariant Verification
 - Use `@pytest.mark.parametrize` for table-driven edge case verification:
   ```python
   @pytest.mark.parametrize(
@@ -382,6 +412,8 @@ Design (DDD), Clean/Hexagonal Architecture, and the high-performance `uv` toolch
 
 Before submitting Python code for review or commit, verify:
 
+- [ ] **Mise Verification Tasks**: `mise.toml` defines required `verify`, `lint`, and `format:check` tasks delegating to `uv`.
+- [ ] **Unified Verification**: Passes `rtk mise run verify` cleanly with zero warnings or errors.
 - [ ] **Package Management**: Standardized exclusively on `uv`; dependencies managed via `uv add` and committed in `uv.lock`.
 - [ ] **Formatting**: Passes `uv run ruff format --check .` cleanly.
 - [ ] **Linting**: Passes `uv run ruff check .` with zero errors or unhandled warnings.

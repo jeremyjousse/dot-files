@@ -164,12 +164,44 @@ conventions for Svelte 5 applications.
 - Do not suppress Svelte compiler a11y warnings with `svelte-ignore` comments without documented architectural justification.
 - Ensure interactive elements are keyboard accessible, have appropriate ARIA attributes (`aria-label`, `aria-expanded`), and respect semantic HTML hierarchy.
 
+### Rule 12: Mandatory Task Automation with mise.toml
+- When initiating a new Svelte or SvelteKit project or updating an existing one, you **MUST** configure standard verification tasks in `mise.toml`.
+- The SDLC Stage 4 Verification Agent (`sdlc-verify`) standardizes on `rtk mise run verify` (with granular tasks `lint` and `format:check`).
+- Define the standard tasks wrapping package manager scripts (e.g. `pnpm`):
+  ```toml
+  [tasks.check]
+  description = "Typecheck and validate Svelte components"
+  run = "pnpm svelte-check --tsconfig ./tsconfig.json"
+
+  [tasks.lint]
+  description = "Lint Svelte and TypeScript code"
+  run = "pnpm oxlint"
+
+  [tasks."format:check"]
+  description = "Check code formatting"
+  run = "pnpm oxfmt --check"
+
+  [tasks.format]
+  description = "Format code"
+  run = "pnpm oxfmt"
+
+  [tasks.test]
+  description = "Run unit and component tests"
+  run = "pnpm vitest run"
+
+  [tasks.verify]
+  description = "Run all verification checks (check, lint, format:check, test)"
+  depends = ["check", "lint", "format:check", "test"]
+  ```
+
 ---
 
 ## 6. Pre-Commit & Review Quality Checklist
 
 Before submitting Svelte code for review or commit, verify:
 
+- [ ] **Mise Verification Tasks**: `mise.toml` defines required `verify`, `lint`, and `format:check` tasks.
+- [ ] **Unified Verification**: Passes `rtk mise run verify` cleanly with zero warnings or errors.
 - [ ] **Typecheck**: Passes `svelte-check --tsconfig ./tsconfig.json` with zero errors.
 - [ ] **Runes Usage**: No legacy `export let` or `$:`; all reactivity uses `$state`, `$derived`, `$props`.
 - [ ] **Effects**: No `$effect()` used for derived calculations; cleanup handlers present on effects that allocate resources or subscriptions.
