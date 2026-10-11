@@ -1,3 +1,11 @@
+# [0.17.0](https://github.com/jeremyjousse/dot-files/compare/v0.16.0...v0.17.0) (2026-10-11)
+
+
+### Features
+
+* **opencode:** add python-best-practices skill with mandatory uv tooling ([2e4730c](https://github.com/jeremyjousse/dot-files/commit/2e4730c9702fc54a7e8f415d3317a6f3a5da76a9))
+* **skills:** add mandatory task automation rules for mise.toml ([0231ea2](https://github.com/jeremyjousse/dot-files/commit/0231ea2ae8acc6d27b4f4fc801b3b1ea2d234922))
+
 # [0.16.0](https://github.com/jeremyjousse/dot-files/compare/v0.15.0...v0.16.0) (2026-10-10)
 
 
