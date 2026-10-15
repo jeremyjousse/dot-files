@@ -33,15 +33,25 @@ If no issue number or URL was provided above, prompt the user for the target Git
 3. **Wait for User Confirmation (MANDATORY)**:
 
    - Propose the branch name clearly to the user.
-   - **STOP AND WAIT**: Do NOT run `git checkout -b` until the user explicitly confirms the branch name.
+   - **STOP AND WAIT**: Do NOT run `git checkout -b` or create a worktree until the user explicitly confirms the branch name.
 
-4. **Checkout Branch & Transition Status**:
+4. **Branch Isolation & Status Transition**:
 
-   - Once confirmed, checkout the new branch:
+   - **Default Workflow (Standard Branch Isolation)**:
+     Once confirmed, checkout the new branch:
 
      ```bash
      git checkout -b <branch-name>
      ```
+
+   - **Opt-in Workflow (Worktree Isolation)**:
+     If the user explicitly requests worktree isolation (e.g. for concurrent sessions or clean parallel worktrees):
+
+     ```bash
+     git worktree add .worktrees/<branch-name> -b <branch-name>
+     ```
+
+     *Note*: The standard convention is `.worktrees/<branch-name>`. Subagents operate relative to the active workspace session; worktree usage is opt-in to avoid dependency duplication and tool path friction.
 
    - Immediately transition the issue label on GitHub:
 
