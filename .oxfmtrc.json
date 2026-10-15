@@ -12,5 +12,13 @@
 	"bracketSameLine": false,
 	"arrowParens": "always",
 	"endOfLine": "lf",
-	"ignorePatterns": ["**/*.md", "**/*.toml", "node_modules", "dist"]
+	"ignorePatterns": ["**/*.md", "**/*.toml", "node_modules", "dist"],
+	"overrides": [
+		{
+			"files": ["config/opencode/opencode.jsonc"],
+			"options": {
+				"trailingComma": "none"
+			}
+		}
+	]
 }

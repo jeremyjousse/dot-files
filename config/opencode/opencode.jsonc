@@ -4,8 +4,8 @@
 		"codeburn": {
 			"type": "local",
 			"command": ["codeburn", "mcp"],
-			"enabled": true,
-		},
+			"enabled": true
+		}
 	},
 	"permission": {
 		"bash": {
@@ -21,7 +21,7 @@
 			"git show *": "allow",
 			"rtk git show *": "allow",
 			"which *": "allow",
-			"rtk which *": "allow",
-		},
-	},
+			"rtk which *": "allow"
+		}
+	}
 }

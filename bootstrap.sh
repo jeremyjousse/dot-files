@@ -31,6 +31,7 @@ link_config_files "$PWD"/config/opencode/command "$HOME"/.config/opencode/comman
 link_config_files "$PWD"/config/opencode/agents "$HOME"/.config/opencode/agents
 link_config_files "$PWD"/config/opencode/skills "$HOME"/.config/opencode/skills
 link_config_files "$PWD"/config/opencode/rules "$HOME"/.config/opencode/rules
+link_config_files "$PWD"/config/opencode/plugins "$HOME"/.config/opencode/plugins
 
 link_config_files "$PWD"/config/alacritty "$HOME"/.config/alacritty
 link_config_files "$PWD"/config/gh-dash "$HOME"/.config/gh-dash
