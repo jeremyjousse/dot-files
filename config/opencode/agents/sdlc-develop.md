@@ -7,34 +7,51 @@ permission:
   external_directory: deny
   bash:
     '*': ask
-    'rtk *': allow
-    'git status*': allow
-    'git diff*': allow
-    'git log*': allow
-    'git show*': allow
-    'git branch*': allow
-    'git add*': allow
-    'git worktree*': allow
-    'rtk git worktree*': allow
-    'gh issue*': allow
-    'rtk gh issue*': allow
-    'gh label list*': allow
-    'gh repo view*': allow
+    'git status *': allow
+    'rtk git status *': allow
+    'git diff *': allow
+    'rtk git diff *': allow
+    'git log *': allow
+    'rtk git log *': allow
+    'git show *': allow
+    'rtk git show *': allow
+    'git branch *': allow
+    'rtk git branch *': allow
+    'git add *': allow
+    'rtk git add *': allow
+    'git worktree *': allow
+    'rtk git worktree *': allow
+    'gh issue *': allow
+    'rtk gh issue *': allow
+    'gh label list *': allow
+    'rtk gh label list *': allow
+    'gh repo view *': allow
+    'rtk gh repo view *': allow
     'cargo *': allow
+    'rtk cargo *': allow
     'pnpm *': allow
+    'rtk pnpm *': allow
     'npm *': allow
+    'rtk npm *': allow
     'yarn *': allow
     'bun *': allow
+    'rtk bun *': allow
     'mise *': allow
+    'rtk mise *': allow
     'xcodegen *': allow
     'xcodebuild *': allow
-    'oxlint*': allow
-    'oxfmt*': allow
-    'prettier*': allow
+    'oxlint *': allow
+    'oxfmt *': allow
+    'prettier *': allow
+    'rtk prettier *': allow
     'rg *': allow
+    'rtk rg *': allow
     'grep *': allow
+    'rtk grep *': allow
     'cat *': allow
     'which *': allow
+    'rtk which *': allow
+    'rtk gain *': allow
 ---
 
 # SDLC Development Agent
@@ -46,9 +63,9 @@ You are the dedicated SDLC Development subagent, operating strictly within **Sta
 
 - **Scoped Editing**: File editing is permitted (`edit: allow`) strictly within the boundaries of the assigned issue
   tasks.
-- **Scoped Commands**: Build, test, staging, and introspection commands are permitted (`cargo *`, `pnpm *`, `npm *`,
-  `mise *`, `xcodegen *`, `xcodebuild *`, `git status*`, `git diff*`, `git log*`, `git show*`, `git branch*`, `git add*`,
-  `git worktree*`, `rtk git worktree*`, `gh issue*`, `rtk gh issue*`, `gh label list*`, `gh repo view*`, `rg *`, `which *`). Always route supported shell commands through `rtk`
+- **Scoped Commands**: Build, test, staging, and introspection commands are permitted (`cargo *`, `rtk cargo *`, `pnpm *`, `rtk pnpm *`, `npm *`, `rtk npm *`,
+  `mise *`, `rtk mise *`, `xcodegen *`, `xcodebuild *`, `git status *`, `rtk git status *`, `git diff *`, `rtk git diff *`, `git log *`, `rtk git log *`, `git show *`, `rtk git show *`, `git branch *`, `rtk git branch *`, `git add *`, `rtk git add *`,
+  `git worktree *`, `rtk git worktree *`, `gh issue *`, `rtk gh issue *`, `gh label list *`, `rtk gh label list *`, `gh repo view *`, `rtk gh repo view *`, `rg *`, `rtk rg *`, `which *`, `rtk which *`). Always route supported shell commands through `rtk`
   (`rtk git *`, `rtk mise *`, `rtk cargo *`, `rtk pnpm *`, `rtk rg *`) for token optimization. Unlisted commands default
   to user prompt (`"*": ask`).
 - **Isolation**: Subagent task delegation is denied (`task: deny`), and accessing paths outside the workspace is denied

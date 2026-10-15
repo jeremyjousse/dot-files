@@ -11,7 +11,7 @@ cascade into development.
 
 - **Slash Command**: `/sdlc-1-refine <issue-id>`
 - **Dedicated Agent**: `sdlc-refine`
-- **Permissions**: `edit: deny`, `bash: gh issue*, rtk gh issue*, gh label list*, gh repo view*`, `task: deny`, `external_directory: deny`
+- **Permissions**: `edit: deny`, `bash: gh issue *, rtk gh issue *, gh label list *, rtk gh label list *, gh repo view *, rtk gh repo view *`, `task: deny`, `external_directory: deny`
 
 Before writing ANY code, creating branches, or modifying files:
 
@@ -113,7 +113,7 @@ Before any commit is proposed:
 
 - **Slash Commands**: `/sdlc-4-pr [issue-id]`, `/sdlc-5-review-pr [pr-id]`
 - **Dedicated Agent**: `sdlc-pr-review`
-- **Permissions**: `edit: allow` (scoped to review fixes), `gh pr*`, `rtk gh pr*`, `gh repo view*`, `gh issue*`, `rtk gh issue*`, `gh pr merge: deny`, `gh api *`, `git push`
+- **Permissions**: `edit: allow` (scoped to review fixes), `gh pr *`, `rtk gh pr *`, `gh repo view *`, `rtk gh repo view *`, `gh issue *`, `rtk gh issue *`, `gh pr merge *: deny`, `rtk gh pr merge *: deny`, `gh api *`, `rtk gh api *`, `git push *`
 
 1. **Push Branch**:
 
