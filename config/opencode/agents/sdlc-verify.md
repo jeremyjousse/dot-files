@@ -9,28 +9,42 @@ permission:
   external_directory: deny
   bash:
     '*': deny
-    'rtk *': allow
-    'gh issue*': allow
-    'rtk gh issue*': allow
-    'git status*': allow
-    'git diff*': allow
-    'git log*': allow
-    'git show*': allow
-    'git branch*': allow
+    'gh issue *': allow
+    'rtk gh issue *': allow
+    'git status *': allow
+    'rtk git status *': allow
+    'git diff *': allow
+    'rtk git diff *': allow
+    'git log *': allow
+    'rtk git log *': allow
+    'git show *': allow
+    'rtk git show *': allow
+    'git branch *': allow
+    'rtk git branch *': allow
     'cargo *': allow
+    'rtk cargo *': allow
     'pnpm *': allow
+    'rtk pnpm *': allow
     'npm *': allow
+    'rtk npm *': allow
     'yarn *': allow
     'bun *': allow
+    'rtk bun *': allow
     'mise *': allow
+    'rtk mise *': allow
     'xcodegen *': allow
     'xcodebuild *': allow
-    'oxlint*': allow
-    'oxfmt*': allow
-    'prettier*': allow
+    'oxlint *': allow
+    'oxfmt *': allow
+    'prettier *': allow
+    'rtk prettier *': allow
     'rg *': allow
+    'rtk rg *': allow
     'grep *': allow
+    'rtk grep *': allow
     'which *': allow
+    'rtk which *': allow
+    'rtk gain *': allow
 ---
 
 # SDLC Verification Agent
@@ -42,10 +56,10 @@ Verification)** of the Software Development Life Cycle.
 
 - **Read-Only / No Code Editing**: Code modifications are strictly forbidden (`edit: deny`). If checks fail, report the
   failures back to the development agent or user rather than attempting code edits.
-- **Scoped Verification Commands**: Terminal execution is restricted to quality and build commands (`mise *`, `cargo *`,
-  `pnpm *`, `npm *`, `xcodebuild *`, `xcodegen *`), read-only search (`rg *`, `grep *`), introspection (`which *`), read-only
-  git inspection (`git status*`, `git diff*`, `git log*`, `git show*`, `git branch*`), and issue inspection (`gh issue*`,
-  `rtk gh issue*`). Always prefer routing commands through `rtk` to minimize token consumption. All other commands
+- **Scoped Verification Commands**: Terminal execution is restricted to quality and build commands (`mise *`, `rtk mise *`, `cargo *`, `rtk cargo *`,
+  `pnpm *`, `rtk pnpm *`, `npm *`, `rtk npm *`, `xcodebuild *`, `xcodegen *`), read-only search (`rg *`, `rtk rg *`, `grep *`, `rtk grep *`), introspection (`which *`, `rtk which *`), read-only
+  git inspection (`git status *`, `rtk git status *`, `git diff *`, `rtk git diff *`, `git log *`, `rtk git log *`, `git show *`, `rtk git show *`, `git branch *`, `rtk git branch *`), and issue inspection (`gh issue *`,
+  `rtk gh issue *`). Always prefer routing commands through `rtk` to minimize token consumption. All other commands
   are denied (`"*": deny`).
 - **Isolation**: Subagent task delegation is denied (`task: deny`), and accessing paths outside the workspace is denied
   (`external_directory: deny`).

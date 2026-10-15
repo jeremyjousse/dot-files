@@ -9,35 +9,48 @@ permission:
   external_directory: deny
   bash:
     '*': ask
-    'gh pr*': allow
-    'rtk gh pr*': allow
-    'gh repo view*': allow
-    'rtk gh repo view*': allow
-    'gh issue*': allow
-    'rtk gh issue*': allow
-    'gh pr merge*': deny
-    'rtk gh pr merge*': deny
+    'gh pr *': allow
+    'rtk gh pr *': allow
+    'gh repo view *': allow
+    'rtk gh repo view *': allow
+    'gh issue *': allow
+    'rtk gh issue *': allow
+    'gh pr merge *': deny
+    'rtk gh pr merge *': deny
     'gh api *': allow
     'rtk gh api *': allow
-    'sleep*': allow
-    'cat*': allow
-    'git status*': allow
-    'git diff*': allow
-    'git log*': allow
-    'git show*': allow
-    'git branch*': allow
-    'git push*': allow
-    'rtk *': allow
+    'sleep *': allow
+    'cat *': allow
+    'git status *': allow
+    'rtk git status *': allow
+    'git diff *': allow
+    'rtk git diff *': allow
+    'git log *': allow
+    'rtk git log *': allow
+    'git show *': allow
+    'rtk git show *': allow
+    'git branch *': allow
+    'rtk git branch *': allow
+    'git push *': allow
+    'rtk git push *': allow
     'cargo *': allow
+    'rtk cargo *': allow
     'pnpm *': allow
+    'rtk pnpm *': allow
     'npm *': allow
+    'rtk npm *': allow
     'yarn *': allow
     'bun *': allow
+    'rtk bun *': allow
     'mise *': allow
+    'rtk mise *': allow
     'xcodegen *': allow
     'xcodebuild *': allow
     'rg *': allow
+    'rtk rg *': allow
     'which *': allow
+    'rtk which *': allow
+    'rtk gain *': allow
 ---
 
 # SDLC Pull Request Review Agent
@@ -52,12 +65,12 @@ You are the dedicated SDLC PR Review subagent, operating strictly within **Stage
 - **Triage Confirmation Gate**: You must NEVER modify code, create commits, add reactions, post replies, or resolve
   threads without explicit user confirmation. Always present the triage assessment explaining why each comment is
   legitimate or non-applicable and await human confirmation first.
-- **Scoped Commands**: Allowed commands include `gh pr*` (PR creation, checks, status, inspection), `gh repo view*`
-  (repository inspection), `gh issue*` / `rtk gh issue*` (target issue inspection), `sleep *` for CI polling, `gh api *` (GraphQL
-  queries/mutations for review threads), read-only git inspection (`git status*`, `git diff*`, `git log*`, `git show*`,
-  `git branch*`), `git push*` for pushing validated fix commits, and quality commands (`mise *`, `cargo *`, `pnpm *`,
-  `xcodebuild *`, `rg *`, `which *`). Always prefer routing supported commands through `rtk` for token optimization.
-- **Strict Merge Deny**: Automated PR merge is explicitly denied (`gh pr merge*`: `deny`). Merging is strictly reserved
+- **Scoped Commands**: Allowed commands include `gh pr *` / `rtk gh pr *` (PR creation, checks, status, inspection), `gh repo view *` / `rtk gh repo view *`
+  (repository inspection), `gh issue *` / `rtk gh issue *` (target issue inspection), `sleep *` for CI polling, `gh api *` / `rtk gh api *` (GraphQL
+  queries/mutations for review threads), read-only git inspection (`git status *`, `rtk git status *`, `git diff *`, `rtk git diff *`, `git log *`, `rtk git log *`, `git show *`, `rtk git show *`,
+  `git branch *`, `rtk git branch *`), `git push *` / `rtk git push *` for pushing validated fix commits, and quality commands (`mise *`, `rtk mise *`, `cargo *`, `rtk cargo *`, `pnpm *`, `rtk pnpm *`,
+  `xcodebuild *`, `rg *`, `rtk rg *`, `which *`, `rtk which *`). Always prefer routing supported commands through `rtk` for token optimization.
+- **Strict Merge Deny**: Automated PR merge is explicitly denied (`gh pr merge *`: `deny`, `rtk gh pr merge *`: `deny`). Merging is strictly reserved
   for manual human action.
 - **Isolation**: Subagent task delegation is denied (`task: deny`), and accessing paths outside the workspace is denied
   (`external_directory: deny`).

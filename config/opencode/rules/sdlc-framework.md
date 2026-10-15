@@ -11,7 +11,7 @@ cascade into development.
 
 - **Slash Command**: `/sdlc-1-refine <issue-id>`
 - **Dedicated Agent**: `sdlc-refine`
-- **Permissions**: `edit: deny`, `bash: gh issue*, rtk gh issue*, gh label list*, gh repo view*`, `task: deny`, `external_directory: deny`
+- **Permissions**: `edit: deny`, `bash: gh issue *, rtk gh issue *, gh label list *, rtk gh label list *, gh repo view *, rtk gh repo view *`, `task: deny`, `external_directory: deny`
 
 Before writing ANY code, creating branches, or modifying files:
 
@@ -49,8 +49,11 @@ Development must NEVER occur directly on `main` or an unrelated branch.
    - `refactor/<issue-id>-<short-description>`
 2. **Branch Creation Gate**:
    - NEVER create or checkout a branch automatically.
-   - Propose the branch name and **wait for explicit user confirmation** before running `git checkout -b <branch>`.
-3. **Issue Status Transition**:
+   - Propose the branch name and **wait for explicit user confirmation** before running `git checkout -b <branch>` or creating a worktree.
+3. **Isolation Strategy**:
+   - **Default (Standard Branch Isolation)**: `git checkout -b <branch>`. Keeps the workspace root aligned with the active OpenCode session, preserves existing dependency caches (`node_modules/`, virtualenvs), and avoids cleanup overhead.
+   - **Opt-in (Worktree Isolation)**: `git worktree add .worktrees/<branch> -b <branch>`. Intended for concurrent sessions or complete filesystem isolation. Follows the standard directory convention `.worktrees/<branch>`.
+4. **Issue Status Transition**:
 
    - Immediately upon creating the branch and starting development, update the issue label on GitHub:
 
@@ -110,7 +113,7 @@ Before any commit is proposed:
 
 - **Slash Commands**: `/sdlc-4-pr [issue-id]`, `/sdlc-5-review-pr [pr-id]`
 - **Dedicated Agent**: `sdlc-pr-review`
-- **Permissions**: `edit: allow` (scoped to review fixes), `gh pr*`, `rtk gh pr*`, `gh repo view*`, `gh issue*`, `rtk gh issue*`, `gh pr merge: deny`, `gh api *`, `git push`
+- **Permissions**: `edit: allow` (scoped to review fixes), `gh pr *`, `rtk gh pr *`, `gh repo view *`, `rtk gh repo view *`, `gh issue *`, `rtk gh issue *`, `gh pr merge *: deny`, `rtk gh pr merge *: deny`, `gh api *`, `rtk gh api *`, `git push *`
 
 1. **Push Branch**:
 
@@ -137,6 +140,13 @@ Before any commit is proposed:
 5. **Merge Gate**:
    - **NEVER** run `gh pr merge`.
    - Merging is strictly reserved for human manual action once all checks and threads are resolved.
+6. **Worktree Cleanup (Opt-in Workflow)**:
+   - If worktree isolation was used, remove the worktree directory once the branch is merged:
+
+     ```bash
+     git worktree remove .worktrees/<branch>
+     git worktree prune
+     ```
 
 ---
 
