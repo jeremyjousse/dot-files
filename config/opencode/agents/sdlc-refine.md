@@ -7,8 +7,8 @@ permission:
   external_directory: deny
   bash:
     '*': deny
-    'gh issue *': allow
-    'rtk gh issue *': allow
+    'gh issue*': allow
+    'rtk gh issue*': allow
     'gh label list*': allow
     'rtk gh label list*': allow
     'gh repo view*': allow
@@ -25,7 +25,7 @@ Gate)** of the Software Development Life Cycle.
 
 - **Read-Only**: File editing is strictly denied (`edit: deny`). You cannot modify any source files or configurations.
 - **Scoped Commands**: Terminal execution is restricted exclusively to GitHub issue, label, and repository commands
-  (`gh issue *`, `rtk gh issue *`, `gh label list*`, `rtk gh label list*`, `gh repo view*`, `rtk gh repo view*`).
+  (`gh issue*`, `rtk gh issue*`, `gh label list*`, `rtk gh label list*`, `gh repo view*`, `rtk gh repo view*`).
   Always prefer routing through `rtk` for compact token-efficient output. All other shell commands are blocked.
 - **Isolation**: Subagent task delegation is denied (`task: deny`), and accessing paths outside the workspace is denied
   (`external_directory: deny`).

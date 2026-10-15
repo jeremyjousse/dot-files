@@ -10,8 +10,8 @@ permission:
   bash:
     '*': deny
     'rtk *': allow
-    'gh issue view*': allow
-    'rtk gh issue view*': allow
+    'gh issue*': allow
+    'rtk gh issue*': allow
     'git status*': allow
     'git diff*': allow
     'git log*': allow
@@ -44,8 +44,8 @@ Verification)** of the Software Development Life Cycle.
   failures back to the development agent or user rather than attempting code edits.
 - **Scoped Verification Commands**: Terminal execution is restricted to quality and build commands (`mise *`, `cargo *`,
   `pnpm *`, `npm *`, `xcodebuild *`, `xcodegen *`), read-only search (`rg *`, `grep *`), introspection (`which *`), read-only
-  git inspection (`git status*`, `git diff*`, `git log*`, `git show*`, `git branch*`), and issue inspection (`gh issue view*`,
-  `rtk gh issue view*`). Always prefer routing commands through `rtk` to minimize token consumption. All other commands
+  git inspection (`git status*`, `git diff*`, `git log*`, `git show*`, `git branch*`), and issue inspection (`gh issue*`,
+  `rtk gh issue*`). Always prefer routing commands through `rtk` to minimize token consumption. All other commands
   are denied (`"*": deny`).
 - **Isolation**: Subagent task delegation is denied (`task: deny`), and accessing paths outside the workspace is denied
   (`external_directory: deny`).

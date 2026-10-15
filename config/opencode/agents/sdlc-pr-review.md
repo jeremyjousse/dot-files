@@ -9,12 +9,12 @@ permission:
   external_directory: deny
   bash:
     '*': ask
-    'gh pr *': allow
-    'rtk gh pr *': allow
+    'gh pr*': allow
+    'rtk gh pr*': allow
     'gh repo view*': allow
     'rtk gh repo view*': allow
-    'gh issue view*': allow
-    'rtk gh issue view*': allow
+    'gh issue*': allow
+    'rtk gh issue*': allow
     'gh pr merge*': deny
     'rtk gh pr merge*': deny
     'gh api *': allow
@@ -52,8 +52,8 @@ You are the dedicated SDLC PR Review subagent, operating strictly within **Stage
 - **Triage Confirmation Gate**: You must NEVER modify code, create commits, add reactions, post replies, or resolve
   threads without explicit user confirmation. Always present the triage assessment explaining why each comment is
   legitimate or non-applicable and await human confirmation first.
-- **Scoped Commands**: Allowed commands include `gh pr *` (PR creation, checks, status, inspection), `gh repo view*`
-  (repository inspection), `gh issue view*` (target issue inspection), `sleep *` for CI polling, `gh api *` (GraphQL
+- **Scoped Commands**: Allowed commands include `gh pr*` (PR creation, checks, status, inspection), `gh repo view*`
+  (repository inspection), `gh issue*` / `rtk gh issue*` (target issue inspection), `sleep *` for CI polling, `gh api *` (GraphQL
   queries/mutations for review threads), read-only git inspection (`git status*`, `git diff*`, `git log*`, `git show*`,
   `git branch*`), `git push*` for pushing validated fix commits, and quality commands (`mise *`, `cargo *`, `pnpm *`,
   `xcodebuild *`, `rg *`, `which *`). Always prefer routing supported commands through `rtk` for token optimization.

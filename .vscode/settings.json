@@ -17,7 +17,8 @@
 		"starship",
 		"utils",
 		"zsh",
-		"nix"
+		"nix",
+		"opencode"
 	],
 	"editor.formatOnSave": true,
 	"editor.defaultFormatter": "oxc.oxc-vscode",
