@@ -1,3 +1,10 @@
+## [0.17.2](https://github.com/jeremyjousse/dot-files/compare/v0.17.1...v0.17.2) (2026-10-15)
+
+
+### Bug Fixes
+
+* **opencode:** :bug: fix typos in opencode permisions ([39079b3](https://github.com/jeremyjousse/dot-files/commit/39079b34590dffc77a7df15db4a58b53af6784f1))
+
 ## [0.17.1](https://github.com/jeremyjousse/dot-files/compare/v0.17.0...v0.17.1) (2026-10-15)
 
 
