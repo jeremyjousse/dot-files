@@ -6,54 +6,6 @@ description:
 mode: all
 tools: ['read', 'edit', 'search', 'execute']
 include-custom-instructions: true
-permission:
-  edit: allow
-  task: deny
-  external_directory: deny
-  bash:
-    '*': ask
-    'gh pr *': allow
-    'rtk gh pr *': allow
-    'gh repo view *': allow
-    'rtk gh repo view *': allow
-    'gh issue *': allow
-    'rtk gh issue *': allow
-    'gh pr merge *': deny
-    'rtk gh pr merge *': deny
-    'gh api *': allow
-    'rtk gh api *': allow
-    'sleep *': allow
-    'cat *': allow
-    'git status *': allow
-    'rtk git status *': allow
-    'git diff *': allow
-    'rtk git diff *': allow
-    'git log *': allow
-    'rtk git log *': allow
-    'git show *': allow
-    'rtk git show *': allow
-    'git branch *': allow
-    'rtk git branch *': allow
-    'git push *': allow
-    'rtk git push *': allow
-    'cargo *': allow
-    'rtk cargo *': allow
-    'pnpm *': allow
-    'rtk pnpm *': allow
-    'npm *': allow
-    'rtk npm *': allow
-    'yarn *': allow
-    'bun *': allow
-    'rtk bun *': allow
-    'mise *': allow
-    'rtk mise *': allow
-    'xcodegen *': allow
-    'xcodebuild *': allow
-    'rg *': allow
-    'rtk rg *': allow
-    'which *': allow
-    'rtk which *': allow
-    'rtk gain *': allow
 ---
 
 # SDLC Pull Request Review Agent

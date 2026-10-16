@@ -6,48 +6,6 @@ description:
 mode: all
 tools: ['read', 'search', 'execute']
 include-custom-instructions: true
-permission:
-  edit: deny
-  task: deny
-  external_directory: deny
-  bash:
-    '*': deny
-    'gh issue *': allow
-    'rtk gh issue *': allow
-    'git status *': allow
-    'rtk git status *': allow
-    'git diff *': allow
-    'rtk git diff *': allow
-    'git log *': allow
-    'rtk git log *': allow
-    'git show *': allow
-    'rtk git show *': allow
-    'git branch *': allow
-    'rtk git branch *': allow
-    'cargo *': allow
-    'rtk cargo *': allow
-    'pnpm *': allow
-    'rtk pnpm *': allow
-    'npm *': allow
-    'rtk npm *': allow
-    'yarn *': allow
-    'bun *': allow
-    'rtk bun *': allow
-    'mise *': allow
-    'rtk mise *': allow
-    'xcodegen *': allow
-    'xcodebuild *': allow
-    'oxlint *': allow
-    'oxfmt *': allow
-    'prettier *': allow
-    'rtk prettier *': allow
-    'rg *': allow
-    'rtk rg *': allow
-    'grep *': allow
-    'rtk grep *': allow
-    'which *': allow
-    'rtk which *': allow
-    'rtk gain *': allow
 ---
 
 # SDLC Verification Agent

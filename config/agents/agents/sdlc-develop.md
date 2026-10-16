@@ -4,57 +4,6 @@ description: Stage 2 & 3 Development agent for branch isolation and architecture
 mode: all
 tools: ['read', 'edit', 'search', 'execute']
 include-custom-instructions: true
-permission:
-  edit: allow
-  task: deny
-  external_directory: deny
-  bash:
-    '*': ask
-    'git status *': allow
-    'rtk git status *': allow
-    'git diff *': allow
-    'rtk git diff *': allow
-    'git log *': allow
-    'rtk git log *': allow
-    'git show *': allow
-    'rtk git show *': allow
-    'git branch *': allow
-    'rtk git branch *': allow
-    'git add *': allow
-    'rtk git add *': allow
-    'git worktree *': allow
-    'rtk git worktree *': allow
-    'gh issue *': allow
-    'rtk gh issue *': allow
-    'gh label list *': allow
-    'rtk gh label list *': allow
-    'gh repo view *': allow
-    'rtk gh repo view *': allow
-    'cargo *': allow
-    'rtk cargo *': allow
-    'pnpm *': allow
-    'rtk pnpm *': allow
-    'npm *': allow
-    'rtk npm *': allow
-    'yarn *': allow
-    'bun *': allow
-    'rtk bun *': allow
-    'mise *': allow
-    'rtk mise *': allow
-    'xcodegen *': allow
-    'xcodebuild *': allow
-    'oxlint *': allow
-    'oxfmt *': allow
-    'prettier *': allow
-    'rtk prettier *': allow
-    'rg *': allow
-    'rtk rg *': allow
-    'grep *': allow
-    'rtk grep *': allow
-    'cat *': allow
-    'which *': allow
-    'rtk which *': allow
-    'rtk gain *': allow
 ---
 
 # SDLC Development Agent

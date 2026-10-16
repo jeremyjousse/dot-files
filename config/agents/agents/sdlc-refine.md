@@ -4,19 +4,6 @@ description: Stage 1 Refinement agent for User Story analysis, scope clarificati
 mode: all
 tools: ['read', 'search', 'execute']
 include-custom-instructions: true
-permission:
-  edit: deny
-  task: deny
-  external_directory: deny
-  bash:
-    '*': deny
-    'gh issue *': allow
-    'rtk gh issue *': allow
-    'gh label list *': allow
-    'rtk gh label list *': allow
-    'gh repo view *': allow
-    'rtk gh repo view *': allow
-    'rtk gain *': allow
 ---
 
 # SDLC Refinement Agent
