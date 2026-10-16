@@ -1,8 +1,11 @@
 ---
+name: sdlc-pr-review
 description:
   Stage 5 PR Review agent for pull request creation, CI inspection, triaging review feedback, and resolving review
   threads.
 mode: all
+tools: ['read', 'edit', 'search', 'execute']
+include-custom-instructions: true
 permission:
   edit: allow
   task: deny

@@ -25,8 +25,9 @@ Run `make update` to update Homebrew formulae without upgrading GUI applications
 
 Each key folder contains a dedicated `README.md` documenting its configuration and usage:
 
-- **[`ai/`](ai/README.md)**: AI agent skills and prompt commands (Gemini CLI, OpenCode).
+- **[`ai/`](ai/README.md)**: Gemini CLI prompt commands.
 - **[`config/`](config/)**: Tool and application configurations symlinked into `$HOME`:
+  - **[`agents/`](config/agents/README.md)**: Centralized AI agent skills, slash commands, subagents, and SDLC rules shared across OpenCode, Pi, and GitHub Copilot CLI.
   - **[`alacritty/`](config/alacritty/README.md)**: Fast GPU-accelerated terminal emulator configuration.
   - **[`gemini/`](config/gemini/README.md)**: Google Gemini Code Assist and CLI settings.
   - **[`gh-dash/`](config/gh-dash/README.md)**: GitHub CLI terminal dashboard for PRs and issues.
@@ -37,7 +38,7 @@ Each key folder contains a dedicated `README.md` documenting its configuration a
   - **[`nix-darwin/`](config/nix-darwin/README.md)**: Nix-darwin system configuration.
   - **[`nushell/`](config/nushell/README.md)**: Nushell configuration and scripts.
   - **[`nvim/`](config/nvim/README.md)**: Neovim configuration using `lazy.nvim`.
-  - **[`opencode/`](config/opencode/README.md)**: Centralized OpenCode configuration, SDLC agents, and rules.
+  - **[`opencode/`](config/opencode/README.md)**: OpenCode harness settings and MCP server configuration.
   - **[`starship/`](config/starship/README.md)**: Starship cross-shell prompt configuration.
   - **[`vscode/`](config/vscode/README.md)**: Visual Studio Code settings, extensions, and snippets.
   - **[`zellij/`](config/zellij/README.md)**: Terminal workspace and multiplexer configuration.

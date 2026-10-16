@@ -1,5 +1,6 @@
 ---
 description: Stage 4 Verification Gate - Code review, quality verification suite, and commit approval
+argument-hint: '[optional-notes]'
 agent: sdlc-verify
 ---
 

@@ -1,5 +1,6 @@
 ---
 description: Stage 2 & 3 Development - Branch isolation and architecture-guided implementation
+argument-hint: <issue-id-or-url>
 agent: sdlc-develop
 ---
 

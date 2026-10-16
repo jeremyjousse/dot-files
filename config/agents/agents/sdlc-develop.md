@@ -1,6 +1,9 @@
 ---
+name: sdlc-develop
 description: Stage 2 & 3 Development agent for branch isolation and architecture-guided implementation.
 mode: all
+tools: ['read', 'edit', 'search', 'execute']
+include-custom-instructions: true
 permission:
   edit: allow
   task: deny

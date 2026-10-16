@@ -1,6 +1,9 @@
 ---
+name: sdlc-refine
 description: Stage 1 Refinement agent for User Story analysis, scope clarification, and GitHub issue refinement.
 mode: all
+tools: ['read', 'search', 'execute']
+include-custom-instructions: true
 permission:
   edit: deny
   task: deny

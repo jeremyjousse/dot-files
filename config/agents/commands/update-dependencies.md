@@ -1,5 +1,6 @@
 ---
 description: Inspect, upgrade, adapt, and verify project dependencies across ecosystems
+argument-hint: '[ecosystem-or-package]'
 ---
 
 # Dependency Update Workflow

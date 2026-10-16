@@ -1,14 +1,15 @@
 # OpenCode Configuration
 
-Centralized OpenCode configuration for agents, commands, skills, rules, and MCP servers.
+OpenCode harness settings and MCP server configuration, integrated with the centralized AI agent hub in [`config/agents/`](../agents/README.md).
 
 ## Components
 
-- **`opencode.jsonc`**: Core settings, tool permissions, and local MCP server configurations.
-- **`agents/`**: SDLC specialized agents (`sdlc-refine`, `sdlc-develop`, `sdlc-verify`, `sdlc-pr-review`).
-- **`command/`**: SDLC workflow commands (`/sdlc-1-refine`, `/sdlc-2-develop`, `/sdlc-3-verify`, `/sdlc-4-pr`, `/sdlc-5-review-pr`) and utility commands (`/update-dependencies`).
-- **`skills/`**: Domain and best-practice skills (e.g. `update-dependencies`, `python-best-practices`, `rust-best-practices`, `typescript-best-practices`, `github`, etc.).
-- **`rules/`**: Operational rules including the SDLC framework guidelines.
+- **`opencode.jsonc`**: Core settings, ambient `instructions` (`~/.agents/rules/sdlc-framework.md`), tool permissions, and local MCP server configurations.
+- **Shared AI Resources (`~/.agents/`)**:
+  - `command` &rarr; `~/.agents/commands` (`config/agents/commands/`)
+  - `agents` &rarr; `~/.agents/agents` (`config/agents/agents/`)
+  - `skills` &rarr; Auto-discovered natively from `~/.agents/skills/` (`config/agents/skills/`)
+  - `rules` &rarr; Loaded via `instructions` from `~/.agents/rules/sdlc-framework.md` (`config/agents/rules/`)
 
 ## Integrated MCP Servers
 

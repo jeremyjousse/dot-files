@@ -1,5 +1,6 @@
 ---
 description: Stage 1 Refinement Gate - Review, clarify, and refine a GitHub issue before development
+argument-hint: <issue-id-or-url>
 agent: sdlc-refine
 ---
 

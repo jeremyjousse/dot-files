@@ -1,5 +1,6 @@
 {
 	"$schema": "https://opencode.ai/config.json",
+	"instructions": ["~/.agents/rules/sdlc-framework.md"],
 	"mcp": {
 		"codeburn": {
 			"type": "local",

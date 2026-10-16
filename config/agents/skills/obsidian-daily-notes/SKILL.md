@@ -1,3 +1,8 @@
+---
+name: obsidian-daily-notes
+description: Use when formatting or generating daily notes and summaries for an Obsidian vault.
+---
+
 # SKILL: Obsidian Daily Notes Creator
 
 ## Role
