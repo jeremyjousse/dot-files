@@ -1,5 +1,6 @@
 ---
 description: Stage 5 PR Review Loop - Fetch, triage, address review comments, and resolve conversation threads
+argument-hint: '[pr-number-or-url]'
 agent: sdlc-pr-review
 ---
 

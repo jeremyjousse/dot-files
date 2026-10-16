@@ -5,6 +5,20 @@ source lib/lib.sh
 unlink_config_files "$HOME"/.zshrc
 unlink_config_files "$HOME"/.config/zsh
 
+unlink_config_files "$HOME"/.config/opencode/opencode.jsonc
+unlink_config_files "$HOME"/.config/opencode/command
+unlink_config_files "$HOME"/.config/opencode/agents
+unlink_config_files "$HOME"/.pi/agent/prompts
+unlink_config_files "$HOME"/.pi/agent/AGENTS.md
+unlink_config_files "$HOME"/.copilot/agents
+unlink_config_files "$HOME"/.copilot/copilot-instructions.md
+for skill_dir in "$PWD"/config/agents/skills/*; do
+	[ -d "$skill_dir" ] && unlink_config_files "$HOME/.agents/skills/$(basename "$skill_dir")"
+done
+unlink_config_files "$HOME"/.agents/commands
+unlink_config_files "$HOME"/.agents/agents
+unlink_config_files "$HOME"/.agents/rules
+
 unlink_config_files "$PWD"/config/nushell "$HOME/Library/Application Support/nushell"
 
 unlink_config_files "$PWD"/config/alacritty "$HOME"/.config/alacritty

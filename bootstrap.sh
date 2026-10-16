@@ -3,17 +3,17 @@
 WITH_GUI=false
 for argument in "$@"; do
 	case "$argument" in
-		--with-gui)
-			WITH_GUI=true
-			;;
-		-h|--help)
-			printf 'Usage: %s [--with-gui]\n' "$0"
-			exit 0
-			;;
-		*)
-			printf 'Unknown option: %s\n' "$argument" >&2
-			exit 2
-			;;
+	--with-gui)
+		WITH_GUI=true
+		;;
+	-h | --help)
+		printf 'Usage: %s [--with-gui]\n' "$0"
+		exit 0
+		;;
+	*)
+		printf 'Unknown option: %s\n' "$argument" >&2
+		exit 2
+		;;
 	esac
 done
 
@@ -21,16 +21,31 @@ source lib/lib.sh
 
 create_folder "$HOME"/.config
 create_folder "$HOME"/.config/opencode
+create_folder "$HOME"/.agents
+create_folder "$HOME"/.agents/skills
+create_folder "$HOME"/.pi/agent
+create_folder "$HOME"/.copilot
 create_folder "$HOME"/Development/Personal
 
 link_config_files "$PWD"/config/zsh/.zshrc "$HOME"/.zshrc
 link_config_files "$PWD"/config/zsh "$HOME"/.config/zsh
 
+link_config_files "$PWD"/config/agents/commands "$HOME"/.agents/commands
+link_config_files "$PWD"/config/agents/agents "$HOME"/.agents/agents
+link_config_files "$PWD"/config/agents/rules "$HOME"/.agents/rules
+link_config_files "$PWD"/config/agents/skills "$HOME"/.agents/skills
+
+[ -L "$HOME"/.config/opencode/skills ] && unlink "$HOME"/.config/opencode/skills
+[ -L "$HOME"/.config/opencode/rules ] && unlink "$HOME"/.config/opencode/rules
 link_config_files "$PWD"/config/opencode/opencode.jsonc "$HOME"/.config/opencode/opencode.jsonc
-link_config_files "$PWD"/config/opencode/command "$HOME"/.config/opencode/command
-link_config_files "$PWD"/config/opencode/agents "$HOME"/.config/opencode/agents
-link_config_files "$PWD"/config/opencode/skills "$HOME"/.config/opencode/skills
-link_config_files "$PWD"/config/opencode/rules "$HOME"/.config/opencode/rules
+link_config_files "$HOME"/.agents/commands "$HOME"/.config/opencode/command
+link_config_files "$HOME"/.agents/agents "$HOME"/.config/opencode/agents
+
+link_config_files "$HOME"/.agents/commands "$HOME"/.pi/agent/prompts
+link_config_files "$HOME"/.agents/rules/sdlc-framework.md "$HOME"/.pi/agent/AGENTS.md
+
+link_config_files "$HOME"/.agents/agents "$HOME"/.copilot/agents
+link_config_files "$HOME"/.agents/rules/sdlc-framework.md "$HOME"/.copilot/copilot-instructions.md
 
 link_config_files "$PWD"/config/alacritty "$HOME"/.config/alacritty
 link_config_files "$PWD"/config/gh-dash "$HOME"/.config/gh-dash

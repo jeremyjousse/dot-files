@@ -1,8 +1,11 @@
 ---
+name: sdlc-verify
 description:
   Stage 4 Verification agent restricted from editing code, scoped to running quality checks, architectural self-review,
   and preparing commit proposals.
 mode: all
+tools: ['read', 'search', 'execute']
+include-custom-instructions: true
 permission:
   edit: deny
   task: deny

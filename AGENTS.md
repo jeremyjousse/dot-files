@@ -12,8 +12,9 @@ logic). Instead, it is a **dotfiles, developer environment, and machine provisio
 
 Key responsibilities:
 
-- **Centralized OpenCode Configuration**: Houses the source of truth for global OpenCode configurations in
-  `config/opencode/` (commands, subagents, skills, rules, and global settings).
+- **Centralized AI Agent Configuration**: Houses the single source of truth for shared AI coding assistant skills,
+  commands, subagents, and SDLC rules in `config/agents/` (linked to `~/.agents/` and shared across OpenCode, Pi Coding
+  Agent, and GitHub Copilot CLI), alongside OpenCode runtime settings in `config/opencode/`.
 - **Tool Configurations**: Houses dotfiles and configuration directories for daily developer tools (`zsh`, `git`,
   `nvim`, `ghostty`, `alacritty`, `zellij`, `starship`, `nushell`, `hammerspoon`, `vscode`).
 - **Provisioning & Automation**: Provides reproducible bootstrapping and symlinking scripts (`bootstrap.sh`, `lib/*.sh`,
@@ -39,9 +40,11 @@ Framework must be interpreted as follows:
 Implementations must adhere to dotfiles-specific conventions:
 
 - **Isolated Tool Configs**: Each tool configuration lives in its designated subfolder under `config/<tool>/`.
-- **Centralized OpenCode Authority**: All shared OpenCode agents, commands, skills, and rules must be maintained in
-  `config/opencode/` so they can be symlinked to `~/.config/opencode/` by `bootstrap.sh`. Changes here impact the global
-  OpenCode environment and require restarting OpenCode.
+- **Centralized AI Agent Authority**: All shared AI agents, commands, skills, and rules must be maintained in
+  `config/agents/` so they can be symlinked to `~/.agents/` and wired into OpenCode (`~/.config/opencode/`), Pi
+  (`~/.pi/agent/`), and GitHub Copilot CLI (`~/.copilot/`) by `bootstrap.sh`. OpenCode-specific runtime settings live in
+  `config/opencode/opencode.jsonc`. Changes to `config/agents/` or `config/opencode/` require restarting active AI
+  assistant sessions.
 - **Idempotency & Safety**: All shell automation in `bootstrap.sh` or `lib/*.sh` must remain idempotent (safe to run
   multiple times) and must back up non-symlinked existing files (`.back`) rather than destructively overwriting them.
 - **Portability & POSIX Compliance**: Shell scripts should adhere to standard Bash/Zsh practices and pass syntax checks.
@@ -114,8 +117,8 @@ Whenever new configuration files or directories are introduced under `config/`:
 
 1. **Bootstrap Symlinking**: Ensure `bootstrap.sh` contains the corresponding `link_config_files` or `copy_config_files`
    entry to link the file/folder to its expected location under `$HOME`.
-2. **OpenCode Configuration**: When files under `config/opencode/` are created or modified, inform the user to restart
-   OpenCode so the loaded global runtime refreshes.
+2. **AI Agent & OpenCode Configuration**: When files under `config/agents/` or `config/opencode/` are created or
+   modified, inform the user to restart OpenCode (or their active AI assistant) so the loaded global runtime refreshes.
 
 ---
 

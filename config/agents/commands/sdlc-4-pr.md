@@ -1,5 +1,6 @@
 ---
 description: Stage 5 Pull Request Gate - Push branch, create PR with repository template, and verify CI checks
+argument-hint: '[issue-id]'
 agent: sdlc-pr-review
 ---
 
