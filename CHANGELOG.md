@@ -1,3 +1,10 @@
+## [0.17.3](https://github.com/jeremyjousse/dot-files/compare/v0.17.2...v0.17.3) (2026-10-16)
+
+
+### Bug Fixes
+
+* **opencode:** :bug: permission moved to opencode.jsonc ([94e8ab5](https://github.com/jeremyjousse/dot-files/commit/94e8ab5b1f5ceff6297111fddd9e64cf6ea4723b))
+
 ## [0.17.2](https://github.com/jeremyjousse/dot-files/compare/v0.17.1...v0.17.2) (2026-10-15)
 
 
