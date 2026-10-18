@@ -66,11 +66,16 @@ if ! command -v pynglish &>/dev/null; then
 fi
 
 ###
-# Open code plugins
+# RTK plugins
 ###
 
-RTK_STATUS=$(rtk init --show | grep 'Opencode')
+RTK_STATUS=$(rtk init --show | grep 'OpenCode: plugin installed')
 if [ -z "$RTK_STATUS" ]; then
 	info "Install Open code plugins"
-	rtk init -g --opencode
+fi
+
+PI_RTK_EXTENSION="$HOME/.pi/agent/extensions/rtk.ts"
+if [ ! -f "$PI_RTK_EXTENSION" ]; then
+	info "Install Pi plugins"
+	rtk init -g --agent pi
 fi
