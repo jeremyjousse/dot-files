@@ -1,3 +1,10 @@
+## [0.17.4](https://github.com/jeremyjousse/dot-files/compare/v0.17.3...v0.17.4) (2026-10-18)
+
+
+### Bug Fixes
+
+* **ai:** :bug: fix rtk installation detection ([045cf48](https://github.com/jeremyjousse/dot-files/commit/045cf481a8a4536508ab63c8a9475793acf1bb47))
+
 ## [0.17.3](https://github.com/jeremyjousse/dot-files/compare/v0.17.2...v0.17.3) (2026-10-16)
 
 
