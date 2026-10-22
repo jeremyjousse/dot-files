@@ -1,3 +1,10 @@
+## [0.17.5](https://github.com/jeremyjousse/dot-files/compare/v0.17.4...v0.17.5) (2026-10-22)
+
+
+### Bug Fixes
+
+* **opencode:** :ambulance: duplicate agent temporary ([27a88e2](https://github.com/jeremyjousse/dot-files/commit/27a88e2bad2a7c6b0f88b4bd6fc6e45f2b386777))
+
 ## [0.17.4](https://github.com/jeremyjousse/dot-files/compare/v0.17.3...v0.17.4) (2026-10-18)
 
 
