@@ -21,8 +21,6 @@ source lib/lib.sh
 
 create_folder "$HOME"/.config
 create_folder "$HOME"/.config/opencode
-create_folder "$HOME"/.agents
-create_folder "$HOME"/.agents/skills
 create_folder "$HOME"/.pi/agent
 create_folder "$HOME"/.copilot
 create_folder "$HOME"/Development/Personal
@@ -30,16 +28,11 @@ create_folder "$HOME"/Development/Personal
 link_config_files "$PWD"/config/zsh/.zshrc "$HOME"/.zshrc
 link_config_files "$PWD"/config/zsh "$HOME"/.config/zsh
 
-link_config_files "$PWD"/config/agents/commands "$HOME"/.agents/commands
-link_config_files "$PWD"/config/agents/agents "$HOME"/.agents/agents
-link_config_files "$PWD"/config/agents/rules "$HOME"/.agents/rules
-link_config_files "$PWD"/config/agents/skills "$HOME"/.agents/skills
+link_config_files "$PWD"/config/agents "$HOME"/.agents
 
-[ -L "$HOME"/.config/opencode/skills ] && unlink "$HOME"/.config/opencode/skills
-[ -L "$HOME"/.config/opencode/rules ] && unlink "$HOME"/.config/opencode/rules
 link_config_files "$PWD"/config/opencode/opencode.jsonc "$HOME"/.config/opencode/opencode.jsonc
-link_config_files "$HOME"/.agents/commands "$HOME"/.config/opencode/command
-link_config_files "$HOME"/.agents/agents "$HOME"/.config/opencode/agents
+link_config_files "$PWD"/.agents/commands "$HOME"/.config/opencode/command
+link_config_files "$PWD"/config/opencode/agents "$HOME"/.config/opencode/agents
 
 link_config_files "$HOME"/.agents/commands "$HOME"/.pi/agent/prompts
 link_config_files "$HOME"/.agents/rules/sdlc-framework.md "$HOME"/.pi/agent/AGENTS.md
