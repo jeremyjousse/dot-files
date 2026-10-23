@@ -1,3 +1,10 @@
+# [0.18.0](https://github.com/jeremyjousse/dot-files/compare/v0.17.5...v0.18.0) (2026-10-23)
+
+
+### Features
+
+* **install:** :sparkles: add yq ([b557740](https://github.com/jeremyjousse/dot-files/commit/b557740a50514450841189043421591947aaf8c6))
+
 ## [0.17.5](https://github.com/jeremyjousse/dot-files/compare/v0.17.4...v0.17.5) (2026-10-22)
 
 
