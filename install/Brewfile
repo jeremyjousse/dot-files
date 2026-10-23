@@ -51,6 +51,9 @@ brew "git-delta"
 # jq (https://jqlang.github.io/jq/) lightweight and flexible command-line JSON processor
 brew "jq"
 
+# yq (https://mikefarah.gitbook.io/yq/) lightweight and flexible command-line YAML processor
+brew "yq"
+
 # lsd (https://github.com/lsd-rs/lsd) next gen ls command
 brew "lsd"
 
