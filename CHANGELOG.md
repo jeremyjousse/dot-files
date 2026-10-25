@@ -1,3 +1,10 @@
+## [0.18.1](https://github.com/jeremyjousse/dot-files/compare/v0.18.0...v0.18.1) (2026-10-25)
+
+
+### Bug Fixes
+
+* **ai:** :ambulance: link are fixed ([8ec53bf](https://github.com/jeremyjousse/dot-files/commit/8ec53bfe000fe7f35a3c3958e850825c2cf438d5))
+
 # [0.18.0](https://github.com/jeremyjousse/dot-files/compare/v0.17.5...v0.18.0) (2026-10-23)
 
 
