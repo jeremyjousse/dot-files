@@ -31,14 +31,14 @@ link_config_files "$PWD"/config/zsh "$HOME"/.config/zsh
 link_config_files "$PWD"/config/agents "$HOME"/.agents
 
 link_config_files "$PWD"/config/opencode/opencode.jsonc "$HOME"/.config/opencode/opencode.jsonc
-link_config_files "$PWD"/.agents/commands "$HOME"/.config/opencode/command
+link_config_files "$PWD"/config/agents/commands "$HOME"/.config/opencode/command
 link_config_files "$PWD"/config/opencode/agents "$HOME"/.config/opencode/agents
 
-link_config_files "$HOME"/.agents/commands "$HOME"/.pi/agent/prompts
-link_config_files "$HOME"/.agents/rules/sdlc-framework.md "$HOME"/.pi/agent/AGENTS.md
+link_config_files "$PWD"/config/agents/commands "$HOME"/.pi/agent/prompts
+link_config_files "$PWD"/config/agents/rules/sdlc-framework.md "$HOME"/.pi/agent/AGENTS.md
 
-link_config_files "$HOME"/.agents/agents "$HOME"/.copilot/agents
-link_config_files "$HOME"/.agents/rules/sdlc-framework.md "$HOME"/.copilot/copilot-instructions.md
+link_config_files "$PWD"/config/agents/agents "$HOME"/.copilot/agents
+link_config_files "$PWD"/config/agents/rules/sdlc-framework.md "$HOME"/.copilot/copilot-instructions.md
 
 link_config_files "$PWD"/config/alacritty "$HOME"/.config/alacritty
 link_config_files "$PWD"/config/gh-dash "$HOME"/.config/gh-dash
