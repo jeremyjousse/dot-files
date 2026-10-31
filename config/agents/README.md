@@ -8,6 +8,7 @@ Single source of truth for AI coding assistant skills, slash commands, subagents
 - **`commands/`**: SDLC workflow slash commands (`/sdlc-1-refine`, `/sdlc-2-develop`, `/sdlc-3-verify`, `/sdlc-4-pr`, `/sdlc-5-review-pr`) and utility commands (`/update-dependencies`).
 - **`rules/`**: Universal operational rules (`sdlc-framework.md`).
 - **`skills/`**: Domain and best-practice skills following the Agent Skills specification (`SKILL.md`).
+  - **`documentation-best-practices/`**: ASD-STE100 guidance for writing, reviewing, and refactoring technical documentation.
 
 ## Multi-Harness Symlink Topology (`bootstrap.sh`)
 
