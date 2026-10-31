@@ -1,3 +1,10 @@
+# [0.23.0](https://github.com/jeremyjousse/dot-files/compare/v0.22.0...v0.23.0) (2026-10-31)
+
+
+### Features
+
+* **ai:** :sparkles: add copilot prompts symlink ([f305402](https://github.com/jeremyjousse/dot-files/commit/f3054028e087a4284bbc72a30976b72728c2880a))
+
 # [0.22.0](https://github.com/jeremyjousse/dot-files/compare/v0.21.0...v0.22.0) (2026-10-31)
 
 
