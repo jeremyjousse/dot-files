@@ -1,3 +1,10 @@
+# [0.21.0](https://github.com/jeremyjousse/dot-files/compare/v0.20.0...v0.21.0) (2026-10-31)
+
+
+### Features
+
+* **agents:** add minimalist senior coding rules and review skills ([43e9615](https://github.com/jeremyjousse/dot-files/commit/43e96155eb34e045c8fc6e3bd5f6f3fdba898a9e))
+
 # [0.20.0](https://github.com/jeremyjousse/dot-files/compare/v0.19.0...v0.20.0) (2026-10-31)
 
 
