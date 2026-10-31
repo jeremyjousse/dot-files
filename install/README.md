@@ -12,13 +12,13 @@ fonts, and Visual Studio Code extensions needed for a complete developer environ
 - **`Brewfile`**: Primary Homebrew bundle containing CLI tools and package managers:
   - **Taps**: Third-party tap repositories (e.g. Databricks, FluxCD).
   - **Shells & Prompts**: Shells, completions, prompts, and workspace managers (`carapace`, `starship`, `zellij`, `zoxide`).
-  - **CLI Navigation & File Utilities**: Modern CLI tools (`bat`, `diffnav`, `dust`, `fd`, `git-delta`, `jq`, `lsd`,
-    `ripgrep`, `tailspin`).
+  - **CLI Navigation & File Utilities**: Modern CLI tools (`bat`, `diffnav`, `dust`, `fd`, `git-delta`, `jq`, `kondo`,
+    `lsd`, `ripgrep`, `tailspin`, `worktrunk`, `yq`).
   - **Shell Editors**: Terminal text editors (`helix`).
   - **Dev Languages & Runtimes**: Runtime managers and build tools (`mise`, `pnpm`, `ruff`, `uv`, `xcodegen`).
   - **Containers & Orchestration**: Container runtimes and Kubernetes tools (`container`, `container-compose`, `flux`,
     `helm`, `kubectl`, `kubectx`, `podman`, `podman-compose`).
-  - **AI & Agent Tools**: Local AI coding assistants and proxies (`codeburn`, `rtk`).
+  - **AI & Agent Tools**: Local AI coding assistants and proxies (`codeburn`, `herdr`, `llmfit`, `rtk`).
   - **Cloud & SaaS CLIs**: Cloud platform CLIs (`databricks`, `gh`).
   - **Code Quality & Linters**: Linters and formatters (`markdownlint-cli2`, `shellcheck`, `shfmt`).
   - **System, Security & Networking**: System tools and network utilities (`dockutil`, `gnupg`, `mas`, `wrk`).

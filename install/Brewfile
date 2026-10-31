@@ -30,9 +30,6 @@ brew "bat"
 # Diffnav (https://github.com/dlvhdr/diffnav) git diff pager based on delta but with a file tree
 brew "diffnav"
 
-# direnv (https://direnv.net/) can load and unload environment variables depending on the current directory
-# brew "direnv"
-
 # Dust (https://github.com/bootandy/dust) a more intuitive version of du in rust
 brew "dust"
 
@@ -48,11 +45,8 @@ brew "fd"
 # Delta (https://github.com/dandavison/delta) syntax-highlighting pager for git, diff, grep, and blame output
 brew "git-delta"
 
-# jq (https://jqlang.github.io/jq/) lightweight and flexible command-line JSON processor
-brew "jq"
-
-# yq (https://mikefarah.gitbook.io/yq/) lightweight and flexible command-line YAML processor
-brew "yq"
+# Kondo (https://github.com/tbillington/kondo) cleans dependencies and build artifacts from your projects
+brew "kondo"
 
 # lsd (https://github.com/lsd-rs/lsd) next gen ls command
 brew "lsd"
@@ -62,6 +56,12 @@ brew "ripgrep"
 
 # tailspin (https://github.com/bensadeh/tailspin) log file highlighter
 brew "tailspin"
+
+# Worktrunk (https://github.com/max-sixty/worktrunk) CLI for Git worktree management, designed for parallel AI agent workflows
+brew "worktrunk"
+
+# yq (https://github.com/mikefarah/yq) lightweight and flexible command-line YAML processor
+brew "yq"
 
 ###
 # Shell Editors
@@ -129,6 +129,12 @@ brew "podman-compose"
 
 # CodeBurn (https://codeburn.app/) track AI token consumption, costs, and model efficiency across local coding assistants
 brew "codeburn"
+
+# Herdr (https://github.com/herdrdev/herdr) the runtime your coding agents live on
+brew "herdr"
+
+# llmfit (https://github.com/AlexsJones/llmfit) find what LLMs run on your hardware
+brew "llmfit"
 
 # Ollama (https://ollama.com/) run large language models locally
 # brew "ollama"
