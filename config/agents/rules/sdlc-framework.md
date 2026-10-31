@@ -117,6 +117,10 @@ Before any commit is proposed:
    - Present `git status` with the list of changed files.
    - Propose a Conventional Commit message (`feat: ...`, `fix: ...`, `chore: ...`, `refactor: ...`, `test: ...`).
    - **Wait for explicit user approval** before running `git commit`.
+   - **Authorship and Attribution (ALL HARNESSes)**: Do NOT add `Co-authored-by` or any other
+     authorship/attribution trailer naming an AI assistant, model, or harness unless the user explicitly
+     requests it. This applies across all harnesses and commit workflows, including amend/rebase
+     operations; never add such trailers by default.
 
 ---
 

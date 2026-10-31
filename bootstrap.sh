@@ -38,6 +38,9 @@ link_config_files "$PWD"/config/agents/commands "$HOME"/.pi/agent/prompts
 link_config_files "$PWD"/config/agents/rules/sdlc-framework.md "$HOME"/.pi/agent/AGENTS.md
 link_config_files "$PWD"/config/agents/rules/minimalist-engineering.md "$HOME"/.pi/agent/minimalist-engineering.md
 
+create_folder "$HOME/Library/Application Support/Code/User"
+link_config_files "$PWD"/config/agents/prompts "$HOME/Library/Application Support/Code/User/prompts"
+
 link_config_files "$PWD"/config/agents/agents "$HOME"/.copilot/agents
 link_config_files "$PWD"/config/agents/rules/sdlc-framework.md "$HOME"/.copilot/copilot-instructions.md
 create_folder "$HOME"/.copilot/rules
