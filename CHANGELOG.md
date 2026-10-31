@@ -1,3 +1,10 @@
+# [0.19.0](https://github.com/jeremyjousse/dot-files/compare/v0.18.1...v0.19.0) (2026-10-31)
+
+
+### Features
+
+* **install:** :sparkles: add new brew installs ([e7e0904](https://github.com/jeremyjousse/dot-files/commit/e7e09045f737659c7adb8387a9144189a3920ae0))
+
 ## [0.18.1](https://github.com/jeremyjousse/dot-files/compare/v0.18.0...v0.18.1) (2026-10-25)
 
 
