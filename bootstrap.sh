@@ -42,6 +42,7 @@ create_folder "$HOME/Library/Application Support/Code/User"
 link_config_files "$PWD"/config/agents/prompts "$HOME/Library/Application Support/Code/User/prompts"
 
 link_config_files "$PWD"/config/agents/agents "$HOME"/.copilot/agents
+link_config_files "$PWD"/config/agents/prompts "$HOME"/.copilot/prompts
 link_config_files "$PWD"/config/agents/rules/sdlc-framework.md "$HOME"/.copilot/copilot-instructions.md
 create_folder "$HOME"/.copilot/rules
 link_config_files "$PWD"/config/agents/rules/minimalist-engineering.md "$HOME"/.copilot/rules/minimalist-engineering.md
