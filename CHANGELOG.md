@@ -1,3 +1,10 @@
+# [0.22.0](https://github.com/jeremyjousse/dot-files/compare/v0.21.0...v0.22.0) (2026-10-31)
+
+
+### Features
+
+* **vscode:** add Local prompt wrappers for canonical commands ([30beb82](https://github.com/jeremyjousse/dot-files/commit/30beb82324f72307980e5bb7a4e4de507df98c0e))
+
 # [0.21.0](https://github.com/jeremyjousse/dot-files/compare/v0.20.0...v0.21.0) (2026-10-31)
 
 
