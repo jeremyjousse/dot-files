@@ -1,3 +1,10 @@
+# [0.20.0](https://github.com/jeremyjousse/dot-files/compare/v0.19.0...v0.20.0) (2026-10-31)
+
+
+### Features
+
+* **agents:** add documentation best-practices skill ([df6744c](https://github.com/jeremyjousse/dot-files/commit/df6744c5ddac7128adfcea21d410aa32079624b4))
+
 # [0.19.0](https://github.com/jeremyjousse/dot-files/compare/v0.18.1...v0.19.0) (2026-10-31)
 
 
