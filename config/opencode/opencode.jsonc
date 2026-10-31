@@ -1,6 +1,6 @@
 {
 	"$schema": "https://opencode.ai/config.json",
-	"instructions": ["~/.agents/rules/sdlc-framework.md"],
+	"instructions": ["~/.agents/rules/sdlc-framework.md", "~/.agents/rules/minimalist-engineering.md"],
 	"lsp": true,
 	"mcp": {
 		"codeburn": {
@@ -22,6 +22,14 @@
 			"rtk gh repo view *": "allow",
 			"git show *": "allow",
 			"rtk git show *": "allow",
+			"git diff *": "allow",
+			"rtk git diff *": "allow",
+			"git status *": "allow",
+			"rtk git status *": "allow",
+			"git log *": "allow",
+			"rtk git log *": "allow",
+			"rg *": "allow",
+			"rtk rg *": "allow",
 			"which *": "allow",
 			"rtk which *": "allow",
 		},

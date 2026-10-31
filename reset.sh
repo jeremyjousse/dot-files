@@ -10,8 +10,10 @@ unlink_config_files "$HOME"/.config/opencode/command
 unlink_config_files "$HOME"/.config/opencode/agents
 unlink_config_files "$HOME"/.pi/agent/prompts
 unlink_config_files "$HOME"/.pi/agent/AGENTS.md
+unlink_config_files "$HOME"/.pi/agent/minimalist-engineering.md
 unlink_config_files "$HOME"/.copilot/agents
 unlink_config_files "$HOME"/.copilot/copilot-instructions.md
+unlink_config_files "$HOME"/.copilot/rules/minimalist-engineering.md
 for skill_dir in "$PWD"/config/agents/skills/*; do
 	[ -d "$skill_dir" ] && unlink_config_files "$HOME/.agents/skills/$(basename "$skill_dir")"
 done

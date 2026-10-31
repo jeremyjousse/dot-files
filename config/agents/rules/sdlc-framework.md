@@ -76,10 +76,21 @@ All implementations must conform strictly to the project's architecture contract
 3. **Project Synchronization Gate**:
    - If specified in `AGENTS.md` (e.g., XcodeGen via `rtk mise run generate`, database migration generators, code
      generation), regenerate project configurations whenever files are added, moved, or deleted.
-4. **Testing Discipline & Code Quality**:
-   - Write or update unit and integration tests covering all changed behavior and edge cases.
+4. **Minimalist Engineering Discipline (6-Step Reuse Ladder)**:
+   - Follow `minimalist-engineering.md` before writing code: (1) Does it need to exist? (2) Already in codebase?
+     (3) Standard library / native platform feature? (4) Already installed dependency? (5) Readable 1-liner?
+     (6) Minimum working code.
+   - Maintain caller-aware changes: inspect direct callers, callees, and adjacent consumers before altering contracts.
+   - Never compromise trust-boundary validation, data loss error handling, security, or accessibility.
+   - Document deliberate limits using structured comments: `// shortcut: <limit>, <upgrade trigger>` (flag `no-trigger` as rot).
+5. **Testing Discipline & Code Quality**:
+   - Write targeted tests for non-trivial/risky logic (branches, loops, edge-case parsers, state machines, security, transactions).
+   - Avoid tests for trivial glue code.
    - Format modified code using standard tasks (`rtk mise run format` or repository formatter).
-5. **No Direct Commits**:
+6. **Implementation Disclosure & Terse Output**:
+   - Conclude implementation replies with a 1–2 line summary of what was intentionally deferred and residual risk.
+   - Adopt terse communication: answer first (`[thing] [action] [reason]`), drop conversational filler, preserve payloads and negations verbatim, and revert to full prose for security, irreversible actions, or clarifications.
+7. **No Direct Commits**:
    - Do NOT commit directly during development. Hand off to Stage 4 (`/sdlc-3-verify`).
 
 ---
