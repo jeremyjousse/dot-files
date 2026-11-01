@@ -3,8 +3,6 @@ _.path = ['./node_modules/.bin']
 
 [tools]
 
-"github:anomalyco/opencode" = "latest"
-
 deno = 'latest'
 node = 'lts'
 "npm:@github/copilot" = "latest"
@@ -22,6 +20,7 @@ rust = { version = "latest", toolchain = "stable", components = ["clippy", "rust
 "cargo:tauri-cli" = 'latest'
 
 fnox = "latest"
+opencode = "latest"
 
 [plugins]
 
