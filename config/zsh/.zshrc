@@ -121,3 +121,5 @@ if [ -f "${HOME}/.config/zsh/custom/index.zsh" ]; then
 fi
 
 export NIX_SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt
+
+if command -v wt >/dev/null 2>&1; then eval "$(command wt config shell init zsh)"; fi
