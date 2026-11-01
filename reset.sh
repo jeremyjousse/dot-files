@@ -6,7 +6,7 @@ unlink_config_files "$HOME"/.zshrc
 unlink_config_files "$HOME"/.config/zsh
 
 unlink_config_files "$HOME"/.config/opencode/opencode.jsonc
-unlink_config_files "$HOME"/.config/opencode/command
+unlink_config_files "$HOME"/.config/opencode/commands
 unlink_config_files "$HOME"/.config/opencode/agents
 unlink_config_files "$HOME"/.pi/agent/prompts
 unlink_config_files "$HOME"/.pi/agent/AGENTS.md

@@ -31,7 +31,7 @@ link_config_files "$PWD"/config/zsh "$HOME"/.config/zsh
 link_config_files "$PWD"/config/agents "$HOME"/.agents
 
 link_config_files "$PWD"/config/opencode/opencode.jsonc "$HOME"/.config/opencode/opencode.jsonc
-link_config_files "$PWD"/config/agents/commands "$HOME"/.config/opencode/command
+link_config_files "$PWD"/config/agents/commands "$HOME"/.config/opencode/commands
 link_config_files "$PWD"/config/opencode/agents "$HOME"/.config/opencode/agents
 
 link_config_files "$PWD"/config/agents/commands "$HOME"/.pi/agent/prompts

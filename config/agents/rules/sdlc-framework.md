@@ -11,7 +11,7 @@ cascade into development.
 
 - **Slash Command**: `/sdlc-1-refine <issue-id>`
 - **Dedicated Agent**: `sdlc-refine`
-- **Permissions**: `edit: deny`, `bash: gh issue *, rtk gh issue *, gh label list *, rtk gh label list *, gh repo view *, rtk gh repo view *`, `task: deny`, `external_directory: deny`
+- **Permissions**: `edit: deny`, `shell: gh issue *, rtk gh issue *, gh label list *, rtk gh label list *, gh repo view *, rtk gh repo view *`, `subagent: deny`, `external_directory: deny`
 
 Before writing ANY code, creating branches, or modifying files:
 
@@ -38,7 +38,7 @@ Before writing ANY code, creating branches, or modifying files:
 
 - **Slash Command**: `/sdlc-2-develop <issue-id>`
 - **Dedicated Agent**: `sdlc-develop`
-- **Permissions**: `edit: allow`, scoped `bash` (development and build tools), `task: deny`
+- **Permissions**: `edit: allow`, scoped `shell` (development and build tools), `subagent: deny`, `external_directory: deny`
 
 Development must NEVER occur directly on `main` or an unrelated branch.
 
@@ -99,7 +99,7 @@ All implementations must conform strictly to the project's architecture contract
 
 - **Slash Command**: `/sdlc-3-verify`
 - **Dedicated Agent**: `sdlc-verify`
-- **Permissions**: `edit: deny`, scoped verification `bash` (test/lint/check tools, read-only git, issue inspection), `task: deny`
+- **Permissions**: `edit: deny`, scoped verification `shell` (test/lint/check tools, read-only git, issue inspection), `subagent: deny`, `external_directory: deny`
 
 Before any commit is proposed:
 
@@ -128,7 +128,7 @@ Before any commit is proposed:
 
 - **Slash Commands**: `/sdlc-4-pr [issue-id]`, `/sdlc-5-review-pr [pr-id]`
 - **Dedicated Agent**: `sdlc-pr-review`
-- **Permissions**: `edit: allow` (scoped to review fixes), `gh pr *`, `rtk gh pr *`, `gh repo view *`, `rtk gh repo view *`, `gh issue *`, `rtk gh issue *`, `gh pr merge *: deny`, `rtk gh pr merge *: deny`, `gh api *`, `rtk gh api *`, `git push *`
+- **Permissions**: `edit: allow` (scoped to review fixes), `shell: gh pr *, rtk gh pr *, gh repo view *, rtk gh repo view *, gh issue *, rtk gh issue *, gh pr merge *: deny, rtk gh pr merge *: deny, gh api *, rtk gh api *, git push *`, `subagent: deny`, `external_directory: deny`
 
 1. **Push Branch**:
 
