@@ -1,3 +1,10 @@
+# [0.25.0](https://github.com/jeremyjousse/dot-files/compare/v0.24.0...v0.25.0) (2026-11-01)
+
+
+### Features
+
+* **opencode:** :sparkles: migrate config to v2 ([6c3b65c](https://github.com/jeremyjousse/dot-files/commit/6c3b65c4b536fd91c1711830d096a15b713e33ae))
+
 # [0.24.0](https://github.com/jeremyjousse/dot-files/compare/v0.23.0...v0.24.0) (2026-11-01)
 
 
