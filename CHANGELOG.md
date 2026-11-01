@@ -1,3 +1,11 @@
+# [0.24.0](https://github.com/jeremyjousse/dot-files/compare/v0.23.0...v0.24.0) (2026-11-01)
+
+
+### Features
+
+* **install:** :sparkles: migrate opencode to default mise install and v2 ([ee02a55](https://github.com/jeremyjousse/dot-files/commit/ee02a55a690507ccf24b67017639cf685396032c))
+* **zsh:** :sparkles: add worktrunk zsh init ([8de3477](https://github.com/jeremyjousse/dot-files/commit/8de34772a22a41d3c938cf73a9bf937f471a62aa))
+
 # [0.23.0](https://github.com/jeremyjousse/dot-files/compare/v0.22.0...v0.23.0) (2026-10-31)
 
 
