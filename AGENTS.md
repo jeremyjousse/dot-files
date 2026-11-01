@@ -43,8 +43,8 @@ Implementations must adhere to dotfiles-specific conventions:
 - **Centralized AI Agent Authority**: All shared AI agents, commands, skills, and rules must be maintained in
   `config/agents/` so they can be symlinked to `~/.agents/` and wired into OpenCode (`~/.config/opencode/`), Pi
   (`~/.pi/agent/`), and GitHub Copilot CLI (`~/.copilot/`) by `bootstrap.sh`. OpenCode-specific runtime settings live in
-  `config/opencode/opencode.jsonc`. Changes to `config/agents/` or `config/opencode/` require restarting active AI
-  assistant sessions.
+  `config/opencode/opencode.jsonc`. OpenCode V2 watches config files and hot-reloads agents, commands, skills, MCP
+  servers, and plugins on save (or via `/reload`); other AI harnesses may require restarting active sessions.
 - **Idempotency & Safety**: All shell automation in `bootstrap.sh` or `lib/*.sh` must remain idempotent (safe to run
   multiple times) and must back up non-symlinked existing files (`.back`) rather than destructively overwriting them.
 - **Portability & POSIX Compliance**: Shell scripts should adhere to standard Bash/Zsh practices and pass syntax checks.
@@ -117,8 +117,9 @@ Whenever new configuration files or directories are introduced under `config/`:
 
 1. **Bootstrap Symlinking**: Ensure `bootstrap.sh` contains the corresponding `link_config_files` or `copy_config_files`
    entry to link the file/folder to its expected location under `$HOME`.
-2. **AI Agent & OpenCode Configuration**: When files under `config/agents/` or `config/opencode/` are created or
-   modified, inform the user to restart OpenCode (or their active AI assistant) so the loaded global runtime refreshes.
+2. **AI Agent & OpenCode Configuration**: OpenCode V2 automatically hot-reloads changes to `config/agents/` and
+   `config/opencode/` on save (use `/reload` to force a full reload; do not tell the user to restart OpenCode). Inform
+   the user if other active AI assistants (Pi, GitHub Copilot CLI) require a session restart.
 
 ---
 
