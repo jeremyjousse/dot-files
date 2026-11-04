@@ -1,0 +1,4 @@
+# Worktrunk Configuration
+# https://github.com/max-sixty/worktrunk
+
+worktree-path = ".worktrees/{{ branch | sanitize }}"
