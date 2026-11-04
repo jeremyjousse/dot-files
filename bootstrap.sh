@@ -56,6 +56,7 @@ link_config_files "$PWD"/config/nushell "$HOME/Library/Application Support/nushe
 link_config_files "$PWD"/config/nvim "$HOME"/.config/nvim
 link_config_files "$PWD"/config/starship/starship.toml "$HOME"/.config/starship.toml
 link_config_files "$PWD"/config/vscode/settings.json "$HOME"/Library/Application\ Support/Code/User/settings.json
+link_config_files "$PWD"/config/worktrunk "$HOME"/.config/worktrunk
 link_config_files "$PWD"/config/zellij "$HOME"/.config/zellij
 
 copy_config_files "$PWD"/config/mise "$HOME"/.config
