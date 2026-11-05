@@ -1,3 +1,10 @@
+# [0.27.0](https://github.com/jeremyjousse/dot-files/compare/v0.26.0...v0.27.0) (2026-11-05)
+
+
+### Features
+
+* **agents:** unify code-review and sdlc-verify into sdlc-3-review workflow ([7c5c561](https://github.com/jeremyjousse/dot-files/commit/7c5c5618246749fbfbb25e02f79db13406f88213))
+
 # [0.26.0](https://github.com/jeremyjousse/dot-files/compare/v0.25.0...v0.26.0) (2026-11-04)
 
 
