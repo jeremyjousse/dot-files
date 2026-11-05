@@ -166,7 +166,7 @@ conventions for Svelte 5 applications.
 
 ### Rule 12: Mandatory Task Automation with mise.toml
 - When initiating a new Svelte or SvelteKit project or updating an existing one, you **MUST** configure standard verification tasks in `mise.toml`.
-- The SDLC Stage 4 Verification Agent (`sdlc-verify`) standardizes on `rtk mise run verify` (with granular tasks `lint` and `format:check`).
+- The SDLC Stage 4 Review Agent (`sdlc-review`) standardizes on `rtk mise run verify` (with granular tasks `lint` and `format:check`).
 - Define the standard tasks wrapping package manager scripts (e.g. `pnpm`):
   ```toml
   [tasks.check]

@@ -5,7 +5,7 @@ Single source of truth for AI coding assistant skills, slash commands, subagents
 ## Directory Structure
 
 - **`agents/`**: Canonical SDLC agent definitions for GitHub Copilot CLI, including their tool aliases.
-- **`commands/`**: SDLC workflow slash commands (`/sdlc-1-refine`, `/sdlc-2-develop`, `/sdlc-3-verify`, `/sdlc-4-pr`, `/sdlc-5-review-pr`), review/audit commands (`/code-review`, `/repo-audit`, `/tech-debt`), and utility commands (`/update-dependencies`).
+- **`commands/`**: SDLC workflow slash commands (`/sdlc-1-refine`, `/sdlc-2-develop`, `/sdlc-3-review`, `/sdlc-4-pr`, `/sdlc-5-review-pr`), review/audit commands (`/repo-audit`, `/tech-debt`), and utility commands (`/update-dependencies`).
 - **`rules/`**: Universal operational rules:
   - `sdlc-framework.md`: 5-stage SDLC workflow lifecycle from issue refinement to pull request review.
   - `minimalist-engineering.md`: Senior minimalist engineering standards (6-step reuse ladder, safety floor, `shortcut:` tracking, skipped/deferred disclosure, terse communication).
@@ -33,6 +33,6 @@ OpenCode agents live in [config/opencode/agents/](../opencode/agents/) and omit 
 
 ## VS Code Local Prompts
 
-`bootstrap.sh` links `config/agents/prompts/` to `~/Library/Application Support/Code/User/prompts/`. The supported Local-harness prompts are `sdlc-1-refine`, `sdlc-2-develop`, `sdlc-3-verify`, `sdlc-4-pr`, `sdlc-5-review-pr`, and `update-dependencies`. Each `.prompt.md` imports its matching canonical body with `#file:~/.agents/commands/<name>.md`; argument-taking commands map VS Code's `${input:...}` value to the body's `$ARGUMENTS`. Edit the command body, not the wrapper, to change workflow instructions.
+`bootstrap.sh` links `config/agents/prompts/` to `~/Library/Application Support/Code/User/prompts/`. The supported Local-harness prompts are `sdlc-1-refine`, `sdlc-2-develop`, `sdlc-3-review`, `sdlc-4-pr`, `sdlc-5-review-pr`, and `update-dependencies`. Each `.prompt.md` imports its matching canonical body with `#file:~/.agents/commands/<name>.md`; argument-taking commands map VS Code's `${input:...}` value to the body's `$ARGUMENTS`. Edit the command body, not the wrapper, to change workflow instructions.
 
 These are Local-harness prompt wrappers, not Copilot custom-agent definitions. They do not select or install the custom agents named in command frontmatter, and do not bundle skill files or tools. Local harness runs therefore use its configured agent and tools; workflows that depend on a skill or a CLI must have that skill or CLI available in the Local environment. Copilot continues to use its own agents and native skills rather than these user-level prompt wrappers.

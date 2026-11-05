@@ -102,7 +102,7 @@
 				{ "action": "shell", "resource": "rtk gain *", "effect": "allow" },
 			],
 		},
-		"sdlc-verify": {
+		"sdlc-review": {
 			"permissions": [
 				{ "action": "edit", "resource": "*", "effect": "deny" },
 				{ "action": "subagent", "resource": "*", "effect": "deny" },

@@ -31,7 +31,7 @@ Framework must be interpreted as follows:
 
 - **Strict Exemption**: Hexagonal Architecture, Clean Architecture, DDD, domain purity, application/infrastructure layer
   decoupling, interfaces, and ports/adapters **DO NOT APPLY** to this repository.
-- **SDLC Agent Directives (`sdlc-develop`, `sdlc-verify`, `sdlc-pr-review`)**:
+- **SDLC Agent Directives (`sdlc-develop`, `sdlc-review`, `sdlc-pr-review`)**:
   - Do **NOT** verify domain purity or inspect changes for architectural layer leaks during verification or reviews.
   - Do **NOT** attempt to refactor dotfile scripts into domain abstractions or layered architectures.
 
@@ -58,7 +58,7 @@ Implementations must adhere to dotfiles-specific conventions:
 - **SDLC Agent Directives**:
   - **Stage 3 (`sdlc-develop`)**: Do **NOT** attempt to write unit tests, create test files, or configure test
     frameworks for configuration or dotfile changes.
-  - **Stage 4 (`sdlc-verify`)**: The Test Coverage Assessment step is **NOT APPLICABLE (N/A)**. Agents must **NEVER**
+  - **Stage 4 (`sdlc-review`)**: The Test Coverage Assessment step is **NOT APPLICABLE (N/A)**. Agents must **NEVER**
     run `npm test` or `pnpm test`, and must never reject or block verification due to the absence of tests.
   - **Stage 5 (`sdlc-pr-review`)**: Do not request or expect unit tests during PR reviews.
 
@@ -66,7 +66,7 @@ Implementations must adhere to dotfiles-specific conventions:
 
 ## Quality Commands
 
-SDLC verification (`/sdlc-3-verify` / `sdlc-verify`) must execute the following commands when verifying working tree
+SDLC verification (`/sdlc-3-review` / `sdlc-review`) must execute the following commands when verifying working tree
 changes:
 
 - **Standard Verification Suite** (runs both lint and format check):

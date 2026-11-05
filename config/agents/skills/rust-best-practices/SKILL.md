@@ -123,7 +123,7 @@ synthesizing standards from the Rust API Guidelines, Apollo GraphQL Codex rules,
 
 ### Rule 12: Mandatory Task Automation with mise.toml
 - When initiating a new Rust project or updating an existing one, you **MUST** configure standard verification tasks in `mise.toml`.
-- The SDLC Stage 4 Verification Agent (`sdlc-verify`) standardizes on `rtk mise run verify` (with granular tasks `lint` and `format:check`).
+- The SDLC Stage 4 Review Agent (`sdlc-review`) standardizes on `rtk mise run verify` (with granular tasks `lint` and `format:check`).
 - Define the standard tasks wrapping Cargo commands:
   ```toml
   [tasks.lint]

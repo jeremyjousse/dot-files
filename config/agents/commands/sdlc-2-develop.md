@@ -87,5 +87,5 @@ If no issue number or URL was provided above, prompt the user for the target Git
 
 5. **Handoff to Verification**:
    - Do NOT commit directly.
-   - Once implementation and tests are complete, tell the user to run `/sdlc-3-verify` to execute pre-commit
-     verification.
+   - Once implementation and tests are complete, tell the user to run `/sdlc-3-review` to execute pre-commit
+     verification and code review.
