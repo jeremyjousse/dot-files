@@ -91,36 +91,43 @@ All implementations must conform strictly to the project's architecture contract
    - Conclude implementation replies with a 1–2 line summary of what was intentionally deferred and residual risk.
    - Adopt terse communication: answer first (`[thing] [action] [reason]`), drop conversational filler, preserve payloads and negations verbatim, and revert to full prose for security, irreversible actions, or clarifications.
 7. **No Direct Commits**:
-   - Do NOT commit directly during development. Hand off to Stage 4 (`/sdlc-3-verify`).
+   - Do NOT commit directly during development. Hand off to Stage 4 (`/sdlc-3-review`).
 
 ---
 
-## Stage 4: Local Code Review & Pre-Commit Verification
+## Stage 4: Local Code Review & Pre-Commit Verification Gate
 
-- **Slash Command**: `/sdlc-3-verify`
-- **Dedicated Agent**: `sdlc-verify`
+- **Slash Command**: `/sdlc-3-review [target-or-path]`
+- **Dedicated Agent**: `sdlc-review`
 - **Permissions**: `edit: deny`, scoped verification `shell` (test/lint/check tools, read-only git, issue inspection), `subagent: deny`, `external_directory: deny`
 
 Before any commit is proposed:
 
-1. **Architectural Review**:
-   - Inspect changes with `git diff`. Confirm domain purity and layer boundaries as specified in `AGENTS.md`.
-2. **Test Coverage Assessment**:
-   - Verify that new or modified logic is backed by corresponding tests. Confirm no stubs or dead code remain.
-3. **Run Quality Verification Suite**:
+1. **Target & Scope Resolution**:
+   - By default, inspect all uncommitted working tree changes (`rtk git diff HEAD`).
+   - When run with an argument (`[target-or-path]`), inspect the specified directory, file, or git ref/range (`rtk git diff HEAD -- <path>` or `rtk git diff <ref>`).
+2. **Run Quality Verification Suite (Fail-Fast)**:
    - **Standardized Task Runner Interface**: Prioritize `rtk mise run verify` to execute all verification checks in one
      step (or individual tasks `rtk mise run lint` and `rtk mise run format:check`).
    - **Fallback**: If no `mise` tasks are configured, run all quality commands specified in `AGENTS.md` under `## Quality Commands`.
-   - All checks must pass with zero errors.
-4. **Commit Approval Rule (MANDATORY)**:
-   - **NEVER** commit directly or automatically.
-   - Present `git status` with the list of changed files.
-   - Propose a Conventional Commit message (`feat: ...`, `fix: ...`, `chore: ...`, `refactor: ...`, `test: ...`).
-   - **Wait for explicit user approval** before running `git commit`.
-   - **Authorship and Attribution (ALL HARNESSes)**: Do NOT add `Co-authored-by` or any other
-     authorship/attribution trailer naming an AI assistant, model, or harness unless the user explicitly
-     requests it. This applies across all harnesses and commit workflows, including amend/rebase
-     operations; never add such trailers by default.
+   - All checks must pass with zero errors. If checks fail, stop early.
+3. **Caller-Aware Code Review**:
+   - Inspect changes using the `code-review` skill and `minimalist-engineering.md` standards.
+   - Trace callers, callees, and contract blast radius using `rtk rg`.
+   - Evaluate against the 6-step reuse ladder, safety floor, risky-path test coverage, and `shortcut:` convention upgrade triggers.
+   - Classify findings into three strict tiers: `[Must fix]`, `[Should fix]`, and `[Nice to have]`.
+   - Output summary metrics (`Files Inspected`, `Diff Volume`, `Lean Potential`) and verdict (`Ready to Ship` | `Revisions Required` | `Blocked`).
+4. **Decision Gate & Pre-Commit Approval Rule (MANDATORY)**:
+   - If `Must fix` or `Should fix` findings exist, verdict is `Revisions Required` and commit proposal is blocked.
+   - **Bypass Exception**: The developer may explicitly bypass blocking findings by providing a stated technical rationale, which must be documented in the review summary.
+   - If verdict is `Ready to Ship` (or explicitly bypassed) and uncommitted changes exist:
+     - Present `git status` with the list of changed files.
+     - Propose a Conventional Commit message (`feat: ...`, `fix: ...`, `chore: ...`, `refactor: ...`, `test: ...`).
+     - **Wait for explicit user approval** before running `git commit`.
+     - **Authorship and Attribution (ALL HARNESSes)**: Do NOT add `Co-authored-by` or any other
+       authorship/attribution trailer naming an AI assistant, model, or harness unless the user explicitly
+       requests it. This applies across all harnesses and commit workflows, including amend/rebase
+       operations; never add such trailers by default.
 
 ---
 
@@ -171,6 +178,6 @@ Before any commit is proposed:
 | ------------------------ | ----------- | ---------------- | ---------------- | ---------------------------------------------------------------------------------------- |
 | `/sdlc-1-refine <id>`    | Stage 1     | `sdlc-refine`    | `edit: deny`     | Refine issue into English with 3 mandatory sections.                                     |
 | `/sdlc-2-develop <id>`   | Stage 2 & 3 | `sdlc-develop`   | `edit: allow`    | Confirm branch, set In progress label, guide implementation via `AGENTS.md`.             |
-| `/sdlc-3-verify`         | Stage 4     | `sdlc-verify`    | `edit: deny`     | Architectural check, quality commands (`mise run verify` / `AGENTS.md`), propose commit. |
+| `/sdlc-3-review [path]`   | Stage 4     | `sdlc-review`    | `edit: deny`     | Quality suite (mise verify), caller-aware review (3 tiers), propose commit. |
 | `/sdlc-4-pr [id]`        | Stage 5     | `sdlc-pr-review` | `edit: allow`    | Push branch, create PR with template, inspect CI.                                        |
 | `/sdlc-5-review-pr [id]` | Stage 5     | `sdlc-pr-review` | `edit: allow`    | Fetch threads via GraphQL, explain triage & confirm, fix, reply, and resolve.           |

@@ -73,7 +73,7 @@ Design (DDD), Clean/Hexagonal Architecture, and the high-performance `uv` toolch
 
 ### Rule 4: Mandatory `mise.toml` Verification Tasks
 - When initiating a new Python project or updating an existing one, you **MUST** configure standard verification tasks in `mise.toml`.
-- The SDLC Stage 4 Verification Agent (`sdlc-verify`) standardizes on `rtk mise run verify` (with granular tasks `lint` and `format:check`).
+- The SDLC Stage 4 Review Agent (`sdlc-review`) standardizes on `rtk mise run verify` (with granular tasks `lint` and `format:check`).
 - Map all `mise` verification tasks directly to `uv` to preserve hermetic execution:
   ```toml
   [tasks.lint]

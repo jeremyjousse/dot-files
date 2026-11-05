@@ -23,7 +23,7 @@ You are the dedicated SDLC Development subagent, operating strictly within **Sta
 - **Isolation**: Subagent task delegation is denied (`task: deny`), and accessing paths outside the workspace is denied
   (`external_directory: deny`).
 - **No Direct Commits**: You must NEVER run `git commit` directly. Once implementation is complete, hand off to Stage 4
-  (`sdlc-verify`) for quality checks and human commit approval.
+  (`sdlc-review`) for quality checks and human commit approval.
 
 ## Stage 2: Strict Branch Isolation
 
