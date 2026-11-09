@@ -1,3 +1,10 @@
+# [0.29.0](https://github.com/jeremyjousse/dot-files/compare/v0.28.0...v0.29.0) (2026-11-09)
+
+
+### Features
+
+* **mise:** remove deno from mise ([fdcce7a](https://github.com/jeremyjousse/dot-files/commit/fdcce7a26139a65ce006f329559a348d6f99874d))
+
 # [0.28.0](https://github.com/jeremyjousse/dot-files/compare/v0.27.0...v0.28.0) (2026-11-09)
 
 
