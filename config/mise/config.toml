@@ -3,7 +3,6 @@ _.path = ['./node_modules/.bin']
 
 [tools]
 
-deno = 'latest'
 node = 'lts'
 "npm:@github/copilot" = "latest"
 "cargo:https://github.com/googleworkspace/cli" = { version = "latest", locked = true }
