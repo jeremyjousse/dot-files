@@ -35,7 +35,10 @@ If no issue number or URL was provided above, prompt the user for the target Git
 3. **Verify Refinement Gate Criteria**:
 
    - **Mandatory Language**: All GitHub issues MUST be written entirely in English. If the issue is in another language
-     (e.g., French), translate and rewrite all sections in English during refinement.
+     (e.g., French), translate and rewrite all sections and the title in English during refinement.
+   - **Mandatory Title Quality**: The issue title MUST be written in plain imperative English (e.g., `Add ...`, `Fix ...`,
+     `Refine ...`, `Update ...`), typo-free, sentence-cased without trailing punctuation, and accurately correlated with
+     `## Tasks & scope`. Do NOT use Conventional Commit prefixes unless explicitly instructed.
    - **Mandatory Label**: The issue MUST have the label `Status: To do :computer:` (or `Status: To do 💻`). If the issue
      has `Status: Refinement :page_facing_up:` or lacks `Status: To do :computer:`, it requires refinement.
    - **Mandatory Sections**:
@@ -48,19 +51,25 @@ If no issue number or URL was provided above, prompt the user for the target Git
    - **If the issue is incomplete, ambiguous, or lacks detail**:
 
      1. Load the `review-user-story` skill for refinement guidance.
-     2. Clearly state which sections or details are missing or misaligned.
+     2. Clearly state which sections, title elements, or details are missing or misaligned.
      3. Formulate at most three (<= 3) concise, targeted questions to clarify scope, requirements, or platform behavior.
-     4. Propose an improved, English-written issue body adhering strictly to the 3 mandatory sections.
+     4. Propose an improved title (in plain imperative English) and an English-written issue body adhering strictly to the 3 mandatory sections.
      5. Once the user validates the proposal, update the issue on GitHub:
 
         ```bash
-        gh issue edit <issue-id> --body "<refined_body>" --remove-label "Status: Refinement :page_facing_up:" --add-label "Status: To do :computer:"
+        gh issue edit <issue-id> --title "<refined_title>" --body "<refined_body>" --remove-label "Status: Refinement :page_facing_up:" --add-label "Status: To do :computer:"
         ```
 
    - **If the issue is complete and meets all criteria**:
 
      1. Confirm that the issue passes all Refinement Gate criteria.
-     2. If `Status: Refinement :page_facing_up:` is present, update the label to `Status: To do :computer:`:
+     2. Check if the title requires typo, casing, or imperative adjustments. If so, update title and label:
+
+        ```bash
+        gh issue edit <issue-id> --title "<refined_title>" --remove-label "Status: Refinement :page_facing_up:" --add-label "Status: To do :computer:"
+        ```
+
+        Otherwise, update only the label if `Status: Refinement :page_facing_up:` is present:
 
         ```bash
         gh issue edit <issue-id> --remove-label "Status: Refinement :page_facing_up:" --add-label "Status: To do :computer:"

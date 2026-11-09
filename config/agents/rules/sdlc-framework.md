@@ -19,6 +19,8 @@ Before writing ANY code, creating branches, or modifying files:
    - `rtk gh issue view <issue-id>`
 2. **Verify Refinement Gate Criteria**:
    - **Language**: All GitHub Issues, Pull Requests, commit messages, and code comments MUST be written in English.
+   - **Title Quality**: Written in plain imperative English (e.g., `Add ...`, `Fix ...`, `Refine ...`, `Update ...`),
+     typo-free, sentence-cased without trailing punctuation, and accurately correlated with `## Tasks & scope`.
    - **Status Label**: The issue MUST have `Status: To do :computer:` (or `Status: To do 💻`). If
      `Status: Refinement :page_facing_up:` is present or `Status: To do` is missing, refinement is required.
    - **Mandatory Sections**:
@@ -26,8 +28,8 @@ Before writing ANY code, creating branches, or modifying files:
      - `## Tasks & scope`: Clear, split tasks and explicit boundaries.
      - `## Out of Scope`: Explicitly excluded features/actions.
 3. **Refinement Action**:
-   - If criteria are missing: load `review-user-story` skill, ask <= 3 clarifying questions, propose refined English
-     body, update issue via `gh issue edit`.
+   - If criteria are missing or title requires corrections: load `review-user-story` skill, ask <= 3 clarifying
+     questions, propose refined title (plain imperative English) and English body, update issue via `gh issue edit`.
 4. **Task Decoupling**:
    - A request to review or scope an issue is **STRICTLY confined to Stage 1**.
    - NEVER create a branch or write code during a refinement task.
@@ -176,7 +178,7 @@ Before any commit is proposed:
 
 | Slash Command            | Stage       | Agent            | File Permissions | Primary Purpose                                                                          |
 | ------------------------ | ----------- | ---------------- | ---------------- | ---------------------------------------------------------------------------------------- |
-| `/sdlc-1-refine <id>`    | Stage 1     | `sdlc-refine`    | `edit: deny`     | Refine issue into English with 3 mandatory sections.                                     |
+| `/sdlc-1-refine <id>`    | Stage 1     | `sdlc-refine`    | `edit: deny`     | Refine issue title (imperative English) & body with 3 mandatory sections.                |
 | `/sdlc-2-develop <id>`   | Stage 2 & 3 | `sdlc-develop`   | `edit: allow`    | Confirm branch, set In progress label, guide implementation via `AGENTS.md`.             |
 | `/sdlc-3-review [path]`   | Stage 4     | `sdlc-review`    | `edit: deny`     | Quality suite (mise verify), caller-aware review (3 tiers), propose commit. |
 | `/sdlc-4-pr [id]`        | Stage 5     | `sdlc-pr-review` | `edit: allow`    | Push branch, create PR with template, inspect CI.                                        |

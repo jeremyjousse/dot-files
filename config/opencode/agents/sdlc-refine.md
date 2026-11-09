@@ -35,7 +35,10 @@ rtk gh issue view <issue-id>
 Verify that the issue satisfies all mandatory criteria:
 
 - **Mandatory Language**: Written entirely in English. If drafted in any other language, translate and rewrite all
-  sections in English.
+  sections and the title in English.
+- **Mandatory Title Quality**: Written in plain imperative English (e.g., `Add ...`, `Fix ...`, `Refine ...`,
+  `Update ...`), typo-free, sentence-cased without trailing punctuation, and accurately correlated with `## Tasks & scope`.
+  Do NOT use Conventional Commit prefixes unless explicitly instructed.
 - **Mandatory Label**: Must have `Status: To do :computer:` (or `Status: To do 💻`). If the issue has
   `Status: Refinement :page_facing_up:` or lacks `Status: To do :computer:`, it requires refinement.
 - **Mandatory Sections**:
@@ -48,19 +51,25 @@ Verify that the issue satisfies all mandatory criteria:
 #### If the Issue is Incomplete, Ambiguous, or Lacks Detail
 
 1. Load the `review-user-story` skill for guidance on scoping and refining user stories.
-2. Identify missing sections, vague scopes, or formatting gaps.
+2. Identify missing sections, title issues, vague scopes, or formatting gaps.
 3. Ask at most three (<= 3) concise, targeted questions to clarify scope and acceptance criteria.
-4. Propose an updated English issue body adhering strictly to the 3 mandatory sections.
+4. Propose an improved title (in plain imperative English) and an updated English issue body adhering strictly to the 3 mandatory sections.
 5. Once validated by the user, update the issue via GitHub CLI:
 
    ```bash
-   gh issue edit <issue-id> --body "<refined_body>" --remove-label "Status: Refinement :page_facing_up:" --add-label "Status: To do :computer:"
+   gh issue edit <issue-id> --title "<refined_title>" --body "<refined_body>" --remove-label "Status: Refinement :page_facing_up:" --add-label "Status: To do :computer:"
    ```
 
 #### If the Issue is Complete and Meets All Criteria
 
 1. Confirm readiness for development.
-2. If `Status: Refinement :page_facing_up:` is present, transition to `Status: To do :computer:`:
+2. Check if the title requires typo, casing, or imperative phrasing adjustments. If so, update title and label:
+
+   ```bash
+   gh issue edit <issue-id> --title "<refined_title>" --remove-label "Status: Refinement :page_facing_up:" --add-label "Status: To do :computer:"
+   ```
+
+   Otherwise, update only the status label if `Status: Refinement :page_facing_up:` is present:
 
    ```bash
    gh issue edit <issue-id> --remove-label "Status: Refinement :page_facing_up:" --add-label "Status: To do :computer:"
