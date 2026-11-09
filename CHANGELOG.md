@@ -1,3 +1,10 @@
+# [0.28.0](https://github.com/jeremyjousse/dot-files/compare/v0.27.0...v0.28.0) (2026-11-09)
+
+
+### Features
+
+* **ai:** :sparkles: update sdlc refine workflow ([4796773](https://github.com/jeremyjousse/dot-files/commit/4796773f831ef955865e8a59eb1d51ed039c3a38))
+
 # [0.27.0](https://github.com/jeremyjousse/dot-files/compare/v0.26.0...v0.27.0) (2026-11-05)
 
 
