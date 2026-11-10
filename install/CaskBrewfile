@@ -4,9 +4,6 @@ tap "manaflow-ai/cmux", trusted: true
 # Browsers
 ###
 
-# Firefox Developer Edition (https://www.mozilla.org/en-US/firefox/developer/) Mozilla's web browser for developers
-# cask "firefox@developer-edition"
-
 # Google Chrome (https://www.google.com/chrome/) Google's web browser
 cask "google-chrome"
 
@@ -37,17 +34,16 @@ cask "visual-studio-code"
 # Bruno (https://usebruno.com/) fully local and Git-native solution to accelerate and secure API work and collaboration
 cask "bruno"
 
-# DevToys (https://devtoys.app/) Swiss army knife for developers
-# cask "devtoys"
 
 # Google Cloud CLI (https://docs.cloud.google.com/sdk/docs) command-line tools for Google Cloud Platform
 cask "gcloud-cli"
 
-# JDK Mission Control (https://www.oracle.com/java/technologies/jdk-mission-control.html) a profiling and event collection framework for JDK
-# cask "jdk-mission-control"
 
 # Podman Desktop (https://podman-desktop.io/) a graphical interface that enables application developers to seamlessly work with containers and Kubernetes
 cask "podman-desktop"
+
+# Wiz CLI (https://www.wiz.io/lp/wiz-cli) gives developers a direct line into the Wiz platform
+cask "wizcli"
 
 ###
 # Productivity & Notes
