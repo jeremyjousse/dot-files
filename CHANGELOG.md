@@ -1,3 +1,10 @@
+# [0.30.0](https://github.com/jeremyjousse/dot-files/compare/v0.29.0...v0.30.0) (2026-11-10)
+
+
+### Features
+
+* **install:** :sparkles: add wizcli ([3f5f325](https://github.com/jeremyjousse/dot-files/commit/3f5f3258cbbbec2158aed12b30a2bf49a1baa6a5))
+
 # [0.29.0](https://github.com/jeremyjousse/dot-files/compare/v0.28.0...v0.29.0) (2026-11-09)
 
 
