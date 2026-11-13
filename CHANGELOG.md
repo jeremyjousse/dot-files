@@ -1,3 +1,10 @@
+# [0.31.0](https://github.com/jeremyjousse/dot-files/compare/v0.30.0...v0.31.0) (2026-11-13)
+
+
+### Features
+
+* **install:** :sparkles: add googleworkspace-cli ([8982f1d](https://github.com/jeremyjousse/dot-files/commit/8982f1d9f6a0ec1af5dfe55955d3e0cd6410d60c))
+
 # [0.30.0](https://github.com/jeremyjousse/dot-files/compare/v0.29.0...v0.30.0) (2026-11-10)
 
 
