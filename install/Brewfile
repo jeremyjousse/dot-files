@@ -158,6 +158,9 @@ brew "databricks"
 # GitHub CLI (https://cli.github.com/) brings GitHub to your terminal
 brew "gh"
 
+
+# Google Workspace CLI (https://github.com/googleworkspace/googleworkspace-cli) command-line interface for Google Workspace
+
 ###
 # Code Quality & Linters
 ###
