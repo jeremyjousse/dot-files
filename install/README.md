@@ -15,7 +15,7 @@ fonts, and Visual Studio Code extensions needed for a complete developer environ
   - **CLI Navigation & File Utilities**: Modern CLI tools (`bat`, `diffnav`, `dust`, `fd`, `git-delta`, `jq`, `kondo`,
     `lsd`, `ripgrep`, `tailspin`, `worktrunk`, `yq`).
   - **Shell Editors**: Terminal text editors (`helix`).
-  - **Dev Languages & Runtimes**: Runtime managers and build tools (`mise`, `pnpm`, `ruff`, `uv`, `xcodegen`).
+  - **Dev Languages & Runtimes**: Runtime managers and build tools (`mise`, `ruff`, `uv`, `xcodegen`).
   - **Containers & Orchestration**: Container runtimes and Kubernetes tools (`container`, `container-compose`, `flux`,
     `helm`, `kubectl`, `kubectx`, `podman`, `podman-compose`).
   - **AI & Agent Tools**: Local AI coding assistants and proxies (`codeburn`, `herdr`, `llmfit`, `rtk`).

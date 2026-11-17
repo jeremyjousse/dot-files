@@ -3,13 +3,6 @@
 # personnal utils as shell app
 [ -d "${HOME}/Development/Personal/toolbox/utils" ] && export PATH="${HOME}/Development/Personal/toolbox/utils:$PATH"
 
-# Direnv
-# TODO maybe remove due to mise
-command -v direnv &>/dev/null && eval "$(direnv hook zsh)"
-
-# SDKMAN
-[ -s "${HOME}/.sdkman/bin/sdkman-init.sh" ] && . "${HOME}/.sdkman/bin/sdkman-init.sh"
-
 # Oh My ZSH Autocompletion
 [ -f "${HOME}/.oh-my-zsh/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh" ] && source "${HOME}/.oh-my-zsh/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh"
 

@@ -80,9 +80,6 @@ brew "helix"
 # mise (https://mise.jdx.dev/) the front-end to your dev env
 brew "mise"
 
-# pnpm (https://pnpm.io/) fast, disk space efficient package manager
-brew "pnpm"
-
 # Ruff (https://github.com/astral-sh/ruff) an extremely fast Python linter and code formatter, written in Rust
 brew "ruff"
 
