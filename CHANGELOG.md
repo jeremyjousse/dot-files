@@ -1,3 +1,10 @@
+# [0.32.0](https://github.com/jeremyjousse/dot-files/compare/v0.31.0...v0.32.0) (2026-11-17)
+
+
+### Features
+
+* **mise:** migrate pnpm, zsh, and vscode settings to mise ([f1d9084](https://github.com/jeremyjousse/dot-files/commit/f1d9084e097dc6c094241b6709caccfbf8bf5c1f))
+
 # [0.31.0](https://github.com/jeremyjousse/dot-files/compare/v0.30.0...v0.31.0) (2026-11-13)
 
 
