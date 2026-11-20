@@ -5,12 +5,13 @@ Single source of truth for AI coding assistant skills, slash commands, subagents
 ## Directory Structure
 
 - **`agents/`**: Canonical SDLC agent definitions for GitHub Copilot CLI, including their tool aliases.
-- **`commands/`**: SDLC workflow slash commands (`/sdlc-1-refine`, `/sdlc-2-develop`, `/sdlc-3-review`, `/sdlc-4-pr`, `/sdlc-5-review-pr`), review/audit commands (`/repo-audit`, `/tech-debt`), and utility commands (`/update-dependencies`).
+- **`commands/`**: SDLC workflow slash commands (`/sdlc-1-refine`, `/sdlc-2-develop`, `/sdlc-3-review`, `/sdlc-4-pr`, `/sdlc-5-review-pr`), review/audit commands (`/pr-analyze`, `/repo-audit`, `/tech-debt`), and utility commands (`/update-dependencies`).
 - **`rules/`**: Universal operational rules:
   - `sdlc-framework.md`: 5-stage SDLC workflow lifecycle from issue refinement to pull request review.
   - `minimalist-engineering.md`: Senior minimalist engineering standards (6-step reuse ladder, safety floor, `shortcut:` tracking, skipped/deferred disclosure, terse communication).
 - **`skills/`**: Domain and best-practice skills following the Agent Skills specification (`SKILL.md`):
   - **`code-review/`**: Caller-aware review of diffs grouped by `Must fix`, `Should fix`, and `Nice to have` with lean potential metrics.
+  - **`analyze-pr/`**: Explain PR changes and propose deduplicated Obsidian knowledge updates.
   - **`repo-audit/`**: Architecture, data flow, untested risky paths, and dead abstraction audit.
   - **`tech-debt/`**: Scan repository comments for `shortcut:` markers to generate a debt ledger and flag rot warnings.
   - **`documentation-best-practices/`**: ASD-STE100 guidance for writing, reviewing, and refactoring technical documentation.
@@ -30,6 +31,11 @@ Single source of truth for AI coding assistant skills, slash commands, subagents
 > **Note**: Each skill directory under `config/agents/skills/*` is linked individually into `~/.agents/skills/<skill-name>` so that third-party skills installed via `npx skills` (tracked in `~/.agents/.skill-lock.json`) coexist without being overwritten.
 
 OpenCode agents live in [config/opencode/agents/](../opencode/agents/) and omit the Copilot-only `tools` and `include-custom-instructions` frontmatter. OpenCode permissions are defined per agent under `agents` (using ordered `permissions` rules) in [opencode.jsonc](../opencode/opencode.jsonc).
+
+`/pr-analyze` reads `~/Mon Drive/Obsidian` when access is available. It asks for confirmation before writing notes.
+Copilot requires its own authorization for vault access; OpenCode permissions do not authorize Copilot.
+OpenCode asks for approval before running analysis commands. Review each command and reject any that modify files.
+OpenCode currently denies vault writes; apply approved proposals manually.
 
 ## VS Code Local Prompts
 
