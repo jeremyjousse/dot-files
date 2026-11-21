@@ -228,5 +228,12 @@
 				{ "action": "shell", "resource": "rtk grep *", "effect": "ask" },
 			],
 		},
+		"yolo": {
+			"permissions": [
+				{ "action": "edit", "resource": "*", "effect": "allow" },
+				{ "action": "shell", "resource": "*", "effect": "allow" },
+				{ "action": "external_directory", "resource": "*", "effect": "allow" },
+			],
+		},
 	},
 }
