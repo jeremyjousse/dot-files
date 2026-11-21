@@ -1,3 +1,10 @@
+# [0.33.0](https://github.com/jeremyjousse/dot-files/compare/v0.32.0...v0.33.0) (2026-11-21)
+
+
+### Features
+
+* **opencode:** add pull request analyzer ([bbb2fee](https://github.com/jeremyjousse/dot-files/commit/bbb2fee685dcc33a44b0703bc71dabfba14a2ec0))
+
 # [0.32.0](https://github.com/jeremyjousse/dot-files/compare/v0.31.0...v0.32.0) (2026-11-17)
 
 
