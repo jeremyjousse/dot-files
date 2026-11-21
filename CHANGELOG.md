@@ -1,3 +1,10 @@
+# [0.34.0](https://github.com/jeremyjousse/dot-files/compare/v0.33.0...v0.34.0) (2026-11-21)
+
+
+### Features
+
+* **opencode:** add rust design patterns and rust-senior-review skill ([9ca53ac](https://github.com/jeremyjousse/dot-files/commit/9ca53ac6d98c5b6511885987f2b5bc47ebf3d501)), closes [#55](https://github.com/jeremyjousse/dot-files/issues/55)
+
 # [0.33.0](https://github.com/jeremyjousse/dot-files/compare/v0.32.0...v0.33.0) (2026-11-21)
 
 
