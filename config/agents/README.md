@@ -4,7 +4,7 @@ Single source of truth for AI coding assistant skills, slash commands, subagents
 
 ## Directory Structure
 
-- **`agents/`**: Canonical SDLC agent definitions for GitHub Copilot CLI, including their tool aliases.
+- **`agents/`**: Canonical agent definitions for GitHub Copilot CLI (SDLC workflow agents and the standalone `yolo` agent), including their tool aliases.
 - **`commands/`**: SDLC workflow slash commands (`/sdlc-1-refine`, `/sdlc-2-develop`, `/sdlc-3-review`, `/sdlc-4-pr`, `/sdlc-5-review-pr`), review/audit commands (`/pr-analyze`, `/repo-audit`, `/tech-debt`), and utility commands (`/update-dependencies`).
 - **`rules/`**: Universal operational rules:
   - `sdlc-framework.md`: 5-stage SDLC workflow lifecycle from issue refinement to pull request review.
@@ -42,3 +42,9 @@ OpenCode currently denies vault writes; apply approved proposals manually.
 `bootstrap.sh` links `config/agents/prompts/` to `~/Library/Application Support/Code/User/prompts/`. The supported Local-harness prompts are `sdlc-1-refine`, `sdlc-2-develop`, `sdlc-3-review`, `sdlc-4-pr`, `sdlc-5-review-pr`, and `update-dependencies`. Each `.prompt.md` imports its matching canonical body with `#file:~/.agents/commands/<name>.md`; argument-taking commands map VS Code's `${input:...}` value to the body's `$ARGUMENTS`. Edit the command body, not the wrapper, to change workflow instructions.
 
 These are Local-harness prompt wrappers, not Copilot custom-agent definitions. They do not select or install the custom agents named in command frontmatter, and do not bundle skill files or tools. Local harness runs therefore use its configured agent and tools; workflows that depend on a skill or a CLI must have that skill or CLI available in the Local environment. Copilot continues to use its own agents and native skills rather than these user-level prompt wrappers.
+
+## Standalone User-Only Agent (`yolo`)
+
+- **GitHub Copilot CLI (`agents/yolo.md`)**: Configures an opt-in `yolo` agent with unrestricted tool access (`tools: ['*']`) and explicit SDLC gate bypass instructions (`sdlc-framework.md`). Sets `user-invocable: true` and `disable-model-invocation: true` (alongside `mode: primary`) so users can select it manually while preventing other agents or model dispatchers from automatically calling or delegating to it.
+- **OpenCode (`config/opencode/agents/yolo.md`)**: Matching `mode: primary` agent paired with `agents.yolo` permissions (`edit`, `shell`, and `external_directory` set to `allow`) in `config/opencode/opencode.jsonc`, similarly isolated from subagent delegation.
+- **SDLC Preservation**: Existing `sdlc-refine`, `sdlc-develop`, `sdlc-review`, and `sdlc-pr-review` permissions and workflow gates remain completely unmodified.
