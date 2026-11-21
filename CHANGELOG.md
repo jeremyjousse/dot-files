@@ -1,3 +1,10 @@
+# [0.35.0](https://github.com/jeremyjousse/dot-files/compare/v0.34.0...v0.35.0) (2026-11-21)
+
+
+### Features
+
+* **opencode:** add standalone yolo agent for OpenCode and Copilot CLI ([699bd5d](https://github.com/jeremyjousse/dot-files/commit/699bd5d872513bbaf27a7ab69e0e258a5f4a990d))
+
 # [0.34.0](https://github.com/jeremyjousse/dot-files/compare/v0.33.0...v0.34.0) (2026-11-21)
 
 
