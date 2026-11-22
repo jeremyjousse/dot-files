@@ -8,6 +8,5 @@ plugins=(
   macos
   man
   podman
-  zsh-autosuggestions
   zsh-syntax-highlighting
 )

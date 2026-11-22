@@ -2,9 +2,6 @@
 # AI & Collaboration
 ###
 
-# GitHub Copilot Chat (https://marketplace.visualstudio.com/items?itemName=GitHub.copilot-chat) AI peer programming tool that helps you write code faster and smarter
-vscode "GitHub.copilot-chat"
-
 # Live Share (https://marketplace.visualstudio.com/items?itemName=ms-vsliveshare.vsliveshare) Real-time collaborative development from the comfort of your favorite tools
 vscode "ms-vsliveshare.vsliveshare"
 
