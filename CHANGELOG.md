@@ -1,3 +1,15 @@
+# [0.37.0](https://github.com/jeremyjousse/dot-files/compare/v0.36.0...v0.37.0) (2026-11-23)
+
+
+### Bug Fixes
+
+* makefile double brew install ([05a0988](https://github.com/jeremyjousse/dot-files/commit/05a0988baeb367345b1a283a41fc8d7a3b1cbdb1))
+
+
+### Features
+
+* **zsh:** replace zsh-autosuggestions with deja ([c33b853](https://github.com/jeremyjousse/dot-files/commit/c33b853174c54db5443ee67e4afb2f15e16fd841))
+
 # [0.36.0](https://github.com/jeremyjousse/dot-files/compare/v0.35.0...v0.36.0) (2026-11-23)
 
 
