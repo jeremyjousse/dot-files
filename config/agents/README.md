@@ -5,11 +5,16 @@ Single source of truth for AI coding assistant skills, slash commands, subagents
 ## Directory Structure
 
 - **`agents/`**: Canonical agent definitions for GitHub Copilot CLI (SDLC workflow agents and the standalone `yolo` agent), including their tool aliases.
-- **`commands/`**: SDLC workflow slash commands (`/sdlc-1-refine`, `/sdlc-2-develop`, `/sdlc-3-review`, `/sdlc-4-pr`, `/sdlc-5-review-pr`), review/audit commands (`/pr-analyze`, `/repo-audit`, `/tech-debt`), and utility commands (`/update-dependencies`).
+- **`commands/`**: SDLC workflow slash commands (`/sdlc-0-discover`, `/sdlc-1-refine`, `/sdlc-2-develop`,
+  `/sdlc-3-review`, `/sdlc-4-pr`, `/sdlc-5-review-pr`), review/audit commands (`/pr-analyze`, `/repo-audit`,
+  `/tech-debt`), and utility commands (`/update-dependencies`).
 - **`rules/`**: Universal operational rules:
-  - `sdlc-framework.md`: 5-stage SDLC workflow lifecycle from issue refinement to pull request review.
+  - `sdlc-framework.md`: 5-stage SDLC workflow lifecycle (plus optional Stage 0 discovery) from issue refinement to pull
+    request review.
   - `minimalist-engineering.md`: Senior minimalist engineering standards (6-step reuse ladder, safety floor, `shortcut:` tracking, skipped/deferred disclosure, terse communication).
 - **`skills/`**: Domain and best-practice skills following the Agent Skills specification (`SKILL.md`):
+  - **`issue-discovery/`**: Guided Stage 0 discovery to explore codebase constraints, compare approaches, and draft
+    GitHub issues prior to `/sdlc-1-refine`.
   - **`code-review/`**: Caller-aware review of diffs grouped by `Must fix`, `Should fix`, and `Nice to have` with lean potential metrics.
   - **`analyze-pr/`**: Explain PR changes and propose deduplicated Obsidian knowledge updates.
   - **`repo-audit/`**: Architecture, data flow, untested risky paths, and dead abstraction audit.
@@ -39,7 +44,11 @@ OpenCode currently denies vault writes; apply approved proposals manually.
 
 ## VS Code Local Prompts
 
-`bootstrap.sh` links `config/agents/prompts/` to `~/Library/Application Support/Code/User/prompts/`. The supported Local-harness prompts are `sdlc-1-refine`, `sdlc-2-develop`, `sdlc-3-review`, `sdlc-4-pr`, `sdlc-5-review-pr`, and `update-dependencies`. Each `.prompt.md` imports its matching canonical body with `#file:~/.agents/commands/<name>.md`; argument-taking commands map VS Code's `${input:...}` value to the body's `$ARGUMENTS`. Edit the command body, not the wrapper, to change workflow instructions.
+`bootstrap.sh` links `config/agents/prompts/` to `~/Library/Application Support/Code/User/prompts/`. The supported
+Local-harness prompts are `sdlc-0-discover`, `sdlc-1-refine`, `sdlc-2-develop`, `sdlc-3-review`, `sdlc-4-pr`,
+`sdlc-5-review-pr`, and `update-dependencies`. Each `.prompt.md` imports its matching canonical body with
+`#file:~/.agents/commands/<name>.md`; argument-taking commands map VS Code's `${input:...}` value to the body's
+`$ARGUMENTS`. Edit the command body, not the wrapper, to change workflow instructions.
 
 These are Local-harness prompt wrappers, not Copilot custom-agent definitions. They do not select or install the custom agents named in command frontmatter, and do not bundle skill files or tools. Local harness runs therefore use its configured agent and tools; workflows that depend on a skill or a CLI must have that skill or CLI available in the Local environment. Copilot continues to use its own agents and native skills rather than these user-level prompt wrappers.
 
