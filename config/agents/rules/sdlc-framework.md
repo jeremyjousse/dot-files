@@ -1,9 +1,35 @@
 # Universal Software Development Life Cycle (SDLC) Framework
 
-This framework defines the mandatory 5-stage SDLC workflow across repositories. All OpenCode agents, subagents, and
-automated workflows MUST strictly follow these 5 stages in sequential order during development tasks. No shortcuts or
-skipped stages are permitted. Issue review and refinement is strictly confined to Stage 1 and must never automatically
-cascade into development.
+This framework defines the mandatory 5-stage SDLC workflow (Stages 1–5) across repositories, preceded by an optional
+Stage 0 discovery step (`/sdlc-0-discover`). All OpenCode agents, subagents, and automated workflows MUST strictly
+follow Stages 1–5 in sequential order during development tasks. No shortcuts or skipped mandatory stages are permitted.
+Discovery (Stage 0) and refinement (Stage 1) must never automatically cascade into development.
+
+---
+
+## Stage 0: Guided Problem & Approach Discovery (Optional)
+
+- **Slash Command**: `/sdlc-0-discover [idea-or-issue-id]`
+- **Dedicated Agent**: `sdlc-discover`
+- **Permissions**: `edit: deny`, read-only git/search + GitHub issue/label/repo `shell` allowlist, web search/fetch
+  enabled, `subagent: deny`, `external_directory: deny`
+
+When starting from a raw idea or an ambiguous problem that needs interactive thinking before locking scope:
+
+1. **Ground Context (`issue-discovery` skill)**:
+   - Inspect an existing issue (`rtk gh issue view <id> --comments`) or accept a raw idea/problem seed.
+   - Read `AGENTS.md`, relevant codebase touchpoints, caller blast radius, git history, and external docs via read-only
+     tools, and traverse the 6-step reuse ladder (`minimalist-engineering.md`).
+2. **Explore Trade-Offs Interactively**:
+   - Summarize grounded constraints, compare 2–3 concrete options (leading with `(Recommended)`), and ask `<= 3`
+     focused questions per turn until the user selects an approach.
+3. **Synthesize & Confirm Draft**:
+   - Propose a plain imperative English title and 3-section body (`## context` `<= 2` lines, `## Tasks & scope`,
+     `## Out of Scope`) and wait for explicit user approval.
+4. **Persist Draft & Hand Off to Stage 1**:
+   - Check labels via `rtk gh label list`, then create (`gh issue create`) or update (`gh issue edit`) the draft via
+     stdin heredoc (`--body-file - <<'EOF'`) with `Status: Refinement :page_facing_up:` when defined.
+   - NEVER stamp `Status: To do :computer:`, create branches, or edit files; hand off to `/sdlc-1-refine <issue-id>`.
 
 ---
 
@@ -176,10 +202,11 @@ Before any commit is proposed:
 
 ## Dedicated SDLC Commands & Subagents Reference
 
-| Slash Command            | Stage       | Agent            | File Permissions | Primary Purpose                                                                          |
-| ------------------------ | ----------- | ---------------- | ---------------- | ---------------------------------------------------------------------------------------- |
-| `/sdlc-1-refine <id>`    | Stage 1     | `sdlc-refine`    | `edit: deny`     | Refine issue title (imperative English) & body with 3 mandatory sections.                |
-| `/sdlc-2-develop <id>`   | Stage 2 & 3 | `sdlc-develop`   | `edit: allow`    | Confirm branch, set In progress label, guide implementation via `AGENTS.md`.             |
-| `/sdlc-3-review [path]`   | Stage 4     | `sdlc-review`    | `edit: deny`     | Quality suite (mise verify), caller-aware review (3 tiers), propose commit. |
-| `/sdlc-4-pr [id]`        | Stage 5     | `sdlc-pr-review` | `edit: allow`    | Push branch, create PR with template, inspect CI.                                        |
-| `/sdlc-5-review-pr [id]` | Stage 5     | `sdlc-pr-review` | `edit: allow`    | Fetch threads via GraphQL, explain triage & confirm, fix, reply, and resolve.           |
+| Slash Command               | Stage         | Agent            | File Permissions | Primary Purpose                                                                          |
+| --------------------------- | ------------- | ---------------- | ---------------- | ---------------------------------------------------------------------------------------- |
+| `/sdlc-0-discover [target]` | Stage 0 (opt) | `sdlc-discover`  | `edit: deny`     | Explore problem/approaches read-only and draft GitHub issue for Stage 1.                 |
+| `/sdlc-1-refine <id>`       | Stage 1       | `sdlc-refine`    | `edit: deny`     | Refine issue title (imperative English) & body with 3 mandatory sections.                |
+| `/sdlc-2-develop <id>`      | Stage 2 & 3   | `sdlc-develop`   | `edit: allow`    | Confirm branch, set In progress label, guide implementation via `AGENTS.md`.             |
+| `/sdlc-3-review [path]`     | Stage 4       | `sdlc-review`    | `edit: deny`     | Quality suite (mise verify), caller-aware review (3 tiers), propose commit.              |
+| `/sdlc-4-pr [id]`           | Stage 5       | `sdlc-pr-review` | `edit: allow`    | Push branch, create PR with template, inspect CI.                                        |
+| `/sdlc-5-review-pr [id]`    | Stage 5       | `sdlc-pr-review` | `edit: allow`    | Fetch threads via GraphQL, explain triage & confirm, fix, reply, and resolve.            |
