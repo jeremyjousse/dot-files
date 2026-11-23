@@ -1,3 +1,10 @@
+# [0.36.0](https://github.com/jeremyjousse/dot-files/compare/v0.35.0...v0.36.0) (2026-11-23)
+
+
+### Features
+
+* **opencode:** add guided discovery stage ([0d04be7](https://github.com/jeremyjousse/dot-files/commit/0d04be72dbd4a488f0bb9f3bb9eff48229eec9cb))
+
 # [0.35.0](https://github.com/jeremyjousse/dot-files/compare/v0.34.0...v0.35.0) (2026-11-21)
 
 
