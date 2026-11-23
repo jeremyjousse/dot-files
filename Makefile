@@ -29,8 +29,7 @@ PATH := $(HOMEBREW_PREFIX)/bin:$(DOTFILES_DIR)/bin:$(N_PREFIX)/bin:$(PATH)
 # Homebrew prefix
 #BIN := $(HOMEBREW_PREFIX)/bin
 
-install: brew-packages
-	$(MAKE) boostrap
+install: boostrap
 
 update:
 	brew update
