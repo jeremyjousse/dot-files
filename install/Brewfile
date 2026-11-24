@@ -187,6 +187,9 @@ brew "gnupg"
 # HTTPie (https://httpie.io/) user-friendly command line API testing client
 # brew "httpie"
 
+# xh (https://github.com/ducaale/xh) friendly and fast tool for sending HTTP requests
+brew "xh"
+
 # mas (https://github.com/mas-cli/mas) Mac App Store command-line interface
 brew "mas"
 

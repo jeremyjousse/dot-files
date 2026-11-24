@@ -52,6 +52,7 @@ link_config_files "$PWD"/config/gh-dash "$HOME"/.config/gh-dash
 link_config_files "$PWD"/config/ghostty "$HOME"/.config/ghostty
 link_config_files "$PWD"/config/git/.gitconfig "$HOME"/.gitconfig
 link_config_files "$PWD"/config/hammerspoon "$HOME"/.hammerspoon
+link_config_files "$PWD"/config/helix "$HOME"/.config/helix
 link_config_files "$PWD"/config/nushell "$HOME/Library/Application Support/nushell"
 link_config_files "$PWD"/config/nvim "$HOME"/.config/nvim
 link_config_files "$PWD"/config/starship/starship.toml "$HOME"/.config/starship.toml
