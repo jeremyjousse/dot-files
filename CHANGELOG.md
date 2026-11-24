@@ -1,3 +1,10 @@
+# [0.38.0](https://github.com/jeremyjousse/dot-files/compare/v0.37.0...v0.38.0) (2026-11-24)
+
+
+### Features
+
+* :sparkles: add helix config and xh install ([a55829e](https://github.com/jeremyjousse/dot-files/commit/a55829e2d4eae7b52ecd6c56664e3f0f9c40544b))
+
 # [0.37.0](https://github.com/jeremyjousse/dot-files/compare/v0.36.0...v0.37.0) (2026-11-23)
 
 
