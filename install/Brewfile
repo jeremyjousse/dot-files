@@ -33,6 +33,9 @@ brew "bat"
 # Diffnav (https://github.com/dlvhdr/diffnav) git diff pager based on delta but with a file tree
 brew "diffnav"
 
+# Lazygit (https://github.com/jesseduffield/lazygit) simple terminal UI for git
+brew "lazygit"
+
 # Dust (https://github.com/bootandy/dust) a more intuitive version of du in rust
 brew "dust"
 
