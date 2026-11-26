@@ -1,3 +1,10 @@
+# [0.39.0](https://github.com/jeremyjousse/dot-files/compare/v0.38.0...v0.39.0) (2026-11-26)
+
+
+### Features
+
+* **install:** :sparkles: add lazygit ([fc2362d](https://github.com/jeremyjousse/dot-files/commit/fc2362d6bf06bfd3f0a7aedeba8edcb06850599a))
+
 # [0.38.0](https://github.com/jeremyjousse/dot-files/compare/v0.37.0...v0.38.0) (2026-11-24)
 
 
