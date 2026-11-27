@@ -3,8 +3,8 @@
 # personnal utils as shell app
 [ -d "${HOME}/Development/Personal/toolbox/utils" ] && export PATH="${HOME}/Development/Personal/toolbox/utils:$PATH"
 
-# Deja (https://github.com/Giammarco-Ferranti/deja) predictive inline suggestions
-command -v deja &>/dev/null && eval "$(deja init zsh)"
+# Oh My ZSH Autocompletion
+[ -f "${HOME}/.oh-my-zsh/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh" ] && source "${HOME}/.oh-my-zsh/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh"
 
 # cht (https://cht.sh/)
 [ -e ${HOME}/.cht ] && export PATH="${HOME}/.cht:$PATH" && fpath=(~/.zsh.d/ $fpath)
