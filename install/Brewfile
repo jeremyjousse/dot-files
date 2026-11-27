@@ -8,9 +8,6 @@ tap "fluxcd/tap", trusted: true
 # Carapace (https://carapace-sh.github.io/carapace-bin/) multi-shell multi-command argument completer
 brew "carapace"
 
-# Deja (https://github.com/Giammarco-Ferranti/deja) predictive inline suggestions for zsh
-brew "deja"
-
 # Nushell (https://www.nushell.sh/) a new type of shell
 # brew "nushell"
 
