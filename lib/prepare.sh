@@ -2,6 +2,7 @@
 
 set -u
 
+# shellcheck source=lib/lib.sh
 source lib.sh
 
 info "Preparing your macOS computer"

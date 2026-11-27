@@ -6,7 +6,7 @@ export PATH="$PATH:$HOME/.local/bin:$PATH"
 # CONSTANTS
 ##
 
-DEVELOPMENT_ROOT_FOLDER="$HOME/Development"
+export DEVELOPMENT_ROOT_FOLDER="$HOME/Development"
 
 # check_install() {
 #   local installName="$1"
@@ -125,6 +125,7 @@ generate_local_gitconfig() {
 	local GITCONFIG_FILE="$2"
 
 	if [ -f "$ENV_FILE" ]; then
+		# shellcheck source=/dev/null
 		source "$ENV_FILE"
 
 		if [ -n "$GIT_USER_NAME" ]; then
@@ -184,15 +185,15 @@ yellow_color='\033[0;33m' # Yellow
 rest_color='\033[0m'      # Text Reset
 
 warning() {
-	printf "\n\r⚠️ ${yellow_color}WARNING${rest_color} $1"
+	printf '\n\r⚠️ %bWARNING%b %s' "$yellow_color" "$rest_color" "$1"
 }
 
 info() {
-	printf "\n\rℹ️ ${green_color}INFO${rest_color} $1"
+	printf '\n\rℹ️ %bINFO%b %s' "$green_color" "$rest_color" "$1"
 }
 
 error() {
-	printf "\n\r⚠️ ${red_color}ERROR${rest_color} $1"
+	printf '\n\r⚠️ %bERROR%b %s' "$red_color" "$rest_color" "$1"
 }
 
 abort() {
