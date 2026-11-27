@@ -1,59 +1,37 @@
 # Centralized AI Agents Configuration
 
-Single source of truth for AI coding assistant skills, slash commands, subagents, and SDLC operational rules, shared across **OpenCode**, **Pi Coding Agent**, and **GitHub Copilot CLI**.
+Single source of truth for shared AI coding assistant skills and universal operational instructions, shared across **OpenCode**, **Pi Coding Agent**, and **GitHub Copilot CLI**.
 
 ## Directory Structure
 
-- **`agents/`**: Canonical agent definitions for GitHub Copilot CLI (SDLC workflow agents and the standalone `yolo` agent), including their tool aliases.
-- **`commands/`**: SDLC workflow slash commands (`/sdlc-0-discover`, `/sdlc-1-refine`, `/sdlc-2-develop`,
-  `/sdlc-3-review`, `/sdlc-4-pr`, `/sdlc-5-review-pr`), review/audit commands (`/pr-analyze`, `/repo-audit`,
-  `/tech-debt`), and utility commands (`/update-dependencies`).
-- **`rules/`**: Universal operational rules:
-  - `sdlc-framework.md`: 5-stage SDLC workflow lifecycle (plus optional Stage 0 discovery) from issue refinement to pull
-    request review.
-  - `minimalist-engineering.md`: Senior minimalist engineering standards (6-step reuse ladder, safety floor, `shortcut:` tracking, skipped/deferred disclosure, terse communication).
-- **`skills/`**: Domain and best-practice skills following the Agent Skills specification (`SKILL.md`):
-  - **`issue-discovery/`**: Guided Stage 0 discovery to explore codebase constraints, compare approaches, and draft
-    GitHub issues prior to `/sdlc-1-refine`.
-  - **`code-review/`**: Caller-aware review of diffs grouped by `Must fix`, `Should fix`, and `Nice to have` with lean potential metrics.
-  - **`analyze-pr/`**: Explain PR changes and propose deduplicated Obsidian knowledge updates.
-  - **`repo-audit/`**: Architecture, data flow, untested risky paths, and dead abstraction audit.
-  - **`tech-debt/`**: Scan repository comments for `shortcut:` markers to generate a debt ledger and flag rot warnings.
-  - **`documentation-best-practices/`**: ASD-STE100 guidance for writing, reviewing, and refactoring technical documentation.
+- **`instructions/`**: Universal operational rules formatted with `applyTo: "**"` (`*.instructions.md`):
+  - `sdlc-framework.instructions.md`: 5-stage SDLC workflow lifecycle (plus optional Stage 0 discovery) from issue refinement to pull request review.
+  - `minimalist-engineering.instructions.md`: Senior minimalist engineering standards (6-step reuse ladder, safety floor, `shortcut:` tracking, skipped/deferred disclosure, terse communication).
+- **`skills/`**: Domain and workflow skills following the Agent Skills specification (`SKILL.md`), auto-discovered natively by OpenCode, Pi, and GitHub Copilot CLI:
+  - **SDLC & Review**: `issue-discovery/`, `review-user-story/`, `sdlc-develop/`, `code-review/`, `sdlc-pr/`, `review-pr/`, `analyze-pr/`.
+  - **Audit & Maintenance**: `repo-audit/`, `tech-debt/`, `update-dependencies/`.
+  - **Language & Craft**: `documentation-best-practices/`, `github/`, `obsidian-daily-notes/`, `python-best-practices/`, `rust-best-practices/`, `rust-senior-review/`, `svelte-best-practices/`, `tailwind-best-practices/`, `typescript-best-practices/`, `code-quality-analyzer/`.
 
 ## Multi-Harness Symlink Topology (`bootstrap.sh`)
 
-`bootstrap.sh` links this folder into `~/.agents/` and wires each AI coding harness to those canonical resources:
+`bootstrap.sh` links this folder into `~/.agents/` and wires each AI coding harness to canonical resources and harness-specific extensions:
 
-| Resource      | Canonical Hub (`~/.agents/`)         | OpenCode (`~/.config/opencode/`)             | Pi Coding Agent (`~/.pi/agent/`) | GitHub Copilot CLI (`~/.copilot/`) |
-| ------------- | ------------------------------------ | -------------------------------------------- | -------------------------------- | ---------------------------------- |
-| **Skills**    | `~/.agents/skills/<name>` (per-dir)  | Auto-discovered from `~/.agents/skills/`     | Auto-discovered (`~/.agents/skills/`) | Auto-discovered (`~/.agents/skills/`) |
-| **Commands**  | `~/.agents/commands`                 | `~/.config/opencode/commands`                | `~/.pi/agent/prompts`            | Native skills / `@agent`           |
-| **VS Code Local prompts** | `~/.agents/prompts` (wrappers reference `~/.agents/commands/`) | N/A | N/A | N/A |
-| **Subagents** | `~/.agents/agents`                   | Linked by `bootstrap.sh` to `~/.config/opencode/agents` | N/A                    | `~/.copilot/agents`                |
-| **Rules**     | `~/.agents/rules/`                   | `instructions` in `opencode.jsonc`           | `~/.pi/agent/AGENTS.md` + `minimalist-engineering.md` | `~/.copilot/copilot-instructions.md` + `rules/minimalist-engineering.md` |
+| Resource | Canonical Hub (`~/.agents/`) | OpenCode (`~/.config/opencode/`) | Pi Coding Agent (`~/.pi/agent/`) | GitHub Copilot CLI (`~/.copilot/`) |
+| --- | --- | --- | --- | --- |
+| **Skills** | `~/.agents/skills/<name>` | Auto-discovered from `~/.agents/skills/` | Auto-discovered (`~/.agents/skills/`) | Auto-discovered (`~/.agents/skills/`) |
+| **Instructions** | `~/.agents/instructions/` | `instructions` in `opencode.jsonc` | `AGENTS.md` + `APPEND_SYSTEM.md` | `~/.copilot/instructions/*.instructions.md` |
+| **Commands / Prompts** | N/A | `~/.config/opencode/commands` (`config/opencode/commands/`) | `~/.pi/agent/prompts` (`config/pi/prompts/`) | Native skills (`/<skill-name>`) |
+| **Agents** | N/A | `~/.config/opencode/agents` (`config/opencode/agents/`) | N/A | `~/.copilot/agents` (`config/copilot/agents/*.agent.md`) |
 
-> **Note**: Each skill directory under `config/agents/skills/*` is linked individually into `~/.agents/skills/<skill-name>` so that third-party skills installed via `npx skills` (tracked in `~/.agents/.skill-lock.json`) coexist without being overwritten.
+> **Note**: Each skill directory under `config/agents/skills/*` should remain compatible with third-party skills installed via `npx skills` in `~/.agents/`.
 
-OpenCode agents live in [config/opencode/agents/](../opencode/agents/) and omit the Copilot-only `tools` and `include-custom-instructions` frontmatter. OpenCode permissions are defined per agent under `agents` (using ordered `permissions` rules) in [opencode.jsonc](../opencode/opencode.jsonc).
+## Capability-Tier Agents
 
-`/pr-analyze` reads `~/Mon Drive/Obsidian` when access is available. It asks for confirmation before writing notes.
-Copilot requires its own authorization for vault access; OpenCode permissions do not authorize Copilot.
-OpenCode asks for approval before running analysis commands. Review each command and reject any that modify files.
-OpenCode currently denies vault writes; apply approved proposals manually.
+Agents are consolidated into four capability tiers (`config/opencode/agents/` and `config/copilot/agents/`):
 
-## VS Code Local Prompts
+- **`sdlc-readonly`**: Read-only workspace tier (`edit: deny`) for Stage 0 discovery, Stage 1 refinement, and Stage 4 verification.
+- **`sdlc-worker`**: Execution tier (`edit: allow`, `gh pr merge: deny`) for Stage 2/3 development and Stage 5 PR workflows.
+- **`pr-analyzer`**: Read-only workspace tier with gated access to `~/Mon Drive/Obsidian` for conceptual PR analysis (`/pr-analyze`).
+- **`yolo`**: Standalone `mode: primary` agent (`user-invocable: true`, `disable-model-invocation: true` in Copilot) with unrestricted tool access and explicit SDLC gate bypass.
 
-`bootstrap.sh` links `config/agents/prompts/` to `~/Library/Application Support/Code/User/prompts/`. The supported
-Local-harness prompts are `sdlc-0-discover`, `sdlc-1-refine`, `sdlc-2-develop`, `sdlc-3-review`, `sdlc-4-pr`,
-`sdlc-5-review-pr`, and `update-dependencies`. Each `.prompt.md` imports its matching canonical body with
-`#file:~/.agents/commands/<name>.md`; argument-taking commands map VS Code's `${input:...}` value to the body's
-`$ARGUMENTS`. Edit the command body, not the wrapper, to change workflow instructions.
-
-These are Local-harness prompt wrappers, not Copilot custom-agent definitions. They do not select or install the custom agents named in command frontmatter, and do not bundle skill files or tools. Local harness runs therefore use its configured agent and tools; workflows that depend on a skill or a CLI must have that skill or CLI available in the Local environment. Copilot continues to use its own agents and native skills rather than these user-level prompt wrappers.
-
-## Standalone User-Only Agent (`yolo`)
-
-- **GitHub Copilot CLI (`agents/yolo.md`)**: Configures an opt-in `yolo` agent with unrestricted tool access (`tools: ['*']`) and explicit SDLC gate bypass instructions (`sdlc-framework.md`). Sets `user-invocable: true` and `disable-model-invocation: true` (alongside `mode: primary`) so users can select it manually while preventing other agents or model dispatchers from automatically calling or delegating to it.
-- **OpenCode (`config/opencode/agents/yolo.md`)**: Matching `mode: primary` agent paired with `agents.yolo` permissions (`edit`, `shell`, and `external_directory` set to `allow`) in `config/opencode/opencode.jsonc`, similarly isolated from subagent delegation.
-- **SDLC Preservation**: Existing `sdlc-refine`, `sdlc-develop`, `sdlc-review`, and `sdlc-pr-review` permissions and workflow gates remain completely unmodified.
+`/pr-analyze` reads `~/Mon Drive/Obsidian` when access is available and asks for confirmation before writing notes. Copilot requires its own authorization for vault access; OpenCode currently denies vault writes.

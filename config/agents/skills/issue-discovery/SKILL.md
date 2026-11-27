@@ -39,7 +39,7 @@ explore problem space, codebase constraints, and implementation trade-offs befor
    - Inspect relevant entry points, modules, callers, and git history (`read`, `glob`, `grep`, `rtk rg`, `rtk git log`,
      `rtk git show`).
    - Query external documentation or upstream specs via web search/fetch when platform or third-party behavior matters.
-3. **Traverse the 6-Step Reuse Ladder (`minimalist-engineering.md`)**:
+3. **Traverse the 6-Step Reuse Ladder (`minimalist-engineering.instructions.md`)**:
    - Check in order: (1) Does it need to exist? (2) Already in codebase? (3) Standard library / native platform
      feature? (4) Already installed dependency? (5) Readable one-liner? (6) Minimum working code.
 
