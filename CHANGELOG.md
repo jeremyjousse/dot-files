@@ -1,3 +1,10 @@
+# [0.40.0](https://github.com/jeremyjousse/dot-files/compare/v0.39.0...v0.40.0) (2026-11-27)
+
+
+### Features
+
+* **zsh:** restore zsh-autosuggestions and remove deja ([cb56906](https://github.com/jeremyjousse/dot-files/commit/cb569060341160d2b7eb0d759eaa3674b795c942))
+
 # [0.39.0](https://github.com/jeremyjousse/dot-files/compare/v0.38.0...v0.39.0) (2026-11-26)
 
 
