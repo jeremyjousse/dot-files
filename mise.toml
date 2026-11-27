@@ -5,16 +5,31 @@ MY_ENV_VAR = 'my_value'
 node = "lts"
 
 [tasks.lint]
-description = "Lint code with oxlint"
+description = "Lint code with oxlint and shellcheck"
+depends = ["lint:sh"]
 run = "pnpm oxlint"
 
+[tasks."lint:sh"]
+description = "Lint shell scripts with shellcheck"
+run = "shellcheck bootstrap.sh reset.sh doctor.sh rsynch.sh lib/*.sh macOs-defaults/bootstrap.sh"
+
 [tasks.format]
-description = "Format code with oxfmt"
+description = "Format code with oxfmt and shfmt"
+depends = ["format:sh"]
 run = "pnpm oxfmt"
 
+[tasks."format:sh"]
+description = "Format shell scripts with shfmt"
+run = "shfmt -w bootstrap.sh reset.sh doctor.sh rsynch.sh lib/*.sh macOs-defaults/bootstrap.sh"
+
 [tasks."format:check"]
-description = "Check code formatting with oxfmt"
+description = "Check code formatting with oxfmt and shfmt"
+depends = ["format:sh:check"]
 run = "pnpm oxfmt --check"
+
+[tasks."format:sh:check"]
+description = "Check shell script formatting with shfmt"
+run = "shfmt -d bootstrap.sh reset.sh doctor.sh rsynch.sh lib/*.sh macOs-defaults/bootstrap.sh"
 
 [tasks.verify]
 description = "Run all verification checks (lint and format:check)"

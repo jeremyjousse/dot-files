@@ -81,7 +81,7 @@ changes:
   rtk mise run format:check
   ```
 
-  *(Underlying tool: `pnpm oxfmt --check`)*
+  *(Underlying tools: `pnpm oxfmt --check` and `shfmt -d` via `format:sh:check`)*
 
 - **Format Code**:
 
@@ -89,15 +89,15 @@ changes:
   rtk mise run format
   ```
 
-  *(Underlying tool: `pnpm oxfmt`)*
+  *(Underlying tools: `pnpm oxfmt` and `shfmt -w` via `format:sh`)*
 
-- **Lint Check** (JavaScript / repository root):
+- **Lint Check** (JavaScript / repository root and `.sh` scripts):
 
   ```bash
   rtk mise run lint
   ```
 
-  *(Underlying tool: `pnpm oxlint`)*
+  *(Underlying tools: `pnpm oxlint` and `shellcheck` via `lint:sh`)*
 
 - **Shell Syntax Validation** (run on any new or modified `.sh` scripts):
 

@@ -11,9 +11,6 @@ cask "google-chrome"
 # Terminals
 ###
 
-# cmux (https://github.com/manaflow-ai/cmux) Open source Ghostty-based macOS terminal with vertical tabs and notifications for AI coding agents
-cask "cmux"
-
 # Ghostty (https://ghostty.org/) fast, feature-rich, and cross-platform terminal emulator
 cask "ghostty"
 
@@ -34,16 +31,8 @@ cask "visual-studio-code"
 # Bruno (https://usebruno.com/) fully local and Git-native solution to accelerate and secure API work and collaboration
 cask "bruno"
 
-
 # Google Cloud CLI (https://docs.cloud.google.com/sdk/docs) command-line tools for Google Cloud Platform
 cask "gcloud-cli"
-
-
-# Podman Desktop (https://podman-desktop.io/) a graphical interface that enables application developers to seamlessly work with containers and Kubernetes
-cask "podman-desktop"
-
-# Wiz CLI (https://www.wiz.io/lp/wiz-cli) gives developers a direct line into the Wiz platform
-cask "wizcli"
 
 ###
 # Productivity & Notes
