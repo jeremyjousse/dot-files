@@ -10,16 +10,13 @@ unlink_config_files "$HOME"/.config/opencode/commands
 unlink_config_files "$HOME"/.config/opencode/agents
 unlink_config_files "$HOME"/.pi/agent/prompts
 unlink_config_files "$HOME"/.pi/agent/AGENTS.md
-unlink_config_files "$HOME"/.pi/agent/minimalist-engineering.md
+unlink_config_files "$HOME"/.pi/agent/APPEND_SYSTEM.md
 unlink_config_files "$HOME"/.copilot/agents
-unlink_config_files "$HOME"/.copilot/copilot-instructions.md
-unlink_config_files "$HOME"/.copilot/rules/minimalist-engineering.md
+unlink_config_files "$HOME"/.copilot/instructions
 for skill_dir in "$PWD"/config/agents/skills/*; do
 	[ -d "$skill_dir" ] && unlink_config_files "$HOME/.agents/skills/$(basename "$skill_dir")"
 done
-unlink_config_files "$HOME"/.agents/commands
-unlink_config_files "$HOME"/.agents/agents
-unlink_config_files "$HOME"/.agents/rules
+unlink_config_files "$HOME"/.agents/instructions
 
 unlink_config_files "$PWD"/config/nushell "$HOME/Library/Application Support/nushell"
 

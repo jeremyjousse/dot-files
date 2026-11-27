@@ -31,21 +31,25 @@ link_config_files "$PWD"/config/zsh "$HOME"/.config/zsh
 link_config_files "$PWD"/config/agents "$HOME"/.agents
 
 link_config_files "$PWD"/config/opencode/opencode.jsonc "$HOME"/.config/opencode/opencode.jsonc
-link_config_files "$PWD"/config/agents/commands "$HOME"/.config/opencode/commands
+link_config_files "$PWD"/config/opencode/commands "$HOME"/.config/opencode/commands
 link_config_files "$PWD"/config/opencode/agents "$HOME"/.config/opencode/agents
 
-link_config_files "$PWD"/config/agents/commands "$HOME"/.pi/agent/prompts
-link_config_files "$PWD"/config/agents/rules/sdlc-framework.md "$HOME"/.pi/agent/AGENTS.md
-link_config_files "$PWD"/config/agents/rules/minimalist-engineering.md "$HOME"/.pi/agent/minimalist-engineering.md
+link_config_files "$PWD"/config/pi/prompts "$HOME"/.pi/agent/prompts
+link_config_files "$PWD"/config/agents/instructions/sdlc-framework.instructions.md "$HOME"/.pi/agent/AGENTS.md
+link_config_files "$PWD"/config/agents/instructions/minimalist-engineering.instructions.md "$HOME"/.pi/agent/APPEND_SYSTEM.md
 
-create_folder "$HOME/Library/Application Support/Code/User"
-link_config_files "$PWD"/config/agents/prompts "$HOME/Library/Application Support/Code/User/prompts"
+## To Remove next release
+[ -L "$HOME"/.pi/agent/minimalist-engineering.md ] && unlink "$HOME"/.pi/agent/minimalist-engineering.md
+[ -L "$HOME/Library/Application Support/Code/User/prompts" ] && unlink "$HOME/Library/Application Support/Code/User/prompts"
 
-link_config_files "$PWD"/config/agents/agents "$HOME"/.copilot/agents
-link_config_files "$PWD"/config/agents/prompts "$HOME"/.copilot/prompts
-link_config_files "$PWD"/config/agents/rules/sdlc-framework.md "$HOME"/.copilot/copilot-instructions.md
-create_folder "$HOME"/.copilot/rules
-link_config_files "$PWD"/config/agents/rules/minimalist-engineering.md "$HOME"/.copilot/rules/minimalist-engineering.md
+link_config_files "$PWD"/config/copilot/agents "$HOME"/.copilot/agents
+link_config_files "$PWD"/config/agents/instructions "$HOME"/.copilot/instructions
+
+## To Remove next release
+[ -L "$HOME"/.copilot/prompts ] && unlink "$HOME"/.copilot/prompts
+[ -L "$HOME"/.copilot/copilot-instructions.md ] && unlink "$HOME"/.copilot/copilot-instructions.md
+[ -L "$HOME"/.copilot/rules/minimalist-engineering.md ] && unlink "$HOME"/.copilot/rules/minimalist-engineering.md
+rmdir "$HOME"/.copilot/rules 2>/dev/null || true
 
 link_config_files "$PWD"/config/alacritty "$HOME"/.config/alacritty
 link_config_files "$PWD"/config/gh-dash "$HOME"/.config/gh-dash
@@ -56,15 +60,12 @@ link_config_files "$PWD"/config/helix "$HOME"/.config/helix
 link_config_files "$PWD"/config/nushell "$HOME/Library/Application Support/nushell"
 link_config_files "$PWD"/config/nvim "$HOME"/.config/nvim
 link_config_files "$PWD"/config/starship/starship.toml "$HOME"/.config/starship.toml
+create_folder "$HOME/Library/Application Support/Code/User"
 link_config_files "$PWD"/config/vscode/settings.json "$HOME"/Library/Application\ Support/Code/User/settings.json
 link_config_files "$PWD"/config/worktrunk "$HOME"/.config/worktrunk
 link_config_files "$PWD"/config/zellij "$HOME"/.config/zellij
 
 copy_config_files "$PWD"/config/mise "$HOME"/.config
-
-# TODO link deno to /usr/local/bin due to Deno VSCode extension
-# bad configuration https://github.com/denoland/vscode_deno/issues/234
-# sudo ln -s ~/.local/share/mise/installs/deno/latest/bin/deno /usr/local/bin/deno
 
 generate_local_gitconfig "$PWD"/.env "$PWD"/config/git/.gitconfig
 

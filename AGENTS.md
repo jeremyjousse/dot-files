@@ -12,9 +12,10 @@ logic). Instead, it is a **dotfiles, developer environment, and machine provisio
 
 Key responsibilities:
 
-- **Centralized AI Agent Configuration**: Houses the single source of truth for shared AI coding assistant skills,
-  commands, subagents, and SDLC rules in `config/agents/` (linked to `~/.agents/` and shared across OpenCode, Pi Coding
-  Agent, and GitHub Copilot CLI), alongside OpenCode runtime settings in `config/opencode/`.
+- **Centralized AI Agent Configuration**: Houses the single source of truth for shared AI coding assistant skills
+  and universal instructions in `config/agents/` (linked to `~/.agents/` and shared across OpenCode, Pi Coding Agent,
+  and GitHub Copilot CLI), alongside harness-specific configurations in `config/opencode/`, `config/pi/`, and
+  `config/copilot/`.
 - **Tool Configurations**: Houses dotfiles and configuration directories for daily developer tools (`zsh`, `git`,
   `nvim`, `ghostty`, `alacritty`, `zellij`, `starship`, `nushell`, `hammerspoon`, `vscode`).
 - **Provisioning & Automation**: Provides reproducible bootstrapping and symlinking scripts (`bootstrap.sh`, `lib/*.sh`,
@@ -31,7 +32,7 @@ Framework must be interpreted as follows:
 
 - **Strict Exemption**: Hexagonal Architecture, Clean Architecture, DDD, domain purity, application/infrastructure layer
   decoupling, interfaces, and ports/adapters **DO NOT APPLY** to this repository.
-- **SDLC Agent Directives (`sdlc-develop`, `sdlc-review`, `sdlc-pr-review`)**:
+- **SDLC Agent Directives (`sdlc-readonly`, `sdlc-worker`)**:
   - Do **NOT** verify domain purity or inspect changes for architectural layer leaks during verification or reviews.
   - Do **NOT** attempt to refactor dotfile scripts into domain abstractions or layered architectures.
 
@@ -40,11 +41,13 @@ Framework must be interpreted as follows:
 Implementations must adhere to dotfiles-specific conventions:
 
 - **Isolated Tool Configs**: Each tool configuration lives in its designated subfolder under `config/<tool>/`.
-- **Centralized AI Agent Authority**: All shared AI agents, commands, skills, and rules must be maintained in
-  `config/agents/` so they can be symlinked to `~/.agents/` and wired into OpenCode (`~/.config/opencode/`), Pi
-  (`~/.pi/agent/`), and GitHub Copilot CLI (`~/.copilot/`) by `bootstrap.sh`. OpenCode-specific runtime settings live in
-  `config/opencode/opencode.jsonc`. OpenCode V2 watches config files and hot-reloads agents, commands, skills, MCP
-  servers, and plugins on save (or via `/reload`); other AI harnesses may require restarting active sessions.
+- **Centralized AI Agent Authority**: Shared AI skills and universal instructions must be maintained in
+  `config/agents/` (`skills/` and `instructions/`) so they symlink into `~/.agents/` and wire into OpenCode
+  (`~/.config/opencode/`), Pi (`~/.pi/agent/`), and GitHub Copilot CLI (`~/.copilot/`) via `bootstrap.sh`.
+  Harness-specific extensions live in `config/opencode/` (settings, commands, agents), `config/pi/` (prompt templates),
+  and `config/copilot/` (custom `.agent.md` profiles). OpenCode V2 watches config files and hot-reloads agents,
+  commands, skills, MCP servers, and plugins on save (or via `/reload`); other AI harnesses may require restarting
+  active sessions.
 - **Idempotency & Safety**: All shell automation in `bootstrap.sh` or `lib/*.sh` must remain idempotent (safe to run
   multiple times) and must back up non-symlinked existing files (`.back`) rather than destructively overwriting them.
 - **Portability & POSIX Compliance**: Shell scripts should adhere to standard Bash/Zsh practices and pass syntax checks.
@@ -56,17 +59,17 @@ Implementations must adhere to dotfiles-specific conventions:
 - **No Unit / Integration Tests**: This repository does NOT maintain automated test suites (e.g. `npm test` or
   `pnpm test` will fail by default with `"Error: no test specified"`).
 - **SDLC Agent Directives**:
-  - **Stage 3 (`sdlc-develop`)**: Do **NOT** attempt to write unit tests, create test files, or configure test
+  - **Stage 3 (`sdlc-worker`)**: Do **NOT** attempt to write unit tests, create test files, or configure test
     frameworks for configuration or dotfile changes.
-  - **Stage 4 (`sdlc-review`)**: The Test Coverage Assessment step is **NOT APPLICABLE (N/A)**. Agents must **NEVER**
+  - **Stage 4 (`sdlc-readonly`)**: The Test Coverage Assessment step is **NOT APPLICABLE (N/A)**. Agents must **NEVER**
     run `npm test` or `pnpm test`, and must never reject or block verification due to the absence of tests.
-  - **Stage 5 (`sdlc-pr-review`)**: Do not request or expect unit tests during PR reviews.
+  - **Stage 5 (`sdlc-worker`)**: Do not request or expect unit tests during PR reviews.
 
 ---
 
 ## Quality Commands
 
-SDLC verification (`/sdlc-3-review` / `sdlc-review`) must execute the following commands when verifying working tree
+SDLC verification (Stage 4 / `code-review` skill) must execute the following commands when verifying working tree
 changes:
 
 - **Standard Verification Suite** (runs both lint and format check):
@@ -98,12 +101,6 @@ changes:
   ```
 
   *(Underlying tool: `pnpm oxlint`)*
-
-- **Shell Syntax Validation** (run on any new or modified `.sh` scripts):
-
-  ```bash
-  bash -n <script.sh>
-  ```
 
 - **Typecheck**: `None (N/A)`
 - **Test**: `None (N/A - dotfiles repository, do not run test suites)`

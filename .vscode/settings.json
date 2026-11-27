@@ -40,6 +40,7 @@
 		"fluxcd",
 		"Fnox",
 		"freetube",
+		"ghostty",
 		"Graphviz",
 		"hammerspoon",
 		"iterm",
@@ -52,6 +53,7 @@
 		"nushell",
 		"nvim",
 		"ollama",
+		"opencode",
 		"pkgs",
 		"pynglish",
 		"shellcheck",
@@ -60,6 +62,7 @@
 		"Tauri",
 		"thefuck",
 		"Wocabulary",
+		"worktrunk",
 		"zoxide"
 	],
 	"[shellscript]": {
